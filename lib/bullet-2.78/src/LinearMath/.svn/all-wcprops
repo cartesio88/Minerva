@@ -1,0 +1,203 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/LinearMath
+END
+btQuickprof.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/LinearMath/btQuickprof.h
+END
+btAabbUtil2.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/LinearMath/btAabbUtil2.h
+END
+btConvexHullComputer.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/LinearMath/btConvexHullComputer.h
+END
+btTransformUtil.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/LinearMath/btTransformUtil.h
+END
+btSerializer.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/LinearMath/btSerializer.h
+END
+btDefaultMotionState.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/LinearMath/btDefaultMotionState.h
+END
+btStackAlloc.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/LinearMath/btStackAlloc.h
+END
+btHashMap.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/LinearMath/btHashMap.h
+END
+btConvexHull.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/LinearMath/btConvexHull.cpp
+END
+btGeometryUtil.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/LinearMath/btGeometryUtil.cpp
+END
+btQuaternion.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/LinearMath/btQuaternion.h
+END
+btQuickprof.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/LinearMath/btQuickprof.cpp
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/LinearMath/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/LinearMath/Makefile
+END
+btConvexHullComputer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/LinearMath/btConvexHullComputer.cpp
+END
+btMatrix3x3.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/LinearMath/btMatrix3x3.h
+END
+btSerializer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/LinearMath/btSerializer.cpp
+END
+btAlignedAllocator.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/LinearMath/btAlignedAllocator.h
+END
+btScalar.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/LinearMath/btScalar.h
+END
+btMotionState.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/LinearMath/btMotionState.h
+END
+cmake_install.cmake
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/LinearMath/cmake_install.cmake
+END
+btPoolAllocator.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/LinearMath/btPoolAllocator.h
+END
+btTransform.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/LinearMath/btTransform.h
+END
+btList.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/LinearMath/btList.h
+END
+btIDebugDraw.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/LinearMath/btIDebugDraw.h
+END
+btRandom.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/LinearMath/btRandom.h
+END
+btVector3.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/LinearMath/btVector3.h
+END
+btQuadWord.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/LinearMath/btQuadWord.h
+END
+btConvexHull.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/LinearMath/btConvexHull.h
+END
+btGeometryUtil.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/LinearMath/btGeometryUtil.h
+END
+btMinMax.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/LinearMath/btMinMax.h
+END
+btAlignedObjectArray.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/LinearMath/btAlignedObjectArray.h
+END
+btAlignedAllocator.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/LinearMath/btAlignedAllocator.cpp
+END

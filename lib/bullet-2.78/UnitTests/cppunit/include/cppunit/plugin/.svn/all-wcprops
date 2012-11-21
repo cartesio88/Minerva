@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/UnitTests/cppunit/include/cppunit/plugin
+END
+PlugInManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/UnitTests/cppunit/include/cppunit/plugin/PlugInManager.h
+END
+TestPlugIn.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/UnitTests/cppunit/include/cppunit/plugin/TestPlugIn.h
+END
+PlugInParameters.h
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/UnitTests/cppunit/include/cppunit/plugin/PlugInParameters.h
+END
+DynamicLibraryManagerException.h
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/UnitTests/cppunit/include/cppunit/plugin/DynamicLibraryManagerException.h
+END
+DynamicLibraryManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/UnitTests/cppunit/include/cppunit/plugin/DynamicLibraryManager.h
+END
+TestPlugInDefaultImpl.h
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/UnitTests/cppunit/include/cppunit/plugin/TestPlugInDefaultImpl.h
+END

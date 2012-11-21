@@ -1,0 +1,149 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/BulletSoftBody
+END
+btSoftBodyConcaveCollisionAlgorithm.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/BulletSoftBody/btSoftBodyConcaveCollisionAlgorithm.cpp
+END
+btSoftBodyHelpers.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/BulletSoftBody/btSoftBodyHelpers.cpp
+END
+btSoftBodySolvers.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/BulletSoftBody/btSoftBodySolvers.h
+END
+btSoftRigidCollisionAlgorithm.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/BulletSoftBody/btSoftRigidCollisionAlgorithm.cpp
+END
+btSoftBodyInternals.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/BulletSoftBody/btSoftBodyInternals.h
+END
+cmake_install.cmake
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/BulletSoftBody/cmake_install.cmake
+END
+btSoftBodyConcaveCollisionAlgorithm.h
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/BulletSoftBody/btSoftBodyConcaveCollisionAlgorithm.h
+END
+btSoftBodySolverVertexBuffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/BulletSoftBody/btSoftBodySolverVertexBuffer.h
+END
+btSoftBodyHelpers.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/BulletSoftBody/btSoftBodyHelpers.h
+END
+btSoftRigidCollisionAlgorithm.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/BulletSoftBody/btSoftRigidCollisionAlgorithm.h
+END
+btSoftBodyData.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/BulletSoftBody/btSoftBodyData.h
+END
+btSoftBody.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/BulletSoftBody/btSoftBody.cpp
+END
+btDefaultSoftBodySolver.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/BulletSoftBody/btDefaultSoftBodySolver.cpp
+END
+btSoftBodyRigidBodyCollisionConfiguration.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/BulletSoftBody/btSoftBodyRigidBodyCollisionConfiguration.cpp
+END
+btSoftRigidDynamicsWorld.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/BulletSoftBody/btSoftRigidDynamicsWorld.cpp
+END
+btSoftSoftCollisionAlgorithm.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/BulletSoftBody/btSoftSoftCollisionAlgorithm.cpp
+END
+btSoftBody.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/BulletSoftBody/btSoftBody.h
+END
+btDefaultSoftBodySolver.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/BulletSoftBody/btDefaultSoftBodySolver.h
+END
+btSoftBodyRigidBodyCollisionConfiguration.h
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/BulletSoftBody/btSoftBodyRigidBodyCollisionConfiguration.h
+END
+btSoftRigidDynamicsWorld.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/BulletSoftBody/btSoftRigidDynamicsWorld.h
+END
+btSoftSoftCollisionAlgorithm.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/BulletSoftBody/btSoftSoftCollisionAlgorithm.h
+END
+btSparseSDF.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/BulletSoftBody/btSparseSDF.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/BulletSoftBody/Makefile
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/BulletSoftBody/CMakeLists.txt
+END

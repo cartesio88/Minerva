@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/minervaproject/!svn/ver/1/lib/ARToolKit/lib/SRC/ARMulti
+END
+arMultiActivate.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/minervaproject/!svn/ver/1/lib/ARToolKit/lib/SRC/ARMulti/arMultiActivate.c
+END
+arMultiReadConfigFile.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/minervaproject/!svn/ver/1/lib/ARToolKit/lib/SRC/ARMulti/arMultiReadConfigFile.c
+END
+Makefile.in
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/minervaproject/!svn/ver/1/lib/ARToolKit/lib/SRC/ARMulti/Makefile.in
+END
+libARMulti.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/minervaproject/!svn/ver/1/lib/ARToolKit/lib/SRC/ARMulti/libARMulti.vcproj
+END
+arMultiGetTransMat.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/minervaproject/!svn/ver/1/lib/ARToolKit/lib/SRC/ARMulti/arMultiGetTransMat.c
+END
+libARmulti.dsp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/minervaproject/!svn/ver/1/lib/ARToolKit/lib/SRC/ARMulti/libARmulti.dsp
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/minervaproject/!svn/ver/1/lib/ARToolKit/lib/SRC/ARMulti/Makefile
+END

@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/Glut/GL
+END
+wglext.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/Glut/GL/wglext.h
+END
+glut.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/Glut/GL/glut.h
+END
+glxext.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/Glut/GL/glxext.h
+END
+glew.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/Glut/GL/glew.h
+END
+glext.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/Glut/GL/glext.h
+END
+wglew.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/Glut/GL/wglew.h
+END
+glxew.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/Glut/GL/glxew.h
+END

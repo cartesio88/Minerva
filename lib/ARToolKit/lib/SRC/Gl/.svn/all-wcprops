@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/minervaproject/!svn/ver/1/lib/ARToolKit/lib/SRC/Gl
+END
+gsubUtil.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/minervaproject/!svn/ver/1/lib/ARToolKit/lib/SRC/Gl/gsubUtil.c
+END
+gsub.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/minervaproject/!svn/ver/1/lib/ARToolKit/lib/SRC/Gl/gsub.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/minervaproject/!svn/ver/1/lib/ARToolKit/lib/SRC/Gl/Makefile
+END
+gsub_lite.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/minervaproject/!svn/ver/1/lib/ARToolKit/lib/SRC/Gl/gsub_lite.c
+END

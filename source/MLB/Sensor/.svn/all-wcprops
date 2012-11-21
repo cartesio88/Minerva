@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svnroot/minervaproject/!svn/ver/2/source/MLB/Sensor
+END
+MLBSensor.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/minervaproject/!svn/ver/3/source/MLB/Sensor/MLBSensor.cpp
+END
+MLBSensorRandom.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/minervaproject/!svn/ver/3/source/MLB/Sensor/MLBSensorRandom.cpp
+END
+MLBSensorActuator.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/minervaproject/!svn/ver/3/source/MLB/Sensor/MLBSensorActuator.cpp
+END
+MLBSensor.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/minervaproject/!svn/ver/3/source/MLB/Sensor/MLBSensor.h
+END
+MLBSensorProperty.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/minervaproject/!svn/ver/3/source/MLB/Sensor/MLBSensorProperty.cpp
+END
+MLBSensorRandom.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/minervaproject/!svn/ver/3/source/MLB/Sensor/MLBSensorRandom.h
+END
+MLBSensorNear.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/minervaproject/!svn/ver/3/source/MLB/Sensor/MLBSensorNear.cpp
+END
+MLBSensorActuator.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/minervaproject/!svn/ver/3/source/MLB/Sensor/MLBSensorActuator.h
+END
+MLBSensorProperty.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/minervaproject/!svn/ver/3/source/MLB/Sensor/MLBSensorProperty.h
+END
+MLBSensorNear.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/minervaproject/!svn/ver/3/source/MLB/Sensor/MLBSensorNear.h
+END
+MLBSensorCollision.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/minervaproject/!svn/ver/3/source/MLB/Sensor/MLBSensorCollision.cpp
+END
+MLBSensorDelay.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/minervaproject/!svn/ver/3/source/MLB/Sensor/MLBSensorDelay.cpp
+END
+MLBSensorAlways.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/minervaproject/!svn/ver/3/source/MLB/Sensor/MLBSensorAlways.cpp
+END
+MLBSensorCollision.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/minervaproject/!svn/ver/3/source/MLB/Sensor/MLBSensorCollision.h
+END
+MLBSensorKeyboard.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/minervaproject/!svn/ver/3/source/MLB/Sensor/MLBSensorKeyboard.cpp
+END
+MLBSensorDelay.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/minervaproject/!svn/ver/3/source/MLB/Sensor/MLBSensorDelay.h
+END
+MLBSensorKeyboard.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/minervaproject/!svn/ver/3/source/MLB/Sensor/MLBSensorKeyboard.h
+END
+MLBSensorAlways.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/minervaproject/!svn/ver/3/source/MLB/Sensor/MLBSensorAlways.h
+END

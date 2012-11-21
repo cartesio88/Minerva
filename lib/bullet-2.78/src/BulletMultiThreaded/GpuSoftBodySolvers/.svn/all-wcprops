@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/BulletMultiThreaded/GpuSoftBodySolvers
+END
+cmake_install.cmake
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/BulletMultiThreaded/GpuSoftBodySolvers/cmake_install.cmake
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/BulletMultiThreaded/GpuSoftBodySolvers/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/BulletMultiThreaded/GpuSoftBodySolvers/Makefile
+END

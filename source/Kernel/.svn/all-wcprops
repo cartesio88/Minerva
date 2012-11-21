@@ -1,0 +1,185 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svnroot/minervaproject/!svn/ver/2/source/Kernel
+END
+MSLParser.y
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/minervaproject/!svn/ver/3/source/Kernel/MSLParser.y
+END
+Orej.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svnroot/minervaproject/!svn/ver/3/source/Kernel/Orej.cpp
+END
+PhysicDynamicObject.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/minervaproject/!svn/ver/3/source/Kernel/PhysicDynamicObject.h
+END
+TrackingMethod.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/minervaproject/!svn/ver/3/source/Kernel/TrackingMethod.cpp
+END
+Orej.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svnroot/minervaproject/!svn/ver/3/source/Kernel/Orej.h
+END
+MSLScanner.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/minervaproject/!svn/ver/3/source/Kernel/MSLScanner.cpp
+END
+PathPoint.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/minervaproject/!svn/ver/3/source/Kernel/PathPoint.cpp
+END
+Singleton.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/minervaproject/!svn/ver/3/source/Kernel/Singleton.h
+END
+TrackingMethod.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/minervaproject/!svn/ver/3/source/Kernel/TrackingMethod.h
+END
+MSLParser.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/minervaproject/!svn/ver/3/source/Kernel/MSLParser.cpp
+END
+MSLProperties.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/minervaproject/!svn/ver/3/source/Kernel/MSLProperties.cpp
+END
+EndController.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/minervaproject/!svn/ver/3/source/Kernel/EndController.cpp
+END
+PathPoint.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/minervaproject/!svn/ver/3/source/Kernel/PathPoint.h
+END
+MSLParser.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/minervaproject/!svn/ver/1/source/Kernel/MSLParser.h
+END
+MSLProperties.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/minervaproject/!svn/ver/3/source/Kernel/MSLProperties.h
+END
+MSLScanner.l
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/minervaproject/!svn/ver/3/source/Kernel/MSLScanner.l
+END
+GLDebugDrawer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/minervaproject/!svn/ver/3/source/Kernel/GLDebugDrawer.cpp
+END
+Logger.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/minervaproject/!svn/ver/3/source/Kernel/Logger.cpp
+END
+EndController.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/minervaproject/!svn/ver/3/source/Kernel/EndController.h
+END
+GLDebugDrawer.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/minervaproject/!svn/ver/3/source/Kernel/GLDebugDrawer.h
+END
+Logger.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svnroot/minervaproject/!svn/ver/3/source/Kernel/Logger.h
+END
+TrackingMethodARTK.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/minervaproject/!svn/ver/3/source/Kernel/TrackingMethodARTK.cpp
+END
+PhysicObject.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/minervaproject/!svn/ver/3/source/Kernel/PhysicObject.cpp
+END
+VideoSource.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/minervaproject/!svn/ver/3/source/Kernel/VideoSource.cpp
+END
+World.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svnroot/minervaproject/!svn/ver/3/source/Kernel/World.cpp
+END
+TrackingMethodARTK.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/minervaproject/!svn/ver/3/source/Kernel/TrackingMethodARTK.h
+END
+PhysicDynamicObject.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/minervaproject/!svn/ver/3/source/Kernel/PhysicDynamicObject.cpp
+END
+PhysicObject.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/minervaproject/!svn/ver/3/source/Kernel/PhysicObject.h
+END
+VideoSource.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/minervaproject/!svn/ver/3/source/Kernel/VideoSource.h
+END
+World.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svnroot/minervaproject/!svn/ver/3/source/Kernel/World.h
+END

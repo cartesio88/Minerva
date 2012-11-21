@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/minervaproject/!svn/ver/1/lib/ARToolKit/include/AR
+END
+config.h.in
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/minervaproject/!svn/ver/1/lib/ARToolKit/include/AR/config.h.in
+END
+arMulti.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/minervaproject/!svn/ver/1/lib/ARToolKit/include/AR/arMulti.h
+END
+gsub_lite.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/minervaproject/!svn/ver/1/lib/ARToolKit/include/AR/gsub_lite.h
+END
+gsubUtil.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/minervaproject/!svn/ver/1/lib/ARToolKit/include/AR/gsubUtil.h
+END
+gsub.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/minervaproject/!svn/ver/1/lib/ARToolKit/include/AR/gsub.h
+END
+param.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/minervaproject/!svn/ver/1/lib/ARToolKit/include/AR/param.h
+END
+ar.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/minervaproject/!svn/ver/1/lib/ARToolKit/include/AR/ar.h
+END
+arvrml.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/minervaproject/!svn/ver/1/lib/ARToolKit/include/AR/arvrml.h
+END
+matrix.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/minervaproject/!svn/ver/1/lib/ARToolKit/include/AR/matrix.h
+END
+config.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/minervaproject/!svn/ver/1/lib/ARToolKit/include/AR/config.h
+END
+video.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/minervaproject/!svn/ver/1/lib/ARToolKit/include/AR/video.h
+END

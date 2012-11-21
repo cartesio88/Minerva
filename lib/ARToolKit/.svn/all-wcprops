@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svnroot/minervaproject/!svn/ver/1/lib/ARToolKit
+END
+artk-yuv422-v4l2-2.72.1.20090801.patch
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/minervaproject/!svn/ver/1/lib/ARToolKit/artk-yuv422-v4l2-2.72.1.20090801.patch
+END
+ChangeLog.txt
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/minervaproject/!svn/ver/1/lib/ARToolKit/ChangeLog.txt
+END
+COPYING.txt
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/minervaproject/!svn/ver/1/lib/ARToolKit/COPYING.txt
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/minervaproject/!svn/ver/1/lib/ARToolKit/README.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svnroot/minervaproject/!svn/ver/1/lib/ARToolKit/Makefile
+END

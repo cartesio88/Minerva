@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/UnitTests/cppunit/include/cppunit/config
+END
+CppUnitApi.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/UnitTests/cppunit/include/cppunit/config/CppUnitApi.h
+END
+SourcePrefix.h
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/UnitTests/cppunit/include/cppunit/config/SourcePrefix.h
+END
+config-bcb5.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/UnitTests/cppunit/include/cppunit/config/config-bcb5.h
+END
+config-msvc6.h
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/UnitTests/cppunit/include/cppunit/config/config-msvc6.h
+END
+SelectDllLoader.h
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/UnitTests/cppunit/include/cppunit/config/SelectDllLoader.h
+END
+config-mac.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/UnitTests/cppunit/include/cppunit/config/config-mac.h
+END
+config-evc4.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/UnitTests/cppunit/include/cppunit/config/config-evc4.h
+END

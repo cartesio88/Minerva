@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/BulletDynamics
+END
+cmake_install.cmake
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/BulletDynamics/cmake_install.cmake
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/BulletDynamics/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/BulletDynamics/Makefile
+END

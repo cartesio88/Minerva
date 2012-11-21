@@ -1,0 +1,173 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svnroot/minervaproject/!svn/ver/2/source/MAO
+END
+MAORenderable2DImage.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/minervaproject/!svn/ver/3/source/MAO/MAORenderable2DImage.h
+END
+MAORenderable3DLine.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/minervaproject/!svn/ver/3/source/MAO/MAORenderable3DLine.cpp
+END
+MAORenderable2DText.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/minervaproject/!svn/ver/3/source/MAO/MAORenderable2DText.h
+END
+MAORenderable3DOrj.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/minervaproject/!svn/ver/3/source/MAO/MAORenderable3DOrj.cpp
+END
+MAORenderable3DTeapot.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/minervaproject/!svn/ver/3/source/MAO/MAORenderable3DTeapot.cpp
+END
+MAORenderable3DPath.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/minervaproject/!svn/ver/3/source/MAO/MAORenderable3DPath.cpp
+END
+MAORenderable3DLine.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/minervaproject/!svn/ver/3/source/MAO/MAORenderable3DLine.h
+END
+MAORenderable3DOrj.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/minervaproject/!svn/ver/3/source/MAO/MAORenderable3DOrj.h
+END
+MAOValue.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svnroot/minervaproject/!svn/ver/3/source/MAO/MAOValue.cpp
+END
+MAORenderable3DTeapot.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/minervaproject/!svn/ver/3/source/MAO/MAORenderable3DTeapot.h
+END
+MAORenderable3DPath.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/minervaproject/!svn/ver/3/source/MAO/MAORenderable3DPath.h
+END
+MAO.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svnroot/minervaproject/!svn/ver/3/source/MAO/MAO.cpp
+END
+MAOValue.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svnroot/minervaproject/!svn/ver/3/source/MAO/MAOValue.h
+END
+MAOPositionator3D.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/minervaproject/!svn/ver/3/source/MAO/MAOPositionator3D.cpp
+END
+MAOProperty.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/minervaproject/!svn/ver/3/source/MAO/MAOProperty.cpp
+END
+MAO.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svnroot/minervaproject/!svn/ver/3/source/MAO/MAO.h
+END
+MAOPositionator3D.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/minervaproject/!svn/ver/3/source/MAO/MAOPositionator3D.h
+END
+MAORenderable2D.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/minervaproject/!svn/ver/3/source/MAO/MAORenderable2D.cpp
+END
+MAOProperty.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/minervaproject/!svn/ver/3/source/MAO/MAOProperty.h
+END
+MAOMarksGroup.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/minervaproject/!svn/ver/3/source/MAO/MAOMarksGroup.cpp
+END
+MAOMark.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svnroot/minervaproject/!svn/ver/3/source/MAO/MAOMark.cpp
+END
+MAORenderable3D.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/minervaproject/!svn/ver/3/source/MAO/MAORenderable3D.cpp
+END
+MAORenderable2DImage.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/minervaproject/!svn/ver/3/source/MAO/MAORenderable2DImage.cpp
+END
+MAORenderable2DText.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/minervaproject/!svn/ver/3/source/MAO/MAORenderable2DText.cpp
+END
+MAORenderable2D.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/minervaproject/!svn/ver/3/source/MAO/MAORenderable2D.h
+END
+MAOMarksGroup.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/minervaproject/!svn/ver/3/source/MAO/MAOMarksGroup.h
+END
+MAOMark.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svnroot/minervaproject/!svn/ver/3/source/MAO/MAOMark.h
+END
+MAORenderable3D.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/minervaproject/!svn/ver/3/source/MAO/MAORenderable3D.h
+END

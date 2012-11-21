@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/UnitTests/cppunit/include/cppunit/ui/text
+END
+TestRunner.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/UnitTests/cppunit/include/cppunit/ui/text/TestRunner.h
+END
+TextTestRunner.h
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/UnitTests/cppunit/include/cppunit/ui/text/TextTestRunner.h
+END

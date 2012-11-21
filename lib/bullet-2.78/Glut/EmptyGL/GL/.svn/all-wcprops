@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/Glut/EmptyGL/GL
+END
+egl_tokens.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/Glut/EmptyGL/GL/egl_tokens.h
+END
+glut.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/Glut/EmptyGL/GL/glut.h
+END
+egl_cpx.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/Glut/EmptyGL/GL/egl_cpx.h
+END
+gl.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/Glut/EmptyGL/GL/gl.h
+END
+glu.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/Glut/EmptyGL/GL/glu.h
+END
+egl_defs.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/Glut/EmptyGL/GL/egl_defs.h
+END
+egl_logged.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/Glut/EmptyGL/GL/egl_logged.h
+END
+egl_void.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/Glut/EmptyGL/GL/egl_void.h
+END

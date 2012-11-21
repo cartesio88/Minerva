@@ -1,0 +1,89 @@
+EXECNAME = minerva
+OUTPUTDIR = ../bin/
+OBJSDIR = ../obj/
+CXX = g++
+CXXFLAGS = -Wall -c -O2 #-ggdb
+ARTKLIBS = -L../lib/ARToolKit/lib -lARgsub -lAR
+BULLETDIR = bullet-2.77/
+#PYTHONDIR = /usr/include/python2.7
+PYTHONDIR = /usr/include/python2.6
+#PYTHONLIB = -lpython2.7
+PYTHONLIB = -lpython2.6
+BULLETLIBS = -L../lib/$(BULLETDIR)/src/BulletDynamics -lBulletDynamics\
+			 -L../lib/$(BULLETDIR)/src/BulletCollision -lBulletCollision\
+			 -L../lib/$(BULLETDIR)/src/LinearMath -lLinearMath
+
+LDFLAGS = -lGL -lGLU -lSDL -lSDL_ttf -lSDL_image -lSDL_mixer -lhighgui $(ARTKLIBS) $(BULLETLIBS) $(PYTHONLIB) -lboost_python -lboost_system
+#-lboost_filesystem
+INCFLAGS = -I. -I ../lib/ARToolKit/include -I../lib/$(BULLETDIR)/src -I$(PYTHONDIR)
+OBJSCRUDE = InputEventController.o GameLogicController.o MAOFactory.o\
+	MLBFactory.o VideoFactory.o Logger.o VideoSource.o TrackingMethod.o\
+	TrackingMethodARTK.o TrackingMethodFactory.o MAOPositionator3D.o\
+	MAOMark.o MAOMarksGroup.o MAORenderable3D.o MAO.o MAORenderable3DTeapot.o\
+	World.o MLB.o MLBSensor.o MLBController.o MLBActuator.o  MLBActuatorRelativePose.o\
+	MLBControllerAND.o MLBActuatorVisibility.o MLBControllerNAND.o PhysicObject.o\
+	MLBControllerOR.o MLBControllerNOR.o MLBSensorAlways.o MLBSensorKeyboard.o\
+	MLBSensorNear.o MAORenderable2D.o MAORenderable2DText.o MAORenderable2DImage.o\
+	MLBSensorProperty.o MLBActuatorChangePose.o MLBActuatorDistance.o MLBActuatorAng.o\
+	MAORenderable3DLine.o MLBSensorRandom.o MLBActuatorRandom.o MLBSensorDelay.o\
+	Orej.o MAORenderable3DOrj.o	MLBActuatorSound.o MAORenderable3DPath.o PathPoint.o\
+	MLBActuatorPathRemovePoints.o MLBActuatorQuitApp.o MLBActuatorProperty.o MLBSensorActuator.o\
+	MLBActuatorPathAddPoint.o MAOProperty.o MAOValue.o PhysicsController.o MLBSensorCollision.o\
+	PhysicDynamicObject.o MLBActuatorAddDynamicObject.o MSLParser.o MSLScanner.o MSLProperties.o\
+	MLBActuatorAnimOrej.o MLBControllerScript.o MGEModule.o MPYWrapper.o WrapperTypes.o EndController.o\
+	GLDebugDrawer.o
+
+
+OBJS= $(addprefix $(OBJSDIR),$(OBJSCRUDE))
+
+#For TEAPOT
+LDFLAGS+= -lglut
+
+all: $(DIRS)  $(OBJS)
+	$(CXX) $(OBJS) main.cpp -Wall $(LDFLAGS) $(INCFLAGS) -o $(OUTPUTDIR)/$(EXECNAME)
+
+#Controller objs
+$(OBJSDIR)%.o: Controllers/%.cpp Controllers/%.h
+	$(CXX) -o $@ $< $(CXXFLAGS) $(INCFLAGS) $(LDFLAGS)
+
+#Factories objs
+$(OBJSDIR)%.o: Factories/%.cpp Factories/%.h
+	$(CXX) -o $@ $< $(CXXFLAGS) $(INCFLAGS) $(LDFLAGS)
+
+#Kernel objs
+$(OBJSDIR)%.o: Kernel/%.cpp Kernel/%.h
+	$(CXX) -o $@ $< $(CXXFLAGS) $(INCFLAGS) $(LDFLAGS)
+
+#MAO objs
+$(OBJSDIR)%.o: MAO/%.cpp MAO/%.h
+	$(CXX) -o $@ $< $(CXXFLAGS) $(INCFLAGS) $(LDFLAGS)
+
+#MLB objs
+$(OBJSDIR)%.o: MLB/%.cpp MLB/%.h
+	$(CXX) -o $@ $< $(CXXFLAGS) $(INCFLAGS) $(LDFLAGS)
+
+$(OBJSDIR)%.o: MLB/Sensor/%.cpp MLB/Sensor/%.h
+	$(CXX) -o $@ $< $(CXXFLAGS) $(INCFLAGS) $(LDFLAGS)
+
+$(OBJSDIR)%.o: MLB/Controller/%.cpp MLB/Controller/%.h
+	$(CXX) -o $@ $< $(CXXFLAGS) $(INCFLAGS) $(LDFLAGS)
+
+$(OBJSDIR)%.o: MLB/Actuator/%.cpp MLB/Actuator/%.h
+	$(CXX) -o $@ $< $(CXXFLAGS) $(INCFLAGS) $(LDFLAGS)
+
+#MPY
+$(OBJSDIR)%.o: MPY/%.cpp MPY/%.h
+	$(CXX) -o $@ $< $(CXXFLAGS) $(INCFLAGS) $(LDFLAGS)
+
+
+#MSL's (Minerva Specification Languaje) rules
+$(OBJSDIR)MSLParser.o: Kernel/MSLParser.y
+	bison++ -d -hKernel/MSLParser.h -o Kernel/MSLParser.cpp $<
+	$(CXX) -o $@ Kernel/MSLParser.cpp  $(CXXFLAGS) $(INCFLAGS) $(LDFLAGS)
+
+$(OBJSDIR)MSLScanner.o: Kernel/MSLScanner.l
+	flex++ -d -oKernel/MSLScanner.cpp $<
+	$(CXX) -o $@ Kernel/MSLScanner.cpp  $(CXXFLAGS) $(INCFLAGS) $(LDFLAGS)
+
+clean:
+	rm -Rf $(OBJSDIR) $(OUTPUTDIR)/$(EXECNAME) *~

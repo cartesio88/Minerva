@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/UnitTests/cppunit
+END
+BUGS
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/UnitTests/cppunit/BUGS
+END
+AUTHORS
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/UnitTests/cppunit/AUTHORS
+END
+TODO
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/UnitTests/cppunit/TODO
+END
+ChangeLog
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/UnitTests/cppunit/ChangeLog
+END
+THANKS
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/UnitTests/cppunit/THANKS
+END
+CodingGuideLines.txt
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/UnitTests/cppunit/CodingGuideLines.txt
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/UnitTests/cppunit/CMakeLists.txt
+END

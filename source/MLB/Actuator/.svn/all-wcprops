@@ -1,0 +1,173 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svnroot/minervaproject/!svn/ver/2/source/MLB/Actuator
+END
+MLBActuatorRelativePose.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/minervaproject/!svn/ver/3/source/MLB/Actuator/MLBActuatorRelativePose.cpp
+END
+MLBActuatorAnimOrej.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/minervaproject/!svn/ver/3/source/MLB/Actuator/MLBActuatorAnimOrej.cpp
+END
+MLBActuatorAng.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/minervaproject/!svn/ver/3/source/MLB/Actuator/MLBActuatorAng.cpp
+END
+MLBActuatorRelativePose.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/minervaproject/!svn/ver/3/source/MLB/Actuator/MLBActuatorRelativePose.h
+END
+MLBActuatorPathRemovePoints.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/minervaproject/!svn/ver/3/source/MLB/Actuator/MLBActuatorPathRemovePoints.cpp
+END
+MLBActuatorAnimOrej.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/minervaproject/!svn/ver/3/source/MLB/Actuator/MLBActuatorAnimOrej.h
+END
+MLBActuatorAng.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/minervaproject/!svn/ver/3/source/MLB/Actuator/MLBActuatorAng.h
+END
+MLBActuatorChangePose.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/minervaproject/!svn/ver/3/source/MLB/Actuator/MLBActuatorChangePose.cpp
+END
+MLBActuatorPathRemovePoints.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/minervaproject/!svn/ver/3/source/MLB/Actuator/MLBActuatorPathRemovePoints.h
+END
+MLBActuator.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/minervaproject/!svn/ver/3/source/MLB/Actuator/MLBActuator.cpp
+END
+MLBActuatorPathAddPoint.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/minervaproject/!svn/ver/3/source/MLB/Actuator/MLBActuatorPathAddPoint.cpp
+END
+MLBActuatorRandom.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/minervaproject/!svn/ver/3/source/MLB/Actuator/MLBActuatorRandom.cpp
+END
+MLBActuatorChangePose.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/minervaproject/!svn/ver/3/source/MLB/Actuator/MLBActuatorChangePose.h
+END
+MLBActuatorQuitApp.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/minervaproject/!svn/ver/3/source/MLB/Actuator/MLBActuatorQuitApp.cpp
+END
+MLBActuatorPathAddPoint.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/minervaproject/!svn/ver/3/source/MLB/Actuator/MLBActuatorPathAddPoint.h
+END
+MLBActuatorAddDynamicObject.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/minervaproject/!svn/ver/3/source/MLB/Actuator/MLBActuatorAddDynamicObject.cpp
+END
+MLBActuator.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/minervaproject/!svn/ver/3/source/MLB/Actuator/MLBActuator.h
+END
+MLBActuatorProperty.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/minervaproject/!svn/ver/3/source/MLB/Actuator/MLBActuatorProperty.cpp
+END
+MLBActuatorRandom.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/minervaproject/!svn/ver/3/source/MLB/Actuator/MLBActuatorRandom.h
+END
+MLBActuatorVisibility.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/minervaproject/!svn/ver/3/source/MLB/Actuator/MLBActuatorVisibility.cpp
+END
+MLBActuatorQuitApp.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/minervaproject/!svn/ver/3/source/MLB/Actuator/MLBActuatorQuitApp.h
+END
+MLBActuatorSound.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/minervaproject/!svn/ver/3/source/MLB/Actuator/MLBActuatorSound.cpp
+END
+MLBActuatorAddDynamicObject.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/minervaproject/!svn/ver/3/source/MLB/Actuator/MLBActuatorAddDynamicObject.h
+END
+MLBActuatorProperty.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/minervaproject/!svn/ver/3/source/MLB/Actuator/MLBActuatorProperty.h
+END
+MLBActuatorDistance.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/minervaproject/!svn/ver/3/source/MLB/Actuator/MLBActuatorDistance.cpp
+END
+MLBActuatorVisibility.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/minervaproject/!svn/ver/3/source/MLB/Actuator/MLBActuatorVisibility.h
+END
+MLBActuatorSound.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/minervaproject/!svn/ver/3/source/MLB/Actuator/MLBActuatorSound.h
+END
+MLBActuatorDistance.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/minervaproject/!svn/ver/3/source/MLB/Actuator/MLBActuatorDistance.h
+END

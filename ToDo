@@ -1,0 +1,75 @@
+**************_TODO_***************
+----  MARZO  ---------------
+**Crear lista de dependencias!
+**Empaquetar!
+**Tutoriales básicos!
+**Página web BILINGÜE!
+
+API PYTHON: #include <MLB/Sensor/MLBSensorProperty.h>
+
+
+-Improvements:
+**Trabajar en las listas en python! C++ -> Lista y Lista -> C++
+
+-Actuador para eliminar todos los MAOS instanciados de un MAO Clase?
+Suena guay MLBActuatorRemoveInstantiated
+
+-El impulso de los addDynamic se ha hecho de forma LOCAL a la marca de creación... igual interesa dar a elegir, nop?
+-Bindear MAOProperty Pose con python? cómo?
+-Add impulse?? Add force?? Esto habrá que hacerlo para las demos, no crees?
+-Poner constantes? En plan PLAY, PAUSE, INTERVAL, EQUAL, LOOP, PINGPONG, etc.
+-Poder hacer una sentencia #include!
+-Probar conjunto de marcas.
+-Mejorar la transparencia de las sombras.. Preguntar a Vallejo? molaría! cool!
+-OPTIMIZAR EL PHYSICSCONTROLLER: Las collisionShape hacen new's.. qué mal en el método collide!
+-Comprobar la destrucción en algunos destructores.. Está todo en los TODO's
+-Repasar los TODO's!
+-El Renderable2DText necesita color!
+-Parametrizar el camera_para.dat!!!
+-Meter producciones de error, para que quede más cuco!
+-Si pones un "1" y te pide un float el lenguaje, te va a cascar porque no encuentra el punto!!
+-Añadir representación del suelo!
+-Resto de collisionShape que los calcule el OreJ.
+-Sensores: Message!, Mouse.
+-Actuadores: Message!
+
+
+*Issues
+(-Cuando se diseñe un objeto en blender para exportar en el OreJ, lo mejor es centrarlo en su origen de coordenadas local! Bullet
+centra sus primitivas de collision en ese centro! ;))
+(-Un tipo de propiedad vector2d y vector3d??)
+(-Memoria gratis al crear los tipos de datos? se hacen news!! (Parece resuelto, tener MUCHO cuidado! al hacer los deletes!))
+(-El actuador Add Object sólo añade objetos Dinámicos, y para Bullet!! Es necesario que añada otros tipos de MAO?).
+(-Añadir soporte para MP3 en los actuadores? (De momento solo .WAV))
+(-Comprobar MarksGroup!)
+(-Controlar excepciones! Crearlas, tener cuidado!!)
+(-Crear lista de dependencias (cmake, libsdl, libsdl-mixer, libsdl-image, bison!, flex!)
+(-LOW FPS?? A mí también me pasaba.. qué hice? Creo que instalé gnome-media y reinicié, o quizá fue alguna actualización... Ahora va  toda leche!).
+(-Al indicar el impulso, es siempre local a la marca creationRef! Si se queire global, indicar el ground! :) )
+(-Explicar bien la diferencia (en Bullet) entre objeto estático y dinámico.
+	-El estático tiene un globalReference que dice dónde está, pero no se somete a leyes físicas, pero hay que añadirlo al controlador
+	físico para que tenga en cuenta colisiones con los objetos dinámicos. No tiene masa!!
+	-El dinámico no tiene global reference, pero al añadirlo hay que indicarle un creation reference, para saber dónde comenzar
+	a crearse. Tiene masa!! Hay que añadirlo al controlador físico!! No tiene global reference, porque su global reference es el ground!)
+(-Los ficheros críticos de minerca (como el camera_para) están en /usr/share/minerva. En concreto ese está en /usr/share/minerva/data/).
+
+**************
+PARA LA POSTERIDAD: CACHOS DE ERRORES! DE BUGS!
+**************
+
+*E1: al borrar un elemento de un vector recorrido con un iterador, se hacía lo siguiente:
+
+vector.erase(it);
+delete (*it);
+
+Los elementos del vector eran punteros. Al hacer el erase, "it" apuntaba a otro lado y menudas consecuencias catastróficas!
+******************
+*E2: Variable no inicializada. En el orej se hacia el loadModel antes que el loadTexture... no se inicializaba la variable _texHeight
+que necesitaba loadModel y que inicializaba loadTexture. A veces funcionaba bien y otras no, dependiendo de la basura que hubiese en
+_texHeight!
+
+
+
+***¡¡¡CAMBIOS EN LA DOCU!!!***
+-MGEModule ahora tiene getMAO
+-MAORenderable2DText tiene ahora color como parámetro OBLIGATORIO

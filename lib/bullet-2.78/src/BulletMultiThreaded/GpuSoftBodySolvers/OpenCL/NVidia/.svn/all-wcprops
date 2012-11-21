@@ -1,0 +1,11 @@
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/NVidia
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/NVidia/CMakeLists.txt
+END

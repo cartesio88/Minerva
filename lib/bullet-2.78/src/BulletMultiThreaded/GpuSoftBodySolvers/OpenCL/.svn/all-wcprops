@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL
+END
+btSoftBodySolverTriangleData_OpenCL.h
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/btSoftBodySolverTriangleData_OpenCL.h
+END
+btSoftBodySolverOutputCLtoGL.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/btSoftBodySolverOutputCLtoGL.cpp
+END
+cmake_install.cmake
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/cmake_install.cmake
+END
+btSoftBodySolverOutputCLtoGL.h
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/btSoftBodySolverOutputCLtoGL.h
+END
+btSoftBodySolverVertexData_OpenCL.h
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/btSoftBodySolverVertexData_OpenCL.h
+END
+btSoftBodySolver_OpenCLSIMDAware.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/btSoftBodySolver_OpenCLSIMDAware.cpp
+END
+btSoftBodySolverBuffer_OpenCL.h
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/btSoftBodySolverBuffer_OpenCL.h
+END
+btSoftBodySolver_OpenCL.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/btSoftBodySolver_OpenCL.cpp
+END
+btSoftBodySolverVertexBuffer_OpenGL.h
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/btSoftBodySolverVertexBuffer_OpenGL.h
+END
+btSoftBodySolver_OpenCLSIMDAware.h
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/btSoftBodySolver_OpenCLSIMDAware.h
+END
+btSoftBodySolver_OpenCL.h
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/btSoftBodySolver_OpenCL.h
+END
+btSoftBodySolverLinkData_OpenCLSIMDAware.h
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/btSoftBodySolverLinkData_OpenCLSIMDAware.h
+END
+btSoftBodySolverLinkData_OpenCL.h
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/btSoftBodySolverLinkData_OpenCL.h
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svnroot/minervaproject/!svn/ver/1/lib/bullet-2.78/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Makefile
+END

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svnroot/minervaproject/!svn/ver/2/source
+END
+main.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svnroot/minervaproject/!svn/ver/3/source/main.cpp
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svnroot/minervaproject/!svn/ver/3/source/Makefile
+END

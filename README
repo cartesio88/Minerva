@@ -1,0 +1,146 @@
+
+    /|    //| |
+   //|   // | |    ( )   __      ___      __              ___
+  // |  //  | |   / / //   ) ) //___) ) //  ) ) ||  / / //   ) )
+ //  | //   | |  / / //   / / //       //       || / / //   / /
+//   |//    | | / / //   / / ((____   //        ||/ / ((___( (
+
+** Building Augmented Reality apps has never been so easy! **
+
+-César Mora Castro.-
+
+http://theminervaproject.wordpress.com
+http://sourceforge.net/projects/minervaproject
+
+**************************
+* What is Minerva?
+**************************
+Minerva is a framework that provides a high level language (called MSL - Minerva
+Specification Language) to specify the logic of Augmented Reality applications.
+Minerva offers too a platform to interpret that language and execute the apps.
+
+Some feautres of Minerva are:
+ -3D Geometry and texturing from metaformat.
+ -2D Images and Text.
+ -Physic Simulation.
+ -Sounds playing.
+ -Multi-Tracking method abstract layer. Currently implemented with ARToolKit.
+ -Scripting language with Python, using the module MGE (Minerva Game Engine).
+
+If you feel you like to test or colaborate with Minerva, contact its author:
+
+ César Mora Castro <cesarmoracastro@gmail.com>
+
+Thanks!
+
+**************************
+* Minerva's Readme
+**************************
+
+In this document you will find explanations of how to compile Minerva in
+GNU/Linux and Microsoft Windows platforms. You will find a troubleshooting
+section as well.
+
+
+****************************
+* Compile on GNU/Linux
+****************************
+
+1/ Minerva has been thought to be easy-instalable. No patchs or hacks are
+needed. The first of all is to install the library dependencies:
+
+  $ sudo apt-get install cmake bison++ libsdl1.2-dev libsdl-gfx1.2-dev
+  libsdl-image1.2-dev libsdl-mixer1.2-dev libsdl-sound1.2-dev
+  libsdl-ttf2.0-dev libcv-dev libhighgui-dev libboost-python-dev python2.6-dev
+  freeglut3-dev libboost-filesystem-dev
+
+
+2/ To compile evertyhing, type:
+   $ make
+
+3/ Minerva needs somen files to work in your system. In the Minerva directory,
+there are one called "usr". Copy it to your system:
+
+   $ sudo cp -R usr /
+
+ Finished! If everything went right, we just have Minerva ready to use! From the
+root directory try this (you should have a camera in /dev/video0):
+
+   $ ./bin/minerva examples/ARSheep/ARSheep.mrv
+
+
+Enjoy your own Augmented Reality Applications!
+
+
+*********************
+* Compile on Windows
+*********************
+
+Minerva has been build using Visual Studio C++ 2010. Just open the
+solution file, with
+.sln extension, and compile it!
+
+The static shared libraries are already in libwin32.
+
+The dynamic shared libraries are in dynamiclibwin32, and they should
+be copied to the
+binary directory (i.e. Release\) or to C:\Windows\system32
+
+Once compiled, Minerva need some files to work in your system. Create
+the directory:
+
+   C:\Minerva\data
+
+In the source directory, copy the file contained in
+usr/share/minerva/data/camera_para.dat to C:\Minerva\data
+
+
+******************
+* Troubleshooting
+******************
+
+If an applications does not work propertly, the first step is checking
+the console looking for warning or error messages that can be helpful.
+Here are some commons mistakes:
+
+
+* ARGUMENTS ERROR! *
+--------------------------------------------------------------------------
+
+In order to run an Augmented Reality application, you should tell Minerva
+what is the application file with extension .mrv.
+
+There are two ways to do it:
+
+ 1/ If you compile Minerva from source, in the source directory type:
+
+   $ ./bin/minerva <application file>
+
+ 2/ If you installed it from a .deb package:
+
+   $ minerva <application file>
+
+
+
+* Exception: Camera not found exception: cam*
+--------------------------------------------------------------------------
+  Minerva is not able to use your camera. Is it properly plugged?
+  In GNU/Linux platforms it should be in /dev/video0.
+
+
+
+* [ERROR] Unable to init ARToolKit *
+--------------------------------------------------------------------------
+  Minerva is not able to permorf the tracking method due to it
+  could not initialize it. That usually is because Minerva did not find
+  the camera_para.dat file, when Minerva was compiled from source.
+
+  Please, check that you follow properly all the steps below to compile
+  Minerva.
+
+
+
+
+--------------------------------------------------------------------------
+ Minerva: Building Augmented Reality apps has never been so easy!
+--------------------------------------------------------------------------

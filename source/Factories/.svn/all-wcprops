@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svnroot/minervaproject/!svn/ver/2/source/Factories
+END
+VideoFactory.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/minervaproject/!svn/ver/3/source/Factories/VideoFactory.cpp
+END
+TrackingMethodFactory.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/minervaproject/!svn/ver/3/source/Factories/TrackingMethodFactory.h
+END
+MLBFactory.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/minervaproject/!svn/ver/3/source/Factories/MLBFactory.cpp
+END
+VideoFactory.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/minervaproject/!svn/ver/3/source/Factories/VideoFactory.h
+END
+MAOFactory.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/minervaproject/!svn/ver/3/source/Factories/MAOFactory.cpp
+END
+MLBFactory.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/minervaproject/!svn/ver/3/source/Factories/MLBFactory.h
+END
+MAOFactory.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/minervaproject/!svn/ver/3/source/Factories/MAOFactory.h
+END
+TrackingMethodFactory.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/minervaproject/!svn/ver/3/source/Factories/TrackingMethodFactory.cpp
+END
