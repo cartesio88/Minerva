@@ -8,7 +8,7 @@
 #ifndef MAOPOSITIONATOR3D_H_
 #define MAOPOSITIONATOR3D_H_
 
-#include <opencv/cv.h>
+#include <cv.h>
 #include <string>
 #include <iostream>
 

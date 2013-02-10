@@ -8,7 +8,7 @@
 #ifndef MGEMODULE_H_
 #define MGEMODULE_H_
 
-#include <boost/python.hpp>
+#include <python.hpp>
 #include <MLB/Controller/MLBControllerScript.h>
 #include <Factories/MAOFactory.h>
 

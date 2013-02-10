@@ -15,7 +15,7 @@
 #define MAOPROPERTY_POSE 4
 #define MAOPROPERTY_EMPTY 5
 
-#include <opencv/cv.h>
+#include <cv.h>
 #include <Kernel/Logger.h>
 
 class MAOValue {

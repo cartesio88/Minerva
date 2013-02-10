@@ -10,7 +10,7 @@
 
 #include <vector>
 #include <typeinfo>
-#include <SDL/SDL.h>
+#include <SDL.h>
 
 #include <Kernel/Singleton.h>
 #include <Controllers/InputEventController.h>
@@ -46,7 +46,7 @@
 #include <MLB/Actuator/MLBActuatorPathAddPoint.h>
 #include <MLB/Actuator/MLBActuatorRelativePose.h>
 #include <MLB/Actuator/MLBActuatorAddDynamicObject.h>
-#include <MLB/Actuator/MLBActuatorAnimOrej.h>
+#include <MLB/Actuator/MLBActuatorAnim.h>
 
 #include <MAO/MAO.h>
 #include <MAO/MAORenderable3D.h>
@@ -125,7 +125,7 @@ public:
 	MLBActuatorAddDynamicObject& addMLBActuatorAddDynamicObject(
 			std::string name, std::string nparent, std::string nmao,
 			int timeToExpire = 0, cv::Mat* offset = 0, btVector3* impulse = 0);
-	MLBActuatorAnimOrej& addMLBActuatorAnimOrej(std::string name,
+	MLBActuatorAnim& addMLBActuatorAnim(std::string name,
 			std::string nparent, std::string nanimChoice,
 			std::string* nanimType);
 

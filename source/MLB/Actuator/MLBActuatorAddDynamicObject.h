@@ -12,8 +12,7 @@
 #include <Controllers/PhysicsController.h>
 #include <MLB/Actuator/MLBActuator.h>
 #include <MAO/MAORenderable3D.h>
-#include <MAO/MAORenderable3DOrj.h>
-#include <MAO/MAORenderable3DTeapot.h>
+#include <MAO/MAORenderable3DModel.h>
 
 
 class MLBActuatorAddDynamicObject: public MLBActuator {

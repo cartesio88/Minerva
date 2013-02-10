@@ -177,9 +177,9 @@ object MLBControllerScript::mPyGetActuator(std::string name) {
 		pyObj = converter((MLBActuatorAng*)a);
 	}
 		break;
-	case T_MLBACTUATORANIMOREJ: {
-		reference_existing_object::apply<MLBActuatorAnimOrej*>::type converter;
-		pyObj = converter((MLBActuatorAnimOrej*)a);
+	case T_MLBACTUATORANIM: {
+		reference_existing_object::apply<MLBActuatorAnim*>::type converter;
+		pyObj = converter((MLBActuatorAnim*)a);
 	}
 		break;
 	case T_MLBACTUATORCHANGEPOSE: {

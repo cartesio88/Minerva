@@ -594,7 +594,7 @@ MLBActuatorAddDynamicObject& MLBFactory::addMLBActuatorAddDynamicObject(
 	return *a;
 }
 
-MLBActuatorAnimOrej& MLBFactory::addMLBActuatorAnimOrej(
+MLBActuatorAnim& MLBFactory::addMLBActuatorAnim(
 		std::string name, const std::string nparent,
 		std::string nanimChoice, std::string* nanimType) {
 
@@ -610,7 +610,7 @@ MLBActuatorAnimOrej& MLBFactory::addMLBActuatorAnimOrej(
 	} else if (nanimChoice == "STOP") {
 		animChoice = STOP;
 	} else {
-		throw "Invalid anim choice for MLB Actuator Anim Orej: " + name;
+		throw "Invalid anim choice for MLB Actuator Anim: " + name;
 	}
 
 	if (nanimType != 0) {
@@ -621,7 +621,7 @@ MLBActuatorAnimOrej& MLBFactory::addMLBActuatorAnimOrej(
 		} else if (*nanimType == "PINGPONG") {
 			animType = PINGPONG;
 		} else {
-			throw "Invalid anim type for MLB Actuator Anim Orej: " + name;
+			throw "Invalid anim type for MLB Actuator Anim: " + name;
 		}
 	} else {
 		animType = SIMPLE;
@@ -630,13 +630,13 @@ MLBActuatorAnimOrej& MLBFactory::addMLBActuatorAnimOrej(
 	MAORenderable3D& parent = MAOFactory::getInstance()->getMAORenderable3D(
 			nparent);
 
-	if (parent.getType() != T_MAORENDERABLE3DORJ) {
-		throw "MLB Actuator Anim Type just applicable to MAO Renderable 3D Orej: "
+	if (parent.getType() != T_MAORENDERABLE3D) {
+		throw "MLB Actuator Anim Type just applicable to MAO Renderable 3Dj: "
 				+ name;
 	}
 
-	MLBActuatorAnimOrej* a = new MLBActuatorAnimOrej(name,
-			(MAORenderable3DOrj&) parent, animChoice, animType);
+	MLBActuatorAnim* a = new MLBActuatorAnim(name,
+			(MAORenderable3DModel&) parent, animChoice, animType);
 	_vectorMLB.push_back(a);
 	_vectorMLBActuator.push_back(a);
 

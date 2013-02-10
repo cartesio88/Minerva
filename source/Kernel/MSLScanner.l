@@ -20,9 +20,8 @@ SIGN {-|+}
 "MAORenderable2DImage" 			{return MSLParser::MAORENDERABLE2DIMAGE;}
 "MAORenderable2DText" 			{return MSLParser::MAORENDERABLE2DTEXT;}
 "MAORenderable3DLine" 			{return MSLParser::MAORENDERABLE3DLINE;}
-"MAORenderable3DOrj" 			{return MSLParser::MAORENDERABLE3DORJ;}
+"MAORenderable3DModel" 			{return MSLParser::MAORENDERABLE3DMODEL;}
 "MAORenderable3DPath" 			{return MSLParser::MAORENDERABLE3DPATH;}
-"MAORenderable3DTeapot" 		{return MSLParser::MAORENDERABLE3DTEAPOT;}
 
 "MLBActuatorAddDynamicObject" 	{return MSLParser::MLBACTUATORADDDYNAMICOBJECT;}
 "MLBActuatorAng" 				{return MSLParser::MLBACTUATORANG;}
@@ -36,7 +35,7 @@ SIGN {-|+}
 "MLBActuatorRelativePose" 		{return MSLParser::MLBACTUATORRELATIVEPOSE;}
 "MLBActuatorSound" 				{return MSLParser::MLBACTUATORSOUND;}
 "MLBActuatorVisibility" 		{return MSLParser::MLBACTUATORVISIBILITY;}
-"MLBActuatorAnimOrej" 			{return MSLParser::MLBACTUATORANIMOREJ;}
+"MLBActuatorAnim" 				{return MSLParser::MLBACTUATORANIM;}
 
 "MLBControllerAND" 				{return MSLParser::MLBCONTROLLERAND;}
 "MLBControllerNAND" 			{return MSLParser::MLBCONTROLLERNAND;}
@@ -67,8 +66,6 @@ SIGN {-|+}
 "width"							{return MSLParser::PARAM_WIDTH;}
 "height"						{return MSLParser::PARAM_HEIGHT;}
 "text"							{return MSLParser::PARAM_TEXT;}
-"path_orj"						{return MSLParser::PARAM_PATH_ORJ;}
-"path_tex"						{return MSLParser::PARAM_PATH_TEX;}
 "anim_type"						{return MSLParser::PARAM_ANIM_TYPE;}
 "reference"						{return MSLParser::PARAM_REFERENCE;}
 "mao"							{return MSLParser::PARAM_MAO;}

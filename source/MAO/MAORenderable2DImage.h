@@ -8,7 +8,7 @@
 #ifndef MAORENDERABLE2DIMAGE_H_
 #define MAORENDERABLE2DIMAGE_H_
 
-#include <SDL/SDL.h>
+#include <SDL.h>
 #include <MAO/MAORenderable2D.h>
 
 class MAORenderable2DImage: public MAORenderable2D {

@@ -11,15 +11,15 @@
 #include <MAO/MAO.h>
 #include <Kernel/Logger.h>
 
-#include <boost/python.hpp>
-#include <boost/filesystem.hpp>
+#include <python.hpp>
+#include <filesystem.hpp>
 #include <MPY/WrapperTypes.h>
 
 /* Types of MLB's */
 #define T_MLBACTUATOR 0
 #define T_MLBACTUATORADDDYNAMICOBJECT 1
 #define T_MLBACTUATORANG 2
-#define T_MLBACTUATORANIMOREJ 3
+#define T_MLBACTUATORANIM 3
 #define T_MLBACTUATORCHANGEPOSE 4
 #define T_MLBACTUATORDISTANCE 5
 #define T_MLBACTUATORPATHADDPOINT 6

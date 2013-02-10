@@ -95,13 +95,13 @@ BOOST_PYTHON_MODULE(MGE) {
 	.def("actuate",&MLBActuatorAng::actuate)
 	;
 
-	object MLBActuatorAnimOrej_class = class_<MLBActuatorAnimOrej>("MLBActuatorAnimOrej",no_init)
+	object MLBActuatorAnim_class = class_<MLBActuatorAnim>("MLBActuatorAnim",no_init)
 	.def("getName",&MLB::getName)
-	.def("actuate",&MLBActuatorAnimOrej::actuate)
-	.def("getAnimType",&MLBActuatorAnimOrej::mPyGetAnimType)
-	.def("setAnimType",&MLBActuatorAnimOrej::mPySetAnimType)
-	.def("getAnimChoice",&MLBActuatorAnimOrej::mPyGetAnimChoice)
-	.def("setAnimChoice",&MLBActuatorAnimOrej::mPySetAnimChoice)
+	.def("actuate",&MLBActuatorAnim::actuate)
+	.def("getAnimType",&MLBActuatorAnim::mPyGetAnimType)
+	.def("setAnimType",&MLBActuatorAnim::mPySetAnimType)
+	.def("getAnimAction",&MLBActuatorAnim::mPyGetAnimAction)
+	.def("setAnimAction",&MLBActuatorAnim::mPySetAnimAction)
 	;
 
 	object MLBActuatorChangePose_class = class_<MLBActuatorChangePose>("MLBActuatorChangePose",no_init)
@@ -250,7 +250,7 @@ void MPYWrapper::initPython() {
 		PyRun_SimpleString("from MGE import *");
 
 		/*-------- Importing constants! --------*/
-		/* Anim Orej! */
+		/* Anim!! */
 		PyRun_SimpleString("MGE_PLAY=0");
 		PyRun_SimpleString("MGE_PAUSE=1");
 		PyRun_SimpleString("MGE_STOP=2");

@@ -36,7 +36,7 @@
 #include <MLB/Actuator/MLBActuatorPathAddPoint.h>
 #include <MLB/Actuator/MLBActuatorRelativePose.h>
 #include <MLB/Actuator/MLBActuatorAddDynamicObject.h>
-#include <MLB/Actuator/MLBActuatorAnimOrej.h>
+#include <MLB/Actuator/MLBActuatorAnim.h>
 
 
 class MLBControllerScript: public MLBController {

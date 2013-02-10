@@ -18,16 +18,15 @@
 #define T_MAORENDERABLE2DTEXT 6
 #define T_MAORENDERABLE3D 7
 #define T_MAORENDERABLE3DLINE 8
-#define T_MAORENDERABLE3DORJ 9
+#define T_MAORENDERABLE3DMODEL 9
 #define T_MAORENDERABLE3DPATH 10
-#define T_MAORENDERABLE3DTEAPOT 11
 
 #include <string>
 #include <vector>
-#include <opencv/cv.h>
-#include <SDL/SDL.h>
-#include <boost/python.hpp>
-#include <boost/filesystem.hpp>
+#include <cv.h>
+#include <SDL.h>
+#include <python.hpp>
+#include <filesystem.hpp>
 
 #include <MPY/WrapperTypes.h>
 #include <Kernel/Logger.h>

@@ -13,17 +13,17 @@
 #include <Factories/TrackingMethodFactory.h>
 #include <Kernel/Logger.h>
 #include <Kernel/Singleton.h>
+#include <Kernel/Parsers/ParserOrej.h>
 #include <MAO/MAOPositionator3D.h>
 #include <MAO/MAOMark.h>
 #include <MAO/MAOMarksGroup.h>
 #include <MAO/MAO.h>
 #include <MAO/MAORenderable3D.h>
-#include <MAO/MAORenderable3DTeapot.h>
 #include <MAO/MAORenderable3DLine.h>
 #include <MAO/MAORenderable2D.h>
 #include <MAO/MAORenderable2DText.h>
 #include <MAO/MAORenderable2DImage.h>
-#include <MAO/MAORenderable3DOrj.h>
+#include <MAO/MAORenderable3DModel.h>
 #include <MAO/MAORenderable3DPath.h>
 
 class MAOFactory: public Singleton<MAOFactory> {
@@ -35,8 +35,6 @@ public:
 	MAOMark& addMAOMark(std::string name, const std::string& path,
 			const float& size);
 	MAOMarksGroup& addMAOMarksGroup(std::string name);
-	MAORenderable3DTeapot& addMAORenderable3DTeapot(std::string name,
-			const float& size, std::string& nref);
 	MAORenderable2DText& addMAORenderable2DText(std::string name,
 			const std::string& fontPath, const int& ptSize,
 			const std::string& text, const int& x = 0, const int& y = 0,
@@ -49,9 +47,8 @@ public:
 	MAORenderable3DLine& addMAORenderable3DLine(std::string name,
 			const float& size, int r, int g, int b, std::string& nMao1,
 			std::string& nMao2);
-	MAORenderable3DOrj& addMAORenderable3DOrj(std::string name,
-			const float& size, const std::string& pathOrj,
-			const std::string& pathTex, std::string& nref);
+	MAORenderable3DModel& addMAORenderable3DModel(std::string name,
+			const float& size, const std::string& file, const std::string& nref);
 	MAORenderable3DPath& addMAORenderable3DPath(std::string name,
 			const float& size, int r, int g, int b, std::string& nref);
 

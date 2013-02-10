@@ -14,7 +14,11 @@
 #include <Kernel/World.h>
 #include <Kernel/Logger.h>
 #include <Kernel/MSLParser.h>
+#include <Kernel/MSLPreprocessor.h>
 #include <MPY/MPYWrapper.h>
+#include <string>
+#include <unistd.h>
+#include <sstream>
 
 #ifdef WIN32
 #define MINERVA_HOME "C:\\Minerva"
@@ -27,21 +31,21 @@ using namespace std;
 //Global variable :S
 char initialPath[255];
 
-void showCurrentDirectory(){
+void showCurrentDirectory() {
 	char c[255];
 #ifdef WIN32
 	GetCurrentDirectory(255,c);
 #else
-	getcwd(c,255);
+	getcwd(c, 255);
 #endif
-	cout<<"Current directory: "<<c<<endl;
+	cout << "Current directory: " << c << endl;
 }
 
-void saveInitialDirectory(){
+void saveInitialDirectory() {
 #ifdef WIN32
-GetCurrentDirectory(255,initialPath);
+	GetCurrentDirectory(255,initialPath);
 #else
-getcwd(initialPath, 255);
+	getcwd(initialPath, 255);
 #endif
 }
 
@@ -104,34 +108,33 @@ int main(int argc, char* argv[]) {
 
 		MPYWrapper::getInstance()->initPython();
 		World::getInstance()->initWorld(640, 480);
-		glutInit(&argc, argv); // For MAORenderable3DTeapot
 		VideoFactory::getInstance()->addVideoSource("cam", 0);
 		TrackingMethodFactory::getInstance(); /* Init tracking */
 
 		/* Setting application directory */
 		setAppDirectory(initialPath, argv[1]);
-
+		
+		/* Preprocessing! */
+		MSLPreprocessor preprocessor;
+		string appName = getAppName(argv[1]);		
+		stringstream finalFile;
+		preprocessor.start(appName, finalFile);
 
 		/* Parsing! */
-		string appName = getAppName(argv[1]);
-		FILE* appFile = freopen(appName.c_str(), "r", stdin);
-		if (appFile == NULL) {
-			Logger::getInstance()->error("Application file not found!: "+appName);
-			throw "File not found exception: " + *argv[1];
-		}
+		// Redirect cin
+		streambuf* cinold= cin.rdbuf();
+		cin.rdbuf(finalFile.rdbuf());
 
 		Logger::getInstance()->out("Starts the source file parsing...");
 		MSLParser parser;
 		parser.yyparse();
 
-		fclose(appFile);
-
-		//Logger::getInstance()->warning("The standard input is not recovered!");
+		// Restoring cin
+		cin.rdbuf(cinold);
 
 		setMinervaHomeDirectory();
 
-
-	} catch (std::string e) {
+	} catch (string e) {
 		cout << "Exception: " << e << endl;
 		EndController::getInstance()->end();
 	} catch (const char* e) {

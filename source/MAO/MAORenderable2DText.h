@@ -9,7 +9,7 @@
 #define MAORENDERABLE2DTEXT_H_
 
 #include <MAO/MAORenderable2D.h>
-#include <SDL/SDL_ttf.h>
+#include <SDL_ttf.h>
 
 class MAORenderable2DText: public MAORenderable2D {
 public:

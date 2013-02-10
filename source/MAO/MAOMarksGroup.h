@@ -8,7 +8,7 @@
 #ifndef MAOMARKSGROUP_H_
 #define MAOMARKSGROUP_H_
 
-#include <opencv/cv.h>
+#include <cv.h>
 #include <string>
 
 #include <MAO/MAOMark.h>

@@ -48,15 +48,11 @@ void MLBActuatorAddDynamicObject::specificActuate() {
 	}
 
 	switch (_mao->getType()) {
-	case T_MAORENDERABLE3DORJ:
+	case T_MAORENDERABLE3DMODEL:
 		/*m = new MAORenderable3DOrj("", _mao->getSize(),
 		 ((MAORenderable3DOrj*) _mao)->getPathOrj(),
 		 ((MAORenderable3DOrj*) _mao)->getPathTex());*/
-		m = new MAORenderable3DOrj(*(MAORenderable3DOrj*) _mao);
-		break;
-	case T_MAORENDERABLE3DTEAPOT:
-		//m = new MAORenderable3DTeapot("", _mao->getSize());
-		m = new MAORenderable3DTeapot(*(MAORenderable3DTeapot*) _mao);
+		m = new MAORenderable3DModel(*(MAORenderable3DModel*) _mao);
 		break;
 	default:
 	  Logger::getInstance()->warning("MAO Type Not supported for Add Dynamic Object.. Yet! ;): "

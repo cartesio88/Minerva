@@ -11,7 +11,7 @@ MAOMark::MAOMark(const std::string& name, const std::string& path,
 		const float& size) :
 	MAOPositionator3D(name) {
   //_bPath = boost::filesystem::path(path);
-  _bPath = path;
+        _bPath = path;
 	_size = size;
 	_center = new double[2];
 	_center[0] = .0;

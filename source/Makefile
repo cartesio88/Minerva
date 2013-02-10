@@ -1,42 +1,63 @@
+# Minerva's Makefile
+# Cesar Mora Castro
+# 2013 - University of Minnesota
+
 EXECNAME = minerva
 OUTPUTDIR = ../bin/
 OBJSDIR = ../obj/
 CXX = g++
-CXXFLAGS = -Wall -c -O2 #-ggdb
+CXXFLAGS = -Wall -c -O2
+
+# ARToolKit
 ARTKLIBS = -L../lib/ARToolKit/lib -lARgsub -lAR
+
+# Bullet
 BULLETDIR = bullet-2.78/
-PYTHONDIR = /usr/include/python2.7
-PYTHONLIB = -lpython2.7
 BULLETLIBS = -L../lib/$(BULLETDIR)/src/BulletDynamics -lBulletDynamics\
 			 -L../lib/$(BULLETDIR)/src/BulletCollision -lBulletCollision\
 			 -L../lib/$(BULLETDIR)/src/LinearMath -lLinearMath
 
-LDFLAGS = -lGL -lGLU -lSDL -lSDL_ttf -lSDL_image -lSDL_mixer `pkg-config --libs opencv` $(ARTKLIBS) $(BULLETLIBS) $(PYTHONLIB) -lboost_python -lboost_system
-#-lboost_filesystem
-INCFLAGS = -I. -I ../lib/ARToolKit/include -I../lib/$(BULLETDIR)/src -I$(PYTHONDIR)
+# Python
+PYTHONDIR = /usr/include/python2.7
+PYTHONLIB = -lpython2.7
+
+# Compilation mode
+ifeq ($(mode), release) # Release mode
+	CXXFLAGS += -O2
+else # Debug mode
+	CXXFLAGS += -ggdb
+endif
+
+# Libraries
+LDFLAGS = -lGL -lGLU -lSDL -lSDL_ttf -lSDL_image -lSDL_mixer `pkg-config --libs opencv`\
+		  $(ARTKLIBS) $(BULLETLIBS) $(PYTHONLIB) -lboost_python -lboost_system
+
+# Includes
+INCFLAGS = -I. -I ../lib/ARToolKit/include -I../lib/$(BULLETDIR)/src -I$(PYTHONDIR)\
+			-I /usr/include/SDL -I /usr/include/opencv -I /usr/include/boost
+
+# Objects
 OBJSCRUDE = InputEventController.o GameLogicController.o MAOFactory.o\
 	MLBFactory.o VideoFactory.o Logger.o VideoSource.o TrackingMethod.o\
 	TrackingMethodARTK.o TrackingMethodFactory.o MAOPositionator3D.o\
-	MAOMark.o MAOMarksGroup.o MAORenderable3D.o MAO.o MAORenderable3DTeapot.o\
+	MAOMark.o MAOMarksGroup.o MAORenderable3D.o MAO.o \
 	World.o MLB.o MLBSensor.o MLBController.o MLBActuator.o  MLBActuatorRelativePose.o\
 	MLBControllerAND.o MLBActuatorVisibility.o MLBControllerNAND.o PhysicObject.o\
 	MLBControllerOR.o MLBControllerNOR.o MLBSensorAlways.o MLBSensorKeyboard.o\
 	MLBSensorNear.o MAORenderable2D.o MAORenderable2DText.o MAORenderable2DImage.o\
 	MLBSensorProperty.o MLBActuatorChangePose.o MLBActuatorDistance.o MLBActuatorAng.o\
 	MAORenderable3DLine.o MLBSensorRandom.o MLBActuatorRandom.o MLBSensorDelay.o\
-	Orej.o MAORenderable3DOrj.o	MLBActuatorSound.o MAORenderable3DPath.o PathPoint.o\
+	ParserOrej.o Parser.o MAORenderable3DModel.o	MLBActuatorSound.o MAORenderable3DPath.o PathPoint.o\
 	MLBActuatorPathRemovePoints.o MLBActuatorQuitApp.o MLBActuatorProperty.o MLBSensorActuator.o\
 	MLBActuatorPathAddPoint.o MAOProperty.o MAOValue.o PhysicsController.o MLBSensorCollision.o\
 	PhysicDynamicObject.o MLBActuatorAddDynamicObject.o MSLParser.o MSLScanner.o MSLProperties.o\
-	MLBActuatorAnimOrej.o MLBControllerScript.o MGEModule.o MPYWrapper.o WrapperTypes.o EndController.o\
-	GLDebugDrawer.o
-
+	MLBActuatorAnim.o MLBControllerScript.o MGEModule.o MPYWrapper.o WrapperTypes.o EndController.o\
+	GLDebugDrawer.o MSLPreprocessor.o
 
 OBJS= $(addprefix $(OBJSDIR),$(OBJSCRUDE))
 
-#For TEAPOT
-LDFLAGS+= -lglut
 
+# Rules
 all: $(DIRS)  $(OBJS)
 	$(CXX) $(OBJS) main.cpp -Wall $(LDFLAGS) $(INCFLAGS) -o $(OUTPUTDIR)/$(EXECNAME)
 
@@ -51,7 +72,11 @@ $(OBJSDIR)%.o: Factories/%.cpp Factories/%.h
 #Kernel objs
 $(OBJSDIR)%.o: Kernel/%.cpp Kernel/%.h
 	$(CXX) -o $@ $< $(CXXFLAGS) $(INCFLAGS) $(LDFLAGS)
-
+	
+#Kernel/Parsers objs
+$(OBJSDIR)%.o: Kernel/Parsers/%.cpp Kernel/Parsers/%.h
+	$(CXX) -o $@ $< $(CXXFLAGS) $(INCFLAGS) $(LDFLAGS)
+	
 #MAO objs
 $(OBJSDIR)%.o: MAO/%.cpp MAO/%.h
 	$(CXX) -o $@ $< $(CXXFLAGS) $(INCFLAGS) $(LDFLAGS)
@@ -73,7 +98,6 @@ $(OBJSDIR)%.o: MLB/Actuator/%.cpp MLB/Actuator/%.h
 $(OBJSDIR)%.o: MPY/%.cpp MPY/%.h
 	$(CXX) -o $@ $< $(CXXFLAGS) $(INCFLAGS) $(LDFLAGS)
 
-
 #MSL's (Minerva Specification Languaje) rules
 $(OBJSDIR)MSLParser.o: Kernel/MSLParser.y
 	bison++ -d -hKernel/MSLParser.h -o Kernel/MSLParser.cpp $<
@@ -82,6 +106,7 @@ $(OBJSDIR)MSLParser.o: Kernel/MSLParser.y
 $(OBJSDIR)MSLScanner.o: Kernel/MSLScanner.l
 	flex++ -d -oKernel/MSLScanner.cpp $<
 	$(CXX) -o $@ Kernel/MSLScanner.cpp  $(CXXFLAGS) $(INCFLAGS) $(LDFLAGS)
+
 
 clean:
 	rm -Rf $(OBJSDIR) $(OUTPUTDIR)/$(EXECNAME) *~

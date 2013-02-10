@@ -2,15 +2,24 @@ OUTPUTDIR = bin/
 OBJSDIR = obj/
 BULLETDIR = bullet-2.78
 
-#To build libs, please run a 'make libs' first!
+# Default compilation value
+mode = debug
 
-all: credentials dirs libs
-	cd source; $(MAKE)
+#To build libs, please run a 'make libs' first!
+all: credentials dirs
+	cd source; $(MAKE) mode=$(mode)
 
 libs: ARTK BULLET
 
 credentials:
-	@echo "Minerva's Makefile, by César Mora Castro."
+	@echo
+	@echo '--------------------------------------'
+	@echo ' Minerva Makefile'
+	@echo ' Cesar Mora Castro - 2012 University of Minnesota'
+	@echo ' Compiling $(mode) mode'
+	@echo '--------------------------------------'
+	@echo ' NOTE: To build the libraries, run "make libs" first!'
+	@echo
 
 dirs:
 	mkdir -p $(OUTPUTDIR)

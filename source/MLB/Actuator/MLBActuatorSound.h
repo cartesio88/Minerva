@@ -8,7 +8,7 @@
 #ifndef MLBACTUATORSOUND_H_
 #define MLBACTUATORSOUND_H_
 
-#include <SDL/SDL_mixer.h>
+#include <SDL_mixer.h>
 #include <MLB/Actuator/MLBActuator.h>
 
 class MLBActuatorSound: public MLBActuator {

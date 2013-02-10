@@ -8,16 +8,16 @@
 #ifndef WORLD_H_
 #define WORLD_H_
 
-#include <SDL/SDL.h>
-#include <SDL/SDL_ttf.h>
-#include <SDL/SDL_mixer.h>
+#include <SDL.h>
+#include <SDL_ttf.h>
+#include <SDL_mixer.h>
 
-#include <opencv/cv.h>
+#include <cv.h>
 #include <GL/gl.h>
 #include <GL/glu.h>
 #include <GL/glut.h>
 
-#include <Python.h>
+//#include <python.h>
 
 #include <MAO/MAORenderable3D.h>
 #include <Controllers/PhysicsController.h>

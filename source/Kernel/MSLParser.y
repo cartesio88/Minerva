@@ -22,14 +22,13 @@
 %header{
 #include <cstdlib>
 #include <FlexLexer.h>
-#include <opencv/cv.h>
+#include <cv.h>
 #include <btBulletDynamicsCommon.h>
 
 #include <Kernel/MSLProperties.h>
+#include <Kernel/Logger.h>
 #include <Factories/MAOFactory.h>
 #include <Factories/MLBFactory.h>
-#include <Kernel/Logger.h>
-
 %}
 
 
@@ -76,8 +75,6 @@
 %token < int_type > PARAM_WIDTH
 %token < int_type > PARAM_HEIGHT
 %token < int_type > PARAM_TEXT
-%token < int_type > PARAM_PATH_ORJ
-%token < int_type > PARAM_PATH_TEX
 %token < int_type > PARAM_ANIM_TYPE
 %token < int_type > PARAM_REFERENCE
 %token < int_type > PARAM_MAO
@@ -113,9 +110,8 @@
 %token  MAORENDERABLE2DIMAGE
 %token  MAORENDERABLE2DTEXT
 %token  MAORENDERABLE3DLINE
-%token  MAORENDERABLE3DORJ
+%token  MAORENDERABLE3DMODEL
 %token  MAORENDERABLE3DPATH
-%token  MAORENDERABLE3DTEAPOT
 
 %token  MLBACTUATORADDDYNAMICOBJECT
 %token  MLBACTUATORANG
@@ -129,7 +125,7 @@
 %token  MLBACTUATORRELATIVEPOSE
 %token  MLBACTUATORSOUND
 %token  MLBACTUATORVISIBILITY
-%token  MLBACTUATORANIMOREJ
+%token  MLBACTUATORANIM
 
 %token  MLBCONTROLLERAND
 %token  MLBCONTROLLERNAND
@@ -177,30 +173,28 @@
 %type < int_type > mao_property
 
 %type < int_type > ground
-%type < param_type > optparam_ground
 %type < int_type > physicobj
 
 %type < param_type > param_dynamicobj
-%type < param_type > optparam_dynamicobj
 
 %type < int_type > mao
 %type < int_type > def_maomark
 %type < int_type > def_maomarksgroup
 %type < int_type > def_maorenderable2dimage
 %type < int_type > def_maorenderable2dtext
-%type < int_type > def_maorenderable3dorj
+%type < int_type > def_maorenderable3dmodel
 %type < int_type > def_maorenderable3dline
 %type < int_type > def_maorenderable3dpath
-%type < int_type > def_maorenderable3dteapot
+
 %type < param_type > param_maomark
-%type < param_type > optparam_maomark
 %type < param_type > param_maomarksgroup
 %type < param_type > param_maorenderable2dimage
 %type < param_type > param_maorenderable2dtext
-%type < param_type > param_maorenderable3dorj
+%type < param_type > param_maorenderable3dmodel
 %type < param_type > param_maorenderable3dline
 %type < param_type > param_maorenderable3dpath
-%type < param_type > param_maorenderable3dteapot
+
+%type < param_type > param_ground
 
 %type < int_type > mlb
 %type < int_type > def_mlb
@@ -217,9 +211,8 @@
 %type < int_type > def_mlbactuatorrelativepose
 %type < int_type > def_mlbactuatorsound
 %type < int_type > def_mlbactuatorvisibility
-%type < int_type > def_mlbactuatoranimorej
+%type < int_type > def_mlbactuatoranim
 %type < param_type > param_mlbactuatoradddynamic
-%type < param_type > optparam_mlbactuatoradddynamic
 %type < param_type > param_mlbactuatorang
 %type < param_type > param_mlbactuatorchangepose
 %type < param_type > param_mlbactuatordistance
@@ -232,7 +225,7 @@
 %type < param_type > param_mlbactuatorrelativepose
 %type < param_type > param_mlbactuatorsound
 %type < param_type > param_mlbactuatorvisibility
-%type < param_type > param_mlbactuatoranimorej
+%type < param_type > param_mlbactuatoranim
 
 %type < int_type > mlbcontroller
 %type < int_type > def_mlbcontrollerand
@@ -273,7 +266,7 @@
 
 %%
 
-begin: MAOWORLD identifier '{' maos '}' {Logger::getInstance()->out("Parsing completed succesfully! Enjoy your app "+*$2);}
+begin: maos {Logger::getInstance()->out("Parsing completed succesfully! Enjoy your app!");}
 ;
 
 maos: maos mao {}
@@ -284,10 +277,9 @@ mao: def_maomark {}
 	| def_maomarksgroup {}
 	| def_maorenderable2dimage {}
 	| def_maorenderable2dtext {}
-	| def_maorenderable3dorj {}
+	| def_maorenderable3dmodel {}
 	| def_maorenderable3dline {}
 	| def_maorenderable3dpath {}
-	| def_maorenderable3dteapot {}
 ;
 
 mao_properties: mao_properties mao_property {}
@@ -295,7 +287,7 @@ mao_properties: mao_properties mao_property {}
 ;
 
 mao_property: T_INTEGER identifier '=' integer {currentMAO->addPropertyInt(*$2,$4);}
-			| T_INTEGER identifier{currentMAO->addPropertyInt(*$2);}
+                        | T_INTEGER identifier{currentMAO->addPropertyInt(*$2);}
 			| T_FLOAT identifier '=' float {currentMAO->addPropertyFloat(*$2,$4);}
 			| T_FLOAT identifier  {currentMAO->addPropertyFloat(*$2);}
 			| T_BOOL identifier '=' bool {currentMAO->addPropertyBoolean(*$2,$4);}
@@ -308,12 +300,12 @@ mao_property: T_INTEGER identifier '=' integer {currentMAO->addPropertyInt(*$2,$
 
 //MAO Definitions
 //MAOMark
-def_maomark: MAOMARK identifier '{' param_maomark {currentMAO = &MAOFactory::getInstance()->addMAOMark(*$2,*$4->string1,$4->float1); ((MAOMark*)currentMAO)->setOffsetMatrix($4->pose1);delete $4;} mao_properties mlbs links  ground '}' {}
+def_maomark: MAOMARK identifier '{' param_maomark { currentMAO = &MAOFactory::getInstance()->addMAOMark(*$2,*$4->string1,$4->float1); ((MAOMark*)currentMAO)->setOffsetMatrix($4->pose1);} mao_properties mlbs links  ground '}' {}
 ;
-param_maomark:  PARAM_PATH '=' string PARAM_SIZE '=' float optparam_maomark {$$ = new MSLProperties(*$7); $$->string1 = $3; $$->float1 = $6; delete $7;}
-;
-optparam_maomark: PARAM_OFFSET '=' pose { $$ = new MSLProperties(); $$->pose1 = $3;}
-	| /* empty */ {$$ = new MSLProperties();}
+param_maomark:  PARAM_PATH '=' string param_maomark {$$ = new MSLProperties(*$4); $$->string1 = $3; } /* REQUIRED */
+              | PARAM_SIZE '=' float param_maomark { $$ = new MSLProperties(*$4); $$->float1 = $3;  } /* REQUIRED */
+              | PARAM_OFFSET '=' pose param_maomark { $$ = new MSLProperties(*$4); $$->pose1 = $3; } /* OPTIONAL */
+	      | /* empty */ {$$ = new MSLProperties();}
 ;
 
 //MAOMarksGroup
@@ -321,61 +313,78 @@ def_maomarksgroup: MAOMARKSGROUP identifier '{' {currentMAO = &MAOFactory::getIn
 ;
 
 param_maomarksgroup: identifier ',' param_maomarksgroup{MAOMark& mark = (MAOMark&)MAOFactory::getInstance()->getMAOPositionator3D(*$1);((MAOMarksGroup*)currentMAO)->addMarktoGroup(mark);}
-					|identifier {MAOMark& mark = (MAOMark&)MAOFactory::getInstance()->getMAOPositionator3D(*$1);((MAOMarksGroup*)currentMAO)->addMarktoGroup(mark);}
+		    |identifier {MAOMark& mark = (MAOMark&)MAOFactory::getInstance()->getMAOPositionator3D(*$1);((MAOMarksGroup*)currentMAO)->addMarktoGroup(mark);}
 ;
 
 //MAORenderable2DImage
-def_maorenderable2dimage: MAORENDERABLE2DIMAGE identifier '{' param_maorenderable2dimage {currentMAO = &MAOFactory::getInstance()->addMAORenderable2DImage(*$2,*$4->string1,$4->btvector1->x(),$4->btvector1->y(),$4->int3,$4->int4);delete $4;} mao_properties mlbs links '}' {}
+def_maorenderable2dimage: MAORENDERABLE2DIMAGE identifier '{' param_maorenderable2dimage {currentMAO = &MAOFactory::getInstance()->addMAORenderable2DImage(*$2,*$4->string1,$4->btvector1->x(),$4->btvector1->y(),$4->int3,$4->int4);;} mao_properties mlbs links '}' {}
 ;
-param_maorenderable2dimage: PARAM_PATH '=' string PARAM_POS '=' vector2di PARAM_WIDTH '=' integer PARAM_HEIGHT '=' integer { $$ = new MSLProperties(); $$->string1 = $3; $$->btvector1 = $6;  $$->int3 = $9; $$->int4 = $12;}
-;
-
-def_maorenderable2dtext: MAORENDERABLE2DTEXT identifier '{' param_maorenderable2dtext {currentMAO = &MAOFactory::getInstance()->addMAORenderable2DText(*$2,*$4->string1,$4->int1,*$4->string2,$4->btvector1->x(),$4->btvector1->y()); ((MAORenderable2DText*)currentMAO)->setColor($4->btvector2->x(),$4->btvector2->y(),$4->btvector2->z()); delete $4;} mao_properties mlbs links '}' {}
-;
-param_maorenderable2dtext: PARAM_PATH '=' string PARAM_SIZE '=' integer PARAM_TEXT '=' string PARAM_POS '=' vector2di PARAM_COLOR '=' vector3di{ $$ = new MSLProperties(); $$->string1 = $3; $$->int1 = $6; $$->string2 = $9; $$->btvector1 = $12; $$->btvector2 = $15;}
-;
-
-def_maorenderable3dorj: MAORENDERABLE3DORJ identifier '{' param_maorenderable3dorj {currentMAO = &MAOFactory::getInstance()->addMAORenderable3DOrj(*$2,$4->float1,*$4->string1,*$4->string2,*$4->string3); delete $4;} mao_properties mlbs links physicobj'}' {}
-;
-param_maorenderable3dorj: PARAM_SIZE '=' float PARAM_PATH_ORJ '=' string PARAM_PATH_TEX '=' string  PARAM_REFERENCE '=' identifier { $$ = new MSLProperties(); $$ -> float1 = $3; $$ -> string1 = $6; $$ -> string2 = $9; $$->string3 = $12;}
+param_maorenderable2dimage: PARAM_PATH '=' string    param_maorenderable2dimage {$$ = new MSLProperties(*$4); $$->string1 = $3;}
+                          | PARAM_POS '=' vector2di  param_maorenderable2dimage {$$ = new MSLProperties(*$4); $$->btvector1 = $3;}
+                          | PARAM_WIDTH '=' integer  param_maorenderable2dimage {$$ = new MSLProperties(*$4); $$->int3 = $3;}
+			  | PARAM_HEIGHT '=' integer param_maorenderable2dimage {$$ = new MSLProperties(*$4); $$->int4 = $3;}
+                          | /* empty */ {$$ = new MSLProperties();}
 ;
 
-def_maorenderable3dline: MAORENDERABLE3DLINE identifier '{' param_maorenderable3dline {currentMAO = &MAOFactory::getInstance()->addMAORenderable3DLine(*$2,$4->float1,$4->btvector1->x(), $4->btvector1->y(), $4->btvector1->z(),*$4->string1,*$4->string2); delete $4;} mao_properties mlbs links physicobj '}' {}
+def_maorenderable2dtext: MAORENDERABLE2DTEXT identifier '{' param_maorenderable2dtext {currentMAO = &MAOFactory::getInstance()->addMAORenderable2DText(*$2,*$4->string1,$4->int1,*$4->string2,$4->btvector1->x(),$4->btvector1->y()); ((MAORenderable2DText*)currentMAO)->setColor($4->btvector2->x(),$4->btvector2->y(),$4->btvector2->z()); ;} mao_properties mlbs links '}' {}
 ;
-param_maorenderable3dline: PARAM_SIZE '=' float PARAM_COLOR '=' vector3di PARAM_REFERENCE '=' identifier PARAM_REFERENCE '=' identifier {$$ = new MSLProperties(); $$->float1 = $3; $$->btvector1 = $6; $$->string1 = $9; $$->string2 = $12;}
+param_maorenderable2dtext: PARAM_PATH '=' string     param_maorenderable2dtext {$$ = new MSLProperties(*$4); $$->string1 = $3;}
+                         | PARAM_SIZE '=' integer    param_maorenderable2dtext {$$ = new MSLProperties(*$4); $$->int1 = $3;}
+                         | PARAM_TEXT '=' string     param_maorenderable2dtext {$$ = new MSLProperties(*$4); $$->string2 = $3;}
+                         | PARAM_POS '=' vector2di   param_maorenderable2dtext {$$ = new MSLProperties(*$4); $$->btvector1 = $3;}
+                         | PARAM_COLOR '=' vector3di param_maorenderable2dtext {$$ = new MSLProperties(*$4); $$->btvector2 = $3;}
+                         | /* empty */ {$$ = new MSLProperties();}
+;
 
+def_maorenderable3dmodel: MAORENDERABLE3DMODEL identifier '{' param_maorenderable3dmodel {currentMAO = &MAOFactory::getInstance()->addMAORenderable3DModel(*$2,$4->float1,*$4->string1,*$4->string2); ;} mao_properties mlbs links physicobj'}' {}
+;
+param_maorenderable3dmodel: PARAM_SIZE '=' float           param_maorenderable3dmodel {$$ = new MSLProperties(*$4); $$->float1 = $3;} 
+                          | PARAM_PATH '=' string          param_maorenderable3dmodel {$$ = new MSLProperties(*$4); $$->string1 = $3;} 
+                          | PARAM_REFERENCE '=' identifier param_maorenderable3dmodel {$$ = new MSLProperties(*$4); $$->string2 = $3;} 
+                          | /* empty */ {$$ = new MSLProperties();}
+;
 
-def_maorenderable3dpath: MAORENDERABLE3DPATH identifier '{' param_maorenderable3dpath {currentMAO = &MAOFactory::getInstance()->addMAORenderable3DPath(*$2,$4->float1,$4->btvector1->x(),$4->btvector1->y(),$4->btvector1->z(), *$4->string1); delete $4;} mao_properties mlbs links physicobj'}' {}
+def_maorenderable3dline: MAORENDERABLE3DLINE identifier '{' param_maorenderable3dline {currentMAO = &MAOFactory::getInstance()->addMAORenderable3DLine(*$2,$4->float1,$4->btvector1->x(), $4->btvector1->y(), $4->btvector1->z(),*$4->string1,*$4->string2); ;} mao_properties mlbs links physicobj '}' {}
 ;
-param_maorenderable3dpath: PARAM_SIZE '=' float PARAM_COLOR '=' vector3di PARAM_REFERENCE '=' identifier {$$ = new MSLProperties(); $$->float1 = $3; $$->btvector1 = $6; $$ -> string1 = $9 ;}
+param_maorenderable3dline: PARAM_SIZE '=' float param_maorenderable3dline {$$ = new MSLProperties(*$4); $$->float1 = $3;}  
+                         | PARAM_COLOR '=' vector3di param_maorenderable3dline {$$ = new MSLProperties(*$4); $$->btvector1 = $3;}  
+                         | PARAM_REFERENCE '=' identifier param_maorenderable3dline {$$ = new MSLProperties(*$4); $$->string1 = $3;}  
+                         | PARAM_REFERENCE '=' identifier param_maorenderable3dline {$$ = new MSLProperties(*$4); $$->string2 = $3;}  
+                         | /* empty */ {$$ = new MSLProperties();}
 ;
 
-def_maorenderable3dteapot: MAORENDERABLE3DTEAPOT identifier '{' param_maorenderable3dteapot {currentMAO = &MAOFactory::getInstance()->addMAORenderable3DTeapot(*$2,$4->float1, *$4->string1); delete $4;}mao_properties mlbs links physicobj '}' {}
+def_maorenderable3dpath: MAORENDERABLE3DPATH identifier '{' param_maorenderable3dpath {currentMAO = &MAOFactory::getInstance()->addMAORenderable3DPath(*$2,$4->float1,$4->btvector1->x(),$4->btvector1->y(),$4->btvector1->z(), *$4->string1); ;} mao_properties mlbs links physicobj'}' {}
 ;
-param_maorenderable3dteapot: PARAM_SIZE '=' float PARAM_REFERENCE '=' identifier {$$ = new MSLProperties(); $$->float1 = $3; $$->string1 = $6;}
+param_maorenderable3dpath: PARAM_SIZE '=' float             param_maorenderable3dpath {$$ = new MSLProperties(*$4); $$->float1 = $3;}   
+                           | PARAM_COLOR '=' vector3di      param_maorenderable3dpath {$$ = new MSLProperties(*$4); $$->btvector1 = $3;}   
+                           | PARAM_REFERENCE '=' identifier param_maorenderable3dpath {$$ = new MSLProperties(*$4); $$->string1 = $3;}   
+                           | /* empty */ {$$ = new MSLProperties();}
 ;
 
 //Bullet stuff!
-ground: GROUND '{' PARAM_AXIS '=' string PARAM_GRAVITY '=' float optparam_ground '}' { PhysicsController::getInstance()->initPhysics(); PhysicsController::getInstance()->setMAOGround(*((MAOPositionator3D*)currentMAO),*$5,$8,$9->bool1,$9->btvector1); delete $9;}
-	| /* empty */ {}
-;
-optparam_ground: PARAM_SHADOWS '=' bool PARAM_SUN '=' vector3df { $$ = new MSLProperties(); $$->bool1 = $3; $$->btvector1 = $6;}
-	| /* empty */ {$$ = new MSLProperties();}
-;
-
-
-physicobj: DYNAMICOBJECT '{' param_dynamicobj '}' {PhysicsController::getInstance()->addDynamicRigidBody(*((MAORenderable3D*)currentMAO),$3->float1,$3->pose1,$3->btvector1,*$3->string1);  ((MAORenderable3D*)currentMAO)->setCollisionShapeType(*$3->string1);delete $3;}
-| STATICOBJECT  '{' PARAM_SHAPE '=' string '}' {PhysicsController::getInstance()->addStaticRigidBody(*((MAORenderable3D*)currentMAO),*$5); ((MAORenderable3D*)currentMAO)->setCollisionShapeType(*$5);delete $5;}
+ground: GROUND '{' param_ground '}' { PhysicsController::getInstance()->initPhysics(); PhysicsController::getInstance()->setMAOGround(*((MAOPositionator3D*)currentMAO),*$3->string1,$3->float1, $3->bool1, $3->btvector1); }
 	| /* empty */ {}
 ;
 
-param_dynamicobj: PARAM_MASS '=' float PARAM_SHAPE '=' string optparam_dynamicobj {$$ = new MSLProperties(*$7); $$->float1 = $3; $$->string1 = $6; delete $7;}
-;
-optparam_dynamicobj: optparam_dynamicobj PARAM_OFFSET '=' pose { $$ = new MSLProperties(*$1); $$->pose1 = $4; delete $1;}
-				| optparam_dynamicobj PARAM_IMPULSE '=' vector3df {$$ = new MSLProperties(*$1); $$->btvector1 = $4; delete $1;}
-				| /* empty */ {$$ = new MSLProperties();}
+param_ground: | PARAM_AXIS '=' string param_ground   {$$ = new MSLProperties(*$4); $$->string1 = $3;}
+              | PARAM_GRAVITY '=' float param_ground {$$ = new MSLProperties(*$4); $$->float1 = $3;}
+              | PARAM_SHADOWS '=' bool param_ground  {$$ = new MSLProperties(*$4); $$->bool1 = $3;}
+              |PARAM_SUN '=' vector3df param_ground  {$$ = new MSLProperties(*$4); $$->btvector1 = $3;}
+              | /* empty */ {$$ = new MSLProperties();}
 ;
 
+
+physicobj: DYNAMICOBJECT '{' param_dynamicobj '}' {PhysicsController::getInstance()->addDynamicRigidBody(*((MAORenderable3D*)currentMAO),$3->float1,$3->pose1,$3->btvector1,*$3->string1);  ((MAORenderable3D*)currentMAO)->setCollisionShapeType(*$3->string1);;}
+| STATICOBJECT  '{' PARAM_SHAPE '=' string '}' {PhysicsController::getInstance()->addStaticRigidBody(*((MAORenderable3D*)currentMAO),*$5); ((MAORenderable3D*)currentMAO)->setCollisionShapeType(*$5);;}
+	| /* empty */ {}
+;
+
+param_dynamicobj:   PARAM_MASS '=' float   param_dynamicobj {$$ = new MSLProperties(*$4); $$->float1 = $3;}
+                  | PARAM_SHAPE '=' string param_dynamicobj {$$ = new MSLProperties(*$4); $$->string1 = $3;}
+                  | PARAM_OFFSET '=' pose  param_dynamicobj {$$ = new MSLProperties(*$4); $$->pose1 = $3;}
+                  | PARAM_IMPULSE '=' vector3df param_dynamicobj {$$ = new MSLProperties(*$4); $$->btvector1 = $3;}
+		  | /* empty */ {$$ = new MSLProperties();}
+;
 
 //MLB HEADERS
 //----------------------------------------------------------------------
@@ -403,7 +412,7 @@ mlbactuator: def_mlbactuatoradddynamic {}
 	| def_mlbactuatorrelativepose {}
 	| def_mlbactuatorsound {}
 	| def_mlbactuatorvisibility {}
-	| def_mlbactuatoranimorej {}
+	| def_mlbactuatoranim {}
 ;
 
 mlbcontroller: def_mlbcontrollerand {}
@@ -430,80 +439,86 @@ mlbsensor: def_mlbsensoractuator {}
 //----------------------------------------------------------------------
 
 //MLB Actuators
-def_mlbactuatoradddynamic: MLBACTUATORADDDYNAMICOBJECT identifier '{' param_mlbactuatoradddynamic '}' {MLBFactory::getInstance()->addMLBActuatorAddDynamicObject(*$2,currentMAO->getName(),*$4->string1,$4->int1,$4->pose1,$4->btvector1); delete $4;}
+def_mlbactuatoradddynamic: MLBACTUATORADDDYNAMICOBJECT identifier '{' param_mlbactuatoradddynamic '}' {MLBFactory::getInstance()->addMLBActuatorAddDynamicObject(*$2,currentMAO->getName(),*$4->string1,$4->int1,$4->pose1,$4->btvector1); ;}
 ;
-param_mlbactuatoradddynamic: PARAM_MAO '=' identifier optparam_mlbactuatoradddynamic {$$ = new MSLProperties(*$4); $$->string1 = $3; delete $4;}
-;
-optparam_mlbactuatoradddynamic: optparam_mlbactuatoradddynamic PARAM_TIME '=' integer {$$ = new MSLProperties(*$1); $$->int1 = $4; delete $1; }
-	| optparam_mlbactuatoradddynamic PARAM_OFFSET '=' pose {$$ = new MSLProperties(*$1); $$->pose1 = $4; delete $1;}
-	| optparam_mlbactuatoradddynamic PARAM_IMPULSE '=' vector3df {$$ = new MSLProperties(*$1); $$->btvector1=$4; delete $1;}
+param_mlbactuatoradddynamic: PARAM_MAO '=' identifier  param_mlbactuatoradddynamic {$$ = new MSLProperties(*$4); $$->string1 = $3;}
+        | PARAM_TIME '=' integer param_mlbactuatoradddynamic {$$ = new MSLProperties(*$4); $$->int1 = $3;}
+	| PARAM_OFFSET '=' pose param_mlbactuatoradddynamic {$$ = new MSLProperties(*$4); $$->pose1 = $3;}
+	| PARAM_IMPULSE '=' vector3df param_mlbactuatoradddynamic {$$ = new MSLProperties(*$4); $$->btvector1 = $3;}
 	| /*empty*/ {$$ = new MSLProperties();}
 ;
 
-def_mlbactuatorang: MLBACTUATORANG identifier '{' param_mlbactuatorang '}' {MLBFactory::getInstance()->addMLBActuatorAng(*$2,currentMAO->getName(),*$4->maoproperty1, *$4->string2); delete $4;}
+def_mlbactuatorang: MLBACTUATORANG identifier '{' param_mlbactuatorang '}' {MLBFactory::getInstance()->addMLBActuatorAng(*$2,currentMAO->getName(),*$4->maoproperty1, *$4->string2); ;}
 ;
-param_mlbactuatorang: PARAM_PROPERTY '=' maoproperty PARAM_ANG_AXIS '=' string {$$ = new MSLProperties(); $$ -> maoproperty1 = $3; $$->string2 = $6;}
+param_mlbactuatorang: PARAM_PROPERTY '=' maoproperty param_mlbactuatorang {$$ = new MSLProperties(*$4); $$->maoproperty1 = $3;}
+                      | PARAM_ANG_AXIS '=' string    param_mlbactuatorang {$$ = new MSLProperties(*$4); $$->string2 = $3;}
+	              | /*empty*/ {$$ = new MSLProperties();}
 ;
 
-def_mlbactuatorchangepose: MLBACTUATORCHANGEPOSE identifier '{'  param_mlbactuatorchangepose '}' {MLBFactory::getInstance()->addMLBActuatorChangePose(*$2, currentMAO->getName(),*$4->string1, $4->btvector1, *$4->string2, $4->btvector2); delete $4;}
+def_mlbactuatorchangepose: MLBACTUATORCHANGEPOSE identifier '{'  param_mlbactuatorchangepose '}' {MLBFactory::getInstance()->addMLBActuatorChangePose(*$2, currentMAO->getName(),*$4->string1, $4->btvector1, *$4->string2, $4->btvector2); ;}
 ;
-param_mlbactuatorchangepose: param_mlbactuatorchangepose param_mlbactuatorchangepose {$$ = new MSLProperties(*$1); $$->fill(*$2); delete $1; delete $2;}
+param_mlbactuatorchangepose: param_mlbactuatorchangepose param_mlbactuatorchangepose {$$ = new MSLProperties(*$1); $$->fill(*$2); ; ;}
 | PARAM_LOC_TYPE '=' string PARAM_LOCATION '=' vector3df {$$ = new MSLProperties(); $$->string1 = $3; $$->btvector1 = $6;}
 | PARAM_ROT_TYPE '=' string PARAM_ROTATION '=' vector3df {$$ = new MSLProperties(); $$->string2 = $3; $$->btvector2 = $6;}
 ;
 
-def_mlbactuatordistance: MLBACTUATORDISTANCE identifier '{'  param_mlbactuatordistance '}' {MLBFactory::getInstance()->addMLBActuatorDistance(*$2,currentMAO->getName(),*$4->string1, *$4->maoproperty1); delete $4;}
+def_mlbactuatordistance: MLBACTUATORDISTANCE identifier '{'  param_mlbactuatordistance '}' {MLBFactory::getInstance()->addMLBActuatorDistance(*$2,currentMAO->getName(),*$4->string1, *$4->maoproperty1); ;}
 ;
-param_mlbactuatordistance: PARAM_MAO '=' identifier PARAM_PROPERTY '=' maoproperty {$$ = new MSLProperties(); $$->string1 = $3; $$->maoproperty1 = $6;}
+param_mlbactuatordistance: PARAM_MAO '=' identifier param_mlbactuatordistance {$$ = new MSLProperties(*$4); $$->string1 = $3;}
+                           | PARAM_PROPERTY '=' maoproperty param_mlbactuatordistance {$$ = new MSLProperties(*$4); $$->maoproperty1 = $3;}
+                           | /*empty*/ {$$ = new MSLProperties();}
 ;
 
-def_mlbactuatorpathaddpoint: MLBACTUATORPATHADDPOINT identifier '{'  param_mlbactuatorpathaddpoint '}' {MLBFactory::getInstance()->addMLBActuatorPathAddPoint(*$2,currentMAO->getName()); delete $4;}
+def_mlbactuatorpathaddpoint: MLBACTUATORPATHADDPOINT identifier '{'  param_mlbactuatorpathaddpoint '}' {MLBFactory::getInstance()->addMLBActuatorPathAddPoint(*$2,currentMAO->getName()); ;}
 ;
 
 param_mlbactuatorpathaddpoint: {$$ = new MSLProperties();}
 ;
 
-def_mlbactuatorpathremovepoints: MLBACTUATORPATHREMOVEPOINTS identifier '{'  param_mlbactuatorpathremovepoints '}' {MLBFactory::getInstance()->addMLBActuatorPathRemovePoints(*$2,currentMAO->getName()); delete $4;}
+def_mlbactuatorpathremovepoints: MLBACTUATORPATHREMOVEPOINTS identifier '{'  param_mlbactuatorpathremovepoints '}' {MLBFactory::getInstance()->addMLBActuatorPathRemovePoints(*$2,currentMAO->getName()); ;}
 ;
 param_mlbactuatorpathremovepoints: {$$ = new MSLProperties();}
 ;
 
-def_mlbactuatorproperty: MLBACTUATORPROPERTY identifier '{'  param_mlbactuatorproperty '}' {MLBFactory::getInstance()->addMLBActuatorProperty(*$2,currentMAO->getName(),*$4->maoproperty1, *$4->maovalue1,*$4->string1); delete $4;}
-| MLBACTUATORPROPERTY identifier '{'  param_mlbactuatorproperty2 '}' {MLBFactory::getInstance()->addMLBActuatorProperty(*$2,currentMAO->getName(),*$4->maoproperty1, *$4->maoproperty2,*$4->string1); delete $4;}
+def_mlbactuatorproperty: MLBACTUATORPROPERTY identifier '{'  param_mlbactuatorproperty '}' {MLBFactory::getInstance()->addMLBActuatorProperty(*$2,currentMAO->getName(),*$4->maoproperty1, *$4->maovalue1,*$4->string1); ;}
+                       | MLBACTUATORPROPERTY identifier '{'  param_mlbactuatorproperty2 '}' {MLBFactory::getInstance()->addMLBActuatorProperty(*$2,currentMAO->getName(),*$4->maoproperty1, *$4->maoproperty2,*$4->string1); ;}
 ;
 param_mlbactuatorproperty: PARAM_TYPE '=' string PARAM_PROPERTY '=' maoproperty PARAM_VALUE '=' maovalue {$$ = new MSLProperties(); $$ ->string1 = $3; $$ ->maoproperty1 = $6; $$ -> maovalue1 = $9;}
 ;
 param_mlbactuatorproperty2: PARAM_TYPE '=' string PARAM_PROPERTY '=' maoproperty PARAM_VALUE '=' maoproperty {$$ = new MSLProperties(); $$ ->string1 = $3; $$ ->maoproperty1 = $6; $$ -> maoproperty2 = $9;}
 ;
 
-def_mlbactuatorquitapp: MLBACTUATORQUITAPP identifier '{'  param_mlbactuatorquitapp '}' {MLBFactory::getInstance()->addMLBActuatorQuitApp(*$2,currentMAO->getName()); delete $4;}
+def_mlbactuatorquitapp: MLBACTUATORQUITAPP identifier '{'  param_mlbactuatorquitapp '}' {MLBFactory::getInstance()->addMLBActuatorQuitApp(*$2,currentMAO->getName()); ;}
 ;
 param_mlbactuatorquitapp: { $$ = new MSLProperties();}
 ;
 
-def_mlbactuatorrandom: MLBACTUATORRANDOM identifier '{'  param_mlbactuatorrandom '}' {MLBFactory::getInstance()->addMLBActuatorRandom(*$2, currentMAO->getName(),*$4->maoproperty1); delete $4;}
+def_mlbactuatorrandom: MLBACTUATORRANDOM identifier '{'  param_mlbactuatorrandom '}' {MLBFactory::getInstance()->addMLBActuatorRandom(*$2, currentMAO->getName(),*$4->maoproperty1); ;}
 ;
 param_mlbactuatorrandom: PARAM_PROPERTY '=' maoproperty {$$ = new MSLProperties(); $$ -> maoproperty1 = $3;}
 ;
 
-def_mlbactuatorrelativepose: MLBACTUATORRELATIVEPOSE identifier '{'  param_mlbactuatorrelativepose '}' {MLBFactory::getInstance()->addMLBActuatorRelativePose(*$2,currentMAO->getName(),*$4->string1, *$4->maoproperty1, $4->bool1); delete $4;}
+def_mlbactuatorrelativepose: MLBACTUATORRELATIVEPOSE identifier '{'  param_mlbactuatorrelativepose '}' {MLBFactory::getInstance()->addMLBActuatorRelativePose(*$2,currentMAO->getName(),*$4->string1, *$4->maoproperty1, $4->bool1); ;}
 ;
-param_mlbactuatorrelativepose: PARAM_REFERENCE '=' identifier PARAM_PROPERTY '=' maoproperty PARAM_INVERSE '=' bool {$$ = new MSLProperties(); $$->string1 = $3; $$ -> maoproperty1 = $6; $$->bool1 = $9;}
+param_mlbactuatorrelativepose: PARAM_REFERENCE '=' identifier param_mlbactuatorrelativepose {$$ = new MSLProperties(*$4); $$->string1 = $3;}
+                             | PARAM_PROPERTY '=' maoproperty param_mlbactuatorrelativepose {$$ = new MSLProperties(*$4); $$->maoproperty1 = $3;}
+                             | PARAM_INVERSE '=' bool param_mlbactuatorrelativepose {$$ = new MSLProperties(*$4); $$->bool1 = $3;}
+                             | /*empty*/ {$$ = new MSLProperties();}
 ;
 
-def_mlbactuatorsound: MLBACTUATORSOUND identifier '{'  param_mlbactuatorsound '}' {MLBFactory::getInstance()->addMLBActuatorSound(*$2, currentMAO->getName(),*$4->string1); delete $4;}
+def_mlbactuatorsound: MLBACTUATORSOUND identifier '{'  param_mlbactuatorsound '}' {MLBFactory::getInstance()->addMLBActuatorSound(*$2, currentMAO->getName(),*$4->string1); ;}
 ;
 param_mlbactuatorsound: PARAM_PATH '=' string {$$ = new MSLProperties(); $$->string1 = $3; }
 ;
 
-def_mlbactuatorvisibility: MLBACTUATORVISIBILITY identifier '{'  param_mlbactuatorvisibility '}' {MLBFactory::getInstance()->addMLBActuatorVisibility(*$2, currentMAO->getName(), $4->bool1); delete $4;}
+def_mlbactuatorvisibility: MLBACTUATORVISIBILITY identifier '{'  param_mlbactuatorvisibility '}' {MLBFactory::getInstance()->addMLBActuatorVisibility(*$2, currentMAO->getName(), $4->bool1); ;}
 ;
 param_mlbactuatorvisibility: PARAM_VALUE '=' bool {$$ = new MSLProperties(); $$ -> bool1 = $3;}
 ;
 
-def_mlbactuatoranimorej: MLBACTUATORANIMOREJ identifier '{' param_mlbactuatoranimorej '}' { MLBFactory::getInstance()->addMLBActuatorAnimOrej(*$2, currentMAO->getName(), *$4->string1, $4->string2); delete $4;}
+def_mlbactuatoranim: MLBACTUATORANIM identifier '{' param_mlbactuatoranim '}' { MLBFactory::getInstance()->addMLBActuatorAnim(*$2, currentMAO->getName(), *$4->string1, $4->string2); ;}
 ;
-param_mlbactuatoranimorej: PARAM_TYPE '=' string PARAM_ANIM_TYPE '=' string {$$ = new MSLProperties(); $$->string1 = $3; $$ -> string2 = $6;}
+param_mlbactuatoranim: PARAM_TYPE '=' string PARAM_ANIM_TYPE '=' string {$$ = new MSLProperties(); $$->string1 = $3; $$ -> string2 = $6;}
 	| PARAM_TYPE '=' string { $$ = new MSLProperties(); $$->string1 = $3;}
 ;
 
@@ -536,52 +551,56 @@ list_mlbcontrollernor: list_mlbcontrollernor ',' identifier {MLBFactory::getInst
 	| /*empty*/ {}
 ;
 
-def_mlbcontrollerscript: MLBCONTROLLERSCRIPT identifier '{' PARAM_PATH '=' string '}' {MLBFactory::getInstance()->addMLBControllerScript(*$2,currentMAO->getName(),*$6); delete $6;}
+def_mlbcontrollerscript: MLBCONTROLLERSCRIPT identifier '{' PARAM_PATH '=' string '}' {MLBFactory::getInstance()->addMLBControllerScript(*$2,currentMAO->getName(),*$6); ;}
 ;
 
 
 //MLB Sensors
 
-def_mlbsensoractuator: MLBSENSORACTUATOR identifier '{'  param_mlbsensoractuator '}' {MLBFactory::getInstance()->addMLBSensorActuator(*$2, currentMAO->getName(), *$4->string1); delete $4;}
+def_mlbsensoractuator: MLBSENSORACTUATOR identifier '{'  param_mlbsensoractuator '}' {MLBFactory::getInstance()->addMLBSensorActuator(*$2, currentMAO->getName(), *$4->string1); ;}
 ;
 param_mlbsensoractuator: PARAM_ACTUATOR '=' identifier {$$ = new MSLProperties(); $$ -> string1 = $3;}
 ;
 
-def_mlbsensoralways: MLBSENSORALWAYS identifier '{'  param_mlbsensoralways '}' {MLBFactory::getInstance()->addMLBSensorAlways(*$2, currentMAO->getName()); delete $4;}
+def_mlbsensoralways: MLBSENSORALWAYS identifier '{'  param_mlbsensoralways '}' {MLBFactory::getInstance()->addMLBSensorAlways(*$2, currentMAO->getName()); ;}
 ;
 param_mlbsensoralways: {$$ = new MSLProperties();}
 ;
 
-def_mlbsensorcollision: MLBSENSORCOLLISION identifier '{'  param_mlbsensorcollision '}' {MLBFactory::getInstance()->addMLBSensorCollision(*$2,currentMAO->getName(),*$4->string1); delete $4;}
+def_mlbsensorcollision: MLBSENSORCOLLISION identifier '{'  param_mlbsensorcollision '}' {MLBFactory::getInstance()->addMLBSensorCollision(*$2,currentMAO->getName(),*$4->string1); ;}
 ;
 param_mlbsensorcollision: PARAM_PROPERTY '=' identifier { $$ = new MSLProperties(); $$ -> string1 = $3;}
 ;
 
-def_mlbsensordelay: MLBSENSORDELAY identifier '{'  param_mlbsensordelay '}' {MLBFactory::getInstance()->addMLBSensorDelay(*$2, currentMAO->getName(),$4->int1); delete $4;}
+def_mlbsensordelay: MLBSENSORDELAY identifier '{'  param_mlbsensordelay '}' {MLBFactory::getInstance()->addMLBSensorDelay(*$2, currentMAO->getName(),$4->int1); ;}
 ;
 param_mlbsensordelay: PARAM_TIME '=' integer {$$ = new MSLProperties(); $$ -> int1 = $3;}
 ;
 
-def_mlbsensorkeyboard: MLBSENSORKEYBOARD identifier '{' param_mlbsensorkeyboard '}' {MLBFactory::getInstance()->addMLBSensorKeyboard(*$2, currentMAO->getName(),*$4->string1, *$4->string2); delete $4;}
+def_mlbsensorkeyboard: MLBSENSORKEYBOARD identifier '{' param_mlbsensorkeyboard '}' {MLBFactory::getInstance()->addMLBSensorKeyboard(*$2, currentMAO->getName(),*$4->string1, *$4->string2); ;}
 ;
-param_mlbsensorkeyboard: PARAM_TYPE '=' string PARAM_KEY '=' string { $$ = new MSLProperties(); $$ -> string1 = $3; $$ -> string2 = $6;}
-;
-
-def_mlbsensornear: MLBSENSORNEAR identifier '{' param_mlbsensornear '}' {MLBFactory::getInstance()->addMLBSensorNear(*$2, currentMAO->getName(),*$4->string1,$4->float1); delete $4;}
-;
-param_mlbsensornear: PARAM_PROPERTY '=' identifier PARAM_DISTANCE '=' float {$$ = new MSLProperties(); $$ ->string1 = $3; $$->float1 = $6;}
+param_mlbsensorkeyboard: PARAM_TYPE '=' string param_mlbsensorkeyboard {$$ = new MSLProperties(*$4); $$->string1 = $3;}
+                         | PARAM_KEY '=' string param_mlbsensorkeyboard {$$ = new MSLProperties(*$4); $$->string2 = $3;}
+                         | /* Empty */ {$$ = new MSLProperties();}
 ;
 
-def_mlbsensorproperty: MLBSENSORPROPERTY identifier '{' param_mlbsensorproperty '}' {MLBFactory::getInstance()->addMLBSensorProperty(*$2, currentMAO->getName(),*$4->string1, *$4->maoproperty1, $4->maovalue1, $4->maovalue2); delete $4;}
-| MLBSENSORPROPERTY identifier '{' param_mlbsensorproperty2 '}' {MLBFactory::getInstance()->addMLBSensorProperty(*$2, currentMAO->getName(),*$4->string1, *$4->maoproperty1, $4->maoproperty2); delete $4;}
+def_mlbsensornear: MLBSENSORNEAR identifier '{' param_mlbsensornear '}' {MLBFactory::getInstance()->addMLBSensorNear(*$2, currentMAO->getName(),*$4->string1,$4->float1); ;}
 ;
-param_mlbsensorproperty: PARAM_TYPE '=' string PARAM_PROPERTY '=' maoproperty PARAM_VALUE '=' maovalue{ $$ = new MSLProperties(); $$->string1 = $3; $$->maoproperty1 = $6; $$->maovalue1 = $9;}
+param_mlbsensornear: PARAM_PROPERTY '=' identifier param_mlbsensornear {$$ = new MSLProperties(*$4); $$->string1 = $3;}
+                   | PARAM_DISTANCE '=' float param_mlbsensornear {$$ = new MSLProperties(*$4); $$->float1 = $3;}
+                   | /* Empty */ {$$ = new MSLProperties();}
+;
+
+def_mlbsensorproperty: MLBSENSORPROPERTY identifier '{' param_mlbsensorproperty '}' {MLBFactory::getInstance()->addMLBSensorProperty(*$2, currentMAO->getName(),*$4->string1, *$4->maoproperty1, $4->maovalue1, $4->maovalue2); ;}
+| MLBSENSORPROPERTY identifier '{' param_mlbsensorproperty2 '}' {MLBFactory::getInstance()->addMLBSensorProperty(*$2, currentMAO->getName(),*$4->string1, *$4->maoproperty1, $4->maoproperty2); ;}
+;
+param_mlbsensorproperty: PARAM_TYPE '=' string  PARAM_PROPERTY '=' maoproperty PARAM_VALUE '=' maovalue{ $$ = new MSLProperties(); $$->string1 = $3; $$->maoproperty1 = $6; $$->maovalue1 = $9;}
 						| PARAM_TYPE '=' string PARAM_PROPERTY '=' maoproperty PARAM_VALUE1 '=' maovalue PARAM_VALUE2 '=' maovalue{ $$ = new MSLProperties(); $$->string1 = $3; $$->maoproperty1 = $6; $$->maovalue1 = $9; $$->maovalue2 = $12;}
 ;
 param_mlbsensorproperty2: PARAM_TYPE '=' string PARAM_PROPERTY '=' maoproperty PARAM_VALUE '=' maoproperty {$$ = new MSLProperties(); $$->string1 = $3; $$->maoproperty1 = $6; $$->maoproperty2 = $9;}
 ;
 
-def_mlbsensorrandom: MLBSENSORRANDOM identifier '{' param_mlbsensorrandom '}' {MLBFactory::getInstance()->addMLBSensorRandom(*$2,currentMAO->getName(),$4->float1); delete $4;}
+def_mlbsensorrandom: MLBSENSORRANDOM identifier '{' param_mlbsensorrandom '}' {MLBFactory::getInstance()->addMLBSensorRandom(*$2,currentMAO->getName(),$4->float1); ;}
 ;
 param_mlbsensorrandom: PARAM_PROBABILITY '=' float {$$ = new MSLProperties(); $$->float1 = $3;}
 ;
@@ -600,14 +619,14 @@ link:  list_mlbidentifiers ARROW identifier ARROW list_mlbidentifiers {
 				for(unsigned int i=0;i<$5->size();i++){
 					MLBFactory::getInstance()->addMLBLink(currentMAO->getName(),*$3,*($5->at(i)));
 				}
-				delete $1; delete $5;}
+				; ;}
 	| list_mlbidentifiers ARROW list_mlbidentifiers {
 				for(unsigned int i=0;i<$1->size();i++){
 					for(unsigned int j=0;j<$3->size();j++){
 						MLBFactory::getInstance()->addMLBLink(currentMAO->getName(),*($1->at(i)),*($3->at(j)));
 					}
 				}
-				delete $1; }
+				; }
 
 ;
 list_mlbidentifiers: identifier ',' list_mlbidentifiers {
@@ -615,7 +634,7 @@ list_mlbidentifiers: identifier ',' list_mlbidentifiers {
 					for(unsigned int i=0;i<$3->size();i++){
 						$$->push_back($3->at(i));
 					}
-					delete $3;
+					;
 					}
 		| identifier {$$ = new std::vector<std::string*>(); $$->push_back($1);}
 ;

@@ -117,16 +117,15 @@ Maintained by Magnus Ekdahl <magnus@debian.org>
 
 #include <cstdlib>
 #include <FlexLexer.h>
-#include <opencv/cv.h>
+#include <cv.h>
 #include <btBulletDynamicsCommon.h>
 
 #include <Kernel/MSLProperties.h>
+#include <Kernel/Logger.h>
 #include <Factories/MAOFactory.h>
 #include <Factories/MLBFactory.h>
-#include <Kernel/Logger.h>
 
-
-#line 39 "Kernel/MSLParser.y"
+#line 38 "Kernel/MSLParser.y"
 typedef union {
 	int int_type;
 	bool bool_type;
@@ -356,73 +355,70 @@ typedef
 #define	PARAM_WIDTH	276
 #define	PARAM_HEIGHT	277
 #define	PARAM_TEXT	278
-#define	PARAM_PATH_ORJ	279
-#define	PARAM_PATH_TEX	280
-#define	PARAM_ANIM_TYPE	281
-#define	PARAM_REFERENCE	282
-#define	PARAM_MAO	283
-#define	PARAM_TIME	284
-#define	PARAM_OFFSET	285
-#define	PARAM_IMPULSE	286
-#define	PARAM_ANG_AXIS	287
-#define	PARAM_PROPERTY	288
-#define	PARAM_ROT_TYPE	289
-#define	PARAM_LOC_TYPE	290
-#define	PARAM_ROTATION	291
-#define	PARAM_LOCATION	292
-#define	PARAM_TYPE	293
-#define	PARAM_VALUE	294
-#define	PARAM_VALUE1	295
-#define	PARAM_VALUE2	296
-#define	PARAM_ACTUATOR	297
-#define	PARAM_KEY	298
-#define	PARAM_DISTANCE	299
-#define	PARAM_PROBABILITY	300
-#define	PARAM_INVERSE	301
-#define	PARAM_GRAVITY	302
-#define	PARAM_AXIS	303
-#define	PARAM_MASS	304
-#define	PARAM_SHAPE	305
-#define	PARAM_SHADOWS	306
-#define	PARAM_SUN	307
-#define	MAOWORLD	308
-#define	MAOMARK	309
-#define	MAOMARKSGROUP	310
-#define	MAORENDERABLE2DIMAGE	311
-#define	MAORENDERABLE2DTEXT	312
-#define	MAORENDERABLE3DLINE	313
-#define	MAORENDERABLE3DORJ	314
-#define	MAORENDERABLE3DPATH	315
-#define	MAORENDERABLE3DTEAPOT	316
-#define	MLBACTUATORADDDYNAMICOBJECT	317
-#define	MLBACTUATORANG	318
-#define	MLBACTUATORCHANGEPOSE	319
-#define	MLBACTUATORDISTANCE	320
-#define	MLBACTUATORPATHADDPOINT	321
-#define	MLBACTUATORPATHREMOVEPOINTS	322
-#define	MLBACTUATORPROPERTY	323
-#define	MLBACTUATORQUITAPP	324
-#define	MLBACTUATORRANDOM	325
-#define	MLBACTUATORRELATIVEPOSE	326
-#define	MLBACTUATORSOUND	327
-#define	MLBACTUATORVISIBILITY	328
-#define	MLBACTUATORANIMOREJ	329
-#define	MLBCONTROLLERAND	330
-#define	MLBCONTROLLERNAND	331
-#define	MLBCONTROLLERNOR	332
-#define	MLBCONTROLLEROR	333
-#define	MLBCONTROLLERSCRIPT	334
-#define	MLBSENSORACTUATOR	335
-#define	MLBSENSORALWAYS	336
-#define	MLBSENSORCOLLISION	337
-#define	MLBSENSORDELAY	338
-#define	MLBSENSORKEYBOARD	339
-#define	MLBSENSORNEAR	340
-#define	MLBSENSORPROPERTY	341
-#define	MLBSENSORRANDOM	342
-#define	GROUND	343
-#define	DYNAMICOBJECT	344
-#define	STATICOBJECT	345
+#define	PARAM_ANIM_TYPE	279
+#define	PARAM_REFERENCE	280
+#define	PARAM_MAO	281
+#define	PARAM_TIME	282
+#define	PARAM_OFFSET	283
+#define	PARAM_IMPULSE	284
+#define	PARAM_ANG_AXIS	285
+#define	PARAM_PROPERTY	286
+#define	PARAM_ROT_TYPE	287
+#define	PARAM_LOC_TYPE	288
+#define	PARAM_ROTATION	289
+#define	PARAM_LOCATION	290
+#define	PARAM_TYPE	291
+#define	PARAM_VALUE	292
+#define	PARAM_VALUE1	293
+#define	PARAM_VALUE2	294
+#define	PARAM_ACTUATOR	295
+#define	PARAM_KEY	296
+#define	PARAM_DISTANCE	297
+#define	PARAM_PROBABILITY	298
+#define	PARAM_INVERSE	299
+#define	PARAM_GRAVITY	300
+#define	PARAM_AXIS	301
+#define	PARAM_MASS	302
+#define	PARAM_SHAPE	303
+#define	PARAM_SHADOWS	304
+#define	PARAM_SUN	305
+#define	MAOWORLD	306
+#define	MAOMARK	307
+#define	MAOMARKSGROUP	308
+#define	MAORENDERABLE2DIMAGE	309
+#define	MAORENDERABLE2DTEXT	310
+#define	MAORENDERABLE3DLINE	311
+#define	MAORENDERABLE3DMODEL	312
+#define	MAORENDERABLE3DPATH	313
+#define	MLBACTUATORADDDYNAMICOBJECT	314
+#define	MLBACTUATORANG	315
+#define	MLBACTUATORCHANGEPOSE	316
+#define	MLBACTUATORDISTANCE	317
+#define	MLBACTUATORPATHADDPOINT	318
+#define	MLBACTUATORPATHREMOVEPOINTS	319
+#define	MLBACTUATORPROPERTY	320
+#define	MLBACTUATORQUITAPP	321
+#define	MLBACTUATORRANDOM	322
+#define	MLBACTUATORRELATIVEPOSE	323
+#define	MLBACTUATORSOUND	324
+#define	MLBACTUATORVISIBILITY	325
+#define	MLBACTUATORANIM	326
+#define	MLBCONTROLLERAND	327
+#define	MLBCONTROLLERNAND	328
+#define	MLBCONTROLLERNOR	329
+#define	MLBCONTROLLEROR	330
+#define	MLBCONTROLLERSCRIPT	331
+#define	MLBSENSORACTUATOR	332
+#define	MLBSENSORALWAYS	333
+#define	MLBSENSORCOLLISION	334
+#define	MLBSENSORDELAY	335
+#define	MLBSENSORKEYBOARD	336
+#define	MLBSENSORNEAR	337
+#define	MLBSENSORPROPERTY	338
+#define	MLBSENSORRANDOM	339
+#define	GROUND	340
+#define	DYNAMICOBJECT	341
+#define	STATICOBJECT	342
 
 
 #line 263 "/usr/share/bison++/bison.cc"
@@ -493,8 +489,6 @@ static const int PARAM_COLOR;
 static const int PARAM_WIDTH;
 static const int PARAM_HEIGHT;
 static const int PARAM_TEXT;
-static const int PARAM_PATH_ORJ;
-static const int PARAM_PATH_TEX;
 static const int PARAM_ANIM_TYPE;
 static const int PARAM_REFERENCE;
 static const int PARAM_MAO;
@@ -528,9 +522,8 @@ static const int MAOMARKSGROUP;
 static const int MAORENDERABLE2DIMAGE;
 static const int MAORENDERABLE2DTEXT;
 static const int MAORENDERABLE3DLINE;
-static const int MAORENDERABLE3DORJ;
+static const int MAORENDERABLE3DMODEL;
 static const int MAORENDERABLE3DPATH;
-static const int MAORENDERABLE3DTEAPOT;
 static const int MLBACTUATORADDDYNAMICOBJECT;
 static const int MLBACTUATORANG;
 static const int MLBACTUATORCHANGEPOSE;
@@ -543,7 +536,7 @@ static const int MLBACTUATORRANDOM;
 static const int MLBACTUATORRELATIVEPOSE;
 static const int MLBACTUATORSOUND;
 static const int MLBACTUATORVISIBILITY;
-static const int MLBACTUATORANIMOREJ;
+static const int MLBACTUATORANIM;
 static const int MLBCONTROLLERAND;
 static const int MLBCONTROLLERNAND;
 static const int MLBCONTROLLERNOR;
@@ -589,73 +582,70 @@ enum YY_MSLParser_ENUM_TOKEN { YY_MSLParser_NULL_TOKEN=0
 	,PARAM_WIDTH=276
 	,PARAM_HEIGHT=277
 	,PARAM_TEXT=278
-	,PARAM_PATH_ORJ=279
-	,PARAM_PATH_TEX=280
-	,PARAM_ANIM_TYPE=281
-	,PARAM_REFERENCE=282
-	,PARAM_MAO=283
-	,PARAM_TIME=284
-	,PARAM_OFFSET=285
-	,PARAM_IMPULSE=286
-	,PARAM_ANG_AXIS=287
-	,PARAM_PROPERTY=288
-	,PARAM_ROT_TYPE=289
-	,PARAM_LOC_TYPE=290
-	,PARAM_ROTATION=291
-	,PARAM_LOCATION=292
-	,PARAM_TYPE=293
-	,PARAM_VALUE=294
-	,PARAM_VALUE1=295
-	,PARAM_VALUE2=296
-	,PARAM_ACTUATOR=297
-	,PARAM_KEY=298
-	,PARAM_DISTANCE=299
-	,PARAM_PROBABILITY=300
-	,PARAM_INVERSE=301
-	,PARAM_GRAVITY=302
-	,PARAM_AXIS=303
-	,PARAM_MASS=304
-	,PARAM_SHAPE=305
-	,PARAM_SHADOWS=306
-	,PARAM_SUN=307
-	,MAOWORLD=308
-	,MAOMARK=309
-	,MAOMARKSGROUP=310
-	,MAORENDERABLE2DIMAGE=311
-	,MAORENDERABLE2DTEXT=312
-	,MAORENDERABLE3DLINE=313
-	,MAORENDERABLE3DORJ=314
-	,MAORENDERABLE3DPATH=315
-	,MAORENDERABLE3DTEAPOT=316
-	,MLBACTUATORADDDYNAMICOBJECT=317
-	,MLBACTUATORANG=318
-	,MLBACTUATORCHANGEPOSE=319
-	,MLBACTUATORDISTANCE=320
-	,MLBACTUATORPATHADDPOINT=321
-	,MLBACTUATORPATHREMOVEPOINTS=322
-	,MLBACTUATORPROPERTY=323
-	,MLBACTUATORQUITAPP=324
-	,MLBACTUATORRANDOM=325
-	,MLBACTUATORRELATIVEPOSE=326
-	,MLBACTUATORSOUND=327
-	,MLBACTUATORVISIBILITY=328
-	,MLBACTUATORANIMOREJ=329
-	,MLBCONTROLLERAND=330
-	,MLBCONTROLLERNAND=331
-	,MLBCONTROLLERNOR=332
-	,MLBCONTROLLEROR=333
-	,MLBCONTROLLERSCRIPT=334
-	,MLBSENSORACTUATOR=335
-	,MLBSENSORALWAYS=336
-	,MLBSENSORCOLLISION=337
-	,MLBSENSORDELAY=338
-	,MLBSENSORKEYBOARD=339
-	,MLBSENSORNEAR=340
-	,MLBSENSORPROPERTY=341
-	,MLBSENSORRANDOM=342
-	,GROUND=343
-	,DYNAMICOBJECT=344
-	,STATICOBJECT=345
+	,PARAM_ANIM_TYPE=279
+	,PARAM_REFERENCE=280
+	,PARAM_MAO=281
+	,PARAM_TIME=282
+	,PARAM_OFFSET=283
+	,PARAM_IMPULSE=284
+	,PARAM_ANG_AXIS=285
+	,PARAM_PROPERTY=286
+	,PARAM_ROT_TYPE=287
+	,PARAM_LOC_TYPE=288
+	,PARAM_ROTATION=289
+	,PARAM_LOCATION=290
+	,PARAM_TYPE=291
+	,PARAM_VALUE=292
+	,PARAM_VALUE1=293
+	,PARAM_VALUE2=294
+	,PARAM_ACTUATOR=295
+	,PARAM_KEY=296
+	,PARAM_DISTANCE=297
+	,PARAM_PROBABILITY=298
+	,PARAM_INVERSE=299
+	,PARAM_GRAVITY=300
+	,PARAM_AXIS=301
+	,PARAM_MASS=302
+	,PARAM_SHAPE=303
+	,PARAM_SHADOWS=304
+	,PARAM_SUN=305
+	,MAOWORLD=306
+	,MAOMARK=307
+	,MAOMARKSGROUP=308
+	,MAORENDERABLE2DIMAGE=309
+	,MAORENDERABLE2DTEXT=310
+	,MAORENDERABLE3DLINE=311
+	,MAORENDERABLE3DMODEL=312
+	,MAORENDERABLE3DPATH=313
+	,MLBACTUATORADDDYNAMICOBJECT=314
+	,MLBACTUATORANG=315
+	,MLBACTUATORCHANGEPOSE=316
+	,MLBACTUATORDISTANCE=317
+	,MLBACTUATORPATHADDPOINT=318
+	,MLBACTUATORPATHREMOVEPOINTS=319
+	,MLBACTUATORPROPERTY=320
+	,MLBACTUATORQUITAPP=321
+	,MLBACTUATORRANDOM=322
+	,MLBACTUATORRELATIVEPOSE=323
+	,MLBACTUATORSOUND=324
+	,MLBACTUATORVISIBILITY=325
+	,MLBACTUATORANIM=326
+	,MLBCONTROLLERAND=327
+	,MLBCONTROLLERNAND=328
+	,MLBCONTROLLERNOR=329
+	,MLBCONTROLLEROR=330
+	,MLBCONTROLLERSCRIPT=331
+	,MLBSENSORACTUATOR=332
+	,MLBSENSORALWAYS=333
+	,MLBSENSORCOLLISION=334
+	,MLBSENSORDELAY=335
+	,MLBSENSORKEYBOARD=336
+	,MLBSENSORNEAR=337
+	,MLBSENSORPROPERTY=338
+	,MLBSENSORRANDOM=339
+	,GROUND=340
+	,DYNAMICOBJECT=341
+	,STATICOBJECT=342
 
 
 #line 310 "/usr/share/bison++/bison.cc"
@@ -713,73 +703,70 @@ const int YY_MSLParser_CLASS::PARAM_COLOR=275;
 const int YY_MSLParser_CLASS::PARAM_WIDTH=276;
 const int YY_MSLParser_CLASS::PARAM_HEIGHT=277;
 const int YY_MSLParser_CLASS::PARAM_TEXT=278;
-const int YY_MSLParser_CLASS::PARAM_PATH_ORJ=279;
-const int YY_MSLParser_CLASS::PARAM_PATH_TEX=280;
-const int YY_MSLParser_CLASS::PARAM_ANIM_TYPE=281;
-const int YY_MSLParser_CLASS::PARAM_REFERENCE=282;
-const int YY_MSLParser_CLASS::PARAM_MAO=283;
-const int YY_MSLParser_CLASS::PARAM_TIME=284;
-const int YY_MSLParser_CLASS::PARAM_OFFSET=285;
-const int YY_MSLParser_CLASS::PARAM_IMPULSE=286;
-const int YY_MSLParser_CLASS::PARAM_ANG_AXIS=287;
-const int YY_MSLParser_CLASS::PARAM_PROPERTY=288;
-const int YY_MSLParser_CLASS::PARAM_ROT_TYPE=289;
-const int YY_MSLParser_CLASS::PARAM_LOC_TYPE=290;
-const int YY_MSLParser_CLASS::PARAM_ROTATION=291;
-const int YY_MSLParser_CLASS::PARAM_LOCATION=292;
-const int YY_MSLParser_CLASS::PARAM_TYPE=293;
-const int YY_MSLParser_CLASS::PARAM_VALUE=294;
-const int YY_MSLParser_CLASS::PARAM_VALUE1=295;
-const int YY_MSLParser_CLASS::PARAM_VALUE2=296;
-const int YY_MSLParser_CLASS::PARAM_ACTUATOR=297;
-const int YY_MSLParser_CLASS::PARAM_KEY=298;
-const int YY_MSLParser_CLASS::PARAM_DISTANCE=299;
-const int YY_MSLParser_CLASS::PARAM_PROBABILITY=300;
-const int YY_MSLParser_CLASS::PARAM_INVERSE=301;
-const int YY_MSLParser_CLASS::PARAM_GRAVITY=302;
-const int YY_MSLParser_CLASS::PARAM_AXIS=303;
-const int YY_MSLParser_CLASS::PARAM_MASS=304;
-const int YY_MSLParser_CLASS::PARAM_SHAPE=305;
-const int YY_MSLParser_CLASS::PARAM_SHADOWS=306;
-const int YY_MSLParser_CLASS::PARAM_SUN=307;
-const int YY_MSLParser_CLASS::MAOWORLD=308;
-const int YY_MSLParser_CLASS::MAOMARK=309;
-const int YY_MSLParser_CLASS::MAOMARKSGROUP=310;
-const int YY_MSLParser_CLASS::MAORENDERABLE2DIMAGE=311;
-const int YY_MSLParser_CLASS::MAORENDERABLE2DTEXT=312;
-const int YY_MSLParser_CLASS::MAORENDERABLE3DLINE=313;
-const int YY_MSLParser_CLASS::MAORENDERABLE3DORJ=314;
-const int YY_MSLParser_CLASS::MAORENDERABLE3DPATH=315;
-const int YY_MSLParser_CLASS::MAORENDERABLE3DTEAPOT=316;
-const int YY_MSLParser_CLASS::MLBACTUATORADDDYNAMICOBJECT=317;
-const int YY_MSLParser_CLASS::MLBACTUATORANG=318;
-const int YY_MSLParser_CLASS::MLBACTUATORCHANGEPOSE=319;
-const int YY_MSLParser_CLASS::MLBACTUATORDISTANCE=320;
-const int YY_MSLParser_CLASS::MLBACTUATORPATHADDPOINT=321;
-const int YY_MSLParser_CLASS::MLBACTUATORPATHREMOVEPOINTS=322;
-const int YY_MSLParser_CLASS::MLBACTUATORPROPERTY=323;
-const int YY_MSLParser_CLASS::MLBACTUATORQUITAPP=324;
-const int YY_MSLParser_CLASS::MLBACTUATORRANDOM=325;
-const int YY_MSLParser_CLASS::MLBACTUATORRELATIVEPOSE=326;
-const int YY_MSLParser_CLASS::MLBACTUATORSOUND=327;
-const int YY_MSLParser_CLASS::MLBACTUATORVISIBILITY=328;
-const int YY_MSLParser_CLASS::MLBACTUATORANIMOREJ=329;
-const int YY_MSLParser_CLASS::MLBCONTROLLERAND=330;
-const int YY_MSLParser_CLASS::MLBCONTROLLERNAND=331;
-const int YY_MSLParser_CLASS::MLBCONTROLLERNOR=332;
-const int YY_MSLParser_CLASS::MLBCONTROLLEROR=333;
-const int YY_MSLParser_CLASS::MLBCONTROLLERSCRIPT=334;
-const int YY_MSLParser_CLASS::MLBSENSORACTUATOR=335;
-const int YY_MSLParser_CLASS::MLBSENSORALWAYS=336;
-const int YY_MSLParser_CLASS::MLBSENSORCOLLISION=337;
-const int YY_MSLParser_CLASS::MLBSENSORDELAY=338;
-const int YY_MSLParser_CLASS::MLBSENSORKEYBOARD=339;
-const int YY_MSLParser_CLASS::MLBSENSORNEAR=340;
-const int YY_MSLParser_CLASS::MLBSENSORPROPERTY=341;
-const int YY_MSLParser_CLASS::MLBSENSORRANDOM=342;
-const int YY_MSLParser_CLASS::GROUND=343;
-const int YY_MSLParser_CLASS::DYNAMICOBJECT=344;
-const int YY_MSLParser_CLASS::STATICOBJECT=345;
+const int YY_MSLParser_CLASS::PARAM_ANIM_TYPE=279;
+const int YY_MSLParser_CLASS::PARAM_REFERENCE=280;
+const int YY_MSLParser_CLASS::PARAM_MAO=281;
+const int YY_MSLParser_CLASS::PARAM_TIME=282;
+const int YY_MSLParser_CLASS::PARAM_OFFSET=283;
+const int YY_MSLParser_CLASS::PARAM_IMPULSE=284;
+const int YY_MSLParser_CLASS::PARAM_ANG_AXIS=285;
+const int YY_MSLParser_CLASS::PARAM_PROPERTY=286;
+const int YY_MSLParser_CLASS::PARAM_ROT_TYPE=287;
+const int YY_MSLParser_CLASS::PARAM_LOC_TYPE=288;
+const int YY_MSLParser_CLASS::PARAM_ROTATION=289;
+const int YY_MSLParser_CLASS::PARAM_LOCATION=290;
+const int YY_MSLParser_CLASS::PARAM_TYPE=291;
+const int YY_MSLParser_CLASS::PARAM_VALUE=292;
+const int YY_MSLParser_CLASS::PARAM_VALUE1=293;
+const int YY_MSLParser_CLASS::PARAM_VALUE2=294;
+const int YY_MSLParser_CLASS::PARAM_ACTUATOR=295;
+const int YY_MSLParser_CLASS::PARAM_KEY=296;
+const int YY_MSLParser_CLASS::PARAM_DISTANCE=297;
+const int YY_MSLParser_CLASS::PARAM_PROBABILITY=298;
+const int YY_MSLParser_CLASS::PARAM_INVERSE=299;
+const int YY_MSLParser_CLASS::PARAM_GRAVITY=300;
+const int YY_MSLParser_CLASS::PARAM_AXIS=301;
+const int YY_MSLParser_CLASS::PARAM_MASS=302;
+const int YY_MSLParser_CLASS::PARAM_SHAPE=303;
+const int YY_MSLParser_CLASS::PARAM_SHADOWS=304;
+const int YY_MSLParser_CLASS::PARAM_SUN=305;
+const int YY_MSLParser_CLASS::MAOWORLD=306;
+const int YY_MSLParser_CLASS::MAOMARK=307;
+const int YY_MSLParser_CLASS::MAOMARKSGROUP=308;
+const int YY_MSLParser_CLASS::MAORENDERABLE2DIMAGE=309;
+const int YY_MSLParser_CLASS::MAORENDERABLE2DTEXT=310;
+const int YY_MSLParser_CLASS::MAORENDERABLE3DLINE=311;
+const int YY_MSLParser_CLASS::MAORENDERABLE3DMODEL=312;
+const int YY_MSLParser_CLASS::MAORENDERABLE3DPATH=313;
+const int YY_MSLParser_CLASS::MLBACTUATORADDDYNAMICOBJECT=314;
+const int YY_MSLParser_CLASS::MLBACTUATORANG=315;
+const int YY_MSLParser_CLASS::MLBACTUATORCHANGEPOSE=316;
+const int YY_MSLParser_CLASS::MLBACTUATORDISTANCE=317;
+const int YY_MSLParser_CLASS::MLBACTUATORPATHADDPOINT=318;
+const int YY_MSLParser_CLASS::MLBACTUATORPATHREMOVEPOINTS=319;
+const int YY_MSLParser_CLASS::MLBACTUATORPROPERTY=320;
+const int YY_MSLParser_CLASS::MLBACTUATORQUITAPP=321;
+const int YY_MSLParser_CLASS::MLBACTUATORRANDOM=322;
+const int YY_MSLParser_CLASS::MLBACTUATORRELATIVEPOSE=323;
+const int YY_MSLParser_CLASS::MLBACTUATORSOUND=324;
+const int YY_MSLParser_CLASS::MLBACTUATORVISIBILITY=325;
+const int YY_MSLParser_CLASS::MLBACTUATORANIM=326;
+const int YY_MSLParser_CLASS::MLBCONTROLLERAND=327;
+const int YY_MSLParser_CLASS::MLBCONTROLLERNAND=328;
+const int YY_MSLParser_CLASS::MLBCONTROLLERNOR=329;
+const int YY_MSLParser_CLASS::MLBCONTROLLEROR=330;
+const int YY_MSLParser_CLASS::MLBCONTROLLERSCRIPT=331;
+const int YY_MSLParser_CLASS::MLBSENSORACTUATOR=332;
+const int YY_MSLParser_CLASS::MLBSENSORALWAYS=333;
+const int YY_MSLParser_CLASS::MLBSENSORCOLLISION=334;
+const int YY_MSLParser_CLASS::MLBSENSORDELAY=335;
+const int YY_MSLParser_CLASS::MLBSENSORKEYBOARD=336;
+const int YY_MSLParser_CLASS::MLBSENSORNEAR=337;
+const int YY_MSLParser_CLASS::MLBSENSORPROPERTY=338;
+const int YY_MSLParser_CLASS::MLBSENSORRANDOM=339;
+const int YY_MSLParser_CLASS::GROUND=340;
+const int YY_MSLParser_CLASS::DYNAMICOBJECT=341;
+const int YY_MSLParser_CLASS::STATICOBJECT=342;
 
 
 #line 341 "/usr/share/bison++/bison.cc"
@@ -798,26 +785,26 @@ YY_MSLParser_CONSTRUCTOR_CODE;
  #line 352 "/usr/share/bison++/bison.cc"
 
 
-#define	YYFINAL		573
+#define	YYFINAL		587
 #define	YYFLAG		-32768
-#define	YYNTBASE	97
+#define	YYNTBASE	94
 
-#define YYTRANSLATE(x) ((unsigned)(x) <= 345 ? yytranslate[x] : 206)
+#define YYTRANSLATE(x) ((unsigned)(x) <= 342 ? yytranslate[x] : 197)
 
 static const char yytranslate[] = {     0,
      2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
      2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
      2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-     2,     2,     2,     2,     2,     2,     2,     2,     2,    95,
-    96,     2,     2,    94,     2,     2,     2,     2,     2,     2,
+     2,     2,     2,     2,     2,     2,     2,     2,     2,    92,
+    93,     2,     2,    91,     2,     2,     2,     2,     2,     2,
      2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-    93,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-     2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-     2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+    88,     2,     2,     2,     2,     2,     2,     2,     2,     2,
      2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
      2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
      2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-     2,     2,    91,     2,    92,     2,     2,     2,     2,     2,
+     2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+     2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+     2,     2,    89,     2,    90,     2,     2,     2,     2,     2,
      2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
      2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
      2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
@@ -839,178 +826,186 @@ static const char yytranslate[] = {     0,
     56,    57,    58,    59,    60,    61,    62,    63,    64,    65,
     66,    67,    68,    69,    70,    71,    72,    73,    74,    75,
     76,    77,    78,    79,    80,    81,    82,    83,    84,    85,
-    86,    87,    88,    89,    90
+    86,    87
 };
 
 #if YY_MSLParser_DEBUG != 0
 static const short yyprhs[] = {     0,
-     0,     6,     9,    10,    12,    14,    16,    18,    20,    22,
-    24,    26,    29,    30,    35,    38,    43,    46,    51,    54,
-    59,    62,    67,    70,    71,    82,    90,    94,    95,    96,
-   109,   113,   115,   116,   126,   139,   140,   150,   166,   167,
-   178,   191,   192,   203,   216,   217,   228,   238,   239,   250,
-   257,   268,   269,   276,   277,   282,   289,   290,   298,   303,
-   308,   309,   312,   313,   316,   319,   322,   323,   325,   327,
-   329,   331,   333,   335,   337,   339,   341,   343,   345,   347,
-   349,   351,   353,   355,   357,   359,   361,   363,   365,   367,
-   369,   371,   373,   375,   381,   386,   391,   396,   401,   402,
-   408,   415,   421,   424,   431,   438,   444,   451,   457,   458,
-   464,   465,   471,   477,   487,   497,   503,   504,   510,   514,
-   520,   530,   536,   540,   546,   550,   556,   563,   567,   570,
-   574,   576,   577,   580,   584,   586,   587,   590,   594,   596,
-   597,   600,   604,   606,   607,   615,   621,   625,   631,   632,
-   638,   642,   648,   652,   658,   665,   671,   678,   684,   690,
-   700,   713,   723,   729,   733,   736,   737,   743,   747,   751,
-   753,   755,   757,   759,   761,   778,   780,   782,   784,   786,
-   788,   792,   794,   800,   806,   814,   822
+     0,     2,     5,     6,     8,    10,    12,    14,    16,    18,
+    20,    23,    24,    29,    32,    37,    40,    45,    48,    53,
+    56,    61,    64,    65,    76,    81,    86,    91,    92,    93,
+   106,   110,   112,   113,   123,   128,   133,   138,   143,   144,
+   145,   155,   160,   165,   170,   175,   180,   181,   182,   193,
+   198,   203,   208,   209,   210,   221,   226,   231,   236,   241,
+   242,   243,   254,   259,   264,   269,   270,   275,   276,   277,
+   282,   287,   292,   297,   298,   303,   310,   311,   316,   321,
+   326,   331,   332,   335,   336,   339,   342,   345,   346,   348,
+   350,   352,   354,   356,   358,   360,   362,   364,   366,   368,
+   370,   372,   374,   376,   378,   380,   382,   384,   386,   388,
+   390,   392,   394,   396,   398,   404,   409,   414,   419,   424,
+   425,   431,   436,   441,   442,   448,   451,   458,   465,   471,
+   476,   481,   482,   488,   489,   495,   496,   502,   508,   518,
+   528,   534,   535,   541,   545,   551,   556,   561,   566,   567,
+   573,   577,   583,   587,   593,   600,   604,   607,   611,   613,
+   614,   617,   621,   623,   624,   627,   631,   633,   634,   637,
+   641,   643,   644,   652,   658,   662,   668,   669,   675,   679,
+   685,   689,   695,   700,   705,   706,   712,   717,   722,   723,
+   729,   735,   745,   758,   768,   774,   778,   781,   782,   788,
+   792,   796,   798,   800,   802,   804,   806,   823,   825,   827,
+   829,   831,   833,   837,   839,   845,   851,   859,   867
 };
 
-static const short yyrhs[] = {    53,
-   205,    91,    98,    92,     0,    98,    99,     0,     0,   102,
-     0,   106,     0,   109,     0,   112,     0,   115,     0,   118,
-     0,   121,     0,   124,     0,   100,   101,     0,     0,     4,
-   205,    93,   195,     0,     4,   205,     0,     6,   205,    93,
-   197,     0,     6,   205,     0,    10,   205,    93,   196,     0,
-    10,   205,     0,     8,   205,    93,   198,     0,     8,   205,
-     0,    11,   205,    93,   199,     0,    11,   205,     0,     0,
-    54,   205,    91,   104,   103,   100,   132,   192,   127,    92,
-     0,    16,    93,   198,    17,    93,   197,   105,     0,    30,
-    93,   199,     0,     0,     0,    55,   205,    91,   107,    18,
-    93,   108,   100,   132,   192,   127,    92,     0,   205,    94,
-   108,     0,   205,     0,     0,    56,   205,    91,   111,   110,
-   100,   132,   192,    92,     0,    16,    93,   198,    19,    93,
-   202,    21,    93,   195,    22,    93,   195,     0,     0,    57,
-   205,    91,   114,   113,   100,   132,   192,    92,     0,    16,
-    93,   198,    17,    93,   195,    23,    93,   198,    19,    93,
-   202,    20,    93,   203,     0,     0,    59,   205,    91,   117,
-   116,   100,   132,   192,   129,    92,     0,    17,    93,   197,
-    24,    93,   198,    25,    93,   198,    27,    93,   205,     0,
-     0,    58,   205,    91,   120,   119,   100,   132,   192,   129,
-    92,     0,    17,    93,   197,    20,    93,   203,    27,    93,
-   205,    27,    93,   205,     0,     0,    60,   205,    91,   123,
-   122,   100,   132,   192,   129,    92,     0,    17,    93,   197,
-    20,    93,   203,    27,    93,   205,     0,     0,    61,   205,
-    91,   126,   125,   100,   132,   192,   129,    92,     0,    17,
-    93,   197,    27,    93,   205,     0,    88,    91,    48,    93,
-   198,    47,    93,   197,   128,    92,     0,     0,    51,    93,
-   196,    52,    93,   204,     0,     0,    89,    91,   130,    92,
-     0,    90,    91,    50,    93,   198,    92,     0,     0,    49,
-    93,   197,    50,    93,   198,   131,     0,   131,    30,    93,
-   199,     0,   131,    31,    93,   204,     0,     0,   132,   133,
-     0,     0,   134,   135,     0,   134,   136,     0,   134,   137,
-     0,     0,   138,     0,   141,     0,   143,     0,   145,     0,
-   147,     0,   149,     0,   151,     0,   154,     0,   156,     0,
-   158,     0,   160,     0,   162,     0,   164,     0,   166,     0,
-   168,     0,   170,     0,   172,     0,   174,     0,   175,     0,
-   177,     0,   179,     0,   181,     0,   183,     0,   185,     0,
-   187,     0,   190,     0,    62,   205,    91,   139,    92,     0,
-    28,    93,   205,   140,     0,   140,    29,    93,   195,     0,
-   140,    30,    93,   199,     0,   140,    31,    93,   204,     0,
-     0,    63,   205,    91,   142,    92,     0,    33,    93,   201,
-    32,    93,   198,     0,    64,   205,    91,   144,    92,     0,
-   144,   144,     0,    35,    93,   198,    37,    93,   204,     0,
-    34,    93,   198,    36,    93,   204,     0,    65,   205,    91,
-   146,    92,     0,    28,    93,   205,    33,    93,   201,     0,
-    66,   205,    91,   148,    92,     0,     0,    67,   205,    91,
-   150,    92,     0,     0,    68,   205,    91,   152,    92,     0,
-    68,   205,    91,   153,    92,     0,    38,    93,   198,    33,
-    93,   201,    39,    93,   200,     0,    38,    93,   198,    33,
-    93,   201,    39,    93,   201,     0,    69,   205,    91,   155,
-    92,     0,     0,    70,   205,    91,   157,    92,     0,    33,
-    93,   201,     0,    71,   205,    91,   159,    92,     0,    27,
-    93,   205,    33,    93,   201,    46,    93,   196,     0,    72,
-   205,    91,   161,    92,     0,    16,    93,   198,     0,    73,
-   205,    91,   163,    92,     0,    39,    93,   196,     0,    74,
-   205,    91,   165,    92,     0,    38,    93,   198,    26,    93,
-   198,     0,    38,    93,   198,     0,    75,   167,     0,   167,
-    94,   205,     0,   205,     0,     0,    76,   169,     0,   169,
-    94,   205,     0,   205,     0,     0,    78,   171,     0,   171,
-    94,   205,     0,   205,     0,     0,    77,   173,     0,   173,
-    94,   205,     0,   205,     0,     0,    79,   205,    91,    16,
-    93,   198,    92,     0,    80,   205,    91,   176,    92,     0,
-    42,    93,   205,     0,    81,   205,    91,   178,    92,     0,
-     0,    82,   205,    91,   180,    92,     0,    33,    93,   205,
-     0,    83,   205,    91,   182,    92,     0,    29,    93,   195,
-     0,    84,   205,    91,   184,    92,     0,    38,    93,   198,
-    43,    93,   198,     0,    85,   205,    91,   186,    92,     0,
-    33,    93,   205,    44,    93,   197,     0,    86,   205,    91,
-   188,    92,     0,    86,   205,    91,   189,    92,     0,    38,
-    93,   198,    33,    93,   201,    39,    93,   200,     0,    38,
-    93,   198,    33,    93,   201,    40,    93,   200,    41,    93,
-   200,     0,    38,    93,   198,    33,    93,   201,    39,    93,
-   201,     0,    87,   205,    91,   191,    92,     0,    45,    93,
-   197,     0,   192,   193,     0,     0,   194,    13,   205,    13,
-   194,     0,   194,    13,   194,     0,   205,    94,   194,     0,
-   205,     0,     3,     0,     9,     0,     5,     0,     7,     0,
-   197,   197,   197,   197,   197,   197,   197,   197,   197,   197,
-   197,   197,   197,   197,   197,   197,     0,   195,     0,   196,
-     0,   197,     0,   198,     0,   199,     0,   205,    14,   205,
-     0,   205,     0,    95,   195,    94,   195,    96,     0,    95,
-   197,    94,   197,    96,     0,    95,   195,    94,   195,    94,
-   195,    96,     0,    95,   197,    94,   197,    94,   197,    96,
-     0,    12,     0
+static const short yyrhs[] = {    95,
+     0,    95,    96,     0,     0,    99,     0,   102,     0,   105,
+     0,   108,     0,   111,     0,   114,     0,   117,     0,    97,
+    98,     0,     0,     4,   196,    88,   186,     0,     4,   196,
+     0,     6,   196,    88,   188,     0,     6,   196,     0,    10,
+   196,    88,   187,     0,    10,   196,     0,     8,   196,    88,
+   189,     0,     8,   196,     0,    11,   196,    88,   190,     0,
+    11,   196,     0,     0,    52,   196,    89,   101,   100,    97,
+   124,   183,   120,    90,     0,    16,    88,   189,   101,     0,
+    17,    88,   188,   101,     0,    28,    88,   190,   101,     0,
+     0,     0,    53,   196,    89,   103,    18,    88,   104,    97,
+   124,   183,   120,    90,     0,   196,    91,   104,     0,   196,
+     0,     0,    54,   196,    89,   107,   106,    97,   124,   183,
+    90,     0,    16,    88,   189,   107,     0,    19,    88,   193,
+   107,     0,    21,    88,   186,   107,     0,    22,    88,   186,
+   107,     0,     0,     0,    55,   196,    89,   110,   109,    97,
+   124,   183,    90,     0,    16,    88,   189,   110,     0,    17,
+    88,   186,   110,     0,    23,    88,   189,   110,     0,    19,
+    88,   193,   110,     0,    20,    88,   194,   110,     0,     0,
+     0,    57,   196,    89,   113,   112,    97,   124,   183,   122,
+    90,     0,    17,    88,   188,   113,     0,    16,    88,   189,
+   113,     0,    25,    88,   196,   113,     0,     0,     0,    56,
+   196,    89,   116,   115,    97,   124,   183,   122,    90,     0,
+    17,    88,   188,   116,     0,    20,    88,   194,   116,     0,
+    25,    88,   196,   116,     0,    25,    88,   196,   116,     0,
+     0,     0,    58,   196,    89,   119,   118,    97,   124,   183,
+   122,    90,     0,    17,    88,   188,   119,     0,    20,    88,
+   194,   119,     0,    25,    88,   196,   119,     0,     0,    85,
+    89,   121,    90,     0,     0,     0,    46,    88,   189,   121,
+     0,    45,    88,   188,   121,     0,    49,    88,   187,   121,
+     0,    50,    88,   195,   121,     0,     0,    86,    89,   123,
+    90,     0,    87,    89,    48,    88,   189,    90,     0,     0,
+    47,    88,   188,   123,     0,    48,    88,   189,   123,     0,
+    28,    88,   190,   123,     0,    29,    88,   195,   123,     0,
+     0,   124,   125,     0,     0,   126,   127,     0,   126,   128,
+     0,   126,   129,     0,     0,   130,     0,   132,     0,   134,
+     0,   136,     0,   138,     0,   140,     0,   142,     0,   145,
+     0,   147,     0,   149,     0,   151,     0,   153,     0,   155,
+     0,   157,     0,   159,     0,   161,     0,   163,     0,   165,
+     0,   166,     0,   168,     0,   170,     0,   172,     0,   174,
+     0,   176,     0,   178,     0,   181,     0,    59,   196,    89,
+   131,    90,     0,    26,    88,   196,   131,     0,    27,    88,
+   186,   131,     0,    28,    88,   190,   131,     0,    29,    88,
+   195,   131,     0,     0,    60,   196,    89,   133,    90,     0,
+    31,    88,   192,   133,     0,    30,    88,   189,   133,     0,
+     0,    61,   196,    89,   135,    90,     0,   135,   135,     0,
+    33,    88,   189,    35,    88,   195,     0,    32,    88,   189,
+    34,    88,   195,     0,    62,   196,    89,   137,    90,     0,
+    26,    88,   196,   137,     0,    31,    88,   192,   137,     0,
+     0,    63,   196,    89,   139,    90,     0,     0,    64,   196,
+    89,   141,    90,     0,     0,    65,   196,    89,   143,    90,
+     0,    65,   196,    89,   144,    90,     0,    36,    88,   189,
+    31,    88,   192,    37,    88,   191,     0,    36,    88,   189,
+    31,    88,   192,    37,    88,   192,     0,    66,   196,    89,
+   146,    90,     0,     0,    67,   196,    89,   148,    90,     0,
+    31,    88,   192,     0,    68,   196,    89,   150,    90,     0,
+    25,    88,   196,   150,     0,    31,    88,   192,   150,     0,
+    44,    88,   187,   150,     0,     0,    69,   196,    89,   152,
+    90,     0,    16,    88,   189,     0,    70,   196,    89,   154,
+    90,     0,    37,    88,   187,     0,    71,   196,    89,   156,
+    90,     0,    36,    88,   189,    24,    88,   189,     0,    36,
+    88,   189,     0,    72,   158,     0,   158,    91,   196,     0,
+   196,     0,     0,    73,   160,     0,   160,    91,   196,     0,
+   196,     0,     0,    75,   162,     0,   162,    91,   196,     0,
+   196,     0,     0,    74,   164,     0,   164,    91,   196,     0,
+   196,     0,     0,    76,   196,    89,    16,    88,   189,    90,
+     0,    77,   196,    89,   167,    90,     0,    40,    88,   196,
+     0,    78,   196,    89,   169,    90,     0,     0,    79,   196,
+    89,   171,    90,     0,    31,    88,   196,     0,    80,   196,
+    89,   173,    90,     0,    27,    88,   186,     0,    81,   196,
+    89,   175,    90,     0,    36,    88,   189,   175,     0,    41,
+    88,   189,   175,     0,     0,    82,   196,    89,   177,    90,
+     0,    31,    88,   196,   177,     0,    42,    88,   188,   177,
+     0,     0,    83,   196,    89,   179,    90,     0,    83,   196,
+    89,   180,    90,     0,    36,    88,   189,    31,    88,   192,
+    37,    88,   191,     0,    36,    88,   189,    31,    88,   192,
+    38,    88,   191,    39,    88,   191,     0,    36,    88,   189,
+    31,    88,   192,    37,    88,   192,     0,    84,   196,    89,
+   182,    90,     0,    43,    88,   188,     0,   183,   184,     0,
+     0,   185,    13,   196,    13,   185,     0,   185,    13,   185,
+     0,   196,    91,   185,     0,   196,     0,     3,     0,     9,
+     0,     5,     0,     7,     0,   188,   188,   188,   188,   188,
+   188,   188,   188,   188,   188,   188,   188,   188,   188,   188,
+   188,     0,   186,     0,   187,     0,   188,     0,   189,     0,
+   190,     0,   196,    14,   196,     0,   196,     0,    92,   186,
+    91,   186,    93,     0,    92,   188,    91,   188,    93,     0,
+    92,   186,    91,   186,    91,   186,    93,     0,    92,   188,
+    91,   188,    91,   188,    93,     0,    12,     0
 };
 
 #endif
 
 #if (YY_MSLParser_DEBUG != 0) || defined(YY_MSLParser_ERROR_VERBOSE) 
 static const short yyrline[] = { 0,
-   276,   279,   280,   283,   284,   285,   286,   287,   288,   289,
-   290,   293,   294,   297,   298,   299,   300,   301,   302,   303,
-   304,   305,   306,   311,   311,   313,   315,   316,   320,   320,
-   323,   324,   328,   328,   330,   333,   333,   335,   338,   338,
-   340,   343,   343,   345,   348,   348,   350,   353,   353,   355,
-   359,   360,   362,   363,   367,   368,   369,   372,   374,   375,
-   376,   382,   383,   386,   387,   388,   391,   394,   395,   396,
-   397,   398,   399,   400,   401,   402,   403,   404,   405,   406,
-   409,   410,   411,   412,   413,   416,   417,   418,   419,   420,
-   421,   422,   423,   433,   435,   437,   438,   439,   440,   443,
-   445,   448,   450,   451,   452,   455,   457,   460,   463,   466,
-   468,   471,   472,   474,   476,   479,   481,   484,   486,   489,
-   491,   494,   496,   499,   501,   504,   506,   507,   511,   513,
-   514,   515,   518,   520,   521,   522,   525,   527,   528,   529,
-   532,   534,   535,   536,   539,   545,   547,   550,   552,   555,
-   557,   560,   562,   565,   567,   570,   572,   575,   576,   578,
-   579,   581,   584,   586,   592,   593,   595,   604,   613,   620,
-   627,   630,   633,   636,   639,   646,   647,   648,   649,   650,
-   653,   654,   657,   659,   662,   665,   668
+   269,   272,   273,   276,   277,   278,   279,   280,   281,   282,
+   285,   286,   289,   290,   291,   292,   293,   294,   295,   296,
+   297,   298,   303,   303,   305,   306,   307,   308,   312,   312,
+   315,   316,   320,   320,   322,   323,   324,   325,   326,   329,
+   329,   331,   332,   333,   334,   335,   336,   339,   339,   341,
+   342,   343,   344,   347,   347,   349,   350,   351,   352,   353,
+   356,   356,   358,   359,   360,   361,   365,   366,   369,   369,
+   370,   371,   372,   373,   377,   378,   379,   382,   383,   384,
+   385,   386,   391,   392,   395,   396,   397,   400,   403,   404,
+   405,   406,   407,   408,   409,   410,   411,   412,   413,   414,
+   415,   418,   419,   420,   421,   422,   425,   426,   427,   428,
+   429,   430,   431,   432,   442,   444,   445,   446,   447,   448,
+   451,   453,   454,   455,   458,   460,   461,   462,   465,   467,
+   468,   469,   472,   475,   478,   480,   483,   484,   486,   488,
+   491,   493,   496,   498,   501,   503,   504,   505,   506,   509,
+   511,   514,   516,   519,   521,   522,   526,   528,   529,   530,
+   533,   535,   536,   537,   540,   542,   543,   544,   547,   549,
+   550,   551,   554,   560,   562,   565,   567,   570,   572,   575,
+   577,   580,   582,   583,   584,   587,   589,   590,   591,   594,
+   595,   597,   598,   600,   603,   605,   611,   612,   614,   623,
+   632,   639,   646,   649,   652,   655,   658,   665,   666,   667,
+   668,   669,   672,   673,   676,   678,   681,   684,   687
 };
 
 static const char * const yytname[] = {   "$","error","$illegal.","INTEGER",
 "T_INTEGER","FLOAT","T_FLOAT","STRING","T_STRING","BOOL","T_BOOL","T_POSE","IDENTIFIER",
 "ARROW","DOT","PARAM_NAME","PARAM_PATH","PARAM_SIZE","PARAM_MARKS","PARAM_POS",
-"PARAM_COLOR","PARAM_WIDTH","PARAM_HEIGHT","PARAM_TEXT","PARAM_PATH_ORJ","PARAM_PATH_TEX",
-"PARAM_ANIM_TYPE","PARAM_REFERENCE","PARAM_MAO","PARAM_TIME","PARAM_OFFSET",
-"PARAM_IMPULSE","PARAM_ANG_AXIS","PARAM_PROPERTY","PARAM_ROT_TYPE","PARAM_LOC_TYPE",
-"PARAM_ROTATION","PARAM_LOCATION","PARAM_TYPE","PARAM_VALUE","PARAM_VALUE1",
-"PARAM_VALUE2","PARAM_ACTUATOR","PARAM_KEY","PARAM_DISTANCE","PARAM_PROBABILITY",
-"PARAM_INVERSE","PARAM_GRAVITY","PARAM_AXIS","PARAM_MASS","PARAM_SHAPE","PARAM_SHADOWS",
-"PARAM_SUN","MAOWORLD","MAOMARK","MAOMARKSGROUP","MAORENDERABLE2DIMAGE","MAORENDERABLE2DTEXT",
-"MAORENDERABLE3DLINE","MAORENDERABLE3DORJ","MAORENDERABLE3DPATH","MAORENDERABLE3DTEAPOT",
-"MLBACTUATORADDDYNAMICOBJECT","MLBACTUATORANG","MLBACTUATORCHANGEPOSE","MLBACTUATORDISTANCE",
-"MLBACTUATORPATHADDPOINT","MLBACTUATORPATHREMOVEPOINTS","MLBACTUATORPROPERTY",
-"MLBACTUATORQUITAPP","MLBACTUATORRANDOM","MLBACTUATORRELATIVEPOSE","MLBACTUATORSOUND",
-"MLBACTUATORVISIBILITY","MLBACTUATORANIMOREJ","MLBCONTROLLERAND","MLBCONTROLLERNAND",
-"MLBCONTROLLERNOR","MLBCONTROLLEROR","MLBCONTROLLERSCRIPT","MLBSENSORACTUATOR",
-"MLBSENSORALWAYS","MLBSENSORCOLLISION","MLBSENSORDELAY","MLBSENSORKEYBOARD",
-"MLBSENSORNEAR","MLBSENSORPROPERTY","MLBSENSORRANDOM","GROUND","DYNAMICOBJECT",
-"STATICOBJECT","'{'","'}'","'='","','","'('","')'","begin","maos","mao","mao_properties",
-"mao_property","def_maomark","@1","param_maomark","optparam_maomark","def_maomarksgroup",
+"PARAM_COLOR","PARAM_WIDTH","PARAM_HEIGHT","PARAM_TEXT","PARAM_ANIM_TYPE","PARAM_REFERENCE",
+"PARAM_MAO","PARAM_TIME","PARAM_OFFSET","PARAM_IMPULSE","PARAM_ANG_AXIS","PARAM_PROPERTY",
+"PARAM_ROT_TYPE","PARAM_LOC_TYPE","PARAM_ROTATION","PARAM_LOCATION","PARAM_TYPE",
+"PARAM_VALUE","PARAM_VALUE1","PARAM_VALUE2","PARAM_ACTUATOR","PARAM_KEY","PARAM_DISTANCE",
+"PARAM_PROBABILITY","PARAM_INVERSE","PARAM_GRAVITY","PARAM_AXIS","PARAM_MASS",
+"PARAM_SHAPE","PARAM_SHADOWS","PARAM_SUN","MAOWORLD","MAOMARK","MAOMARKSGROUP",
+"MAORENDERABLE2DIMAGE","MAORENDERABLE2DTEXT","MAORENDERABLE3DLINE","MAORENDERABLE3DMODEL",
+"MAORENDERABLE3DPATH","MLBACTUATORADDDYNAMICOBJECT","MLBACTUATORANG","MLBACTUATORCHANGEPOSE",
+"MLBACTUATORDISTANCE","MLBACTUATORPATHADDPOINT","MLBACTUATORPATHREMOVEPOINTS",
+"MLBACTUATORPROPERTY","MLBACTUATORQUITAPP","MLBACTUATORRANDOM","MLBACTUATORRELATIVEPOSE",
+"MLBACTUATORSOUND","MLBACTUATORVISIBILITY","MLBACTUATORANIM","MLBCONTROLLERAND",
+"MLBCONTROLLERNAND","MLBCONTROLLERNOR","MLBCONTROLLEROR","MLBCONTROLLERSCRIPT",
+"MLBSENSORACTUATOR","MLBSENSORALWAYS","MLBSENSORCOLLISION","MLBSENSORDELAY",
+"MLBSENSORKEYBOARD","MLBSENSORNEAR","MLBSENSORPROPERTY","MLBSENSORRANDOM","GROUND",
+"DYNAMICOBJECT","STATICOBJECT","'='","'{'","'}'","','","'('","')'","begin","maos",
+"mao","mao_properties","mao_property","def_maomark","@1","param_maomark","def_maomarksgroup",
 "@2","param_maomarksgroup","def_maorenderable2dimage","@3","param_maorenderable2dimage",
-"def_maorenderable2dtext","@4","param_maorenderable2dtext","def_maorenderable3dorj",
-"@5","param_maorenderable3dorj","def_maorenderable3dline","@6","param_maorenderable3dline",
-"def_maorenderable3dpath","@7","param_maorenderable3dpath","def_maorenderable3dteapot",
-"@8","param_maorenderable3dteapot","ground","optparam_ground","physicobj","param_dynamicobj",
-"optparam_dynamicobj","mlbs","mlb","def_mlb","mlbactuator","mlbcontroller","mlbsensor",
-"def_mlbactuatoradddynamic","param_mlbactuatoradddynamic","optparam_mlbactuatoradddynamic",
-"def_mlbactuatorang","param_mlbactuatorang","def_mlbactuatorchangepose","param_mlbactuatorchangepose",
+"def_maorenderable2dtext","@4","param_maorenderable2dtext","def_maorenderable3dmodel",
+"@5","param_maorenderable3dmodel","def_maorenderable3dline","@6","param_maorenderable3dline",
+"def_maorenderable3dpath","@7","param_maorenderable3dpath","ground","param_ground",
+"physicobj","param_dynamicobj","mlbs","mlb","def_mlb","mlbactuator","mlbcontroller",
+"mlbsensor","def_mlbactuatoradddynamic","param_mlbactuatoradddynamic","def_mlbactuatorang",
+"param_mlbactuatorang","def_mlbactuatorchangepose","param_mlbactuatorchangepose",
 "def_mlbactuatordistance","param_mlbactuatordistance","def_mlbactuatorpathaddpoint",
 "param_mlbactuatorpathaddpoint","def_mlbactuatorpathremovepoints","param_mlbactuatorpathremovepoints",
 "def_mlbactuatorproperty","param_mlbactuatorproperty","param_mlbactuatorproperty2",
 "def_mlbactuatorquitapp","param_mlbactuatorquitapp","def_mlbactuatorrandom",
 "param_mlbactuatorrandom","def_mlbactuatorrelativepose","param_mlbactuatorrelativepose",
 "def_mlbactuatorsound","param_mlbactuatorsound","def_mlbactuatorvisibility",
-"param_mlbactuatorvisibility","def_mlbactuatoranimorej","param_mlbactuatoranimorej",
+"param_mlbactuatorvisibility","def_mlbactuatoranim","param_mlbactuatoranim",
 "def_mlbcontrollerand","list_mlbcontrollerand","def_mlbcontrollernand","list_mlbcontrollernand",
 "def_mlbcontrolleror","list_mlbcontrolleror","def_mlbcontrollernor","list_mlbcontrollernor",
 "def_mlbcontrollerscript","def_mlbsensoractuator","param_mlbsensoractuator",
@@ -1024,315 +1019,329 @@ static const char * const yytname[] = {   "$","error","$illegal.","INTEGER",
 #endif
 
 static const short yyr1[] = {     0,
-    97,    98,    98,    99,    99,    99,    99,    99,    99,    99,
-    99,   100,   100,   101,   101,   101,   101,   101,   101,   101,
-   101,   101,   101,   103,   102,   104,   105,   105,   107,   106,
-   108,   108,   110,   109,   111,   113,   112,   114,   116,   115,
-   117,   119,   118,   120,   122,   121,   123,   125,   124,   126,
-   127,   127,   128,   128,   129,   129,   129,   130,   131,   131,
-   131,   132,   132,   133,   133,   133,   134,   135,   135,   135,
-   135,   135,   135,   135,   135,   135,   135,   135,   135,   135,
-   136,   136,   136,   136,   136,   137,   137,   137,   137,   137,
-   137,   137,   137,   138,   139,   140,   140,   140,   140,   141,
-   142,   143,   144,   144,   144,   145,   146,   147,   148,   149,
-   150,   151,   151,   152,   153,   154,   155,   156,   157,   158,
-   159,   160,   161,   162,   163,   164,   165,   165,   166,   167,
-   167,   167,   168,   169,   169,   169,   170,   171,   171,   171,
-   172,   173,   173,   173,   174,   175,   176,   177,   178,   179,
-   180,   181,   182,   183,   184,   185,   186,   187,   187,   188,
-   188,   189,   190,   191,   192,   192,   193,   193,   194,   194,
-   195,   196,   197,   198,   199,   200,   200,   200,   200,   200,
-   201,   201,   202,    -1,   203,   204,   205
+    94,    95,    95,    96,    96,    96,    96,    96,    96,    96,
+    97,    97,    98,    98,    98,    98,    98,    98,    98,    98,
+    98,    98,   100,    99,   101,   101,   101,   101,   103,   102,
+   104,   104,   106,   105,   107,   107,   107,   107,   107,   109,
+   108,   110,   110,   110,   110,   110,   110,   112,   111,   113,
+   113,   113,   113,   115,   114,   116,   116,   116,   116,   116,
+   118,   117,   119,   119,   119,   119,   120,   120,   121,   121,
+   121,   121,   121,   121,   122,   122,   122,   123,   123,   123,
+   123,   123,   124,   124,   125,   125,   125,   126,   127,   127,
+   127,   127,   127,   127,   127,   127,   127,   127,   127,   127,
+   127,   128,   128,   128,   128,   128,   129,   129,   129,   129,
+   129,   129,   129,   129,   130,   131,   131,   131,   131,   131,
+   132,   133,   133,   133,   134,   135,   135,   135,   136,   137,
+   137,   137,   138,   139,   140,   141,   142,   142,   143,   144,
+   145,   146,   147,   148,   149,   150,   150,   150,   150,   151,
+   152,   153,   154,   155,   156,   156,   157,   158,   158,   158,
+   159,   160,   160,   160,   161,   162,   162,   162,   163,   164,
+   164,   164,   165,   166,   167,   168,   169,   170,   171,   172,
+   173,   174,   175,   175,   175,   176,   177,   177,   177,   178,
+   178,   179,   179,   180,   181,   182,   183,   183,   184,   184,
+   185,   185,   186,   187,   188,   189,   190,   191,   191,   191,
+   191,   191,   192,   192,   193,    -1,   194,   195,   196
 };
 
 static const short yyr2[] = {     0,
-     5,     2,     0,     1,     1,     1,     1,     1,     1,     1,
-     1,     2,     0,     4,     2,     4,     2,     4,     2,     4,
-     2,     4,     2,     0,    10,     7,     3,     0,     0,    12,
-     3,     1,     0,     9,    12,     0,     9,    15,     0,    10,
-    12,     0,    10,    12,     0,    10,     9,     0,    10,     6,
-    10,     0,     6,     0,     4,     6,     0,     7,     4,     4,
-     0,     2,     0,     2,     2,     2,     0,     1,     1,     1,
+     1,     2,     0,     1,     1,     1,     1,     1,     1,     1,
+     2,     0,     4,     2,     4,     2,     4,     2,     4,     2,
+     4,     2,     0,    10,     4,     4,     4,     0,     0,    12,
+     3,     1,     0,     9,     4,     4,     4,     4,     0,     0,
+     9,     4,     4,     4,     4,     4,     0,     0,    10,     4,
+     4,     4,     0,     0,    10,     4,     4,     4,     4,     0,
+     0,    10,     4,     4,     4,     0,     4,     0,     0,     4,
+     4,     4,     4,     0,     4,     6,     0,     4,     4,     4,
+     4,     0,     2,     0,     2,     2,     2,     0,     1,     1,
      1,     1,     1,     1,     1,     1,     1,     1,     1,     1,
      1,     1,     1,     1,     1,     1,     1,     1,     1,     1,
-     1,     1,     1,     5,     4,     4,     4,     4,     0,     5,
-     6,     5,     2,     6,     6,     5,     6,     5,     0,     5,
-     0,     5,     5,     9,     9,     5,     0,     5,     3,     5,
-     9,     5,     3,     5,     3,     5,     6,     3,     2,     3,
-     1,     0,     2,     3,     1,     0,     2,     3,     1,     0,
-     2,     3,     1,     0,     7,     5,     3,     5,     0,     5,
-     3,     5,     3,     5,     6,     5,     6,     5,     5,     9,
-    12,     9,     5,     3,     2,     0,     5,     3,     3,     1,
-     1,     1,     1,     1,    16,     1,     1,     1,     1,     1,
-     3,     1,     5,     5,     7,     7,     1
+     1,     1,     1,     1,     5,     4,     4,     4,     4,     0,
+     5,     4,     4,     0,     5,     2,     6,     6,     5,     4,
+     4,     0,     5,     0,     5,     0,     5,     5,     9,     9,
+     5,     0,     5,     3,     5,     4,     4,     4,     0,     5,
+     3,     5,     3,     5,     6,     3,     2,     3,     1,     0,
+     2,     3,     1,     0,     2,     3,     1,     0,     2,     3,
+     1,     0,     7,     5,     3,     5,     0,     5,     3,     5,
+     3,     5,     4,     4,     0,     5,     4,     4,     0,     5,
+     5,     9,    12,     9,     5,     3,     2,     0,     5,     3,
+     3,     1,     1,     1,     1,     1,    16,     1,     1,     1,
+     1,     1,     3,     1,     5,     5,     7,     7,     1
 };
 
-static const short yydefact[] = {     0,
-     0,   187,     0,     3,     0,     0,     0,     0,     0,     0,
-     0,     0,     0,     1,     2,     4,     5,     6,     7,     8,
-     9,    10,    11,     0,     0,     0,     0,     0,     0,     0,
-     0,     0,    29,     0,     0,     0,     0,     0,     0,     0,
-    24,     0,     0,    33,     0,    36,     0,    42,     0,    39,
-     0,    45,     0,    48,     0,    13,     0,     0,    13,     0,
-    13,     0,    13,     0,    13,     0,    13,     0,    13,   174,
-     0,    63,     0,     0,    63,     0,    63,   173,     0,    63,
-     0,    63,     0,    63,     0,    63,     0,     0,     0,     0,
-     0,     0,    12,    67,    13,    32,     0,    67,     0,    67,
-     0,    67,     0,    67,     0,    67,     0,    67,     0,    15,
-    17,    21,    19,    23,    62,     0,    52,    63,     0,     0,
-     0,     0,     0,     0,    57,     0,    57,     0,    57,     0,
-    57,    28,     0,     0,     0,     0,     0,     0,     0,     0,
+static const short yydefact[] = {     3,
+     1,     0,     0,     0,     0,     0,     0,     0,     2,     4,
+     5,     6,     7,     8,     9,    10,   219,     0,     0,     0,
+     0,     0,     0,     0,    28,    29,    39,    47,    60,    53,
+    66,     0,     0,     0,    23,     0,     0,     0,     0,     0,
+    33,     0,     0,     0,     0,     0,    40,     0,     0,     0,
+    54,     0,     0,     0,    48,     0,     0,     0,    61,     0,
+     0,     0,    12,     0,     0,     0,     0,     0,    12,     0,
+     0,     0,     0,     0,    12,     0,     0,     0,    12,     0,
+     0,     0,    12,     0,     0,     0,    12,   206,    28,   205,
+    28,     0,    28,    84,     0,    39,     0,    39,   203,    39,
+    39,    84,    47,    47,    47,     0,    47,    47,    84,    60,
+    60,    60,    84,    53,    53,    53,    84,    66,    66,    66,
+    84,    25,    26,     0,    27,     0,     0,     0,     0,     0,
+    11,    88,    12,    32,    35,     0,    36,    37,    38,    88,
+    42,    43,    45,     0,    46,    44,    88,    56,    57,    58,
+    88,    51,    50,    52,    88,    63,    64,    65,    88,     0,
+    14,    16,    20,    18,    22,    83,     0,    68,    84,     0,
+     0,     0,     0,     0,    77,    77,    77,     0,     0,     0,
      0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
-   132,   136,   144,   140,     0,     0,     0,     0,     0,     0,
-     0,     0,     0,    64,    65,    66,    68,    69,    70,    71,
-    72,    73,    74,    75,    76,    77,    78,    79,    80,    81,
-    82,    83,    84,    85,    86,    87,    88,    89,    90,    91,
-    92,    93,     0,     0,   165,     0,   170,    67,    31,     0,
-     0,    34,   171,     0,    37,     0,     0,     0,     0,     0,
-     0,     0,     0,     0,    50,     0,     0,    26,    14,    16,
-    20,   172,    18,     0,    22,     0,     0,     0,     0,     0,
-     0,     0,     0,     0,     0,     0,     0,     0,   129,   131,
-   133,   135,   141,   143,   137,   139,     0,     0,     0,     0,
-     0,     0,     0,     0,     0,     0,    25,     0,     0,    52,
-     0,     0,     0,     0,     0,     0,     0,    43,     0,    40,
-     0,    46,    49,     0,     0,     0,     0,     0,     0,   109,
-   111,     0,   117,     0,     0,     0,     0,     0,     0,     0,
-     0,     0,     0,     0,   149,     0,     0,     0,     0,     0,
-     0,     0,   168,   170,   169,     0,     0,     0,     0,     0,
-     0,     0,     0,     0,     0,     0,    27,     0,     0,     0,
+     0,     0,     0,     0,     0,     0,   160,   164,   172,   168,
+     0,     0,     0,     0,     0,     0,     0,     0,     0,    85,
+    86,    87,    89,    90,    91,    92,    93,    94,    95,    96,
+    97,    98,    99,   100,   101,   102,   103,   104,   105,   106,
+   107,   108,   109,   110,   111,   112,   113,   114,     0,     0,
+   197,     0,   202,    88,    31,     0,    34,     0,    41,     0,
+     0,     0,     0,     0,     0,    13,    15,    19,   204,    17,
+    21,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+     0,     0,     0,     0,   157,   159,   161,   163,   169,   171,
+   165,   167,     0,     0,     0,     0,     0,     0,     0,     0,
+     0,    69,    24,     0,     0,    68,   215,     0,    82,     0,
+    55,    49,    62,     0,   120,   124,     0,   132,   134,   136,
+     0,   142,     0,   149,     0,     0,     0,     0,     0,     0,
+     0,     0,     0,   177,     0,     0,   185,   189,     0,     0,
+     0,     0,     0,     0,     0,   200,   202,   201,     0,     0,
      0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
      0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
-     0,     0,     0,   130,   134,   142,   138,     0,     0,     0,
      0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
-     0,     0,     0,     0,     0,     0,    30,     0,     0,     0,
-     0,     0,     0,    55,     0,     0,    47,     0,     0,    94,
-     0,   100,     0,     0,   102,   103,     0,   106,   108,   110,
-     0,   112,   113,   116,     0,   118,     0,   120,     0,   122,
-     0,   124,     0,   126,     0,     0,   146,   148,     0,   150,
-     0,   152,     0,   154,     0,   156,     0,   158,   159,     0,
-   163,     0,   167,   183,     0,     0,     0,     0,     0,     0,
-     0,     0,    99,     0,   182,     0,     0,     0,     0,   119,
-     0,   123,   125,   128,     0,   147,   151,   153,     0,     0,
-     0,   164,     0,     0,     0,     0,     0,     0,    56,     0,
-     0,    95,     0,     0,     0,     0,     0,     0,     0,     0,
-   145,     0,     0,     0,     0,    35,     0,   185,    44,     0,
-    41,     0,     0,     0,     0,     0,   181,     0,     0,     0,
-     0,     0,     0,     0,     0,     0,    54,     0,    61,     0,
-     0,     0,     0,   101,     0,   105,   104,   107,     0,     0,
-   127,   155,   157,     0,     0,     0,     0,    58,     0,    96,
-    97,    98,     0,     0,     0,     0,     0,     0,    51,    38,
+     0,     0,     0,     0,     0,     0,     0,     0,     0,   158,
+   162,   170,   166,     0,     0,     0,     0,     0,     0,     0,
      0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
-     0,     0,     0,   176,   177,   178,   179,   180,   114,   115,
-   121,   160,   162,     0,     0,    59,    60,     0,     0,     0,
-     0,     0,     0,     0,    53,     0,   186,   161,     0,   175,
-     0,     0,     0
+     0,     0,     0,     0,     0,     0,    67,     0,    30,   217,
+     0,     0,     0,     0,    75,     0,     0,     0,     0,     0,
+     0,   115,     0,     0,   121,     0,     0,   125,   126,     0,
+     0,   129,   133,   135,     0,   137,   138,   141,     0,   143,
+     0,     0,     0,   145,     0,   150,     0,   152,     0,   154,
+     0,     0,   174,   176,     0,   178,     0,   180,     0,     0,
+   182,     0,     0,   186,     0,   190,   191,     0,   195,    69,
+    69,    69,     0,    69,   199,    82,    82,    82,    82,     0,
+     0,   120,   120,   120,   120,   124,   124,   214,     0,     0,
+   132,   132,     0,   144,   149,   149,   149,   151,   153,   156,
+     0,   175,   179,   181,   185,   185,   189,   189,     0,   196,
+    71,    70,    72,     0,    73,    80,    81,    78,    79,    76,
+     0,   116,   117,   118,   119,   123,   122,     0,     0,     0,
+   130,   131,     0,   146,   147,   148,     0,   173,   183,   184,
+   187,   188,     0,     0,     0,   213,     0,     0,     0,     0,
+     0,     0,     0,   128,   127,     0,   155,     0,     0,     0,
+     0,     0,     0,     0,     0,     0,     0,     0,   218,     0,
+   208,   209,   210,   211,   212,   139,   140,   192,   194,     0,
+   207,     0,     0,   193,     0,     0,     0
 };
 
-static const short yydefgoto[] = {   571,
-     5,    15,    72,    93,    16,    56,    41,   218,    17,    42,
-    95,    18,    59,    44,    19,    61,    46,    20,    65,    50,
-    21,    63,    48,    22,    67,    52,    23,    69,    54,   194,
-   516,   210,   313,   518,    94,   115,   116,   164,   165,   166,
-   167,   320,   462,   168,   322,   169,   386,   170,   327,   171,
-   328,   172,   329,   173,   331,   332,   174,   333,   175,   335,
-   176,   337,   177,   339,   178,   341,   179,   343,   180,   239,
-   181,   241,   182,   245,   183,   243,   184,   185,   350,   186,
-   351,   187,   353,   188,   355,   189,   357,   190,   359,   191,
-   361,   362,   192,   364,   117,   195,   196,   544,   545,   224,
-   547,   548,   549,   434,   201,   207,   506,   197
+static const short yydefgoto[] = {   585,
+     1,     9,    94,   131,    10,    63,    35,    11,    36,   133,
+    12,    69,    41,    13,    75,    47,    14,    83,    55,    15,
+    79,    51,    16,    87,    59,   240,   335,   252,   345,   132,
+   166,   167,   210,   211,   212,   213,   352,   214,   355,   215,
+   429,   216,   361,   217,   362,   218,   363,   219,   365,   366,
+   220,   367,   221,   369,   222,   373,   223,   375,   224,   377,
+   225,   379,   226,   275,   227,   277,   228,   281,   229,   279,
+   230,   231,   386,   232,   387,   233,   389,   234,   391,   235,
+   394,   236,   397,   237,   399,   400,   238,   402,   168,   241,
+   242,   571,   572,    92,   574,   575,   576,   487,    98,   107,
+   474,   243
 };
 
-static const short yypact[] = {   -30,
-    17,-32768,   -47,-32768,   113,    17,    17,    17,    17,    17,
-    17,    17,    17,-32768,-32768,-32768,-32768,-32768,-32768,-32768,
--32768,-32768,-32768,   -45,   -37,   -26,   -23,   -21,   -17,   -14,
-    -6,    84,-32768,    94,    96,    91,   109,   110,   114,    37,
--32768,   115,    39,-32768,    41,-32768,    42,-32768,    43,-32768,
-    72,-32768,    83,-32768,   171,-32768,    87,   171,-32768,   171,
--32768,   177,-32768,   177,-32768,   177,-32768,   177,-32768,-32768,
-   167,    65,    17,   168,    65,   169,    65,-32768,   170,    65,
-   164,    65,   172,    65,   162,    65,    98,    17,    17,    17,
-    17,    17,-32768,     9,-32768,   100,   102,     1,   103,     1,
-   105,    -8,   108,    -8,   111,    -8,   117,    -8,   177,   145,
-   146,   147,   148,   149,-32768,   150,    27,    65,    17,   112,
-     7,   194,    10,   151,    15,   171,    15,   151,    15,    17,
-    15,   173,   194,   177,   171,   197,   177,    17,    17,    17,
-    17,    17,    17,    17,    17,    17,    17,    17,    17,    17,
-    17,    17,    17,    17,    17,    17,    17,    17,    17,    17,
-    17,    17,    17,-32768,-32768,-32768,-32768,-32768,-32768,-32768,
+static const short yypact[] = {-32768,
+   121,    15,    15,    15,    15,    15,    15,    15,-32768,-32768,
+-32768,-32768,-32768,-32768,-32768,-32768,-32768,   -45,   -39,   -21,
+    16,    33,    50,    55,    62,-32768,   192,   126,    69,    71,
+    81,    53,    65,   130,-32768,    96,   134,   136,   140,   142,
+-32768,   144,   178,   181,   182,   184,-32768,   185,   186,   188,
+-32768,   189,   190,   191,-32768,   193,   194,   195,-32768,    92,
+   165,   165,-32768,   196,    92,   168,   277,   277,-32768,    92,
+   277,   168,   197,    92,-32768,   165,   197,    15,-32768,    92,
+   165,    15,-32768,   165,   197,    15,-32768,-32768,    62,-32768,
+    62,   165,    62,   161,    15,   192,   277,   192,-32768,   192,
+   192,   161,   126,   126,   126,   277,   126,   126,   161,    69,
+    69,    69,   161,    71,    71,    71,   161,    81,    81,    81,
+   161,-32768,-32768,   165,-32768,    15,    15,    15,    15,    15,
+-32768,    12,-32768,   199,-32768,   200,-32768,-32768,-32768,    10,
+-32768,-32768,-32768,   202,-32768,-32768,    10,-32768,-32768,-32768,
+     5,-32768,-32768,-32768,     5,-32768,-32768,-32768,     5,   165,
+   198,   206,   207,   209,   210,-32768,   261,    22,   161,    15,
+   277,    13,   277,    14,    23,    23,    23,   165,   277,   165,
+    92,   276,   165,    15,    15,    15,    15,    15,    15,    15,
+    15,    15,    15,    15,    15,    15,    15,    15,    15,    15,
+    15,    15,    15,    15,    15,    15,    15,    15,    15,-32768,
 -32768,-32768,-32768,-32768,-32768,-32768,-32768,-32768,-32768,-32768,
 -32768,-32768,-32768,-32768,-32768,-32768,-32768,-32768,-32768,-32768,
--32768,-32768,   118,   153,-32768,   195,   154,     9,-32768,   194,
-   222,-32768,-32768,   224,-32768,   194,   223,   158,   160,   161,
-   227,   163,   229,   166,-32768,   174,   178,-32768,-32768,-32768,
--32768,-32768,-32768,   177,-32768,   176,   179,   181,   182,   183,
-   185,   186,   187,   188,   189,   190,   191,   192,   165,-32768,
-   198,-32768,   199,-32768,   200,-32768,   193,   204,   205,   206,
-   207,   208,   209,   210,   211,   212,-32768,    17,    17,    27,
-   213,   215,   216,   217,   219,   214,   235,-32768,   220,-32768,
-   221,-32768,-32768,   177,   177,   226,   228,    45,   234,-32768,
--32768,   248,-32768,   231,   238,   288,   266,   268,    17,    17,
-    17,    17,   300,   275,-32768,   285,   291,   283,   289,   286,
-   278,   233,-32768,   -11,-32768,   236,   194,   194,   171,   194,
-    17,   237,   239,   240,   171,    17,-32768,   177,   241,   244,
-   245,   247,   252,   255,    14,   256,   249,   258,   260,   261,
-   263,   264,   265,   267,   269,   271,   270,   273,   276,   274,
-   277,   279,   282,-32768,-32768,-32768,-32768,   290,   292,   284,
-   287,   294,   296,   299,   305,   306,   308,   309,   312,   313,
-   315,   317,   318,   320,   171,    17,-32768,   257,   307,   321,
-   243,   331,   177,-32768,   171,   343,-32768,   177,    17,-32768,
-    17,-32768,   171,   171,-32768,    45,    17,-32768,-32768,-32768,
-   171,-32768,-32768,-32768,    17,-32768,    17,-32768,   171,-32768,
-   197,-32768,   171,-32768,   171,    17,-32768,-32768,    17,-32768,
-   194,-32768,   171,-32768,    17,-32768,   171,-32768,-32768,   177,
--32768,   280,-32768,-32768,   322,   323,   194,   324,   325,   326,
-   327,   177,-32768,   339,   367,   346,   295,   351,   365,-32768,
-   377,-32768,-32768,   387,   329,-32768,-32768,-32768,   376,   378,
-   390,-32768,   332,   194,   112,   328,    17,   333,-32768,    17,
-   177,    21,   334,    17,   335,   338,   340,   341,   342,   344,
--32768,   345,   348,   349,   177,-32768,   412,-32768,-32768,   171,
--32768,   177,   350,   352,   354,   171,-32768,   353,   353,    17,
-    17,    17,   171,   171,   177,    17,   385,   356,-32768,   177,
-   194,   177,   353,-32768,   177,-32768,-32768,-32768,   400,   404,
--32768,-32768,-32768,    77,   359,   363,   151,    92,   177,-32768,
--32768,-32768,   364,   368,   369,   372,   373,   197,-32768,-32768,
-   374,   375,   177,   177,    54,   197,    54,   104,   405,   177,
-   353,   177,   366,-32768,-32768,   177,-32768,-32768,-32768,-32768,
--32768,-32768,-32768,   429,   379,-32768,-32768,   177,   177,   380,
-   353,   177,   381,   104,-32768,   177,-32768,-32768,   177,-32768,
-   471,   475,-32768
+-32768,-32768,-32768,-32768,-32768,-32768,-32768,-32768,   211,   212,
+-32768,   274,   205,    12,-32768,   213,-32768,   214,-32768,   218,
+   219,   220,   221,   222,   165,-32768,-32768,-32768,-32768,-32768,
+-32768,   224,   225,   226,   257,   258,   259,   260,   262,   263,
+   265,   266,   267,   268,   270,-32768,   273,-32768,   275,-32768,
+   278,-32768,   269,   279,   284,   288,   289,   290,   291,   292,
+   293,    20,-32768,    15,    15,    22,-32768,   277,    25,   240,
+-32768,-32768,-32768,   165,   208,    52,   148,    89,-32768,-32768,
+   314,-32768,   272,    11,   283,   264,   331,    15,    15,    15,
+    15,   367,   345,-32768,   355,   282,    82,    43,   351,   346,
+   300,   302,   303,   304,   305,-32768,    17,-32768,   306,   308,
+   311,   315,   316,   317,   312,   318,   165,   319,   322,   323,
+   324,   325,   329,   330,   333,   336,   338,    26,   339,   343,
+   342,   344,   352,   347,   353,   354,   356,   348,   357,   360,
+   361,   363,   362,   366,   365,   368,   369,   370,   371,-32768,
+-32768,-32768,-32768,   374,   375,   376,   377,   380,   379,   382,
+   381,   384,   385,   386,   387,   389,   390,   391,   392,   393,
+   396,   395,   165,    92,   276,   301,-32768,    15,-32768,-32768,
+   165,   301,   165,    92,-32768,    92,   165,    15,   277,   165,
+   301,-32768,    92,    15,-32768,    92,    92,-32768,   148,    15,
+    15,-32768,-32768,-32768,    92,-32768,-32768,-32768,    15,-32768,
+    15,    15,   276,-32768,    92,-32768,   276,-32768,    92,-32768,
+    92,    15,-32768,-32768,    15,-32768,   277,-32768,    92,    92,
+-32768,    15,   165,-32768,    92,-32768,-32768,   165,-32768,    20,
+    20,    20,   165,    20,-32768,    25,    25,    25,    25,   397,
+   165,   208,   208,   208,   208,    52,    52,   399,   407,   398,
+    89,    89,   388,-32768,    11,    11,    11,-32768,-32768,   421,
+   400,-32768,-32768,-32768,    82,    82,    43,    43,   426,-32768,
+-32768,-32768,-32768,   373,-32768,-32768,-32768,-32768,-32768,-32768,
+   165,-32768,-32768,-32768,-32768,-32768,-32768,    15,   401,   403,
+-32768,-32768,   404,-32768,-32768,-32768,   405,-32768,-32768,-32768,
+-32768,-32768,   406,   165,   165,-32768,   301,   301,    15,    92,
+    15,   383,   165,-32768,-32768,   428,-32768,   172,   165,   165,
+   408,   409,   410,   328,   165,   154,   154,   155,-32768,   165,
+-32768,-32768,   165,-32768,-32768,-32768,-32768,-32768,-32768,   442,
+-32768,   412,   155,-32768,   486,   488,-32768
 };
 
 static const short yypgoto[] = {-32768,
--32768,-32768,   116,-32768,-32768,-32768,-32768,-32768,-32768,-32768,
-   357,-32768,-32768,-32768,-32768,-32768,-32768,-32768,-32768,-32768,
--32768,-32768,-32768,-32768,-32768,-32768,-32768,-32768,-32768,   218,
--32768,   -84,-32768,-32768,   -22,-32768,-32768,-32768,-32768,-32768,
--32768,-32768,-32768,-32768,-32768,-32768,   201,-32768,-32768,-32768,
+-32768,-32768,   -12,-32768,-32768,-32768,   138,-32768,-32768,   334,
+-32768,-32768,   125,-32768,-32768,   112,-32768,-32768,   133,-32768,
+-32768,    21,-32768,-32768,   132,   215,  -320,    80,  -237,   -57,
+-32768,-32768,-32768,-32768,-32768,-32768,  -239,-32768,  -228,-32768,
+   201,-32768,  -229,-32768,-32768,-32768,-32768,-32768,-32768,-32768,
+-32768,-32768,-32768,-32768,-32768,  -242,-32768,-32768,-32768,-32768,
 -32768,-32768,-32768,-32768,-32768,-32768,-32768,-32768,-32768,-32768,
 -32768,-32768,-32768,-32768,-32768,-32768,-32768,-32768,-32768,-32768,
--32768,-32768,-32768,-32768,-32768,-32768,-32768,-32768,-32768,-32768,
--32768,-32768,-32768,-32768,-32768,-32768,-32768,-32768,-32768,-32768,
--32768,-32768,-32768,-32768,   -70,-32768,  -242,  -108,  -133,   -31,
-   -40,  -111,  -497,  -371,    25,  -127,  -447,    -1
+  -241,-32768,  -240,-32768,-32768,-32768,-32768,-32768,  -108,-32768,
+  -279,   -60,  -172,   -43,   -51,   -49,  -506,  -411,   423,   -37,
+  -400,    -2
 };
 
 
-#define	YYLAST		538
+#define	YYLAST		565
 
 
-static const short yytable[] = {     3,
-   213,   366,   223,  -166,    24,    25,    26,    27,    28,    29,
-    30,    31,  -166,   204,    71,   303,   305,    74,     2,    76,
-  -166,     2,     1,   440,   219,   225,     2,   121,     2,   123,
-    79,   125,    81,   127,    83,   129,    85,   131,     2,   552,
-   554,   507,   212,     4,   214,    32,   216,   323,   324,   483,
-   484,   485,    98,    33,   100,   522,   203,   102,    78,   104,
-    70,   106,   222,   108,    34,     2,   568,    35,    88,    36,
-    89,    96,    90,    37,    91,    92,    38,   132,   323,   324,
-  -166,  -166,   259,  -166,    39,   211,   110,   111,   112,   113,
-   114,   261,  -166,   557,   221,   198,  -166,   264,   202,    40,
-  -166,   205,   220,   208,   209,   385,   203,    47,    78,    43,
-    70,    45,   222,   565,   193,   526,   527,    96,   508,   509,
-   510,   531,   532,   423,   514,    49,    51,   260,   215,    55,
-    53,    58,    57,    60,    62,    64,   226,   227,   228,   229,
-   230,   231,   232,   233,   234,   235,   236,   237,   238,   240,
-   242,   244,   246,   247,   248,   249,   250,   251,   252,   253,
-   254,   255,   317,   550,    66,   553,     6,     7,     8,     9,
-    10,    11,    12,    13,    75,    68,    77,    70,    80,    73,
-    82,    78,    84,    87,    86,    99,    97,   103,   107,   101,
-   109,   105,   275,   119,   120,   122,   203,   124,   368,   369,
-   126,   371,   217,   128,    14,   222,   200,   258,   256,   130,
-   118,   138,   139,   140,   141,   142,   143,   144,   145,   146,
-   147,   148,   149,   150,   151,   152,   153,   154,   155,   156,
-   157,   158,   159,   160,   161,   162,   163,   133,   134,   135,
-   136,   137,   262,   318,   257,   206,   263,   259,   266,   265,
-   267,   269,   268,   319,   270,   271,   304,   272,   289,   302,
-   321,   326,   312,   334,   336,   273,   276,   443,   370,   277,
-   274,   278,   279,   280,   376,   281,   282,   283,   284,   285,
-   286,   287,   288,   293,   314,   330,   378,   344,   345,   346,
-   347,   290,   291,   292,   294,   295,   296,   297,   298,   299,
-   300,   301,   448,   338,   340,   342,   307,   308,   309,   372,
-   310,   311,   315,   316,   377,   348,   349,   352,   456,   354,
-   356,   358,   363,   360,   422,   365,   453,   367,   425,   373,
-   374,   466,   375,   379,   430,   380,   427,   381,   382,   426,
-   388,   429,   436,   437,   383,   476,   432,   384,   387,   389,
-   439,   390,   424,   391,   392,   393,   394,   428,   442,   395,
-   396,   398,   444,   397,   445,   399,   401,   400,   402,   431,
-   463,   403,   449,   404,   458,   407,   451,   433,   408,   435,
-   464,   465,   405,   467,   406,   438,   409,   410,   452,   530,
-   521,   411,   520,   435,   539,   441,   412,   468,   413,   414,
-   461,   415,   551,   416,   446,   417,   418,   447,   419,   469,
-   420,   421,   470,   450,   454,   455,   457,   459,   472,   460,
-   471,   473,   474,   478,   475,   480,   486,   488,   556,   482,
-   489,   498,   490,   491,   492,   515,   493,   494,   524,   499,
-   495,   496,   501,   497,   502,   504,   503,   505,   517,   525,
-   500,   528,   511,   512,   529,   479,   555,   534,   481,   559,
-   535,   536,   487,   513,   537,   538,   540,   541,   519,   560,
-   572,   561,   564,   523,   573,   199,   567,   306,   325,   477,
-     0,     0,     0,     0,     0,     0,     0,   533,   435,   435,
-   435,     0,     0,     0,   435,     0,     0,     0,     0,     0,
-     0,   542,   543,   546,     0,   546,   546,     0,     0,     0,
-   558,     0,     0,     0,   275,     0,     0,     0,     0,     0,
-     0,     0,     0,     0,     0,     0,   562,   563,     0,     0,
-   566,     0,   546,   435,   569,   435,     0,   570
+static const short yytable[] = {    18,
+    19,    20,    21,    22,    23,    24,   100,   101,    89,   260,
+   104,   477,    93,    96,   336,   338,  -198,    91,   103,   492,
+   485,  -198,   108,  -198,    17,    17,    17,   494,   114,   408,
+   496,   172,   110,    17,    17,   370,   136,   115,   174,   111,
+   118,   371,   175,    25,   140,   144,   176,   119,   124,    26,
+   177,   147,   341,   342,   372,   151,   102,   356,   357,   155,
+   578,   580,   109,   159,   331,   332,   113,    27,   333,   334,
+   117,   343,   344,   395,   121,   112,   584,    32,    33,   116,
+   160,   353,   354,   120,   396,    48,    52,    53,    49,    34,
+  -198,  -198,   134,    50,  -198,    54,  -198,    56,    88,  -198,
+    57,  -198,   247,   249,    28,    58,   239,   295,   250,   251,
+   246,   244,   248,    64,   359,   428,   178,   392,   256,   360,
+   169,    29,   393,   161,   162,   163,   164,   165,   475,   258,
+   148,   149,   150,   261,   255,   296,   257,   556,    30,   558,
+    60,    42,    43,    31,    44,    45,   554,   555,    46,   511,
+   512,   513,    61,   515,   577,   579,    99,    99,    90,    90,
+    88,    88,   259,   259,   126,    17,   127,   134,   128,    90,
+   129,   130,     2,     3,     4,     5,     6,     7,     8,   356,
+   357,   262,   263,   264,   265,   266,   267,   268,   269,   270,
+   271,   272,   273,   274,   276,   278,   280,   282,   283,   284,
+   285,   286,   287,   288,   289,   290,   291,    37,   562,   563,
+    38,   304,    39,    40,   141,   142,   143,    62,   145,   146,
+   135,    65,   137,    66,   138,   139,   122,    67,   123,    68,
+   125,    70,   472,   348,   349,   350,   351,   340,   516,   517,
+   518,   519,   522,   523,   524,   525,   152,   153,   154,   156,
+   157,   158,   534,   535,   536,   253,   254,   526,   527,    97,
+   347,   531,   532,   539,   540,    71,   541,   542,    72,    73,
+   497,    74,    76,    77,   499,    78,    80,    81,    82,    99,
+    84,    85,    86,    95,   259,   179,   294,   346,   106,   170,
+   171,   337,   173,   180,   181,   295,   182,   183,   374,   292,
+   376,   293,   368,   417,   298,   297,   299,   300,   390,   301,
+   302,   303,   305,   306,   307,   380,   381,   382,   383,   184,
+   185,   186,   187,   188,   189,   190,   191,   192,   193,   194,
+   195,   196,   197,   198,   199,   200,   201,   202,   203,   204,
+   205,   206,   207,   208,   209,   308,   309,   310,   311,   364,
+   312,   313,   471,   314,   315,   316,   317,   322,   483,   470,
+   318,   476,   479,   319,   480,   320,   378,   323,   321,   478,
+   484,   486,   324,   481,   489,   490,   325,   326,   327,   328,
+   329,   330,   384,   493,   385,   388,   398,   403,   401,   404,
+   405,   406,   473,   498,   407,   409,   504,   500,   411,   501,
+   410,   415,   412,   413,   414,   416,   418,   505,   506,   419,
+   420,   421,   528,   509,   422,   482,   423,   424,   533,   508,
+   569,   488,   425,   426,   510,   427,   430,   491,   488,   514,
+   431,   432,   530,   433,   435,   439,   488,   521,   495,   488,
+   529,   434,   436,   437,   537,   438,   440,   441,   442,   502,
+   443,   444,   503,   445,   446,   447,   543,   449,   448,   507,
+   450,   451,   452,   544,   561,   453,   454,   455,   456,   457,
+   458,   459,   460,   559,   462,   461,   463,   545,   465,   464,
+   582,   466,   467,   468,   469,   586,   520,   587,   547,   538,
+   548,   549,   550,   551,   105,   566,   567,   568,   557,   583,
+   552,   553,     0,   245,     0,     0,     0,   358,     0,   560,
+   339,     0,     0,     0,     0,   564,   565,     0,     0,     0,
+     0,   570,   573,   573,   573,   546,   581,     0,     0,   124,
+     0,     0,     0,     0,     0,     0,     0,     0,     0,   573,
+     0,     0,     0,     0,     0,     0,   488,     0,   488,     0,
+     0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+     0,     0,     0,   488,   488
 };
 
-static const short yycheck[] = {     1,
-   128,    13,   136,    12,     6,     7,     8,     9,    10,    11,
-    12,    13,    12,   122,    55,   258,   259,    58,    12,    60,
-    12,    12,    53,   395,   133,   137,    12,    98,    12,   100,
-    62,   102,    64,   104,    66,   106,    68,   108,    12,   537,
-   538,   489,   127,    91,   129,    91,   131,    34,    35,    29,
-    30,    31,    75,    91,    77,   503,     3,    80,     5,    82,
-     7,    84,     9,    86,    91,    12,   564,    91,     4,    91,
-     6,    73,     8,    91,    10,    11,    91,   109,    34,    35,
-    89,    90,    94,    92,    91,   126,    88,    89,    90,    91,
-    92,   200,    92,   541,   135,   118,    88,   206,    92,    16,
-    92,    92,   134,    89,    90,    92,     3,    17,     5,    16,
-     7,    16,     9,   561,    88,    39,    40,   119,   490,   491,
-   492,    30,    31,   366,   496,    17,    17,   198,   130,    93,
-    17,    93,    18,    93,    93,    93,   138,   139,   140,   141,
-   142,   143,   144,   145,   146,   147,   148,   149,   150,   151,
-   152,   153,   154,   155,   156,   157,   158,   159,   160,   161,
-   162,   163,   274,   535,    93,   537,    54,    55,    56,    57,
-    58,    59,    60,    61,    59,    93,    61,     7,    63,    93,
-    65,     5,    67,    17,    69,    17,    19,    24,    27,    20,
-    93,    20,   224,    94,    93,    93,     3,    93,   307,   308,
-    93,   310,    30,    93,    92,     9,    95,    13,    91,    93,
-    95,    62,    63,    64,    65,    66,    67,    68,    69,    70,
-    71,    72,    73,    74,    75,    76,    77,    78,    79,    80,
-    81,    82,    83,    84,    85,    86,    87,    93,    93,    93,
-    93,    93,    21,   275,    92,    95,    23,    94,    91,    27,
-    91,    25,    92,    28,    92,    27,   258,    92,    94,    48,
-    33,    28,    49,    33,    27,    92,    91,   401,   309,    91,
-    93,    91,    91,    91,   315,    91,    91,    91,    91,    91,
-    91,    91,    91,    91,    50,    38,   318,   289,   290,   291,
-   292,    94,    94,    94,    91,    91,    91,    91,    91,    91,
-    91,    91,   411,    16,    39,    38,    94,    93,    93,   311,
-    94,    93,    93,    93,   316,    16,    42,    33,   427,    29,
-    38,    33,    45,    38,   365,    93,    47,    92,    22,    93,
-    92,    37,    93,    93,   375,    92,    94,    93,    92,    19,
-    92,   373,   383,   384,    93,   454,   378,    93,    93,    92,
-   391,    92,    96,    93,    92,    92,    92,    27,   399,    93,
-    92,    92,   403,    93,   405,    93,    93,    92,    92,    27,
-    32,    93,   413,    92,    50,    92,   417,   379,    92,   381,
-    14,    36,    93,    33,    93,   387,    93,    92,   420,   517,
-   502,    93,   501,   395,   528,   397,    92,    33,    93,    92,
-   432,    93,   536,    92,   406,    93,    92,   409,    92,    33,
-    93,    92,    26,   415,    93,    93,    93,    92,    43,    93,
-    92,    44,    33,    96,    93,    93,    93,    93,   540,   461,
-    93,    20,    93,    93,    93,    51,    93,    93,    39,   480,
-    93,    93,    93,   475,    93,   486,    93,    95,    93,    46,
-   482,    93,   493,   494,    92,   457,    52,    94,   460,    94,
-    93,    93,   464,   495,    93,    93,    93,    93,   500,    41,
-     0,    93,    93,   505,     0,   119,    96,   260,   278,   455,
-    -1,    -1,    -1,    -1,    -1,    -1,    -1,   519,   490,   491,
-   492,    -1,    -1,    -1,   496,    -1,    -1,    -1,    -1,    -1,
-    -1,   533,   534,   535,    -1,   537,   538,    -1,    -1,    -1,
-   542,    -1,    -1,    -1,   546,    -1,    -1,    -1,    -1,    -1,
-    -1,    -1,    -1,    -1,    -1,    -1,   558,   559,    -1,    -1,
-   562,    -1,   564,   535,   566,   537,    -1,   569
+static const short yycheck[] = {     2,
+     3,     4,     5,     6,     7,     8,    67,    68,    60,   182,
+    71,   412,    62,    65,   294,   295,    12,    61,    70,   431,
+   421,    12,    74,    12,    12,    12,    12,   439,    80,    13,
+   442,   140,    76,    12,    12,    25,    97,    81,   147,    77,
+    84,    31,   151,    89,   102,   106,   155,    85,    92,    89,
+   159,   109,    28,    29,    44,   113,    69,    32,    33,   117,
+   567,   568,    75,   121,    45,    46,    79,    89,    49,    50,
+    83,    47,    48,    31,    87,    78,   583,    16,    17,    82,
+   124,    30,    31,    86,    42,    17,    16,    17,    20,    28,
+    86,    87,    95,    25,    90,    25,    85,    17,     7,    90,
+    20,    90,    90,    90,    89,    25,    85,    91,    86,    87,
+   171,   169,   173,    18,    26,    90,   160,    36,   179,    31,
+   133,    89,    41,   126,   127,   128,   129,   130,   408,   181,
+   110,   111,   112,   183,   178,   244,   180,   549,    89,   551,
+    88,    16,    17,    89,    19,    20,   547,   548,    23,   470,
+   471,   472,    88,   474,   566,   567,     3,     3,     5,     5,
+     7,     7,     9,     9,     4,    12,     6,   170,     8,     5,
+    10,    11,    52,    53,    54,    55,    56,    57,    58,    32,
+    33,   184,   185,   186,   187,   188,   189,   190,   191,   192,
+   193,   194,   195,   196,   197,   198,   199,   200,   201,   202,
+   203,   204,   205,   206,   207,   208,   209,    16,    37,    38,
+    19,   255,    21,    22,   103,   104,   105,    88,   107,   108,
+    96,    88,    98,    88,   100,   101,    89,    88,    91,    88,
+    93,    88,   405,    26,    27,    28,    29,   298,   476,   477,
+   478,   479,   482,   483,   484,   485,   114,   115,   116,   118,
+   119,   120,   495,   496,   497,   176,   177,   486,   487,    92,
+   304,   491,   492,   505,   506,    88,   507,   508,    88,    88,
+   443,    88,    88,    88,   447,    88,    88,    88,    88,     3,
+    88,    88,    88,    88,     9,    88,    13,    48,    92,    91,
+    91,   294,    91,    88,    88,    91,    88,    88,    16,    89,
+    37,    90,    31,   347,    91,    93,    89,    89,    27,    90,
+    90,    90,    89,    89,    89,   318,   319,   320,   321,    59,
+    60,    61,    62,    63,    64,    65,    66,    67,    68,    69,
+    70,    71,    72,    73,    74,    75,    76,    77,    78,    79,
+    80,    81,    82,    83,    84,    89,    89,    89,    89,    36,
+    89,    89,   404,    89,    89,    89,    89,    89,   419,   403,
+    91,   411,   414,    91,   416,    91,    36,    89,    91,   413,
+   420,   423,    89,   417,   426,   427,    89,    89,    89,    89,
+    89,    89,    16,   435,    40,    31,    36,    88,    43,    88,
+    88,    88,    92,   445,    90,    90,   457,   449,    88,   451,
+    93,    90,    88,    88,    88,    88,    88,   459,   460,    88,
+    88,    88,    14,   465,    90,   418,    88,    88,    31,   463,
+    93,   424,    90,    88,   468,    88,    88,   430,   431,   473,
+    88,    90,    35,    90,    88,    88,   439,   481,   441,   442,
+    34,    90,    90,    90,    24,    90,    90,    88,    88,   452,
+    88,    90,   455,    88,    90,    88,    31,    88,    90,   462,
+    90,    88,    88,    91,    37,    90,    90,    88,    90,    88,
+    90,    88,    88,    91,    88,    90,    88,   521,    88,    90,
+    39,    90,    90,    88,    90,     0,    90,     0,    88,    90,
+    88,    88,    88,    88,    72,    88,    88,    88,   550,    88,
+   544,   545,    -1,   170,    -1,    -1,    -1,   307,    -1,   553,
+   296,    -1,    -1,    -1,    -1,   559,   560,    -1,    -1,    -1,
+    -1,   565,   566,   567,   568,   528,   570,    -1,    -1,   573,
+    -1,    -1,    -1,    -1,    -1,    -1,    -1,    -1,    -1,   583,
+    -1,    -1,    -1,    -1,    -1,    -1,   549,    -1,   551,    -1,
+    -1,    -1,    -1,    -1,    -1,    -1,    -1,    -1,    -1,    -1,
+    -1,    -1,    -1,   566,   567
 };
 
 #line 352 "/usr/share/bison++/bison.cc"
@@ -1829,671 +1838,795 @@ YYLABEL(yyreduce)
   switch (yyn) {
 
 case 1:
-#line 276 "Kernel/MSLParser.y"
-{Logger::getInstance()->out("Parsing completed succesfully! Enjoy your app "+*yyvsp[-3]. string_type );;
+#line 269 "Kernel/MSLParser.y"
+{Logger::getInstance()->out("Parsing completed succesfully! Enjoy your app!");;
     break;}
 case 2:
-#line 279 "Kernel/MSLParser.y"
+#line 272 "Kernel/MSLParser.y"
 {;
     break;}
 case 3:
-#line 280 "Kernel/MSLParser.y"
+#line 273 "Kernel/MSLParser.y"
 {;
     break;}
 case 4:
-#line 283 "Kernel/MSLParser.y"
+#line 276 "Kernel/MSLParser.y"
 {;
     break;}
 case 5:
-#line 284 "Kernel/MSLParser.y"
+#line 277 "Kernel/MSLParser.y"
 {;
     break;}
 case 6:
-#line 285 "Kernel/MSLParser.y"
+#line 278 "Kernel/MSLParser.y"
 {;
     break;}
 case 7:
-#line 286 "Kernel/MSLParser.y"
+#line 279 "Kernel/MSLParser.y"
 {;
     break;}
 case 8:
-#line 287 "Kernel/MSLParser.y"
+#line 280 "Kernel/MSLParser.y"
 {;
     break;}
 case 9:
-#line 288 "Kernel/MSLParser.y"
+#line 281 "Kernel/MSLParser.y"
 {;
     break;}
 case 10:
-#line 289 "Kernel/MSLParser.y"
+#line 282 "Kernel/MSLParser.y"
 {;
     break;}
 case 11:
-#line 290 "Kernel/MSLParser.y"
+#line 285 "Kernel/MSLParser.y"
 {;
     break;}
 case 12:
-#line 293 "Kernel/MSLParser.y"
+#line 286 "Kernel/MSLParser.y"
 {;
     break;}
 case 13:
-#line 294 "Kernel/MSLParser.y"
-{;
-    break;}
-case 14:
-#line 297 "Kernel/MSLParser.y"
+#line 289 "Kernel/MSLParser.y"
 {currentMAO->addPropertyInt(*yyvsp[-2]. string_type ,yyvsp[0]. int_type );;
     break;}
-case 15:
-#line 298 "Kernel/MSLParser.y"
+case 14:
+#line 290 "Kernel/MSLParser.y"
 {currentMAO->addPropertyInt(*yyvsp[0]. string_type );;
     break;}
-case 16:
-#line 299 "Kernel/MSLParser.y"
+case 15:
+#line 291 "Kernel/MSLParser.y"
 {currentMAO->addPropertyFloat(*yyvsp[-2]. string_type ,yyvsp[0]. float_type );;
     break;}
-case 17:
-#line 300 "Kernel/MSLParser.y"
+case 16:
+#line 292 "Kernel/MSLParser.y"
 {currentMAO->addPropertyFloat(*yyvsp[0]. string_type );;
     break;}
-case 18:
-#line 301 "Kernel/MSLParser.y"
+case 17:
+#line 293 "Kernel/MSLParser.y"
 {currentMAO->addPropertyBoolean(*yyvsp[-2]. string_type ,yyvsp[0]. bool_type );;
     break;}
-case 19:
-#line 302 "Kernel/MSLParser.y"
+case 18:
+#line 294 "Kernel/MSLParser.y"
 {currentMAO->addPropertyBoolean(*yyvsp[0]. string_type );;
     break;}
-case 20:
-#line 303 "Kernel/MSLParser.y"
+case 19:
+#line 295 "Kernel/MSLParser.y"
 {currentMAO->addPropertyString(*yyvsp[-2]. string_type ,*yyvsp[0]. string_type );;
     break;}
-case 21:
-#line 304 "Kernel/MSLParser.y"
+case 20:
+#line 296 "Kernel/MSLParser.y"
 {currentMAO->addPropertyString(*yyvsp[0]. string_type );;
     break;}
-case 22:
-#line 305 "Kernel/MSLParser.y"
+case 21:
+#line 297 "Kernel/MSLParser.y"
 {currentMAO->addPropertyPose(*yyvsp[-2]. string_type ,*yyvsp[0]. pose_type );;
     break;}
-case 23:
-#line 306 "Kernel/MSLParser.y"
+case 22:
+#line 298 "Kernel/MSLParser.y"
 {currentMAO->addPropertyPose(*yyvsp[0]. string_type );;
     break;}
-case 24:
-#line 311 "Kernel/MSLParser.y"
-{currentMAO = &MAOFactory::getInstance()->addMAOMark(*yyvsp[-2]. string_type ,*yyvsp[0]. param_type ->string1,yyvsp[0]. param_type ->float1); ((MAOMark*)currentMAO)->setOffsetMatrix(yyvsp[0]. param_type ->pose1);delete yyvsp[0]. param_type ;;
+case 23:
+#line 303 "Kernel/MSLParser.y"
+{ currentMAO = &MAOFactory::getInstance()->addMAOMark(*yyvsp[-2]. string_type ,*yyvsp[0]. param_type ->string1,yyvsp[0]. param_type ->float1); ((MAOMark*)currentMAO)->setOffsetMatrix(yyvsp[0]. param_type ->pose1);;
     break;}
-case 25:
-#line 311 "Kernel/MSLParser.y"
+case 24:
+#line 303 "Kernel/MSLParser.y"
 {;
     break;}
+case 25:
+#line 305 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(*yyvsp[0]. param_type ); yyval. param_type ->string1 = yyvsp[-1]. string_type ; ;
+    break;}
 case 26:
-#line 313 "Kernel/MSLParser.y"
-{yyval. param_type  = new MSLProperties(*yyvsp[0]. param_type ); yyval. param_type ->string1 = yyvsp[-4]. string_type ; yyval. param_type ->float1 = yyvsp[-1]. float_type ; delete yyvsp[0]. param_type ;;
+#line 306 "Kernel/MSLParser.y"
+{ yyval. param_type  = new MSLProperties(*yyvsp[0]. param_type ); yyval. param_type ->float1 = yyvsp[-1]. float_type ;  ;
     break;}
 case 27:
-#line 315 "Kernel/MSLParser.y"
-{ yyval. param_type  = new MSLProperties(); yyval. param_type ->pose1 = yyvsp[0]. pose_type ;;
+#line 307 "Kernel/MSLParser.y"
+{ yyval. param_type  = new MSLProperties(*yyvsp[0]. param_type ); yyval. param_type ->pose1 = yyvsp[-1]. pose_type ; ;
     break;}
 case 28:
-#line 316 "Kernel/MSLParser.y"
+#line 308 "Kernel/MSLParser.y"
 {yyval. param_type  = new MSLProperties();;
     break;}
 case 29:
-#line 320 "Kernel/MSLParser.y"
+#line 312 "Kernel/MSLParser.y"
 {currentMAO = &MAOFactory::getInstance()->addMAOMarksGroup(*yyvsp[-1]. string_type );;
     break;}
 case 30:
-#line 320 "Kernel/MSLParser.y"
+#line 312 "Kernel/MSLParser.y"
 {;
     break;}
 case 31:
-#line 323 "Kernel/MSLParser.y"
+#line 315 "Kernel/MSLParser.y"
 {MAOMark& mark = (MAOMark&)MAOFactory::getInstance()->getMAOPositionator3D(*yyvsp[-2]. string_type );((MAOMarksGroup*)currentMAO)->addMarktoGroup(mark);;
     break;}
 case 32:
-#line 324 "Kernel/MSLParser.y"
+#line 316 "Kernel/MSLParser.y"
 {MAOMark& mark = (MAOMark&)MAOFactory::getInstance()->getMAOPositionator3D(*yyvsp[0]. string_type );((MAOMarksGroup*)currentMAO)->addMarktoGroup(mark);;
     break;}
 case 33:
-#line 328 "Kernel/MSLParser.y"
-{currentMAO = &MAOFactory::getInstance()->addMAORenderable2DImage(*yyvsp[-2]. string_type ,*yyvsp[0]. param_type ->string1,yyvsp[0]. param_type ->btvector1->x(),yyvsp[0]. param_type ->btvector1->y(),yyvsp[0]. param_type ->int3,yyvsp[0]. param_type ->int4);delete yyvsp[0]. param_type ;;
+#line 320 "Kernel/MSLParser.y"
+{currentMAO = &MAOFactory::getInstance()->addMAORenderable2DImage(*yyvsp[-2]. string_type ,*yyvsp[0]. param_type ->string1,yyvsp[0]. param_type ->btvector1->x(),yyvsp[0]. param_type ->btvector1->y(),yyvsp[0]. param_type ->int3,yyvsp[0]. param_type ->int4);;;
     break;}
 case 34:
-#line 328 "Kernel/MSLParser.y"
+#line 320 "Kernel/MSLParser.y"
 {;
     break;}
 case 35:
-#line 330 "Kernel/MSLParser.y"
-{ yyval. param_type  = new MSLProperties(); yyval. param_type ->string1 = yyvsp[-9]. string_type ; yyval. param_type ->btvector1 = yyvsp[-6]. vector3_type ;  yyval. param_type ->int3 = yyvsp[-3]. int_type ; yyval. param_type ->int4 = yyvsp[0]. int_type ;;
+#line 322 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(*yyvsp[0]. param_type ); yyval. param_type ->string1 = yyvsp[-1]. string_type ;;
     break;}
 case 36:
-#line 333 "Kernel/MSLParser.y"
-{currentMAO = &MAOFactory::getInstance()->addMAORenderable2DText(*yyvsp[-2]. string_type ,*yyvsp[0]. param_type ->string1,yyvsp[0]. param_type ->int1,*yyvsp[0]. param_type ->string2,yyvsp[0]. param_type ->btvector1->x(),yyvsp[0]. param_type ->btvector1->y()); ((MAORenderable2DText*)currentMAO)->setColor(yyvsp[0]. param_type ->btvector2->x(),yyvsp[0]. param_type ->btvector2->y(),yyvsp[0]. param_type ->btvector2->z()); delete yyvsp[0]. param_type ;;
+#line 323 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(*yyvsp[0]. param_type ); yyval. param_type ->btvector1 = yyvsp[-1]. vector3_type ;;
     break;}
 case 37:
-#line 333 "Kernel/MSLParser.y"
-{;
+#line 324 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(*yyvsp[0]. param_type ); yyval. param_type ->int3 = yyvsp[-1]. int_type ;;
     break;}
 case 38:
-#line 335 "Kernel/MSLParser.y"
-{ yyval. param_type  = new MSLProperties(); yyval. param_type ->string1 = yyvsp[-12]. string_type ; yyval. param_type ->int1 = yyvsp[-9]. int_type ; yyval. param_type ->string2 = yyvsp[-6]. string_type ; yyval. param_type ->btvector1 = yyvsp[-3]. vector3_type ; yyval. param_type ->btvector2 = yyvsp[0]. vector3_type ;;
+#line 325 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(*yyvsp[0]. param_type ); yyval. param_type ->int4 = yyvsp[-1]. int_type ;;
     break;}
 case 39:
-#line 338 "Kernel/MSLParser.y"
-{currentMAO = &MAOFactory::getInstance()->addMAORenderable3DOrj(*yyvsp[-2]. string_type ,yyvsp[0]. param_type ->float1,*yyvsp[0]. param_type ->string1,*yyvsp[0]. param_type ->string2,*yyvsp[0]. param_type ->string3); delete yyvsp[0]. param_type ;;
+#line 326 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties();;
     break;}
 case 40:
-#line 338 "Kernel/MSLParser.y"
-{;
+#line 329 "Kernel/MSLParser.y"
+{currentMAO = &MAOFactory::getInstance()->addMAORenderable2DText(*yyvsp[-2]. string_type ,*yyvsp[0]. param_type ->string1,yyvsp[0]. param_type ->int1,*yyvsp[0]. param_type ->string2,yyvsp[0]. param_type ->btvector1->x(),yyvsp[0]. param_type ->btvector1->y()); ((MAORenderable2DText*)currentMAO)->setColor(yyvsp[0]. param_type ->btvector2->x(),yyvsp[0]. param_type ->btvector2->y(),yyvsp[0]. param_type ->btvector2->z()); ;;
     break;}
 case 41:
-#line 340 "Kernel/MSLParser.y"
-{ yyval. param_type  = new MSLProperties(); yyval. param_type  -> float1 = yyvsp[-9]. float_type ; yyval. param_type  -> string1 = yyvsp[-6]. string_type ; yyval. param_type  -> string2 = yyvsp[-3]. string_type ; yyval. param_type ->string3 = yyvsp[0]. string_type ;;
+#line 329 "Kernel/MSLParser.y"
+{;
     break;}
 case 42:
-#line 343 "Kernel/MSLParser.y"
-{currentMAO = &MAOFactory::getInstance()->addMAORenderable3DLine(*yyvsp[-2]. string_type ,yyvsp[0]. param_type ->float1,yyvsp[0]. param_type ->btvector1->x(), yyvsp[0]. param_type ->btvector1->y(), yyvsp[0]. param_type ->btvector1->z(),*yyvsp[0]. param_type ->string1,*yyvsp[0]. param_type ->string2); delete yyvsp[0]. param_type ;;
+#line 331 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(*yyvsp[0]. param_type ); yyval. param_type ->string1 = yyvsp[-1]. string_type ;;
     break;}
 case 43:
-#line 343 "Kernel/MSLParser.y"
-{;
+#line 332 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(*yyvsp[0]. param_type ); yyval. param_type ->int1 = yyvsp[-1]. int_type ;;
     break;}
 case 44:
-#line 345 "Kernel/MSLParser.y"
-{yyval. param_type  = new MSLProperties(); yyval. param_type ->float1 = yyvsp[-9]. float_type ; yyval. param_type ->btvector1 = yyvsp[-6]. vector3_type ; yyval. param_type ->string1 = yyvsp[-3]. string_type ; yyval. param_type ->string2 = yyvsp[0]. string_type ;;
+#line 333 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(*yyvsp[0]. param_type ); yyval. param_type ->string2 = yyvsp[-1]. string_type ;;
     break;}
 case 45:
-#line 348 "Kernel/MSLParser.y"
-{currentMAO = &MAOFactory::getInstance()->addMAORenderable3DPath(*yyvsp[-2]. string_type ,yyvsp[0]. param_type ->float1,yyvsp[0]. param_type ->btvector1->x(),yyvsp[0]. param_type ->btvector1->y(),yyvsp[0]. param_type ->btvector1->z(), *yyvsp[0]. param_type ->string1); delete yyvsp[0]. param_type ;;
+#line 334 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(*yyvsp[0]. param_type ); yyval. param_type ->btvector1 = yyvsp[-1]. vector3_type ;;
     break;}
 case 46:
-#line 348 "Kernel/MSLParser.y"
-{;
+#line 335 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(*yyvsp[0]. param_type ); yyval. param_type ->btvector2 = yyvsp[-1]. vector3_type ;;
     break;}
 case 47:
-#line 350 "Kernel/MSLParser.y"
-{yyval. param_type  = new MSLProperties(); yyval. param_type ->float1 = yyvsp[-6]. float_type ; yyval. param_type ->btvector1 = yyvsp[-3]. vector3_type ; yyval. param_type  -> string1 = yyvsp[0]. string_type  ;;
+#line 336 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties();;
     break;}
 case 48:
-#line 353 "Kernel/MSLParser.y"
-{currentMAO = &MAOFactory::getInstance()->addMAORenderable3DTeapot(*yyvsp[-2]. string_type ,yyvsp[0]. param_type ->float1, *yyvsp[0]. param_type ->string1); delete yyvsp[0]. param_type ;;
+#line 339 "Kernel/MSLParser.y"
+{currentMAO = &MAOFactory::getInstance()->addMAORenderable3DModel(*yyvsp[-2]. string_type ,yyvsp[0]. param_type ->float1,*yyvsp[0]. param_type ->string1,*yyvsp[0]. param_type ->string2); ;;
     break;}
 case 49:
-#line 353 "Kernel/MSLParser.y"
+#line 339 "Kernel/MSLParser.y"
 {;
     break;}
 case 50:
-#line 355 "Kernel/MSLParser.y"
-{yyval. param_type  = new MSLProperties(); yyval. param_type ->float1 = yyvsp[-3]. float_type ; yyval. param_type ->string1 = yyvsp[0]. string_type ;;
+#line 341 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(*yyvsp[0]. param_type ); yyval. param_type ->float1 = yyvsp[-1]. float_type ;;
     break;}
 case 51:
-#line 359 "Kernel/MSLParser.y"
-{ PhysicsController::getInstance()->initPhysics(); PhysicsController::getInstance()->setMAOGround(*((MAOPositionator3D*)currentMAO),*yyvsp[-5]. string_type ,yyvsp[-2]. float_type ,yyvsp[-1]. param_type ->bool1,yyvsp[-1]. param_type ->btvector1); delete yyvsp[-1]. param_type ;;
+#line 342 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(*yyvsp[0]. param_type ); yyval. param_type ->string1 = yyvsp[-1]. string_type ;;
     break;}
 case 52:
-#line 360 "Kernel/MSLParser.y"
-{;
+#line 343 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(*yyvsp[0]. param_type ); yyval. param_type ->string2 = yyvsp[-1]. string_type ;;
     break;}
 case 53:
-#line 362 "Kernel/MSLParser.y"
-{ yyval. param_type  = new MSLProperties(); yyval. param_type ->bool1 = yyvsp[-3]. bool_type ; yyval. param_type ->btvector1 = yyvsp[0]. vector3_type ;;
+#line 344 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties();;
     break;}
 case 54:
-#line 363 "Kernel/MSLParser.y"
-{yyval. param_type  = new MSLProperties();;
+#line 347 "Kernel/MSLParser.y"
+{currentMAO = &MAOFactory::getInstance()->addMAORenderable3DLine(*yyvsp[-2]. string_type ,yyvsp[0]. param_type ->float1,yyvsp[0]. param_type ->btvector1->x(), yyvsp[0]. param_type ->btvector1->y(), yyvsp[0]. param_type ->btvector1->z(),*yyvsp[0]. param_type ->string1,*yyvsp[0]. param_type ->string2); ;;
     break;}
 case 55:
-#line 367 "Kernel/MSLParser.y"
-{PhysicsController::getInstance()->addDynamicRigidBody(*((MAORenderable3D*)currentMAO),yyvsp[-1]. param_type ->float1,yyvsp[-1]. param_type ->pose1,yyvsp[-1]. param_type ->btvector1,*yyvsp[-1]. param_type ->string1);  ((MAORenderable3D*)currentMAO)->setCollisionShapeType(*yyvsp[-1]. param_type ->string1);delete yyvsp[-1]. param_type ;;
-    break;}
-case 56:
-#line 368 "Kernel/MSLParser.y"
-{PhysicsController::getInstance()->addStaticRigidBody(*((MAORenderable3D*)currentMAO),*yyvsp[-1]. string_type ); ((MAORenderable3D*)currentMAO)->setCollisionShapeType(*yyvsp[-1]. string_type );delete yyvsp[-1]. string_type ;;
-    break;}
-case 57:
-#line 369 "Kernel/MSLParser.y"
+#line 347 "Kernel/MSLParser.y"
 {;
     break;}
+case 56:
+#line 349 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(*yyvsp[0]. param_type ); yyval. param_type ->float1 = yyvsp[-1]. float_type ;;
+    break;}
+case 57:
+#line 350 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(*yyvsp[0]. param_type ); yyval. param_type ->btvector1 = yyvsp[-1]. vector3_type ;;
+    break;}
 case 58:
-#line 372 "Kernel/MSLParser.y"
-{yyval. param_type  = new MSLProperties(*yyvsp[0]. param_type ); yyval. param_type ->float1 = yyvsp[-4]. float_type ; yyval. param_type ->string1 = yyvsp[-1]. string_type ; delete yyvsp[0]. param_type ;;
+#line 351 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(*yyvsp[0]. param_type ); yyval. param_type ->string1 = yyvsp[-1]. string_type ;;
     break;}
 case 59:
-#line 374 "Kernel/MSLParser.y"
-{ yyval. param_type  = new MSLProperties(*yyvsp[-3]. param_type ); yyval. param_type ->pose1 = yyvsp[0]. pose_type ; delete yyvsp[-3]. param_type ;;
+#line 352 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(*yyvsp[0]. param_type ); yyval. param_type ->string2 = yyvsp[-1]. string_type ;;
     break;}
 case 60:
-#line 375 "Kernel/MSLParser.y"
-{yyval. param_type  = new MSLProperties(*yyvsp[-3]. param_type ); yyval. param_type ->btvector1 = yyvsp[0]. vector3_type ; delete yyvsp[-3]. param_type ;;
-    break;}
-case 61:
-#line 376 "Kernel/MSLParser.y"
+#line 353 "Kernel/MSLParser.y"
 {yyval. param_type  = new MSLProperties();;
     break;}
+case 61:
+#line 356 "Kernel/MSLParser.y"
+{currentMAO = &MAOFactory::getInstance()->addMAORenderable3DPath(*yyvsp[-2]. string_type ,yyvsp[0]. param_type ->float1,yyvsp[0]. param_type ->btvector1->x(),yyvsp[0]. param_type ->btvector1->y(),yyvsp[0]. param_type ->btvector1->z(), *yyvsp[0]. param_type ->string1); ;;
+    break;}
 case 62:
-#line 382 "Kernel/MSLParser.y"
+#line 356 "Kernel/MSLParser.y"
 {;
     break;}
 case 63:
-#line 383 "Kernel/MSLParser.y"
-{;
+#line 358 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(*yyvsp[0]. param_type ); yyval. param_type ->float1 = yyvsp[-1]. float_type ;;
     break;}
 case 64:
-#line 386 "Kernel/MSLParser.y"
-{;
+#line 359 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(*yyvsp[0]. param_type ); yyval. param_type ->btvector1 = yyvsp[-1]. vector3_type ;;
     break;}
 case 65:
-#line 387 "Kernel/MSLParser.y"
-{;
+#line 360 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(*yyvsp[0]. param_type ); yyval. param_type ->string1 = yyvsp[-1]. string_type ;;
     break;}
 case 66:
-#line 388 "Kernel/MSLParser.y"
-{;
+#line 361 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties();;
     break;}
 case 67:
-#line 391 "Kernel/MSLParser.y"
-{;
+#line 365 "Kernel/MSLParser.y"
+{ PhysicsController::getInstance()->initPhysics(); PhysicsController::getInstance()->setMAOGround(*((MAOPositionator3D*)currentMAO),*yyvsp[-1]. param_type ->string1,yyvsp[-1]. param_type ->float1, yyvsp[-1]. param_type ->bool1, yyvsp[-1]. param_type ->btvector1); ;
     break;}
 case 68:
-#line 394 "Kernel/MSLParser.y"
-{;
-    break;}
-case 69:
-#line 395 "Kernel/MSLParser.y"
+#line 366 "Kernel/MSLParser.y"
 {;
     break;}
 case 70:
-#line 396 "Kernel/MSLParser.y"
-{;
+#line 369 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(*yyvsp[0]. param_type ); yyval. param_type ->string1 = yyvsp[-1]. string_type ;;
     break;}
 case 71:
-#line 397 "Kernel/MSLParser.y"
-{;
+#line 370 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(*yyvsp[0]. param_type ); yyval. param_type ->float1 = yyvsp[-1]. float_type ;;
     break;}
 case 72:
-#line 398 "Kernel/MSLParser.y"
-{;
+#line 371 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(*yyvsp[0]. param_type ); yyval. param_type ->bool1 = yyvsp[-1]. bool_type ;;
     break;}
 case 73:
-#line 399 "Kernel/MSLParser.y"
-{;
+#line 372 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(*yyvsp[0]. param_type ); yyval. param_type ->btvector1 = yyvsp[-1]. vector3_type ;;
     break;}
 case 74:
-#line 400 "Kernel/MSLParser.y"
-{;
+#line 373 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties();;
     break;}
 case 75:
-#line 401 "Kernel/MSLParser.y"
-{;
+#line 377 "Kernel/MSLParser.y"
+{PhysicsController::getInstance()->addDynamicRigidBody(*((MAORenderable3D*)currentMAO),yyvsp[-1]. param_type ->float1,yyvsp[-1]. param_type ->pose1,yyvsp[-1]. param_type ->btvector1,*yyvsp[-1]. param_type ->string1);  ((MAORenderable3D*)currentMAO)->setCollisionShapeType(*yyvsp[-1]. param_type ->string1);;;
     break;}
 case 76:
-#line 402 "Kernel/MSLParser.y"
-{;
+#line 378 "Kernel/MSLParser.y"
+{PhysicsController::getInstance()->addStaticRigidBody(*((MAORenderable3D*)currentMAO),*yyvsp[-1]. string_type ); ((MAORenderable3D*)currentMAO)->setCollisionShapeType(*yyvsp[-1]. string_type );;;
     break;}
 case 77:
-#line 403 "Kernel/MSLParser.y"
+#line 379 "Kernel/MSLParser.y"
 {;
     break;}
 case 78:
-#line 404 "Kernel/MSLParser.y"
-{;
+#line 382 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(*yyvsp[0]. param_type ); yyval. param_type ->float1 = yyvsp[-1]. float_type ;;
     break;}
 case 79:
-#line 405 "Kernel/MSLParser.y"
-{;
+#line 383 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(*yyvsp[0]. param_type ); yyval. param_type ->string1 = yyvsp[-1]. string_type ;;
     break;}
 case 80:
-#line 406 "Kernel/MSLParser.y"
-{;
+#line 384 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(*yyvsp[0]. param_type ); yyval. param_type ->pose1 = yyvsp[-1]. pose_type ;;
     break;}
 case 81:
-#line 409 "Kernel/MSLParser.y"
-{;
+#line 385 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(*yyvsp[0]. param_type ); yyval. param_type ->btvector1 = yyvsp[-1]. vector3_type ;;
     break;}
 case 82:
-#line 410 "Kernel/MSLParser.y"
-{;
+#line 386 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties();;
     break;}
 case 83:
-#line 411 "Kernel/MSLParser.y"
+#line 391 "Kernel/MSLParser.y"
 {;
     break;}
 case 84:
-#line 412 "Kernel/MSLParser.y"
+#line 392 "Kernel/MSLParser.y"
 {;
     break;}
 case 85:
-#line 413 "Kernel/MSLParser.y"
+#line 395 "Kernel/MSLParser.y"
 {;
     break;}
 case 86:
-#line 416 "Kernel/MSLParser.y"
+#line 396 "Kernel/MSLParser.y"
 {;
     break;}
 case 87:
-#line 417 "Kernel/MSLParser.y"
+#line 397 "Kernel/MSLParser.y"
 {;
     break;}
 case 88:
-#line 418 "Kernel/MSLParser.y"
+#line 400 "Kernel/MSLParser.y"
 {;
     break;}
 case 89:
-#line 419 "Kernel/MSLParser.y"
+#line 403 "Kernel/MSLParser.y"
 {;
     break;}
 case 90:
-#line 420 "Kernel/MSLParser.y"
+#line 404 "Kernel/MSLParser.y"
 {;
     break;}
 case 91:
-#line 421 "Kernel/MSLParser.y"
+#line 405 "Kernel/MSLParser.y"
 {;
     break;}
 case 92:
-#line 422 "Kernel/MSLParser.y"
+#line 406 "Kernel/MSLParser.y"
 {;
     break;}
 case 93:
-#line 423 "Kernel/MSLParser.y"
+#line 407 "Kernel/MSLParser.y"
 {;
     break;}
 case 94:
-#line 433 "Kernel/MSLParser.y"
-{MLBFactory::getInstance()->addMLBActuatorAddDynamicObject(*yyvsp[-3]. string_type ,currentMAO->getName(),*yyvsp[-1]. param_type ->string1,yyvsp[-1]. param_type ->int1,yyvsp[-1]. param_type ->pose1,yyvsp[-1]. param_type ->btvector1); delete yyvsp[-1]. param_type ;;
+#line 408 "Kernel/MSLParser.y"
+{;
     break;}
 case 95:
-#line 435 "Kernel/MSLParser.y"
-{yyval. param_type  = new MSLProperties(*yyvsp[0]. param_type ); yyval. param_type ->string1 = yyvsp[-1]. string_type ; delete yyvsp[0]. param_type ;;
+#line 409 "Kernel/MSLParser.y"
+{;
     break;}
 case 96:
-#line 437 "Kernel/MSLParser.y"
-{yyval. param_type  = new MSLProperties(*yyvsp[-3]. param_type ); yyval. param_type ->int1 = yyvsp[0]. int_type ; delete yyvsp[-3]. param_type ; ;
+#line 410 "Kernel/MSLParser.y"
+{;
     break;}
 case 97:
-#line 438 "Kernel/MSLParser.y"
-{yyval. param_type  = new MSLProperties(*yyvsp[-3]. param_type ); yyval. param_type ->pose1 = yyvsp[0]. pose_type ; delete yyvsp[-3]. param_type ;;
+#line 411 "Kernel/MSLParser.y"
+{;
     break;}
 case 98:
-#line 439 "Kernel/MSLParser.y"
-{yyval. param_type  = new MSLProperties(*yyvsp[-3]. param_type ); yyval. param_type ->btvector1=yyvsp[0]. vector3_type ; delete yyvsp[-3]. param_type ;;
+#line 412 "Kernel/MSLParser.y"
+{;
     break;}
 case 99:
-#line 440 "Kernel/MSLParser.y"
-{yyval. param_type  = new MSLProperties();;
+#line 413 "Kernel/MSLParser.y"
+{;
     break;}
 case 100:
-#line 443 "Kernel/MSLParser.y"
-{MLBFactory::getInstance()->addMLBActuatorAng(*yyvsp[-3]. string_type ,currentMAO->getName(),*yyvsp[-1]. param_type ->maoproperty1, *yyvsp[-1]. param_type ->string2); delete yyvsp[-1]. param_type ;;
+#line 414 "Kernel/MSLParser.y"
+{;
     break;}
 case 101:
-#line 445 "Kernel/MSLParser.y"
-{yyval. param_type  = new MSLProperties(); yyval. param_type  -> maoproperty1 = yyvsp[-3]. maoproperty_type ; yyval. param_type ->string2 = yyvsp[0]. string_type ;;
+#line 415 "Kernel/MSLParser.y"
+{;
     break;}
 case 102:
-#line 448 "Kernel/MSLParser.y"
-{MLBFactory::getInstance()->addMLBActuatorChangePose(*yyvsp[-3]. string_type , currentMAO->getName(),*yyvsp[-1]. param_type ->string1, yyvsp[-1]. param_type ->btvector1, *yyvsp[-1]. param_type ->string2, yyvsp[-1]. param_type ->btvector2); delete yyvsp[-1]. param_type ;;
+#line 418 "Kernel/MSLParser.y"
+{;
     break;}
 case 103:
-#line 450 "Kernel/MSLParser.y"
-{yyval. param_type  = new MSLProperties(*yyvsp[-1]. param_type ); yyval. param_type ->fill(*yyvsp[0]. param_type ); delete yyvsp[-1]. param_type ; delete yyvsp[0]. param_type ;;
+#line 419 "Kernel/MSLParser.y"
+{;
     break;}
 case 104:
-#line 451 "Kernel/MSLParser.y"
-{yyval. param_type  = new MSLProperties(); yyval. param_type ->string1 = yyvsp[-3]. string_type ; yyval. param_type ->btvector1 = yyvsp[0]. vector3_type ;;
+#line 420 "Kernel/MSLParser.y"
+{;
     break;}
 case 105:
-#line 452 "Kernel/MSLParser.y"
-{yyval. param_type  = new MSLProperties(); yyval. param_type ->string2 = yyvsp[-3]. string_type ; yyval. param_type ->btvector2 = yyvsp[0]. vector3_type ;;
+#line 421 "Kernel/MSLParser.y"
+{;
     break;}
 case 106:
-#line 455 "Kernel/MSLParser.y"
-{MLBFactory::getInstance()->addMLBActuatorDistance(*yyvsp[-3]. string_type ,currentMAO->getName(),*yyvsp[-1]. param_type ->string1, *yyvsp[-1]. param_type ->maoproperty1); delete yyvsp[-1]. param_type ;;
+#line 422 "Kernel/MSLParser.y"
+{;
     break;}
 case 107:
-#line 457 "Kernel/MSLParser.y"
-{yyval. param_type  = new MSLProperties(); yyval. param_type ->string1 = yyvsp[-3]. string_type ; yyval. param_type ->maoproperty1 = yyvsp[0]. maoproperty_type ;;
+#line 425 "Kernel/MSLParser.y"
+{;
     break;}
 case 108:
-#line 460 "Kernel/MSLParser.y"
-{MLBFactory::getInstance()->addMLBActuatorPathAddPoint(*yyvsp[-3]. string_type ,currentMAO->getName()); delete yyvsp[-1]. param_type ;;
+#line 426 "Kernel/MSLParser.y"
+{;
     break;}
 case 109:
-#line 463 "Kernel/MSLParser.y"
-{yyval. param_type  = new MSLProperties();;
+#line 427 "Kernel/MSLParser.y"
+{;
     break;}
 case 110:
-#line 466 "Kernel/MSLParser.y"
-{MLBFactory::getInstance()->addMLBActuatorPathRemovePoints(*yyvsp[-3]. string_type ,currentMAO->getName()); delete yyvsp[-1]. param_type ;;
+#line 428 "Kernel/MSLParser.y"
+{;
     break;}
 case 111:
-#line 468 "Kernel/MSLParser.y"
-{yyval. param_type  = new MSLProperties();;
+#line 429 "Kernel/MSLParser.y"
+{;
     break;}
 case 112:
-#line 471 "Kernel/MSLParser.y"
-{MLBFactory::getInstance()->addMLBActuatorProperty(*yyvsp[-3]. string_type ,currentMAO->getName(),*yyvsp[-1]. param_type ->maoproperty1, *yyvsp[-1]. param_type ->maovalue1,*yyvsp[-1]. param_type ->string1); delete yyvsp[-1]. param_type ;;
+#line 430 "Kernel/MSLParser.y"
+{;
     break;}
 case 113:
-#line 472 "Kernel/MSLParser.y"
-{MLBFactory::getInstance()->addMLBActuatorProperty(*yyvsp[-3]. string_type ,currentMAO->getName(),*yyvsp[-1]. param_type ->maoproperty1, *yyvsp[-1]. param_type ->maoproperty2,*yyvsp[-1]. param_type ->string1); delete yyvsp[-1]. param_type ;;
+#line 431 "Kernel/MSLParser.y"
+{;
     break;}
 case 114:
-#line 474 "Kernel/MSLParser.y"
-{yyval. param_type  = new MSLProperties(); yyval. param_type  ->string1 = yyvsp[-6]. string_type ; yyval. param_type  ->maoproperty1 = yyvsp[-3]. maoproperty_type ; yyval. param_type  -> maovalue1 = yyvsp[0]. maovalue_type ;;
+#line 432 "Kernel/MSLParser.y"
+{;
     break;}
 case 115:
-#line 476 "Kernel/MSLParser.y"
-{yyval. param_type  = new MSLProperties(); yyval. param_type  ->string1 = yyvsp[-6]. string_type ; yyval. param_type  ->maoproperty1 = yyvsp[-3]. maoproperty_type ; yyval. param_type  -> maoproperty2 = yyvsp[0]. maoproperty_type ;;
+#line 442 "Kernel/MSLParser.y"
+{MLBFactory::getInstance()->addMLBActuatorAddDynamicObject(*yyvsp[-3]. string_type ,currentMAO->getName(),*yyvsp[-1]. param_type ->string1,yyvsp[-1]. param_type ->int1,yyvsp[-1]. param_type ->pose1,yyvsp[-1]. param_type ->btvector1); ;;
     break;}
 case 116:
-#line 479 "Kernel/MSLParser.y"
-{MLBFactory::getInstance()->addMLBActuatorQuitApp(*yyvsp[-3]. string_type ,currentMAO->getName()); delete yyvsp[-1]. param_type ;;
+#line 444 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(*yyvsp[0]. param_type ); yyval. param_type ->string1 = yyvsp[-1]. string_type ;;
     break;}
 case 117:
-#line 481 "Kernel/MSLParser.y"
-{ yyval. param_type  = new MSLProperties();;
+#line 445 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(*yyvsp[0]. param_type ); yyval. param_type ->int1 = yyvsp[-1]. int_type ;;
     break;}
 case 118:
-#line 484 "Kernel/MSLParser.y"
-{MLBFactory::getInstance()->addMLBActuatorRandom(*yyvsp[-3]. string_type , currentMAO->getName(),*yyvsp[-1]. param_type ->maoproperty1); delete yyvsp[-1]. param_type ;;
+#line 446 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(*yyvsp[0]. param_type ); yyval. param_type ->pose1 = yyvsp[-1]. pose_type ;;
     break;}
 case 119:
-#line 486 "Kernel/MSLParser.y"
-{yyval. param_type  = new MSLProperties(); yyval. param_type  -> maoproperty1 = yyvsp[0]. maoproperty_type ;;
+#line 447 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(*yyvsp[0]. param_type ); yyval. param_type ->btvector1 = yyvsp[-1]. vector3_type ;;
     break;}
 case 120:
-#line 489 "Kernel/MSLParser.y"
-{MLBFactory::getInstance()->addMLBActuatorRelativePose(*yyvsp[-3]. string_type ,currentMAO->getName(),*yyvsp[-1]. param_type ->string1, *yyvsp[-1]. param_type ->maoproperty1, yyvsp[-1]. param_type ->bool1); delete yyvsp[-1]. param_type ;;
+#line 448 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties();;
     break;}
 case 121:
-#line 491 "Kernel/MSLParser.y"
-{yyval. param_type  = new MSLProperties(); yyval. param_type ->string1 = yyvsp[-6]. string_type ; yyval. param_type  -> maoproperty1 = yyvsp[-3]. maoproperty_type ; yyval. param_type ->bool1 = yyvsp[0]. bool_type ;;
+#line 451 "Kernel/MSLParser.y"
+{MLBFactory::getInstance()->addMLBActuatorAng(*yyvsp[-3]. string_type ,currentMAO->getName(),*yyvsp[-1]. param_type ->maoproperty1, *yyvsp[-1]. param_type ->string2); ;;
     break;}
 case 122:
-#line 494 "Kernel/MSLParser.y"
-{MLBFactory::getInstance()->addMLBActuatorSound(*yyvsp[-3]. string_type , currentMAO->getName(),*yyvsp[-1]. param_type ->string1); delete yyvsp[-1]. param_type ;;
+#line 453 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(*yyvsp[0]. param_type ); yyval. param_type ->maoproperty1 = yyvsp[-1]. maoproperty_type ;;
     break;}
 case 123:
-#line 496 "Kernel/MSLParser.y"
-{yyval. param_type  = new MSLProperties(); yyval. param_type ->string1 = yyvsp[0]. string_type ; ;
+#line 454 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(*yyvsp[0]. param_type ); yyval. param_type ->string2 = yyvsp[-1]. string_type ;;
     break;}
 case 124:
-#line 499 "Kernel/MSLParser.y"
-{MLBFactory::getInstance()->addMLBActuatorVisibility(*yyvsp[-3]. string_type , currentMAO->getName(), yyvsp[-1]. param_type ->bool1); delete yyvsp[-1]. param_type ;;
+#line 455 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties();;
     break;}
 case 125:
-#line 501 "Kernel/MSLParser.y"
-{yyval. param_type  = new MSLProperties(); yyval. param_type  -> bool1 = yyvsp[0]. bool_type ;;
+#line 458 "Kernel/MSLParser.y"
+{MLBFactory::getInstance()->addMLBActuatorChangePose(*yyvsp[-3]. string_type , currentMAO->getName(),*yyvsp[-1]. param_type ->string1, yyvsp[-1]. param_type ->btvector1, *yyvsp[-1]. param_type ->string2, yyvsp[-1]. param_type ->btvector2); ;;
     break;}
 case 126:
-#line 504 "Kernel/MSLParser.y"
-{ MLBFactory::getInstance()->addMLBActuatorAnimOrej(*yyvsp[-3]. string_type , currentMAO->getName(), *yyvsp[-1]. param_type ->string1, yyvsp[-1]. param_type ->string2); delete yyvsp[-1]. param_type ;;
+#line 460 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(*yyvsp[-1]. param_type ); yyval. param_type ->fill(*yyvsp[0]. param_type ); ; ;;
     break;}
 case 127:
-#line 506 "Kernel/MSLParser.y"
-{yyval. param_type  = new MSLProperties(); yyval. param_type ->string1 = yyvsp[-3]. string_type ; yyval. param_type  -> string2 = yyvsp[0]. string_type ;;
+#line 461 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(); yyval. param_type ->string1 = yyvsp[-3]. string_type ; yyval. param_type ->btvector1 = yyvsp[0]. vector3_type ;;
     break;}
 case 128:
-#line 507 "Kernel/MSLParser.y"
-{ yyval. param_type  = new MSLProperties(); yyval. param_type ->string1 = yyvsp[0]. string_type ;;
+#line 462 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(); yyval. param_type ->string2 = yyvsp[-3]. string_type ; yyval. param_type ->btvector2 = yyvsp[0]. vector3_type ;;
     break;}
 case 129:
-#line 511 "Kernel/MSLParser.y"
-{;
+#line 465 "Kernel/MSLParser.y"
+{MLBFactory::getInstance()->addMLBActuatorDistance(*yyvsp[-3]. string_type ,currentMAO->getName(),*yyvsp[-1]. param_type ->string1, *yyvsp[-1]. param_type ->maoproperty1); ;;
     break;}
 case 130:
-#line 513 "Kernel/MSLParser.y"
-{MLBFactory::getInstance()->addMLBControllerAND(*yyvsp[0]. string_type , currentMAO->getName());;
+#line 467 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(*yyvsp[0]. param_type ); yyval. param_type ->string1 = yyvsp[-1]. string_type ;;
     break;}
 case 131:
-#line 514 "Kernel/MSLParser.y"
-{MLBFactory::getInstance()->addMLBControllerAND(*yyvsp[0]. string_type , currentMAO->getName());;
+#line 468 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(*yyvsp[0]. param_type ); yyval. param_type ->maoproperty1 = yyvsp[-1]. maoproperty_type ;;
     break;}
 case 132:
-#line 515 "Kernel/MSLParser.y"
-{;
+#line 469 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties();;
     break;}
 case 133:
-#line 518 "Kernel/MSLParser.y"
-{;
+#line 472 "Kernel/MSLParser.y"
+{MLBFactory::getInstance()->addMLBActuatorPathAddPoint(*yyvsp[-3]. string_type ,currentMAO->getName()); ;;
     break;}
 case 134:
-#line 520 "Kernel/MSLParser.y"
-{MLBFactory::getInstance()->addMLBControllerNAND(*yyvsp[0]. string_type , currentMAO->getName());;
+#line 475 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties();;
     break;}
 case 135:
-#line 521 "Kernel/MSLParser.y"
-{MLBFactory::getInstance()->addMLBControllerNAND(*yyvsp[0]. string_type , currentMAO->getName());;
+#line 478 "Kernel/MSLParser.y"
+{MLBFactory::getInstance()->addMLBActuatorPathRemovePoints(*yyvsp[-3]. string_type ,currentMAO->getName()); ;;
     break;}
 case 136:
-#line 522 "Kernel/MSLParser.y"
-{;
+#line 480 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties();;
     break;}
 case 137:
-#line 525 "Kernel/MSLParser.y"
-{;
+#line 483 "Kernel/MSLParser.y"
+{MLBFactory::getInstance()->addMLBActuatorProperty(*yyvsp[-3]. string_type ,currentMAO->getName(),*yyvsp[-1]. param_type ->maoproperty1, *yyvsp[-1]. param_type ->maovalue1,*yyvsp[-1]. param_type ->string1); ;;
     break;}
 case 138:
-#line 527 "Kernel/MSLParser.y"
-{MLBFactory::getInstance()->addMLBControllerOR(*yyvsp[0]. string_type , currentMAO->getName());;
+#line 484 "Kernel/MSLParser.y"
+{MLBFactory::getInstance()->addMLBActuatorProperty(*yyvsp[-3]. string_type ,currentMAO->getName(),*yyvsp[-1]. param_type ->maoproperty1, *yyvsp[-1]. param_type ->maoproperty2,*yyvsp[-1]. param_type ->string1); ;;
     break;}
 case 139:
-#line 528 "Kernel/MSLParser.y"
-{MLBFactory::getInstance()->addMLBControllerOR(*yyvsp[0]. string_type , currentMAO->getName());;
+#line 486 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(); yyval. param_type  ->string1 = yyvsp[-6]. string_type ; yyval. param_type  ->maoproperty1 = yyvsp[-3]. maoproperty_type ; yyval. param_type  -> maovalue1 = yyvsp[0]. maovalue_type ;;
     break;}
 case 140:
-#line 529 "Kernel/MSLParser.y"
-{;
+#line 488 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(); yyval. param_type  ->string1 = yyvsp[-6]. string_type ; yyval. param_type  ->maoproperty1 = yyvsp[-3]. maoproperty_type ; yyval. param_type  -> maoproperty2 = yyvsp[0]. maoproperty_type ;;
     break;}
 case 141:
-#line 532 "Kernel/MSLParser.y"
-{;
+#line 491 "Kernel/MSLParser.y"
+{MLBFactory::getInstance()->addMLBActuatorQuitApp(*yyvsp[-3]. string_type ,currentMAO->getName()); ;;
     break;}
 case 142:
-#line 534 "Kernel/MSLParser.y"
-{MLBFactory::getInstance()->addMLBControllerNOR(*yyvsp[0]. string_type , currentMAO->getName());;
+#line 493 "Kernel/MSLParser.y"
+{ yyval. param_type  = new MSLProperties();;
     break;}
 case 143:
-#line 535 "Kernel/MSLParser.y"
-{MLBFactory::getInstance()->addMLBControllerNOR(*yyvsp[0]. string_type , currentMAO->getName());;
+#line 496 "Kernel/MSLParser.y"
+{MLBFactory::getInstance()->addMLBActuatorRandom(*yyvsp[-3]. string_type , currentMAO->getName(),*yyvsp[-1]. param_type ->maoproperty1); ;;
     break;}
 case 144:
-#line 536 "Kernel/MSLParser.y"
-{;
+#line 498 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(); yyval. param_type  -> maoproperty1 = yyvsp[0]. maoproperty_type ;;
     break;}
 case 145:
-#line 539 "Kernel/MSLParser.y"
-{MLBFactory::getInstance()->addMLBControllerScript(*yyvsp[-5]. string_type ,currentMAO->getName(),*yyvsp[-1]. string_type ); delete yyvsp[-1]. string_type ;;
+#line 501 "Kernel/MSLParser.y"
+{MLBFactory::getInstance()->addMLBActuatorRelativePose(*yyvsp[-3]. string_type ,currentMAO->getName(),*yyvsp[-1]. param_type ->string1, *yyvsp[-1]. param_type ->maoproperty1, yyvsp[-1]. param_type ->bool1); ;;
     break;}
 case 146:
-#line 545 "Kernel/MSLParser.y"
-{MLBFactory::getInstance()->addMLBSensorActuator(*yyvsp[-3]. string_type , currentMAO->getName(), *yyvsp[-1]. param_type ->string1); delete yyvsp[-1]. param_type ;;
+#line 503 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(*yyvsp[0]. param_type ); yyval. param_type ->string1 = yyvsp[-1]. string_type ;;
     break;}
 case 147:
-#line 547 "Kernel/MSLParser.y"
-{yyval. param_type  = new MSLProperties(); yyval. param_type  -> string1 = yyvsp[0]. string_type ;;
+#line 504 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(*yyvsp[0]. param_type ); yyval. param_type ->maoproperty1 = yyvsp[-1]. maoproperty_type ;;
     break;}
 case 148:
-#line 550 "Kernel/MSLParser.y"
-{MLBFactory::getInstance()->addMLBSensorAlways(*yyvsp[-3]. string_type , currentMAO->getName()); delete yyvsp[-1]. param_type ;;
+#line 505 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(*yyvsp[0]. param_type ); yyval. param_type ->bool1 = yyvsp[-1]. bool_type ;;
     break;}
 case 149:
-#line 552 "Kernel/MSLParser.y"
+#line 506 "Kernel/MSLParser.y"
 {yyval. param_type  = new MSLProperties();;
     break;}
 case 150:
-#line 555 "Kernel/MSLParser.y"
-{MLBFactory::getInstance()->addMLBSensorCollision(*yyvsp[-3]. string_type ,currentMAO->getName(),*yyvsp[-1]. param_type ->string1); delete yyvsp[-1]. param_type ;;
+#line 509 "Kernel/MSLParser.y"
+{MLBFactory::getInstance()->addMLBActuatorSound(*yyvsp[-3]. string_type , currentMAO->getName(),*yyvsp[-1]. param_type ->string1); ;;
     break;}
 case 151:
-#line 557 "Kernel/MSLParser.y"
-{ yyval. param_type  = new MSLProperties(); yyval. param_type  -> string1 = yyvsp[0]. string_type ;;
+#line 511 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(); yyval. param_type ->string1 = yyvsp[0]. string_type ; ;
     break;}
 case 152:
-#line 560 "Kernel/MSLParser.y"
-{MLBFactory::getInstance()->addMLBSensorDelay(*yyvsp[-3]. string_type , currentMAO->getName(),yyvsp[-1]. param_type ->int1); delete yyvsp[-1]. param_type ;;
+#line 514 "Kernel/MSLParser.y"
+{MLBFactory::getInstance()->addMLBActuatorVisibility(*yyvsp[-3]. string_type , currentMAO->getName(), yyvsp[-1]. param_type ->bool1); ;;
     break;}
 case 153:
-#line 562 "Kernel/MSLParser.y"
-{yyval. param_type  = new MSLProperties(); yyval. param_type  -> int1 = yyvsp[0]. int_type ;;
+#line 516 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(); yyval. param_type  -> bool1 = yyvsp[0]. bool_type ;;
     break;}
 case 154:
-#line 565 "Kernel/MSLParser.y"
-{MLBFactory::getInstance()->addMLBSensorKeyboard(*yyvsp[-3]. string_type , currentMAO->getName(),*yyvsp[-1]. param_type ->string1, *yyvsp[-1]. param_type ->string2); delete yyvsp[-1]. param_type ;;
+#line 519 "Kernel/MSLParser.y"
+{ MLBFactory::getInstance()->addMLBActuatorAnim(*yyvsp[-3]. string_type , currentMAO->getName(), *yyvsp[-1]. param_type ->string1, yyvsp[-1]. param_type ->string2); ;;
     break;}
 case 155:
-#line 567 "Kernel/MSLParser.y"
-{ yyval. param_type  = new MSLProperties(); yyval. param_type  -> string1 = yyvsp[-3]. string_type ; yyval. param_type  -> string2 = yyvsp[0]. string_type ;;
+#line 521 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(); yyval. param_type ->string1 = yyvsp[-3]. string_type ; yyval. param_type  -> string2 = yyvsp[0]. string_type ;;
     break;}
 case 156:
-#line 570 "Kernel/MSLParser.y"
-{MLBFactory::getInstance()->addMLBSensorNear(*yyvsp[-3]. string_type , currentMAO->getName(),*yyvsp[-1]. param_type ->string1,yyvsp[-1]. param_type ->float1); delete yyvsp[-1]. param_type ;;
+#line 522 "Kernel/MSLParser.y"
+{ yyval. param_type  = new MSLProperties(); yyval. param_type ->string1 = yyvsp[0]. string_type ;;
     break;}
 case 157:
-#line 572 "Kernel/MSLParser.y"
-{yyval. param_type  = new MSLProperties(); yyval. param_type  ->string1 = yyvsp[-3]. string_type ; yyval. param_type ->float1 = yyvsp[0]. float_type ;;
+#line 526 "Kernel/MSLParser.y"
+{;
     break;}
 case 158:
-#line 575 "Kernel/MSLParser.y"
-{MLBFactory::getInstance()->addMLBSensorProperty(*yyvsp[-3]. string_type , currentMAO->getName(),*yyvsp[-1]. param_type ->string1, *yyvsp[-1]. param_type ->maoproperty1, yyvsp[-1]. param_type ->maovalue1, yyvsp[-1]. param_type ->maovalue2); delete yyvsp[-1]. param_type ;;
+#line 528 "Kernel/MSLParser.y"
+{MLBFactory::getInstance()->addMLBControllerAND(*yyvsp[0]. string_type , currentMAO->getName());;
     break;}
 case 159:
-#line 576 "Kernel/MSLParser.y"
-{MLBFactory::getInstance()->addMLBSensorProperty(*yyvsp[-3]. string_type , currentMAO->getName(),*yyvsp[-1]. param_type ->string1, *yyvsp[-1]. param_type ->maoproperty1, yyvsp[-1]. param_type ->maoproperty2); delete yyvsp[-1]. param_type ;;
+#line 529 "Kernel/MSLParser.y"
+{MLBFactory::getInstance()->addMLBControllerAND(*yyvsp[0]. string_type , currentMAO->getName());;
     break;}
 case 160:
-#line 578 "Kernel/MSLParser.y"
-{ yyval. param_type  = new MSLProperties(); yyval. param_type ->string1 = yyvsp[-6]. string_type ; yyval. param_type ->maoproperty1 = yyvsp[-3]. maoproperty_type ; yyval. param_type ->maovalue1 = yyvsp[0]. maovalue_type ;;
+#line 530 "Kernel/MSLParser.y"
+{;
     break;}
 case 161:
-#line 579 "Kernel/MSLParser.y"
-{ yyval. param_type  = new MSLProperties(); yyval. param_type ->string1 = yyvsp[-9]. string_type ; yyval. param_type ->maoproperty1 = yyvsp[-6]. maoproperty_type ; yyval. param_type ->maovalue1 = yyvsp[-3]. maovalue_type ; yyval. param_type ->maovalue2 = yyvsp[0]. maovalue_type ;;
+#line 533 "Kernel/MSLParser.y"
+{;
     break;}
 case 162:
-#line 581 "Kernel/MSLParser.y"
-{yyval. param_type  = new MSLProperties(); yyval. param_type ->string1 = yyvsp[-6]. string_type ; yyval. param_type ->maoproperty1 = yyvsp[-3]. maoproperty_type ; yyval. param_type ->maoproperty2 = yyvsp[0]. maoproperty_type ;;
+#line 535 "Kernel/MSLParser.y"
+{MLBFactory::getInstance()->addMLBControllerNAND(*yyvsp[0]. string_type , currentMAO->getName());;
     break;}
 case 163:
-#line 584 "Kernel/MSLParser.y"
-{MLBFactory::getInstance()->addMLBSensorRandom(*yyvsp[-3]. string_type ,currentMAO->getName(),yyvsp[-1]. param_type ->float1); delete yyvsp[-1]. param_type ;;
+#line 536 "Kernel/MSLParser.y"
+{MLBFactory::getInstance()->addMLBControllerNAND(*yyvsp[0]. string_type , currentMAO->getName());;
     break;}
 case 164:
-#line 586 "Kernel/MSLParser.y"
-{yyval. param_type  = new MSLProperties(); yyval. param_type ->float1 = yyvsp[0]. float_type ;;
+#line 537 "Kernel/MSLParser.y"
+{;
     break;}
 case 165:
-#line 592 "Kernel/MSLParser.y"
+#line 540 "Kernel/MSLParser.y"
 {;
     break;}
 case 166:
-#line 593 "Kernel/MSLParser.y"
-{;
+#line 542 "Kernel/MSLParser.y"
+{MLBFactory::getInstance()->addMLBControllerOR(*yyvsp[0]. string_type , currentMAO->getName());;
     break;}
 case 167:
+#line 543 "Kernel/MSLParser.y"
+{MLBFactory::getInstance()->addMLBControllerOR(*yyvsp[0]. string_type , currentMAO->getName());;
+    break;}
+case 168:
+#line 544 "Kernel/MSLParser.y"
+{;
+    break;}
+case 169:
+#line 547 "Kernel/MSLParser.y"
+{;
+    break;}
+case 170:
+#line 549 "Kernel/MSLParser.y"
+{MLBFactory::getInstance()->addMLBControllerNOR(*yyvsp[0]. string_type , currentMAO->getName());;
+    break;}
+case 171:
+#line 550 "Kernel/MSLParser.y"
+{MLBFactory::getInstance()->addMLBControllerNOR(*yyvsp[0]. string_type , currentMAO->getName());;
+    break;}
+case 172:
+#line 551 "Kernel/MSLParser.y"
+{;
+    break;}
+case 173:
+#line 554 "Kernel/MSLParser.y"
+{MLBFactory::getInstance()->addMLBControllerScript(*yyvsp[-5]. string_type ,currentMAO->getName(),*yyvsp[-1]. string_type ); ;;
+    break;}
+case 174:
+#line 560 "Kernel/MSLParser.y"
+{MLBFactory::getInstance()->addMLBSensorActuator(*yyvsp[-3]. string_type , currentMAO->getName(), *yyvsp[-1]. param_type ->string1); ;;
+    break;}
+case 175:
+#line 562 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(); yyval. param_type  -> string1 = yyvsp[0]. string_type ;;
+    break;}
+case 176:
+#line 565 "Kernel/MSLParser.y"
+{MLBFactory::getInstance()->addMLBSensorAlways(*yyvsp[-3]. string_type , currentMAO->getName()); ;;
+    break;}
+case 177:
+#line 567 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties();;
+    break;}
+case 178:
+#line 570 "Kernel/MSLParser.y"
+{MLBFactory::getInstance()->addMLBSensorCollision(*yyvsp[-3]. string_type ,currentMAO->getName(),*yyvsp[-1]. param_type ->string1); ;;
+    break;}
+case 179:
+#line 572 "Kernel/MSLParser.y"
+{ yyval. param_type  = new MSLProperties(); yyval. param_type  -> string1 = yyvsp[0]. string_type ;;
+    break;}
+case 180:
+#line 575 "Kernel/MSLParser.y"
+{MLBFactory::getInstance()->addMLBSensorDelay(*yyvsp[-3]. string_type , currentMAO->getName(),yyvsp[-1]. param_type ->int1); ;;
+    break;}
+case 181:
+#line 577 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(); yyval. param_type  -> int1 = yyvsp[0]. int_type ;;
+    break;}
+case 182:
+#line 580 "Kernel/MSLParser.y"
+{MLBFactory::getInstance()->addMLBSensorKeyboard(*yyvsp[-3]. string_type , currentMAO->getName(),*yyvsp[-1]. param_type ->string1, *yyvsp[-1]. param_type ->string2); ;;
+    break;}
+case 183:
+#line 582 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(*yyvsp[0]. param_type ); yyval. param_type ->string1 = yyvsp[-1]. string_type ;;
+    break;}
+case 184:
+#line 583 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(*yyvsp[0]. param_type ); yyval. param_type ->string2 = yyvsp[-1]. string_type ;;
+    break;}
+case 185:
+#line 584 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties();;
+    break;}
+case 186:
+#line 587 "Kernel/MSLParser.y"
+{MLBFactory::getInstance()->addMLBSensorNear(*yyvsp[-3]. string_type , currentMAO->getName(),*yyvsp[-1]. param_type ->string1,yyvsp[-1]. param_type ->float1); ;;
+    break;}
+case 187:
+#line 589 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(*yyvsp[0]. param_type ); yyval. param_type ->string1 = yyvsp[-1]. string_type ;;
+    break;}
+case 188:
+#line 590 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(*yyvsp[0]. param_type ); yyval. param_type ->float1 = yyvsp[-1]. float_type ;;
+    break;}
+case 189:
+#line 591 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties();;
+    break;}
+case 190:
+#line 594 "Kernel/MSLParser.y"
+{MLBFactory::getInstance()->addMLBSensorProperty(*yyvsp[-3]. string_type , currentMAO->getName(),*yyvsp[-1]. param_type ->string1, *yyvsp[-1]. param_type ->maoproperty1, yyvsp[-1]. param_type ->maovalue1, yyvsp[-1]. param_type ->maovalue2); ;;
+    break;}
+case 191:
 #line 595 "Kernel/MSLParser.y"
+{MLBFactory::getInstance()->addMLBSensorProperty(*yyvsp[-3]. string_type , currentMAO->getName(),*yyvsp[-1]. param_type ->string1, *yyvsp[-1]. param_type ->maoproperty1, yyvsp[-1]. param_type ->maoproperty2); ;;
+    break;}
+case 192:
+#line 597 "Kernel/MSLParser.y"
+{ yyval. param_type  = new MSLProperties(); yyval. param_type ->string1 = yyvsp[-6]. string_type ; yyval. param_type ->maoproperty1 = yyvsp[-3]. maoproperty_type ; yyval. param_type ->maovalue1 = yyvsp[0]. maovalue_type ;;
+    break;}
+case 193:
+#line 598 "Kernel/MSLParser.y"
+{ yyval. param_type  = new MSLProperties(); yyval. param_type ->string1 = yyvsp[-9]. string_type ; yyval. param_type ->maoproperty1 = yyvsp[-6]. maoproperty_type ; yyval. param_type ->maovalue1 = yyvsp[-3]. maovalue_type ; yyval. param_type ->maovalue2 = yyvsp[0]. maovalue_type ;;
+    break;}
+case 194:
+#line 600 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(); yyval. param_type ->string1 = yyvsp[-6]. string_type ; yyval. param_type ->maoproperty1 = yyvsp[-3]. maoproperty_type ; yyval. param_type ->maoproperty2 = yyvsp[0]. maoproperty_type ;;
+    break;}
+case 195:
+#line 603 "Kernel/MSLParser.y"
+{MLBFactory::getInstance()->addMLBSensorRandom(*yyvsp[-3]. string_type ,currentMAO->getName(),yyvsp[-1]. param_type ->float1); ;;
+    break;}
+case 196:
+#line 605 "Kernel/MSLParser.y"
+{yyval. param_type  = new MSLProperties(); yyval. param_type ->float1 = yyvsp[0]. float_type ;;
+    break;}
+case 197:
+#line 611 "Kernel/MSLParser.y"
+{;
+    break;}
+case 198:
+#line 612 "Kernel/MSLParser.y"
+{;
+    break;}
+case 199:
+#line 614 "Kernel/MSLParser.y"
 {
 				for(unsigned int i=0;i<yyvsp[-4]. vectorstr_type->size();i++){
 					MLBFactory::getInstance()->addMLBLink(currentMAO->getName(),*(yyvsp[-4]. vectorstr_type->at(i)),*yyvsp[-2]. string_type );
@@ -2502,102 +2635,102 @@ case 167:
 				for(unsigned int i=0;i<yyvsp[0]. vectorstr_type->size();i++){
 					MLBFactory::getInstance()->addMLBLink(currentMAO->getName(),*yyvsp[-2]. string_type ,*(yyvsp[0]. vectorstr_type->at(i)));
 				}
-				delete yyvsp[-4]. vectorstr_type; delete yyvsp[0]. vectorstr_type;;
+				; ;;
     break;}
-case 168:
-#line 604 "Kernel/MSLParser.y"
+case 200:
+#line 623 "Kernel/MSLParser.y"
 {
 				for(unsigned int i=0;i<yyvsp[-2]. vectorstr_type->size();i++){
 					for(unsigned int j=0;j<yyvsp[0]. vectorstr_type->size();j++){
 						MLBFactory::getInstance()->addMLBLink(currentMAO->getName(),*(yyvsp[-2]. vectorstr_type->at(i)),*(yyvsp[0]. vectorstr_type->at(j)));
 					}
 				}
-				delete yyvsp[-2]. vectorstr_type; ;
+				; ;
     break;}
-case 169:
-#line 613 "Kernel/MSLParser.y"
+case 201:
+#line 632 "Kernel/MSLParser.y"
 {
 					yyval. vectorstr_type = new std::vector<std::string*>(); yyval. vectorstr_type->push_back(yyvsp[-2]. string_type );
 					for(unsigned int i=0;i<yyvsp[0]. vectorstr_type->size();i++){
 						yyval. vectorstr_type->push_back(yyvsp[0]. vectorstr_type->at(i));
 					}
-					delete yyvsp[0]. vectorstr_type;
+					;
 					;
     break;}
-case 170:
-#line 620 "Kernel/MSLParser.y"
+case 202:
+#line 639 "Kernel/MSLParser.y"
 {yyval. vectorstr_type = new std::vector<std::string*>(); yyval. vectorstr_type->push_back(yyvsp[0]. string_type );;
     break;}
-case 171:
-#line 627 "Kernel/MSLParser.y"
+case 203:
+#line 646 "Kernel/MSLParser.y"
 { yyval. int_type  = atoi(lexer.YYText());;
     break;}
-case 172:
-#line 630 "Kernel/MSLParser.y"
+case 204:
+#line 649 "Kernel/MSLParser.y"
 {if(strcmp(lexer.YYText(),"False")==0) yyval. bool_type  = false; else yyval. bool_type  = true;;
     break;}
-case 173:
-#line 633 "Kernel/MSLParser.y"
+case 205:
+#line 652 "Kernel/MSLParser.y"
 {yyval. float_type  = atof(lexer.YYText());;
     break;}
-case 174:
-#line 636 "Kernel/MSLParser.y"
+case 206:
+#line 655 "Kernel/MSLParser.y"
 {int l = strlen(lexer.YYText()); yyval. string_type  = new std::string(lexer.YYText()+1,l-2);;
     break;}
-case 175:
-#line 639 "Kernel/MSLParser.y"
+case 207:
+#line 658 "Kernel/MSLParser.y"
 {float* f = new float[16];f[0]=yyvsp[-15]. float_type ; f[1]=yyvsp[-14]. float_type ;f[2]=yyvsp[-13]. float_type ;f[3]=yyvsp[-12]. float_type ;
 f[4]=yyvsp[-11]. float_type ; f[5]=yyvsp[-10]. float_type ;f[6]=yyvsp[-9]. float_type ;f[7]=yyvsp[-8]. float_type ;
 f[8]=yyvsp[-7]. float_type ; f[9]=yyvsp[-6]. float_type ;f[10]=yyvsp[-5]. float_type ;f[11]=yyvsp[-4]. float_type ;
 f[12]=yyvsp[-3]. float_type ; f[13]=yyvsp[-2]. float_type ;f[14]=yyvsp[-1]. float_type ;f[15]=yyvsp[0]. float_type ;
 cv::Mat* m = new cv::Mat(4,4,CV_32F,(void*) f); yyval. pose_type  = m;;
     break;}
-case 176:
-#line 646 "Kernel/MSLParser.y"
+case 208:
+#line 665 "Kernel/MSLParser.y"
 {yyval. maovalue_type  = new MAOValue(MAOPROPERTY_INT, yyvsp[0]. int_type );;
     break;}
-case 177:
-#line 647 "Kernel/MSLParser.y"
+case 209:
+#line 666 "Kernel/MSLParser.y"
 {yyval. maovalue_type  = new MAOValue(MAOPROPERTY_BOOLEAN, yyvsp[0]. bool_type );
     break;}
-case 178:
-#line 648 "Kernel/MSLParser.y"
+case 210:
+#line 667 "Kernel/MSLParser.y"
 {yyval. maovalue_type  = new MAOValue(MAOPROPERTY_FLOAT, yyvsp[0]. float_type );
     break;}
-case 179:
-#line 649 "Kernel/MSLParser.y"
+case 211:
+#line 668 "Kernel/MSLParser.y"
 {yyval. maovalue_type  = new MAOValue(MAOPROPERTY_STRING, yyvsp[0]. string_type );
     break;}
-case 180:
-#line 650 "Kernel/MSLParser.y"
+case 212:
+#line 669 "Kernel/MSLParser.y"
 {yyval. maovalue_type  = new MAOValue(MAOPROPERTY_POSE, yyvsp[0]. pose_type );
     break;}
-case 181:
-#line 653 "Kernel/MSLParser.y"
+case 213:
+#line 672 "Kernel/MSLParser.y"
 { yyval. maoproperty_type  = &MAOFactory::getInstance()->findProperty(*yyvsp[-2]. string_type ,*yyvsp[0]. string_type ); ;
     break;}
-case 182:
-#line 654 "Kernel/MSLParser.y"
+case 214:
+#line 673 "Kernel/MSLParser.y"
 {yyval. maoproperty_type  = &MAOFactory::getInstance()->findProperty(currentMAO->getName(),*yyvsp[0]. string_type );;
     break;}
-case 183:
-#line 657 "Kernel/MSLParser.y"
+case 215:
+#line 676 "Kernel/MSLParser.y"
 { yyval. vector3_type  = new btVector3(yyvsp[-3]. int_type ,yyvsp[-1]. int_type ,-1);;
     break;}
-case 184:
-#line 659 "Kernel/MSLParser.y"
+case 216:
+#line 678 "Kernel/MSLParser.y"
 { yyval. vector3_type  = new btVector3(yyvsp[-3]. float_type ,yyvsp[-1]. float_type ,-1);;
     break;}
-case 185:
-#line 662 "Kernel/MSLParser.y"
+case 217:
+#line 681 "Kernel/MSLParser.y"
 {yyval. vector3_type  = new btVector3(yyvsp[-5]. int_type ,yyvsp[-3]. int_type ,yyvsp[-1]. int_type );;
     break;}
-case 186:
-#line 665 "Kernel/MSLParser.y"
+case 218:
+#line 684 "Kernel/MSLParser.y"
 {yyval. vector3_type  = new btVector3(yyvsp[-5]. float_type ,yyvsp[-3]. float_type ,yyvsp[-1]. float_type );;
     break;}
-case 187:
-#line 668 "Kernel/MSLParser.y"
+case 219:
+#line 687 "Kernel/MSLParser.y"
 { yyval. string_type  = new std::string(lexer.YYText());;
     break;}
 }
@@ -2804,5 +2937,5 @@ YYLABEL(yyerrhandle)
 /* END */
 
  #line 1038 "/usr/share/bison++/bison.cc"
-#line 671 "Kernel/MSLParser.y"
+#line 690 "Kernel/MSLParser.y"
 

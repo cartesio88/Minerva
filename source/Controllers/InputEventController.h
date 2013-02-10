@@ -9,7 +9,7 @@
 #define INPUTEVENTCONTROLLER_H_
 
 #include <Kernel/Singleton.h>
-#include <SDL/SDL.h>
+#include <SDL.h>
 
 #include <Kernel/Logger.h>
 #include <Kernel/EndController.h>

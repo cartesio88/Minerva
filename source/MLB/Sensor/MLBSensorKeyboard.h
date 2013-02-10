@@ -8,7 +8,7 @@
 #ifndef MLBSENSORKEYBOARD_H_
 #define MLBSENSORKEYBOARD_H_
 
-#include <SDL/SDL.h>
+#include <SDL.h>
 #include <MLB/Sensor/MLBSensor.h>
 
 class MLBSensorKeyboard: public MLBSensor {

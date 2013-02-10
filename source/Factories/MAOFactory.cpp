@@ -17,8 +17,8 @@ MAOFactory::MAOFactory() {
 }
 
 /* ADDS */
-MAOMark& MAOFactory::addMAOMark(std::string name,
-		const std::string& path, const float& size) {
+MAOMark& MAOFactory::addMAOMark(std::string name, const std::string& path,
+		const float& size) {
 	if (!checkMAOName(name))
 		throw "MAO name already exists: " + name;
 
@@ -43,37 +43,16 @@ MAOMarksGroup& MAOFactory::addMAOMarksGroup(std::string name) {
 	_vectorMAOPositionator3D.push_back(marksGroup);
 	_vectorMAOMarksGroup.push_back(marksGroup);
 
-	TrackingMethodFactory::getInstance()->getTrackingMethodARTK().addMAOMarksGroup(*marksGroup);
+	TrackingMethodFactory::getInstance()->getTrackingMethodARTK().addMAOMarksGroup(
+			*marksGroup);
 
 	return *marksGroup;
 
 }
 
-MAORenderable3DTeapot& MAOFactory::addMAORenderable3DTeapot(
-		std::string name, const float& size, std::string& nref) {
-	if (!checkMAOName(name))
-		throw "MAO name already exists: " + name;
-
-	MAORenderable3DTeapot* teapot = new MAORenderable3DTeapot(name, size);
-	_vectorMAO.push_back(teapot);
-	_vectorMAOPositionator3D.push_back(teapot);
-	_vectorMAORenderable3D.push_back(teapot);
-
-	if (nref != "Null") {
-		MAOPositionator3D& ref = getMAOPositionator3D(nref);
-		teapot->setGlobalReference(ref);
-	} else {
-		Logger::getInstance()->out(
-				"The MAO is a Class MAO (not instanciated one)!: " + name);
-	}
-
-	return *teapot;
-}
-
-MAORenderable2DText& MAOFactory::addMAORenderable2DText(
-		std::string name, const std::string& fontPath,
-		const int& ptSize, const std::string& text, const int& x, const int& y,
-		const int& style) {
+MAORenderable2DText& MAOFactory::addMAORenderable2DText(std::string name,
+		const std::string& fontPath, const int& ptSize, const std::string& text,
+		const int& x, const int& y, const int& style) {
 	if (!checkMAOName(name))
 		throw "MAO name already exists: " + name;
 
@@ -85,9 +64,9 @@ MAORenderable2DText& MAOFactory::addMAORenderable2DText(
 	return *mao;
 }
 
-MAORenderable2DImage& MAOFactory::addMAORenderable2DImage(
-		std::string name, const std::string& filePath, const int& x,
-		const int& y, const int& width, const int& height) {
+MAORenderable2DImage& MAOFactory::addMAORenderable2DImage(std::string name,
+		const std::string& filePath, const int& x, const int& y,
+		const int& width, const int& height) {
 	if (!checkMAOName(name))
 		throw "MAO name already exists: " + name;
 
@@ -99,8 +78,8 @@ MAORenderable2DImage& MAOFactory::addMAORenderable2DImage(
 	return *mao;
 }
 
-MAORenderable3DLine& MAOFactory::addMAORenderable3DLine(
-		std::string name, const float& size, int r, int g, int b) {
+MAORenderable3DLine& MAOFactory::addMAORenderable3DLine(std::string name,
+		const float& size, int r, int g, int b) {
 	if (!checkMAOName(name))
 		throw "MAO name already exists: " + name;
 
@@ -112,9 +91,9 @@ MAORenderable3DLine& MAOFactory::addMAORenderable3DLine(
 	return *line;
 }
 
-MAORenderable3DLine& MAOFactory::addMAORenderable3DLine(
-		std::string name, const float& size, int r, int g, int b,
-		std::string& nMao1, std::string& nMao2) {
+MAORenderable3DLine& MAOFactory::addMAORenderable3DLine(std::string name,
+		const float& size, int r, int g, int b, std::string& nMao1,
+		std::string& nMao2) {
 	if (!checkMAOName(name))
 		throw "MAO name already exists: " + name;
 
@@ -130,32 +109,48 @@ MAORenderable3DLine& MAOFactory::addMAORenderable3DLine(
 	return *line;
 }
 
-MAORenderable3DOrj& MAOFactory::addMAORenderable3DOrj(std::string name,
-		const float& size, const std::string& pathOrj,
-		const std::string& pathTex, std::string& nref) {
+MAORenderable3DModel& MAOFactory::addMAORenderable3DModel(std::string name,
+		const float& size, const std::string& file, const std::string& nref) {
 	if (!checkMAOName(name))
 		throw "MAO name already exists: " + name;
 
-	MAORenderable3DOrj* orj = new MAORenderable3DOrj(name, size, pathOrj,
-			pathTex);
-	_vectorMAO.push_back(orj);
-	_vectorMAOPositionator3D.push_back(orj);
-	_vectorMAORenderable3D.push_back(orj);
+	MAORenderable3DModel* model = new MAORenderable3DModel(name, file, size);
+
+	Parser *parser = NULL;
+
+	// Get the file format
+	int dotPos = file.find_last_of('.');
+	std::string format = file.substr(dotPos + 1);
+
+
+	if (format == "orj") {
+		Logger::getInstance()->out("Recognized file format " + format);
+		parser = ParserOrej::getInstance();
+	} else {
+		Logger::getInstance()->error(
+				"MAORenderable3DModel: unrecognized file format of: " + file);
+		exit(-1);
+	}
+
+	parser->loadModel(file, *model);
+
+	_vectorMAO.push_back(model);
+	_vectorMAOPositionator3D.push_back(model);
+	_vectorMAORenderable3D.push_back(model);
 
 	if (nref != "Null") {
 		MAOPositionator3D& ref = getMAOPositionator3D(nref);
-		orj->setGlobalReference(ref);
+		model->setGlobalReference(ref);
 	} else {
 		Logger::getInstance()->out(
 				"The MAO is a Class MAO (not instanciated one)!: " + name);
 	}
 
-	return *orj;
+	return *model;
 }
 
-MAORenderable3DPath& MAOFactory::addMAORenderable3DPath(
-		std::string name, const float& size, int r, int g, int b,
-		std::string& nref) {
+MAORenderable3DPath& MAOFactory::addMAORenderable3DPath(std::string name,
+		const float& size, int r, int g, int b, std::string& nref) {
 	if (!checkMAOName(name))
 		throw "MAO name already exists: " + name;
 
@@ -177,7 +172,8 @@ MAORenderable3DPath& MAOFactory::addMAORenderable3DPath(
 
 /** INSTANTIATED **/
 /*If time is -1, the MAO lives forever ;) */
-void MAOFactory::addInstMAORenderable3D(MAORenderable3D& mao, int timeToExpire) {
+void MAOFactory::addInstMAORenderable3D(MAORenderable3D& mao,
+		int timeToExpire) {
 
 	mao.setTimeToExpire(timeToExpire);
 
@@ -192,7 +188,8 @@ MAO& MAOFactory::getMAO(std::string name) {
 		}
 	}
 	Logger::getInstance()->error("Not found the MAO " + name);
-	Logger::getInstance()->warning("Maybe the MAO is not the proper type for some MLB?");
+	Logger::getInstance()->warning(
+			"Maybe the MAO is not the proper type for some MLB?");
 	throw "MAO not found!";
 }
 
@@ -203,7 +200,8 @@ MAOPositionator3D& MAOFactory::getMAOPositionator3D(std::string name) {
 		}
 	}
 	Logger::getInstance()->error("Not found the MAO " + name);
-	Logger::getInstance()->warning("Maybe the MAO is not the proper type for some MLB?");
+	Logger::getInstance()->warning(
+			"Maybe the MAO is not the proper type for some MLB?");
 	throw "MAO not found!";
 
 }
@@ -215,7 +213,8 @@ MAOMark& MAOFactory::getMAOMark(std::string name) {
 		}
 	}
 	Logger::getInstance()->error("Not found the MAO " + name);
-	Logger::getInstance()->warning("Maybe the MAO is not the proper type for some MLB?");
+	Logger::getInstance()->warning(
+			"Maybe the MAO is not the proper type for some MLB?");
 	throw "MAO not found!";
 }
 
@@ -226,7 +225,8 @@ MAOMarksGroup& MAOFactory::getMAOMarksGroup(std::string name) {
 		}
 	}
 	Logger::getInstance()->error("Not found the MAO " + name);
-	Logger::getInstance()->warning("Maybe the MAO is not the proper type for some MLB?");
+	Logger::getInstance()->warning(
+			"Maybe the MAO is not the proper type for some MLB?");
 	throw "MAO not found!";
 }
 
@@ -237,7 +237,8 @@ MAORenderable3D& MAOFactory::getMAORenderable3D(std::string name) {
 		}
 	}
 	//Logger::getInstance()->error("Not found the MAO " + name);
-	Logger::getInstance()->warning("Maybe the MAO is not the proper type for some MLB?");
+	Logger::getInstance()->warning(
+			"Maybe the MAO is not the proper type for some MLB?");
 	throw "MAO not found!";
 }
 
@@ -248,7 +249,8 @@ MAORenderable2D& MAOFactory::getMAORenderable2D(std::string name) {
 		}
 	}
 	Logger::getInstance()->error("Not found the MAO " + name);
-	Logger::getInstance()->warning("Maybe the MAO is not the proper type for some MLB?");
+	Logger::getInstance()->warning(
+			"Maybe the MAO is not the proper type for some MLB?");
 	throw "MAO not found!";
 }
 
@@ -286,8 +288,8 @@ MAOProperty& MAOFactory::findProperty(const std::string& maoName,
 bool MAOFactory::checkMAOName(std::string name) {
 	for (unsigned int i = 0; i < _vectorMAO.size(); i++) {
 		if (name == _vectorMAO.at(i)->getName()) {
-			Logger::getInstance()->error("The name " + name
-					+ " already exists!");
+			Logger::getInstance()->error(
+					"The name " + name + " already exists!");
 			return false;
 		}
 	}
