@@ -14,43 +14,43 @@ SIGN {-|+}
 
 %%
 
-"MAOWorld"						{return MSLParser::MAOWORLD;}
-"MAOMark" 						{return MSLParser::MAOMARK;}
-"MAOMarksGroup" 				{return MSLParser::MAOMARKSGROUP;}
-"MAORenderable2DImage" 			{return MSLParser::MAORENDERABLE2DIMAGE;}
-"MAORenderable2DText" 			{return MSLParser::MAORENDERABLE2DTEXT;}
-"MAORenderable3DLine" 			{return MSLParser::MAORENDERABLE3DLINE;}
-"MAORenderable3DModel" 			{return MSLParser::MAORENDERABLE3DMODEL;}
-"MAORenderable3DPath" 			{return MSLParser::MAORENDERABLE3DPATH;}
 
-"MLBActuatorAddDynamicObject" 	{return MSLParser::MLBACTUATORADDDYNAMICOBJECT;}
-"MLBActuatorAng" 				{return MSLParser::MLBACTUATORANG;}
-"MLBActuatorChangePose" 		{return MSLParser::MLBACTUATORCHANGEPOSE;}
-"MLBActuatorDistance" 			{return MSLParser::MLBACTUATORDISTANCE;}
-"MLBActuatorPathAddPoint" 		{return MSLParser::MLBACTUATORPATHADDPOINT;}
-"MLBActuatorPathRemovePoints"	{return MSLParser::MLBACTUATORPATHREMOVEPOINTS;}
-"MLBActuatorProperty" 			{return MSLParser::MLBACTUATORPROPERTY;}
-"MLBActuatorQuitApp" 			{return MSLParser::MLBACTUATORQUITAPP;}
-"MLBActuatorRandom" 			{return MSLParser::MLBACTUATORRANDOM;}
-"MLBActuatorRelativePose" 		{return MSLParser::MLBACTUATORRELATIVEPOSE;}
-"MLBActuatorSound" 				{return MSLParser::MLBACTUATORSOUND;}
-"MLBActuatorVisibility" 		{return MSLParser::MLBACTUATORVISIBILITY;}
-"MLBActuatorAnim" 				{return MSLParser::MLBACTUATORANIM;}
+"Mark" 						{return MSLParser::MAOMARK;}
+"MarksGroup" 				{return MSLParser::MAOMARKSGROUP;}
+"Image" 			{return MSLParser::MAORENDERABLE2DIMAGE;}
+"Text" 			{return MSLParser::MAORENDERABLE2DTEXT;}
+"Line3D" 			{return MSLParser::MAORENDERABLE3DLINE;}
+"Model" 			{return MSLParser::MAORENDERABLE3DMODEL;}
+"Path3D" 			{return MSLParser::MAORENDERABLE3DPATH;}
 
-"MLBControllerAND" 				{return MSLParser::MLBCONTROLLERAND;}
-"MLBControllerNAND" 			{return MSLParser::MLBCONTROLLERNAND;}
-"MLBControllerNOR" 				{return MSLParser::MLBCONTROLLERNOR;}
-"MLBControllerOR" 				{return MSLParser::MLBCONTROLLEROR;}
-"MLBControllerScript"			{return MSLParser::MLBCONTROLLERSCRIPT;}
+"ActuatorAddDynamicObject" 	{return MSLParser::MLBACTUATORADDDYNAMICOBJECT;}
+"ActuatorAng" 				{return MSLParser::MLBACTUATORANG;}
+"ActuatorChangePose" 		{return MSLParser::MLBACTUATORCHANGEPOSE;}
+"ActuatorDistance" 			{return MSLParser::MLBACTUATORDISTANCE;}
+"ActuatorPathAddPoint" 		{return MSLParser::MLBACTUATORPATHADDPOINT;}
+"ActuatorPathRemovePoints"	{return MSLParser::MLBACTUATORPATHREMOVEPOINTS;}
+"ActuatorProperty" 			{return MSLParser::MLBACTUATORPROPERTY;}
+"ActuatorQuitApp" 			{return MSLParser::MLBACTUATORQUITAPP;}
+"ActuatorRandom" 			{return MSLParser::MLBACTUATORRANDOM;}
+"ActuatorRelativePose" 		{return MSLParser::MLBACTUATORRELATIVEPOSE;}
+"ActuatorSound" 				{return MSLParser::MLBACTUATORSOUND;}
+"ActuatorVisibility" 		{return MSLParser::MLBACTUATORVISIBILITY;}
+"ActuatorAnim" 				{return MSLParser::MLBACTUATORANIM;}
 
-"MLBSensorActuator" 			{return MSLParser::MLBSENSORACTUATOR;}
-"MLBSensorAlways" 				{return MSLParser::MLBSENSORALWAYS;}
-"MLBSensorCollision"			{return MSLParser::MLBSENSORCOLLISION;}
-"MLBSensorDelay" 				{return MSLParser::MLBSENSORDELAY;}
-"MLBSensorKeyboard" 			{return MSLParser::MLBSENSORKEYBOARD;}
-"MLBSensorNear"					{return MSLParser::MLBSENSORNEAR;}
-"MLBSensorProperty" 			{return MSLParser::MLBSENSORPROPERTY;}
-"MLBSensorRandom" 				{return MSLParser::MLBSENSORRANDOM;}
+"AND" 				{return MSLParser::MLBCONTROLLERAND;}
+"NAND" 			{return MSLParser::MLBCONTROLLERNAND;}
+"NOR" 				{return MSLParser::MLBCONTROLLERNOR;}
+"OR" 				{return MSLParser::MLBCONTROLLEROR;}
+"Script"			{return MSLParser::MLBCONTROLLERSCRIPT;}
+
+"SensorActuator" 			{return MSLParser::MLBSENSORACTUATOR;}
+"SensorAlways" 				{return MSLParser::MLBSENSORALWAYS;}
+"SensorCollision"			{return MSLParser::MLBSENSORCOLLISION;}
+"SensorDelay" 				{return MSLParser::MLBSENSORDELAY;}
+"SensorKeyboard" 			{return MSLParser::MLBSENSORKEYBOARD;}
+"SensorNear"					{return MSLParser::MLBSENSORNEAR;}
+"SensorProperty" 			{return MSLParser::MLBSENSORPROPERTY;}
+"SensorRandom" 				{return MSLParser::MLBSENSORRANDOM;}
 
 "Ground"						{return MSLParser::GROUND;}
 "DynamicObject"					{return MSLParser::DYNAMICOBJECT;}
