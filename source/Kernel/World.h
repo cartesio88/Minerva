@@ -36,6 +36,9 @@ public:
 	int getWidth();
 	int getHeight();
 
+	const std::string& getAppName(){return _appName;}
+	void setAppName(const std::string& appName){ _appName = appName;}
+
 	SDL_Surface& getScreen();
 	void enable2D();
 	void disable2D();
@@ -47,6 +50,7 @@ private:
 	SDL_Surface* _screen;
 	int _width;
 	int _height;
+	std::string _appName;
 };
 
 

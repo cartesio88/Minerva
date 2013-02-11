@@ -7,6 +7,8 @@
 
 #include "TrackingMethodARTK.h"
 
+using namespace std;
+
 TrackingMethodARTK::TrackingMethodARTK() :
 	TrackingMethod() {
 	_vectorMAOMark = std::vector<MAOMark*>();
@@ -71,23 +73,42 @@ void TrackingMethodARTK::addMAOMarksGroup(MAOMarksGroup& marksGroup){
 }
 
 void TrackingMethodARTK::initARTK() {
-	ARParam cparam, wparam;
-	//Camera parameters
-#ifdef WIN32
-	if (arParamLoad("data\\camera_para.dat", 1, &wparam) < 0) {
-#else
-	if (arParamLoad("./data/camera_para.dat", 1, &wparam) < 0) {
-#endif
-		Logger::getInstance()->error("Unable to init ARToolKit");
-		deactive();
-		return;
-	}
+	ARParam cparam;
 
-	arParamChangeSize(&wparam, 640, 480, &cparam);
+	//Camera parameters
+//#ifdef WIN32
+	//if (arParamLoad("data\\camera_para.dat", 1, &wparam) < 0) {
+//#else
+//	if (arParamLoad("./data/camera_para.dat", 1, &wparam) < 0) {
+//#endif
+//		Logger::getInstance()->error("Unable to init ARToolKit");
+//		deactive();
+//		return;
+//	}
+
+	initCameraParams();
+
+	arParamChangeSize(&_wparam, 640, 480, &cparam);
 	arInitCparam(&cparam);
 
 	Logger::getInstance()->out("ARToolKit loaded successfully!");
 }
+
+void TrackingMethodARTK::initCameraParams(){
+		_wparam.xsize=640;
+		_wparam.ysize=480;
+
+		_wparam.mat[0][0]=584.338; _wparam.mat[1][0]=0; _wparam.mat[2][0]=0;
+		_wparam.mat[0][1]=0; _wparam.mat[1][1]=570.865; _wparam.mat[2][1]=0;
+		_wparam.mat[0][2]=324; _wparam.mat[1][2]=235; _wparam.mat[2][2]=1;
+		_wparam.mat[0][3]=0; _wparam.mat[1][3]=0; _wparam.mat[2][3]=0;
+
+		_wparam.dist_factor[0]=319;
+		_wparam.dist_factor[1]=185;
+		_wparam.dist_factor[2]=-37.4;
+		_wparam.dist_factor[3]=0.965333;
+}
+
 /*Checks visibility and sets up relative matrix */
 void TrackingMethodARTK::checkMarkVisibility(MAOMark* mark) {
 	int k = -1;

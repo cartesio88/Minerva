@@ -13,18 +13,12 @@
 #include <Kernel/EndController.h>
 #include <Kernel/World.h>
 #include <Kernel/Logger.h>
-#include <Kernel/MSLParser.h>
-#include <Kernel/MSLPreprocessor.h>
+#include <Kernel/Parsers/MSLParser.h>
+#include <Kernel/Parsers/MSLPreprocessor.h>
 #include <MPY/MPYWrapper.h>
 #include <string>
 #include <unistd.h>
 #include <sstream>
-
-#ifdef WIN32
-#define MINERVA_HOME "C:\\Minerva"
-#else
-#define MINERVA_HOME "/usr/share/minerva/"
-#endif
 
 using namespace std;
 
@@ -68,15 +62,8 @@ void setAppDirectory(char* initialPath, char* appPath) {
 #endif
 }
 
-void setMinervaHomeDirectory() {
-#ifdef WIN32
-	SetCurrentDirectory(MINERVA_HOME);
-#else
-	chdir(MINERVA_HOME);
-#endif
-}
 
-string getAppName(char* appPath) {
+string getAppFileName(char* appPath) {
 	string sAppPath(appPath);
 	int p = sAppPath.rfind('/');
 	string sAppName = sAppPath.substr(p + 1);
@@ -104,8 +91,6 @@ int main(int argc, char* argv[]) {
 	try {
 
 		/* Initializations */
-		setMinervaHomeDirectory();
-
 		MPYWrapper::getInstance()->initPython();
 		World::getInstance()->initWorld(640, 480);
 		VideoFactory::getInstance()->addVideoSource("cam", 0);
@@ -116,7 +101,7 @@ int main(int argc, char* argv[]) {
 		
 		/* Preprocessing! */
 		MSLPreprocessor preprocessor;
-		string appName = getAppName(argv[1]);		
+		string appName = getAppFileName(argv[1]);
 		stringstream finalFile;
 		preprocessor.start(appName, finalFile);
 
@@ -131,8 +116,6 @@ int main(int argc, char* argv[]) {
 
 		// Restoring cin
 		cin.rdbuf(cinold);
-
-		setMinervaHomeDirectory();
 
 	} catch (string e) {
 		cout << "Exception: " << e << endl;

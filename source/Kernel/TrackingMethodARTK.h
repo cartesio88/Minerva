@@ -28,6 +28,7 @@ public:
 
 private:
 	void initARTK();
+	void initCameraParams();
 	void checkMarkVisibility(MAOMark* mark);
 
 	std::vector<MAOMark*> _vectorMAOMark;
@@ -38,6 +39,9 @@ private:
 	int _markerNum;
 	int _thres;
 	float _cfMin;
+
+	/* Camera params */
+	ARParam _wparam;
 };
 
 #endif /* TRACKINGMETHODARTK_H_ */

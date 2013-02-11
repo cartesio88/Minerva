@@ -15,6 +15,8 @@ void World::initWorld(int width, int height) {
 
 	const SDL_VideoInfo* info = NULL;
 
+	_appName = "Minerva's Application";
+
 	_width = width;
 	_height = height;
 
