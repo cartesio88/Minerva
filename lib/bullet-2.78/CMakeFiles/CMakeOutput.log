@@ -17105,3 +17105,1503 @@ make[2]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/
 make[1]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
 
 
+The system is: Linux - 3.5.0-23-generic - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/gcc 
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CompilerIdC/a.out"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /usr/bin/c++ 
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is GNU, found in "/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CompilerIdCXX/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2058563824/fast"
+make[1]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2058563824.dir/build.make CMakeFiles/cmTryCompileExec2058563824.dir/build
+make[2]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/cmake -E cmake_progress_report /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2058563824.dir/testCCompiler.c.o
+/usr/bin/gcc    -o CMakeFiles/cmTryCompileExec2058563824.dir/testCCompiler.c.o   -c /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTryCompileExec2058563824
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2058563824.dir/link.txt --verbose=1
+/usr/bin/gcc         CMakeFiles/cmTryCompileExec2058563824.dir/testCCompiler.c.o  -o cmTryCompileExec2058563824 -rdynamic 
+make[2]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+make[1]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2901496128/fast"
+make[1]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2901496128.dir/build.make CMakeFiles/cmTryCompileExec2901496128.dir/build
+make[2]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/cmake -E cmake_progress_report /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2901496128.dir/CMakeCCompilerABI.c.o
+/usr/bin/gcc    -o CMakeFiles/cmTryCompileExec2901496128.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-2.8/Modules/CMakeCCompilerABI.c
+Linking C executable cmTryCompileExec2901496128
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2901496128.dir/link.txt --verbose=1
+/usr/bin/gcc       -v CMakeFiles/cmTryCompileExec2901496128.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec2901496128 -rdynamic  
+Usando especificaciones internas.
+COLLECT_GCC=/usr/bin/gcc
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.7/lto-wrapper
+Objetivo: x86_64-linux-gnu
+Configurado con: ../src/configure -v --with-pkgversion='Ubuntu/Linaro 4.7.2-2ubuntu1' --with-bugurl=file:///usr/share/doc/gcc-4.7/README.Bugs --enable-languages=c,c++,go,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.7 --enable-shared --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.7 --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --enable-gnu-unique-object --enable-plugin --enable-objc-gc --disable-werror --with-arch-32=i686 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Modelo de hilos: posix
+gcc versión 4.7.2 (Ubuntu/Linaro 4.7.2-2ubuntu1) 
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec2901496128' '-rdynamic' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/collect2 --sysroot=/ --build-id --no-add-needed --as-needed --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec2901496128 /usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.7/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.7 -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../.. CMakeFiles/cmTryCompileExec2901496128.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/4.7/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crtn.o
+make[2]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+make[1]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:/usr/bin/make "cmTryCompileExec2901496128/fast"]
+  ignore line: [make[1]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec2901496128.dir/build.make CMakeFiles/cmTryCompileExec2901496128.dir/build]
+  ignore line: [make[2]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»]
+  ignore line: [/usr/bin/cmake -E cmake_progress_report /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/CMakeFiles 1]
+  ignore line: [Building C object CMakeFiles/cmTryCompileExec2901496128.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/gcc    -o CMakeFiles/cmTryCompileExec2901496128.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-2.8/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTryCompileExec2901496128]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2901496128.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/gcc       -v CMakeFiles/cmTryCompileExec2901496128.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec2901496128 -rdynamic  ]
+  ignore line: [Usando especificaciones internas.]
+  ignore line: [COLLECT_GCC=/usr/bin/gcc]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.7/lto-wrapper]
+  ignore line: [Objetivo: x86_64-linux-gnu]
+  ignore line: [Configurado con: ../src/configure -v --with-pkgversion='Ubuntu/Linaro 4.7.2-2ubuntu1' --with-bugurl=file:///usr/share/doc/gcc-4.7/README.Bugs --enable-languages=c,c++,go,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.7 --enable-shared --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.7 --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --enable-gnu-unique-object --enable-plugin --enable-objc-gc --disable-werror --with-arch-32=i686 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
+  ignore line: [Modelo de hilos: posix]
+  ignore line: [gcc versión 4.7.2 (Ubuntu/Linaro 4.7.2-2ubuntu1) ]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec2901496128' '-rdynamic' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/4.7/collect2 --sysroot=/ --build-id --no-add-needed --as-needed --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec2901496128 /usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.7/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.7 -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../.. CMakeFiles/cmTryCompileExec2901496128.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/4.7/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crtn.o]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.7/collect2] ==> ignore
+    arg [--sysroot=/] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--no-add-needed] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [--hash-style=gnu] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-zrelro] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTryCompileExec2901496128] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crt1.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crti.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.7/crtbegin.o] ==> ignore
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.7] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.7]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib]
+    arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+    arg [-L/lib/../lib] ==> dir [/lib/../lib]
+    arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+    arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../..]
+    arg [CMakeFiles/cmTryCompileExec2901496128.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.7/crtend.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crtn.o] ==> ignore
+  remove lib [gcc]
+  remove lib [gcc_s]
+  remove lib [gcc]
+  remove lib [gcc_s]
+  collapse dir [/usr/lib/gcc/x86_64-linux-gnu/4.7] ==> [/usr/lib/gcc/x86_64-linux-gnu/4.7]
+  collapse dir [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse dir [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib] ==> [/usr/lib]
+  collapse dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+  collapse dir [/lib/../lib] ==> [/lib]
+  collapse dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse dir [/usr/lib/../lib] ==> [/usr/lib]
+  collapse dir [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../..] ==> [/usr/lib]
+  implicit libs: [c]
+  implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/4.7;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1931394538/fast"
+make[1]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1931394538.dir/build.make CMakeFiles/cmTryCompileExec1931394538.dir/build
+make[2]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/cmake -E cmake_progress_report /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec1931394538.dir/testCXXCompiler.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTryCompileExec1931394538.dir/testCXXCompiler.cxx.o -c /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTryCompileExec1931394538
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1931394538.dir/link.txt --verbose=1
+/usr/bin/c++          CMakeFiles/cmTryCompileExec1931394538.dir/testCXXCompiler.cxx.o  -o cmTryCompileExec1931394538 -rdynamic 
+make[2]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+make[1]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2666494552/fast"
+make[1]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2666494552.dir/build.make CMakeFiles/cmTryCompileExec2666494552.dir/build
+make[2]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/cmake -E cmake_progress_report /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec2666494552.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++     -o CMakeFiles/cmTryCompileExec2666494552.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTryCompileExec2666494552
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2666494552.dir/link.txt --verbose=1
+/usr/bin/c++        -v CMakeFiles/cmTryCompileExec2666494552.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec2666494552 -rdynamic  
+Usando especificaciones internas.
+COLLECT_GCC=/usr/bin/c++
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.7/lto-wrapper
+Objetivo: x86_64-linux-gnu
+Configurado con: ../src/configure -v --with-pkgversion='Ubuntu/Linaro 4.7.2-2ubuntu1' --with-bugurl=file:///usr/share/doc/gcc-4.7/README.Bugs --enable-languages=c,c++,go,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.7 --enable-shared --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.7 --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --enable-gnu-unique-object --enable-plugin --enable-objc-gc --disable-werror --with-arch-32=i686 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Modelo de hilos: posix
+gcc versión 4.7.2 (Ubuntu/Linaro 4.7.2-2ubuntu1) 
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec2666494552' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/collect2 --sysroot=/ --build-id --no-add-needed --as-needed --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec2666494552 /usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.7/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.7 -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../.. CMakeFiles/cmTryCompileExec2666494552.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/4.7/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crtn.o
+make[2]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+make[1]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:/usr/bin/make "cmTryCompileExec2666494552/fast"]
+  ignore line: [make[1]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec2666494552.dir/build.make CMakeFiles/cmTryCompileExec2666494552.dir/build]
+  ignore line: [make[2]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»]
+  ignore line: [/usr/bin/cmake -E cmake_progress_report /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/CMakeFiles 1]
+  ignore line: [Building CXX object CMakeFiles/cmTryCompileExec2666494552.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTryCompileExec2666494552.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTryCompileExec2666494552]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2666494552.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++        -v CMakeFiles/cmTryCompileExec2666494552.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec2666494552 -rdynamic  ]
+  ignore line: [Usando especificaciones internas.]
+  ignore line: [COLLECT_GCC=/usr/bin/c++]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.7/lto-wrapper]
+  ignore line: [Objetivo: x86_64-linux-gnu]
+  ignore line: [Configurado con: ../src/configure -v --with-pkgversion='Ubuntu/Linaro 4.7.2-2ubuntu1' --with-bugurl=file:///usr/share/doc/gcc-4.7/README.Bugs --enable-languages=c,c++,go,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.7 --enable-shared --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.7 --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --enable-gnu-unique-object --enable-plugin --enable-objc-gc --disable-werror --with-arch-32=i686 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
+  ignore line: [Modelo de hilos: posix]
+  ignore line: [gcc versión 4.7.2 (Ubuntu/Linaro 4.7.2-2ubuntu1) ]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec2666494552' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/4.7/collect2 --sysroot=/ --build-id --no-add-needed --as-needed --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec2666494552 /usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.7/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.7 -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../.. CMakeFiles/cmTryCompileExec2666494552.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/4.7/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crtn.o]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.7/collect2] ==> ignore
+    arg [--sysroot=/] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--no-add-needed] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [--hash-style=gnu] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-zrelro] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTryCompileExec2666494552] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crt1.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crti.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.7/crtbegin.o] ==> ignore
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.7] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.7]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib]
+    arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+    arg [-L/lib/../lib] ==> dir [/lib/../lib]
+    arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+    arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../..]
+    arg [CMakeFiles/cmTryCompileExec2666494552.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [-lm] ==> lib [m]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lc] ==> lib [c]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.7/crtend.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crtn.o] ==> ignore
+  remove lib [gcc_s]
+  remove lib [gcc]
+  remove lib [gcc_s]
+  remove lib [gcc]
+  collapse dir [/usr/lib/gcc/x86_64-linux-gnu/4.7] ==> [/usr/lib/gcc/x86_64-linux-gnu/4.7]
+  collapse dir [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse dir [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib] ==> [/usr/lib]
+  collapse dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+  collapse dir [/lib/../lib] ==> [/lib]
+  collapse dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse dir [/usr/lib/../lib] ==> [/usr/lib]
+  collapse dir [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../..] ==> [/usr/lib]
+  implicit libs: [stdc++;m;c]
+  implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/4.7;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+
+
+Determining if the function XOpenDisplay exists in the /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so passed with the following output:
+Change Dir: /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3654545244/fast"
+make[1]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3654545244.dir/build.make CMakeFiles/cmTryCompileExec3654545244.dir/build
+make[2]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/cmake -E cmake_progress_report /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3654545244.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=XOpenDisplay   -o CMakeFiles/cmTryCompileExec3654545244.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec3654545244
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3654545244.dir/link.txt --verbose=1
+/usr/bin/gcc     -DCHECK_FUNCTION_EXISTS=XOpenDisplay    CMakeFiles/cmTryCompileExec3654545244.dir/CheckFunctionExists.c.o  -o cmTryCompileExec3654545244 -rdynamic -lX11 -lXext 
+make[2]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+make[1]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+
+
+Determining if the function gethostbyname exists passed with the following output:
+Change Dir: /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3948643931/fast"
+make[1]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3948643931.dir/build.make CMakeFiles/cmTryCompileExec3948643931.dir/build
+make[2]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/cmake -E cmake_progress_report /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3948643931.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=gethostbyname   -o CMakeFiles/cmTryCompileExec3948643931.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec3948643931
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3948643931.dir/link.txt --verbose=1
+/usr/bin/gcc     -DCHECK_FUNCTION_EXISTS=gethostbyname    CMakeFiles/cmTryCompileExec3948643931.dir/CheckFunctionExists.c.o  -o cmTryCompileExec3948643931 -rdynamic 
+make[2]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+make[1]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+
+
+Determining if the function connect exists passed with the following output:
+Change Dir: /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2849434806/fast"
+make[1]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2849434806.dir/build.make CMakeFiles/cmTryCompileExec2849434806.dir/build
+make[2]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/cmake -E cmake_progress_report /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2849434806.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=connect   -o CMakeFiles/cmTryCompileExec2849434806.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec2849434806
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2849434806.dir/link.txt --verbose=1
+/usr/bin/gcc     -DCHECK_FUNCTION_EXISTS=connect    CMakeFiles/cmTryCompileExec2849434806.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2849434806 -rdynamic 
+make[2]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+make[1]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+
+
+Determining if the function remove exists passed with the following output:
+Change Dir: /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2630241623/fast"
+make[1]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2630241623.dir/build.make CMakeFiles/cmTryCompileExec2630241623.dir/build
+make[2]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/cmake -E cmake_progress_report /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2630241623.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=remove   -o CMakeFiles/cmTryCompileExec2630241623.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec2630241623
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2630241623.dir/link.txt --verbose=1
+/usr/bin/gcc     -DCHECK_FUNCTION_EXISTS=remove    CMakeFiles/cmTryCompileExec2630241623.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2630241623 -rdynamic 
+make[2]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+make[1]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+
+
+Determining if the function shmat exists passed with the following output:
+Change Dir: /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec461769230/fast"
+make[1]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/make -f CMakeFiles/cmTryCompileExec461769230.dir/build.make CMakeFiles/cmTryCompileExec461769230.dir/build
+make[2]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/cmake -E cmake_progress_report /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec461769230.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=shmat   -o CMakeFiles/cmTryCompileExec461769230.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec461769230
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec461769230.dir/link.txt --verbose=1
+/usr/bin/gcc     -DCHECK_FUNCTION_EXISTS=shmat    CMakeFiles/cmTryCompileExec461769230.dir/CheckFunctionExists.c.o  -o cmTryCompileExec461769230 -rdynamic 
+make[2]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+make[1]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+
+
+Determining if the function IceConnectionNumber exists in the ICE passed with the following output:
+Change Dir: /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3091074666/fast"
+make[1]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3091074666.dir/build.make CMakeFiles/cmTryCompileExec3091074666.dir/build
+make[2]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/cmake -E cmake_progress_report /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3091074666.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber   -o CMakeFiles/cmTryCompileExec3091074666.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec3091074666
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3091074666.dir/link.txt --verbose=1
+/usr/bin/gcc     -DCHECK_FUNCTION_EXISTS=IceConnectionNumber    CMakeFiles/cmTryCompileExec3091074666.dir/CheckFunctionExists.c.o  -o cmTryCompileExec3091074666 -rdynamic -lICE 
+make[2]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+make[1]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+
+
+The system is: Linux - 3.5.0-23-generic - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/gcc 
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CompilerIdC/a.out"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /usr/bin/c++ 
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is GNU, found in "/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CompilerIdCXX/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3372625621/fast"
+make[1]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3372625621.dir/build.make CMakeFiles/cmTryCompileExec3372625621.dir/build
+make[2]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/cmake -E cmake_progress_report /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3372625621.dir/testCCompiler.c.o
+/usr/bin/gcc    -o CMakeFiles/cmTryCompileExec3372625621.dir/testCCompiler.c.o   -c /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTryCompileExec3372625621
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3372625621.dir/link.txt --verbose=1
+/usr/bin/gcc         CMakeFiles/cmTryCompileExec3372625621.dir/testCCompiler.c.o  -o cmTryCompileExec3372625621 -rdynamic 
+make[2]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+make[1]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3578236996/fast"
+make[1]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3578236996.dir/build.make CMakeFiles/cmTryCompileExec3578236996.dir/build
+make[2]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/cmake -E cmake_progress_report /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3578236996.dir/CMakeCCompilerABI.c.o
+/usr/bin/gcc    -o CMakeFiles/cmTryCompileExec3578236996.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-2.8/Modules/CMakeCCompilerABI.c
+Linking C executable cmTryCompileExec3578236996
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3578236996.dir/link.txt --verbose=1
+/usr/bin/gcc       -v CMakeFiles/cmTryCompileExec3578236996.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec3578236996 -rdynamic  
+Usando especificaciones internas.
+COLLECT_GCC=/usr/bin/gcc
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.7/lto-wrapper
+Objetivo: x86_64-linux-gnu
+Configurado con: ../src/configure -v --with-pkgversion='Ubuntu/Linaro 4.7.2-2ubuntu1' --with-bugurl=file:///usr/share/doc/gcc-4.7/README.Bugs --enable-languages=c,c++,go,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.7 --enable-shared --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.7 --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --enable-gnu-unique-object --enable-plugin --enable-objc-gc --disable-werror --with-arch-32=i686 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Modelo de hilos: posix
+gcc versión 4.7.2 (Ubuntu/Linaro 4.7.2-2ubuntu1) 
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec3578236996' '-rdynamic' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/collect2 --sysroot=/ --build-id --no-add-needed --as-needed --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec3578236996 /usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.7/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.7 -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../.. CMakeFiles/cmTryCompileExec3578236996.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/4.7/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crtn.o
+make[2]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+make[1]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:/usr/bin/make "cmTryCompileExec3578236996/fast"]
+  ignore line: [make[1]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec3578236996.dir/build.make CMakeFiles/cmTryCompileExec3578236996.dir/build]
+  ignore line: [make[2]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»]
+  ignore line: [/usr/bin/cmake -E cmake_progress_report /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/CMakeFiles 1]
+  ignore line: [Building C object CMakeFiles/cmTryCompileExec3578236996.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/gcc    -o CMakeFiles/cmTryCompileExec3578236996.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-2.8/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTryCompileExec3578236996]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3578236996.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/gcc       -v CMakeFiles/cmTryCompileExec3578236996.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec3578236996 -rdynamic  ]
+  ignore line: [Usando especificaciones internas.]
+  ignore line: [COLLECT_GCC=/usr/bin/gcc]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.7/lto-wrapper]
+  ignore line: [Objetivo: x86_64-linux-gnu]
+  ignore line: [Configurado con: ../src/configure -v --with-pkgversion='Ubuntu/Linaro 4.7.2-2ubuntu1' --with-bugurl=file:///usr/share/doc/gcc-4.7/README.Bugs --enable-languages=c,c++,go,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.7 --enable-shared --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.7 --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --enable-gnu-unique-object --enable-plugin --enable-objc-gc --disable-werror --with-arch-32=i686 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
+  ignore line: [Modelo de hilos: posix]
+  ignore line: [gcc versión 4.7.2 (Ubuntu/Linaro 4.7.2-2ubuntu1) ]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec3578236996' '-rdynamic' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/4.7/collect2 --sysroot=/ --build-id --no-add-needed --as-needed --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec3578236996 /usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.7/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.7 -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../.. CMakeFiles/cmTryCompileExec3578236996.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/4.7/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crtn.o]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.7/collect2] ==> ignore
+    arg [--sysroot=/] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--no-add-needed] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [--hash-style=gnu] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-zrelro] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTryCompileExec3578236996] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crt1.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crti.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.7/crtbegin.o] ==> ignore
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.7] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.7]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib]
+    arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+    arg [-L/lib/../lib] ==> dir [/lib/../lib]
+    arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+    arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../..]
+    arg [CMakeFiles/cmTryCompileExec3578236996.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.7/crtend.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crtn.o] ==> ignore
+  remove lib [gcc]
+  remove lib [gcc_s]
+  remove lib [gcc]
+  remove lib [gcc_s]
+  collapse dir [/usr/lib/gcc/x86_64-linux-gnu/4.7] ==> [/usr/lib/gcc/x86_64-linux-gnu/4.7]
+  collapse dir [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse dir [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib] ==> [/usr/lib]
+  collapse dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+  collapse dir [/lib/../lib] ==> [/lib]
+  collapse dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse dir [/usr/lib/../lib] ==> [/usr/lib]
+  collapse dir [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../..] ==> [/usr/lib]
+  implicit libs: [c]
+  implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/4.7;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2072807316/fast"
+make[1]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2072807316.dir/build.make CMakeFiles/cmTryCompileExec2072807316.dir/build
+make[2]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/cmake -E cmake_progress_report /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec2072807316.dir/testCXXCompiler.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTryCompileExec2072807316.dir/testCXXCompiler.cxx.o -c /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTryCompileExec2072807316
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2072807316.dir/link.txt --verbose=1
+/usr/bin/c++          CMakeFiles/cmTryCompileExec2072807316.dir/testCXXCompiler.cxx.o  -o cmTryCompileExec2072807316 -rdynamic 
+make[2]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+make[1]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec17475751/fast"
+make[1]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/make -f CMakeFiles/cmTryCompileExec17475751.dir/build.make CMakeFiles/cmTryCompileExec17475751.dir/build
+make[2]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/cmake -E cmake_progress_report /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec17475751.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++     -o CMakeFiles/cmTryCompileExec17475751.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTryCompileExec17475751
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec17475751.dir/link.txt --verbose=1
+/usr/bin/c++        -v CMakeFiles/cmTryCompileExec17475751.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec17475751 -rdynamic  
+Usando especificaciones internas.
+COLLECT_GCC=/usr/bin/c++
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.7/lto-wrapper
+Objetivo: x86_64-linux-gnu
+Configurado con: ../src/configure -v --with-pkgversion='Ubuntu/Linaro 4.7.2-2ubuntu1' --with-bugurl=file:///usr/share/doc/gcc-4.7/README.Bugs --enable-languages=c,c++,go,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.7 --enable-shared --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.7 --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --enable-gnu-unique-object --enable-plugin --enable-objc-gc --disable-werror --with-arch-32=i686 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Modelo de hilos: posix
+gcc versión 4.7.2 (Ubuntu/Linaro 4.7.2-2ubuntu1) 
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec17475751' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/collect2 --sysroot=/ --build-id --no-add-needed --as-needed --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec17475751 /usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.7/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.7 -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../.. CMakeFiles/cmTryCompileExec17475751.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/4.7/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crtn.o
+make[2]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+make[1]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:/usr/bin/make "cmTryCompileExec17475751/fast"]
+  ignore line: [make[1]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec17475751.dir/build.make CMakeFiles/cmTryCompileExec17475751.dir/build]
+  ignore line: [make[2]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»]
+  ignore line: [/usr/bin/cmake -E cmake_progress_report /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/CMakeFiles 1]
+  ignore line: [Building CXX object CMakeFiles/cmTryCompileExec17475751.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTryCompileExec17475751.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTryCompileExec17475751]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec17475751.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++        -v CMakeFiles/cmTryCompileExec17475751.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec17475751 -rdynamic  ]
+  ignore line: [Usando especificaciones internas.]
+  ignore line: [COLLECT_GCC=/usr/bin/c++]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.7/lto-wrapper]
+  ignore line: [Objetivo: x86_64-linux-gnu]
+  ignore line: [Configurado con: ../src/configure -v --with-pkgversion='Ubuntu/Linaro 4.7.2-2ubuntu1' --with-bugurl=file:///usr/share/doc/gcc-4.7/README.Bugs --enable-languages=c,c++,go,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.7 --enable-shared --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.7 --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --enable-gnu-unique-object --enable-plugin --enable-objc-gc --disable-werror --with-arch-32=i686 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
+  ignore line: [Modelo de hilos: posix]
+  ignore line: [gcc versión 4.7.2 (Ubuntu/Linaro 4.7.2-2ubuntu1) ]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec17475751' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/4.7/collect2 --sysroot=/ --build-id --no-add-needed --as-needed --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec17475751 /usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.7/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.7 -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../.. CMakeFiles/cmTryCompileExec17475751.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/4.7/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crtn.o]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.7/collect2] ==> ignore
+    arg [--sysroot=/] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--no-add-needed] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [--hash-style=gnu] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-zrelro] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTryCompileExec17475751] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crt1.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crti.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.7/crtbegin.o] ==> ignore
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.7] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.7]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib]
+    arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+    arg [-L/lib/../lib] ==> dir [/lib/../lib]
+    arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+    arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../..]
+    arg [CMakeFiles/cmTryCompileExec17475751.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [-lm] ==> lib [m]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lc] ==> lib [c]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.7/crtend.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crtn.o] ==> ignore
+  remove lib [gcc_s]
+  remove lib [gcc]
+  remove lib [gcc_s]
+  remove lib [gcc]
+  collapse dir [/usr/lib/gcc/x86_64-linux-gnu/4.7] ==> [/usr/lib/gcc/x86_64-linux-gnu/4.7]
+  collapse dir [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse dir [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib] ==> [/usr/lib]
+  collapse dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+  collapse dir [/lib/../lib] ==> [/lib]
+  collapse dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse dir [/usr/lib/../lib] ==> [/usr/lib]
+  collapse dir [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../..] ==> [/usr/lib]
+  implicit libs: [stdc++;m;c]
+  implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/4.7;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+
+
+Determining if the function XOpenDisplay exists in the /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so passed with the following output:
+Change Dir: /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1419496027/fast"
+make[1]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1419496027.dir/build.make CMakeFiles/cmTryCompileExec1419496027.dir/build
+make[2]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/cmake -E cmake_progress_report /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1419496027.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=XOpenDisplay   -o CMakeFiles/cmTryCompileExec1419496027.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec1419496027
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1419496027.dir/link.txt --verbose=1
+/usr/bin/gcc     -DCHECK_FUNCTION_EXISTS=XOpenDisplay    CMakeFiles/cmTryCompileExec1419496027.dir/CheckFunctionExists.c.o  -o cmTryCompileExec1419496027 -rdynamic -lX11 -lXext 
+make[2]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+make[1]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+
+
+Determining if the function gethostbyname exists passed with the following output:
+Change Dir: /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1809659879/fast"
+make[1]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1809659879.dir/build.make CMakeFiles/cmTryCompileExec1809659879.dir/build
+make[2]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/cmake -E cmake_progress_report /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1809659879.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=gethostbyname   -o CMakeFiles/cmTryCompileExec1809659879.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec1809659879
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1809659879.dir/link.txt --verbose=1
+/usr/bin/gcc     -DCHECK_FUNCTION_EXISTS=gethostbyname    CMakeFiles/cmTryCompileExec1809659879.dir/CheckFunctionExists.c.o  -o cmTryCompileExec1809659879 -rdynamic 
+make[2]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+make[1]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+
+
+Determining if the function connect exists passed with the following output:
+Change Dir: /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2892337683/fast"
+make[1]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2892337683.dir/build.make CMakeFiles/cmTryCompileExec2892337683.dir/build
+make[2]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/cmake -E cmake_progress_report /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2892337683.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=connect   -o CMakeFiles/cmTryCompileExec2892337683.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec2892337683
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2892337683.dir/link.txt --verbose=1
+/usr/bin/gcc     -DCHECK_FUNCTION_EXISTS=connect    CMakeFiles/cmTryCompileExec2892337683.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2892337683 -rdynamic 
+make[2]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+make[1]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+
+
+Determining if the function remove exists passed with the following output:
+Change Dir: /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2746707801/fast"
+make[1]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2746707801.dir/build.make CMakeFiles/cmTryCompileExec2746707801.dir/build
+make[2]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/cmake -E cmake_progress_report /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2746707801.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=remove   -o CMakeFiles/cmTryCompileExec2746707801.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec2746707801
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2746707801.dir/link.txt --verbose=1
+/usr/bin/gcc     -DCHECK_FUNCTION_EXISTS=remove    CMakeFiles/cmTryCompileExec2746707801.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2746707801 -rdynamic 
+make[2]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+make[1]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+
+
+Determining if the function shmat exists passed with the following output:
+Change Dir: /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3310884080/fast"
+make[1]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3310884080.dir/build.make CMakeFiles/cmTryCompileExec3310884080.dir/build
+make[2]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/cmake -E cmake_progress_report /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3310884080.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=shmat   -o CMakeFiles/cmTryCompileExec3310884080.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec3310884080
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3310884080.dir/link.txt --verbose=1
+/usr/bin/gcc     -DCHECK_FUNCTION_EXISTS=shmat    CMakeFiles/cmTryCompileExec3310884080.dir/CheckFunctionExists.c.o  -o cmTryCompileExec3310884080 -rdynamic 
+make[2]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+make[1]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+
+
+Determining if the function IceConnectionNumber exists in the ICE passed with the following output:
+Change Dir: /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3449207795/fast"
+make[1]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3449207795.dir/build.make CMakeFiles/cmTryCompileExec3449207795.dir/build
+make[2]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/cmake -E cmake_progress_report /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3449207795.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber   -o CMakeFiles/cmTryCompileExec3449207795.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec3449207795
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3449207795.dir/link.txt --verbose=1
+/usr/bin/gcc     -DCHECK_FUNCTION_EXISTS=IceConnectionNumber    CMakeFiles/cmTryCompileExec3449207795.dir/CheckFunctionExists.c.o  -o cmTryCompileExec3449207795 -rdynamic -lICE 
+make[2]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+make[1]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+
+
+The system is: Linux - 3.5.0-23-generic - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/gcc 
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CompilerIdC/a.out"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /usr/bin/c++ 
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is GNU, found in "/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CompilerIdCXX/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3975388469/fast"
+make[1]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3975388469.dir/build.make CMakeFiles/cmTryCompileExec3975388469.dir/build
+make[2]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/cmake -E cmake_progress_report /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3975388469.dir/testCCompiler.c.o
+/usr/bin/gcc    -o CMakeFiles/cmTryCompileExec3975388469.dir/testCCompiler.c.o   -c /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTryCompileExec3975388469
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3975388469.dir/link.txt --verbose=1
+/usr/bin/gcc         CMakeFiles/cmTryCompileExec3975388469.dir/testCCompiler.c.o  -o cmTryCompileExec3975388469 -rdynamic 
+make[2]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+make[1]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec492872979/fast"
+make[1]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/make -f CMakeFiles/cmTryCompileExec492872979.dir/build.make CMakeFiles/cmTryCompileExec492872979.dir/build
+make[2]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/cmake -E cmake_progress_report /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec492872979.dir/CMakeCCompilerABI.c.o
+/usr/bin/gcc    -o CMakeFiles/cmTryCompileExec492872979.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-2.8/Modules/CMakeCCompilerABI.c
+Linking C executable cmTryCompileExec492872979
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec492872979.dir/link.txt --verbose=1
+/usr/bin/gcc       -v CMakeFiles/cmTryCompileExec492872979.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec492872979 -rdynamic  
+Usando especificaciones internas.
+COLLECT_GCC=/usr/bin/gcc
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.7/lto-wrapper
+Objetivo: x86_64-linux-gnu
+Configurado con: ../src/configure -v --with-pkgversion='Ubuntu/Linaro 4.7.2-2ubuntu1' --with-bugurl=file:///usr/share/doc/gcc-4.7/README.Bugs --enable-languages=c,c++,go,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.7 --enable-shared --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.7 --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --enable-gnu-unique-object --enable-plugin --enable-objc-gc --disable-werror --with-arch-32=i686 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Modelo de hilos: posix
+gcc versión 4.7.2 (Ubuntu/Linaro 4.7.2-2ubuntu1) 
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec492872979' '-rdynamic' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/collect2 --sysroot=/ --build-id --no-add-needed --as-needed --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec492872979 /usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.7/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.7 -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../.. CMakeFiles/cmTryCompileExec492872979.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/4.7/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crtn.o
+make[2]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+make[1]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:/usr/bin/make "cmTryCompileExec492872979/fast"]
+  ignore line: [make[1]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec492872979.dir/build.make CMakeFiles/cmTryCompileExec492872979.dir/build]
+  ignore line: [make[2]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»]
+  ignore line: [/usr/bin/cmake -E cmake_progress_report /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/CMakeFiles 1]
+  ignore line: [Building C object CMakeFiles/cmTryCompileExec492872979.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/gcc    -o CMakeFiles/cmTryCompileExec492872979.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-2.8/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTryCompileExec492872979]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec492872979.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/gcc       -v CMakeFiles/cmTryCompileExec492872979.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec492872979 -rdynamic  ]
+  ignore line: [Usando especificaciones internas.]
+  ignore line: [COLLECT_GCC=/usr/bin/gcc]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.7/lto-wrapper]
+  ignore line: [Objetivo: x86_64-linux-gnu]
+  ignore line: [Configurado con: ../src/configure -v --with-pkgversion='Ubuntu/Linaro 4.7.2-2ubuntu1' --with-bugurl=file:///usr/share/doc/gcc-4.7/README.Bugs --enable-languages=c,c++,go,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.7 --enable-shared --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.7 --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --enable-gnu-unique-object --enable-plugin --enable-objc-gc --disable-werror --with-arch-32=i686 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
+  ignore line: [Modelo de hilos: posix]
+  ignore line: [gcc versión 4.7.2 (Ubuntu/Linaro 4.7.2-2ubuntu1) ]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec492872979' '-rdynamic' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/4.7/collect2 --sysroot=/ --build-id --no-add-needed --as-needed --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec492872979 /usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.7/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.7 -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../.. CMakeFiles/cmTryCompileExec492872979.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/4.7/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crtn.o]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.7/collect2] ==> ignore
+    arg [--sysroot=/] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--no-add-needed] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [--hash-style=gnu] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-zrelro] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTryCompileExec492872979] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crt1.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crti.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.7/crtbegin.o] ==> ignore
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.7] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.7]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib]
+    arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+    arg [-L/lib/../lib] ==> dir [/lib/../lib]
+    arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+    arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../..]
+    arg [CMakeFiles/cmTryCompileExec492872979.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.7/crtend.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crtn.o] ==> ignore
+  remove lib [gcc]
+  remove lib [gcc_s]
+  remove lib [gcc]
+  remove lib [gcc_s]
+  collapse dir [/usr/lib/gcc/x86_64-linux-gnu/4.7] ==> [/usr/lib/gcc/x86_64-linux-gnu/4.7]
+  collapse dir [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse dir [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib] ==> [/usr/lib]
+  collapse dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+  collapse dir [/lib/../lib] ==> [/lib]
+  collapse dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse dir [/usr/lib/../lib] ==> [/usr/lib]
+  collapse dir [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../..] ==> [/usr/lib]
+  implicit libs: [c]
+  implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/4.7;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec941364820/fast"
+make[1]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/make -f CMakeFiles/cmTryCompileExec941364820.dir/build.make CMakeFiles/cmTryCompileExec941364820.dir/build
+make[2]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/cmake -E cmake_progress_report /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec941364820.dir/testCXXCompiler.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTryCompileExec941364820.dir/testCXXCompiler.cxx.o -c /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTryCompileExec941364820
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec941364820.dir/link.txt --verbose=1
+/usr/bin/c++          CMakeFiles/cmTryCompileExec941364820.dir/testCXXCompiler.cxx.o  -o cmTryCompileExec941364820 -rdynamic 
+make[2]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+make[1]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3979337079/fast"
+make[1]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3979337079.dir/build.make CMakeFiles/cmTryCompileExec3979337079.dir/build
+make[2]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/cmake -E cmake_progress_report /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec3979337079.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++     -o CMakeFiles/cmTryCompileExec3979337079.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTryCompileExec3979337079
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3979337079.dir/link.txt --verbose=1
+/usr/bin/c++        -v CMakeFiles/cmTryCompileExec3979337079.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec3979337079 -rdynamic  
+Usando especificaciones internas.
+COLLECT_GCC=/usr/bin/c++
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.7/lto-wrapper
+Objetivo: x86_64-linux-gnu
+Configurado con: ../src/configure -v --with-pkgversion='Ubuntu/Linaro 4.7.2-2ubuntu1' --with-bugurl=file:///usr/share/doc/gcc-4.7/README.Bugs --enable-languages=c,c++,go,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.7 --enable-shared --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.7 --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --enable-gnu-unique-object --enable-plugin --enable-objc-gc --disable-werror --with-arch-32=i686 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Modelo de hilos: posix
+gcc versión 4.7.2 (Ubuntu/Linaro 4.7.2-2ubuntu1) 
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec3979337079' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/collect2 --sysroot=/ --build-id --no-add-needed --as-needed --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec3979337079 /usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.7/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.7 -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../.. CMakeFiles/cmTryCompileExec3979337079.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/4.7/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crtn.o
+make[2]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+make[1]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:/usr/bin/make "cmTryCompileExec3979337079/fast"]
+  ignore line: [make[1]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec3979337079.dir/build.make CMakeFiles/cmTryCompileExec3979337079.dir/build]
+  ignore line: [make[2]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»]
+  ignore line: [/usr/bin/cmake -E cmake_progress_report /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/CMakeFiles 1]
+  ignore line: [Building CXX object CMakeFiles/cmTryCompileExec3979337079.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTryCompileExec3979337079.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTryCompileExec3979337079]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3979337079.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++        -v CMakeFiles/cmTryCompileExec3979337079.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec3979337079 -rdynamic  ]
+  ignore line: [Usando especificaciones internas.]
+  ignore line: [COLLECT_GCC=/usr/bin/c++]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.7/lto-wrapper]
+  ignore line: [Objetivo: x86_64-linux-gnu]
+  ignore line: [Configurado con: ../src/configure -v --with-pkgversion='Ubuntu/Linaro 4.7.2-2ubuntu1' --with-bugurl=file:///usr/share/doc/gcc-4.7/README.Bugs --enable-languages=c,c++,go,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.7 --enable-shared --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.7 --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --enable-gnu-unique-object --enable-plugin --enable-objc-gc --disable-werror --with-arch-32=i686 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
+  ignore line: [Modelo de hilos: posix]
+  ignore line: [gcc versión 4.7.2 (Ubuntu/Linaro 4.7.2-2ubuntu1) ]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec3979337079' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/4.7/collect2 --sysroot=/ --build-id --no-add-needed --as-needed --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec3979337079 /usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.7/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.7 -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../.. CMakeFiles/cmTryCompileExec3979337079.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/4.7/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crtn.o]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.7/collect2] ==> ignore
+    arg [--sysroot=/] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--no-add-needed] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [--hash-style=gnu] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-zrelro] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTryCompileExec3979337079] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crt1.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crti.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.7/crtbegin.o] ==> ignore
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.7] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.7]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib]
+    arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+    arg [-L/lib/../lib] ==> dir [/lib/../lib]
+    arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+    arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../..]
+    arg [CMakeFiles/cmTryCompileExec3979337079.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [-lm] ==> lib [m]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lc] ==> lib [c]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.7/crtend.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crtn.o] ==> ignore
+  remove lib [gcc_s]
+  remove lib [gcc]
+  remove lib [gcc_s]
+  remove lib [gcc]
+  collapse dir [/usr/lib/gcc/x86_64-linux-gnu/4.7] ==> [/usr/lib/gcc/x86_64-linux-gnu/4.7]
+  collapse dir [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse dir [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib] ==> [/usr/lib]
+  collapse dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+  collapse dir [/lib/../lib] ==> [/lib]
+  collapse dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse dir [/usr/lib/../lib] ==> [/usr/lib]
+  collapse dir [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../..] ==> [/usr/lib]
+  implicit libs: [stdc++;m;c]
+  implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/4.7;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+
+
+Determining if the function XOpenDisplay exists in the /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so passed with the following output:
+Change Dir: /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2101807328/fast"
+make[1]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2101807328.dir/build.make CMakeFiles/cmTryCompileExec2101807328.dir/build
+make[2]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/cmake -E cmake_progress_report /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2101807328.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=XOpenDisplay   -o CMakeFiles/cmTryCompileExec2101807328.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec2101807328
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2101807328.dir/link.txt --verbose=1
+/usr/bin/gcc     -DCHECK_FUNCTION_EXISTS=XOpenDisplay    CMakeFiles/cmTryCompileExec2101807328.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2101807328 -rdynamic -lX11 -lXext 
+make[2]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+make[1]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+
+
+Determining if the function gethostbyname exists passed with the following output:
+Change Dir: /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec4242965292/fast"
+make[1]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/make -f CMakeFiles/cmTryCompileExec4242965292.dir/build.make CMakeFiles/cmTryCompileExec4242965292.dir/build
+make[2]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/cmake -E cmake_progress_report /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec4242965292.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=gethostbyname   -o CMakeFiles/cmTryCompileExec4242965292.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec4242965292
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec4242965292.dir/link.txt --verbose=1
+/usr/bin/gcc     -DCHECK_FUNCTION_EXISTS=gethostbyname    CMakeFiles/cmTryCompileExec4242965292.dir/CheckFunctionExists.c.o  -o cmTryCompileExec4242965292 -rdynamic 
+make[2]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+make[1]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+
+
+Determining if the function connect exists passed with the following output:
+Change Dir: /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3402211214/fast"
+make[1]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3402211214.dir/build.make CMakeFiles/cmTryCompileExec3402211214.dir/build
+make[2]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/cmake -E cmake_progress_report /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3402211214.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=connect   -o CMakeFiles/cmTryCompileExec3402211214.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec3402211214
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3402211214.dir/link.txt --verbose=1
+/usr/bin/gcc     -DCHECK_FUNCTION_EXISTS=connect    CMakeFiles/cmTryCompileExec3402211214.dir/CheckFunctionExists.c.o  -o cmTryCompileExec3402211214 -rdynamic 
+make[2]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+make[1]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+
+
+Determining if the function remove exists passed with the following output:
+Change Dir: /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2683603217/fast"
+make[1]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2683603217.dir/build.make CMakeFiles/cmTryCompileExec2683603217.dir/build
+make[2]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/cmake -E cmake_progress_report /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2683603217.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=remove   -o CMakeFiles/cmTryCompileExec2683603217.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec2683603217
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2683603217.dir/link.txt --verbose=1
+/usr/bin/gcc     -DCHECK_FUNCTION_EXISTS=remove    CMakeFiles/cmTryCompileExec2683603217.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2683603217 -rdynamic 
+make[2]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+make[1]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+
+
+Determining if the function shmat exists passed with the following output:
+Change Dir: /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2507893462/fast"
+make[1]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2507893462.dir/build.make CMakeFiles/cmTryCompileExec2507893462.dir/build
+make[2]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/cmake -E cmake_progress_report /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2507893462.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=shmat   -o CMakeFiles/cmTryCompileExec2507893462.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec2507893462
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2507893462.dir/link.txt --verbose=1
+/usr/bin/gcc     -DCHECK_FUNCTION_EXISTS=shmat    CMakeFiles/cmTryCompileExec2507893462.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2507893462 -rdynamic 
+make[2]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+make[1]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+
+
+Determining if the function IceConnectionNumber exists in the ICE passed with the following output:
+Change Dir: /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2550983881/fast"
+make[1]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2550983881.dir/build.make CMakeFiles/cmTryCompileExec2550983881.dir/build
+make[2]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/cmake -E cmake_progress_report /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2550983881.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber   -o CMakeFiles/cmTryCompileExec2550983881.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec2550983881
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2550983881.dir/link.txt --verbose=1
+/usr/bin/gcc     -DCHECK_FUNCTION_EXISTS=IceConnectionNumber    CMakeFiles/cmTryCompileExec2550983881.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2550983881 -rdynamic -lICE 
+make[2]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+make[1]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+
+
+The system is: Linux - 3.5.0-23-generic - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/gcc 
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CompilerIdC/a.out"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /usr/bin/c++ 
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is GNU, found in "/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CompilerIdCXX/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2624299552/fast"
+make[1]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2624299552.dir/build.make CMakeFiles/cmTryCompileExec2624299552.dir/build
+make[2]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/cmake -E cmake_progress_report /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2624299552.dir/testCCompiler.c.o
+/usr/bin/gcc    -o CMakeFiles/cmTryCompileExec2624299552.dir/testCCompiler.c.o   -c /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTryCompileExec2624299552
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2624299552.dir/link.txt --verbose=1
+/usr/bin/gcc         CMakeFiles/cmTryCompileExec2624299552.dir/testCCompiler.c.o  -o cmTryCompileExec2624299552 -rdynamic 
+make[2]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+make[1]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3165279956/fast"
+make[1]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3165279956.dir/build.make CMakeFiles/cmTryCompileExec3165279956.dir/build
+make[2]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/cmake -E cmake_progress_report /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3165279956.dir/CMakeCCompilerABI.c.o
+/usr/bin/gcc    -o CMakeFiles/cmTryCompileExec3165279956.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-2.8/Modules/CMakeCCompilerABI.c
+Linking C executable cmTryCompileExec3165279956
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3165279956.dir/link.txt --verbose=1
+/usr/bin/gcc       -v CMakeFiles/cmTryCompileExec3165279956.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec3165279956 -rdynamic  
+Usando especificaciones internas.
+COLLECT_GCC=/usr/bin/gcc
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.7/lto-wrapper
+Objetivo: x86_64-linux-gnu
+Configurado con: ../src/configure -v --with-pkgversion='Ubuntu/Linaro 4.7.2-2ubuntu1' --with-bugurl=file:///usr/share/doc/gcc-4.7/README.Bugs --enable-languages=c,c++,go,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.7 --enable-shared --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.7 --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --enable-gnu-unique-object --enable-plugin --enable-objc-gc --disable-werror --with-arch-32=i686 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Modelo de hilos: posix
+gcc versión 4.7.2 (Ubuntu/Linaro 4.7.2-2ubuntu1) 
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec3165279956' '-rdynamic' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/collect2 --sysroot=/ --build-id --no-add-needed --as-needed --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec3165279956 /usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.7/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.7 -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../.. CMakeFiles/cmTryCompileExec3165279956.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/4.7/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crtn.o
+make[2]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+make[1]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:/usr/bin/make "cmTryCompileExec3165279956/fast"]
+  ignore line: [make[1]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec3165279956.dir/build.make CMakeFiles/cmTryCompileExec3165279956.dir/build]
+  ignore line: [make[2]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»]
+  ignore line: [/usr/bin/cmake -E cmake_progress_report /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/CMakeFiles 1]
+  ignore line: [Building C object CMakeFiles/cmTryCompileExec3165279956.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/gcc    -o CMakeFiles/cmTryCompileExec3165279956.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-2.8/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTryCompileExec3165279956]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3165279956.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/gcc       -v CMakeFiles/cmTryCompileExec3165279956.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec3165279956 -rdynamic  ]
+  ignore line: [Usando especificaciones internas.]
+  ignore line: [COLLECT_GCC=/usr/bin/gcc]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.7/lto-wrapper]
+  ignore line: [Objetivo: x86_64-linux-gnu]
+  ignore line: [Configurado con: ../src/configure -v --with-pkgversion='Ubuntu/Linaro 4.7.2-2ubuntu1' --with-bugurl=file:///usr/share/doc/gcc-4.7/README.Bugs --enable-languages=c,c++,go,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.7 --enable-shared --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.7 --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --enable-gnu-unique-object --enable-plugin --enable-objc-gc --disable-werror --with-arch-32=i686 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
+  ignore line: [Modelo de hilos: posix]
+  ignore line: [gcc versión 4.7.2 (Ubuntu/Linaro 4.7.2-2ubuntu1) ]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec3165279956' '-rdynamic' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/4.7/collect2 --sysroot=/ --build-id --no-add-needed --as-needed --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec3165279956 /usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.7/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.7 -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../.. CMakeFiles/cmTryCompileExec3165279956.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/4.7/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crtn.o]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.7/collect2] ==> ignore
+    arg [--sysroot=/] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--no-add-needed] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [--hash-style=gnu] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-zrelro] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTryCompileExec3165279956] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crt1.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crti.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.7/crtbegin.o] ==> ignore
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.7] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.7]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib]
+    arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+    arg [-L/lib/../lib] ==> dir [/lib/../lib]
+    arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+    arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../..]
+    arg [CMakeFiles/cmTryCompileExec3165279956.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.7/crtend.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crtn.o] ==> ignore
+  remove lib [gcc]
+  remove lib [gcc_s]
+  remove lib [gcc]
+  remove lib [gcc_s]
+  collapse dir [/usr/lib/gcc/x86_64-linux-gnu/4.7] ==> [/usr/lib/gcc/x86_64-linux-gnu/4.7]
+  collapse dir [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse dir [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib] ==> [/usr/lib]
+  collapse dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+  collapse dir [/lib/../lib] ==> [/lib]
+  collapse dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse dir [/usr/lib/../lib] ==> [/usr/lib]
+  collapse dir [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../..] ==> [/usr/lib]
+  implicit libs: [c]
+  implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/4.7;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1996100856/fast"
+make[1]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1996100856.dir/build.make CMakeFiles/cmTryCompileExec1996100856.dir/build
+make[2]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/cmake -E cmake_progress_report /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec1996100856.dir/testCXXCompiler.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTryCompileExec1996100856.dir/testCXXCompiler.cxx.o -c /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTryCompileExec1996100856
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1996100856.dir/link.txt --verbose=1
+/usr/bin/c++          CMakeFiles/cmTryCompileExec1996100856.dir/testCXXCompiler.cxx.o  -o cmTryCompileExec1996100856 -rdynamic 
+make[2]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+make[1]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3882064651/fast"
+make[1]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3882064651.dir/build.make CMakeFiles/cmTryCompileExec3882064651.dir/build
+make[2]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/cmake -E cmake_progress_report /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec3882064651.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++     -o CMakeFiles/cmTryCompileExec3882064651.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTryCompileExec3882064651
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3882064651.dir/link.txt --verbose=1
+/usr/bin/c++        -v CMakeFiles/cmTryCompileExec3882064651.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec3882064651 -rdynamic  
+Usando especificaciones internas.
+COLLECT_GCC=/usr/bin/c++
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.7/lto-wrapper
+Objetivo: x86_64-linux-gnu
+Configurado con: ../src/configure -v --with-pkgversion='Ubuntu/Linaro 4.7.2-2ubuntu1' --with-bugurl=file:///usr/share/doc/gcc-4.7/README.Bugs --enable-languages=c,c++,go,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.7 --enable-shared --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.7 --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --enable-gnu-unique-object --enable-plugin --enable-objc-gc --disable-werror --with-arch-32=i686 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Modelo de hilos: posix
+gcc versión 4.7.2 (Ubuntu/Linaro 4.7.2-2ubuntu1) 
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec3882064651' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/4.7/collect2 --sysroot=/ --build-id --no-add-needed --as-needed --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec3882064651 /usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.7/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.7 -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../.. CMakeFiles/cmTryCompileExec3882064651.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/4.7/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crtn.o
+make[2]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+make[1]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:/usr/bin/make "cmTryCompileExec3882064651/fast"]
+  ignore line: [make[1]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec3882064651.dir/build.make CMakeFiles/cmTryCompileExec3882064651.dir/build]
+  ignore line: [make[2]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»]
+  ignore line: [/usr/bin/cmake -E cmake_progress_report /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/CMakeFiles 1]
+  ignore line: [Building CXX object CMakeFiles/cmTryCompileExec3882064651.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTryCompileExec3882064651.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTryCompileExec3882064651]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3882064651.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++        -v CMakeFiles/cmTryCompileExec3882064651.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec3882064651 -rdynamic  ]
+  ignore line: [Usando especificaciones internas.]
+  ignore line: [COLLECT_GCC=/usr/bin/c++]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.7/lto-wrapper]
+  ignore line: [Objetivo: x86_64-linux-gnu]
+  ignore line: [Configurado con: ../src/configure -v --with-pkgversion='Ubuntu/Linaro 4.7.2-2ubuntu1' --with-bugurl=file:///usr/share/doc/gcc-4.7/README.Bugs --enable-languages=c,c++,go,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.7 --enable-shared --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.7 --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --enable-gnu-unique-object --enable-plugin --enable-objc-gc --disable-werror --with-arch-32=i686 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
+  ignore line: [Modelo de hilos: posix]
+  ignore line: [gcc versión 4.7.2 (Ubuntu/Linaro 4.7.2-2ubuntu1) ]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.7/:/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec3882064651' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/4.7/collect2 --sysroot=/ --build-id --no-add-needed --as-needed --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec3882064651 /usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.7/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.7 -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../.. CMakeFiles/cmTryCompileExec3882064651.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/4.7/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crtn.o]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.7/collect2] ==> ignore
+    arg [--sysroot=/] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--no-add-needed] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [--hash-style=gnu] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-zrelro] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTryCompileExec3882064651] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crt1.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crti.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.7/crtbegin.o] ==> ignore
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.7] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.7]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib]
+    arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+    arg [-L/lib/../lib] ==> dir [/lib/../lib]
+    arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+    arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../..]
+    arg [CMakeFiles/cmTryCompileExec3882064651.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [-lm] ==> lib [m]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lc] ==> lib [c]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.7/crtend.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu/crtn.o] ==> ignore
+  remove lib [gcc_s]
+  remove lib [gcc]
+  remove lib [gcc_s]
+  remove lib [gcc]
+  collapse dir [/usr/lib/gcc/x86_64-linux-gnu/4.7] ==> [/usr/lib/gcc/x86_64-linux-gnu/4.7]
+  collapse dir [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse dir [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib] ==> [/usr/lib]
+  collapse dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+  collapse dir [/lib/../lib] ==> [/lib]
+  collapse dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse dir [/usr/lib/../lib] ==> [/usr/lib]
+  collapse dir [/usr/lib/gcc/x86_64-linux-gnu/4.7/../../..] ==> [/usr/lib]
+  implicit libs: [stdc++;m;c]
+  implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/4.7;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+
+
+Determining if the function XOpenDisplay exists in the /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so passed with the following output:
+Change Dir: /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec912959803/fast"
+make[1]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/make -f CMakeFiles/cmTryCompileExec912959803.dir/build.make CMakeFiles/cmTryCompileExec912959803.dir/build
+make[2]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/cmake -E cmake_progress_report /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec912959803.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=XOpenDisplay   -o CMakeFiles/cmTryCompileExec912959803.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec912959803
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec912959803.dir/link.txt --verbose=1
+/usr/bin/gcc     -DCHECK_FUNCTION_EXISTS=XOpenDisplay    CMakeFiles/cmTryCompileExec912959803.dir/CheckFunctionExists.c.o  -o cmTryCompileExec912959803 -rdynamic -lX11 -lXext 
+make[2]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+make[1]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+
+
+Determining if the function gethostbyname exists passed with the following output:
+Change Dir: /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3575274532/fast"
+make[1]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3575274532.dir/build.make CMakeFiles/cmTryCompileExec3575274532.dir/build
+make[2]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/cmake -E cmake_progress_report /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3575274532.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=gethostbyname   -o CMakeFiles/cmTryCompileExec3575274532.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec3575274532
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3575274532.dir/link.txt --verbose=1
+/usr/bin/gcc     -DCHECK_FUNCTION_EXISTS=gethostbyname    CMakeFiles/cmTryCompileExec3575274532.dir/CheckFunctionExists.c.o  -o cmTryCompileExec3575274532 -rdynamic 
+make[2]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+make[1]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+
+
+Determining if the function connect exists passed with the following output:
+Change Dir: /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec541609237/fast"
+make[1]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/make -f CMakeFiles/cmTryCompileExec541609237.dir/build.make CMakeFiles/cmTryCompileExec541609237.dir/build
+make[2]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/cmake -E cmake_progress_report /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec541609237.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=connect   -o CMakeFiles/cmTryCompileExec541609237.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec541609237
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec541609237.dir/link.txt --verbose=1
+/usr/bin/gcc     -DCHECK_FUNCTION_EXISTS=connect    CMakeFiles/cmTryCompileExec541609237.dir/CheckFunctionExists.c.o  -o cmTryCompileExec541609237 -rdynamic 
+make[2]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+make[1]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+
+
+Determining if the function remove exists passed with the following output:
+Change Dir: /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2280108159/fast"
+make[1]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2280108159.dir/build.make CMakeFiles/cmTryCompileExec2280108159.dir/build
+make[2]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/cmake -E cmake_progress_report /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2280108159.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=remove   -o CMakeFiles/cmTryCompileExec2280108159.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec2280108159
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2280108159.dir/link.txt --verbose=1
+/usr/bin/gcc     -DCHECK_FUNCTION_EXISTS=remove    CMakeFiles/cmTryCompileExec2280108159.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2280108159 -rdynamic 
+make[2]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+make[1]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+
+
+Determining if the function shmat exists passed with the following output:
+Change Dir: /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec569496985/fast"
+make[1]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/make -f CMakeFiles/cmTryCompileExec569496985.dir/build.make CMakeFiles/cmTryCompileExec569496985.dir/build
+make[2]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/cmake -E cmake_progress_report /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec569496985.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=shmat   -o CMakeFiles/cmTryCompileExec569496985.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec569496985
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec569496985.dir/link.txt --verbose=1
+/usr/bin/gcc     -DCHECK_FUNCTION_EXISTS=shmat    CMakeFiles/cmTryCompileExec569496985.dir/CheckFunctionExists.c.o  -o cmTryCompileExec569496985 -rdynamic 
+make[2]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+make[1]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+
+
+Determining if the function IceConnectionNumber exists in the ICE passed with the following output:
+Change Dir: /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3870898735/fast"
+make[1]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3870898735.dir/build.make CMakeFiles/cmTryCompileExec3870898735.dir/build
+make[2]: se ingresa al directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+/usr/bin/cmake -E cmake_progress_report /home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3870898735.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber   -o CMakeFiles/cmTryCompileExec3870898735.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec3870898735
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3870898735.dir/link.txt --verbose=1
+/usr/bin/gcc     -DCHECK_FUNCTION_EXISTS=IceConnectionNumber    CMakeFiles/cmTryCompileExec3870898735.dir/CheckFunctionExists.c.o  -o cmTryCompileExec3870898735 -rdynamic -lICE 
+make[2]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+make[1]: se sale del directorio «/home/cesar/workspace/minerva/lib/bullet-2.78/CMakeFiles/CMakeTmp»
+
+

@@ -8,6 +8,7 @@
 #ifndef TRACKINGMETHODARTK_H_
 #define TRACKINGMETHODARTK_H_
 
+#include <Kernel/ResourcesManager.h>
 #include <Kernel/TrackingMethod.h>
 #include <Kernel/Logger.h>
 #include <Factories/VideoFactory.h>
@@ -27,6 +28,8 @@ public:
 	void addMAOMarksGroup(MAOMarksGroup& marksGroup);
 
 private:
+
+	int loadPattFromResource(const char* filename);
 	void initARTK();
 	void initCameraParams();
 	void checkMarkVisibility(MAOMark* mark);

@@ -55,7 +55,9 @@ void TrackingMethodARTK::addMAOMark(MAOMark& mark) {
 	int id;
 
 	_vectorMAOMark.push_back(&mark);
-	id = arLoadPatt(mark.getPath().c_str());
+	//id = arLoadPatt(mark.getPath().c_str());
+	id = loadPattFromResource(mark.getPath().c_str());
+	//id = loadPattFromResource(ResourcesManager::getInstance()->getResource(mark.getPath()));
 
 	if (id == -1) {
 		Logger::getInstance()->error("Unable to load mark " + mark.getName());
@@ -149,6 +151,83 @@ void TrackingMethodARTK::checkMarkVisibility(MAOMark* mark) {
 	} else {
 		mark->setPositioned(false);
 	}
+}
+
+/* Modified function of ARToolKit to load
+ * patterns from a zip file Resource
+ */
+int TrackingMethodARTK::loadPattFromResource(const char* filename){
+    FILE    *fp;
+    int     patno;
+    int     h, i, j, l, m;
+    int     i1, i2, i3;
+
+    extern int    pattern_num;
+    extern int    patf[AR_PATT_NUM_MAX];
+    extern int    pat[AR_PATT_NUM_MAX][4][AR_PATT_SIZE_Y*AR_PATT_SIZE_X*3];
+    extern double patpow[AR_PATT_NUM_MAX][4];
+    extern int    patBW[AR_PATT_NUM_MAX][4][AR_PATT_SIZE_Y*AR_PATT_SIZE_X*3];
+    extern double patpowBW[AR_PATT_NUM_MAX][4];
+
+
+    if(pattern_num == -1 ) {
+        for( i = 0; i < AR_PATT_NUM_MAX; i++ ) patf[i] = 0;
+        pattern_num = 0;
+    }
+
+    for( i = 0; i < AR_PATT_NUM_MAX; i++ ) {
+        if(patf[i] == 0) break;
+    }
+    if( i == AR_PATT_NUM_MAX ) return -1;
+    patno = i;
+
+    if( (fp=fopen(filename, "r")) == NULL ) {
+        printf("\"%s\" not found!!\n", filename);
+        return(-1);
+    }
+
+    for( h=0; h<4; h++ ) {
+        l = 0;
+        for( i3 = 0; i3 < 3; i3++ ) {
+            for( i2 = 0; i2 < AR_PATT_SIZE_Y; i2++ ) {
+                for( i1 = 0; i1 < AR_PATT_SIZE_X; i1++ ) {
+                    if( fscanf(fp, "%d", &j) != 1 ) {
+                        printf("Pattern Data read error!!\n");
+                        return -1;
+                    }
+                    j = 255-j;
+                    pat[patno][h][(i2*AR_PATT_SIZE_X+i1)*3+i3] = j;
+                    if( i3 == 0 ) patBW[patno][h][i2*AR_PATT_SIZE_X+i1]  = j;
+                    else          patBW[patno][h][i2*AR_PATT_SIZE_X+i1] += j;
+                    if( i3 == 2 ) patBW[patno][h][i2*AR_PATT_SIZE_X+i1] /= 3;
+                    l += j;
+                }
+            }
+        }
+        l /= (AR_PATT_SIZE_Y*AR_PATT_SIZE_X*3);
+
+        m = 0;
+        for( i = 0; i < AR_PATT_SIZE_Y*AR_PATT_SIZE_X*3; i++ ) {
+            pat[patno][h][i] -= l;
+            m += (pat[patno][h][i]*pat[patno][h][i]);
+        }
+        patpow[patno][h] = sqrt((double)m);
+        if( patpow[patno][h] == 0.0 ) patpow[patno][h] = 0.0000001;
+
+        m = 0;
+        for( i = 0; i < AR_PATT_SIZE_Y*AR_PATT_SIZE_X; i++ ) {
+            patBW[patno][h][i] -= l;
+            m += (patBW[patno][h][i]*patBW[patno][h][i]);
+        }
+        patpowBW[patno][h] = sqrt((double)m);
+        if( patpowBW[patno][h] == 0.0 ) patpowBW[patno][h] = 0.0000001;
+    }
+    fclose(fp);
+
+    patf[patno] = 1;
+    pattern_num++;
+
+    return( patno );
 }
 
 TrackingMethodARTK::~TrackingMethodARTK() {
