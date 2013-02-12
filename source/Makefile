@@ -51,7 +51,7 @@ OBJSCRUDE = InputEventController.o GameLogicController.o MAOFactory.o\
 	MLBActuatorPathAddPoint.o MAOProperty.o MAOValue.o PhysicsController.o MLBSensorCollision.o\
 	PhysicDynamicObject.o MLBActuatorAddDynamicObject.o MSLParser.o MSLScanner.o MSLProperties.o\
 	MLBActuatorAnim.o MLBControllerScript.o MGEModule.o MPYWrapper.o WrapperTypes.o EndController.o\
-	GLDebugDrawer.o MSLPreprocessor.o  ResourcesManager.o
+	GLDebugDrawer.o MSLPreprocessor.o  ResourcesManager.o Resource.o
 
 OBJS= $(addprefix $(OBJSDIR),$(OBJSCRUDE))
 
