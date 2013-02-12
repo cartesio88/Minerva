@@ -62,7 +62,6 @@ void setAppDirectory(char* initialPath, char* appPath) {
 #endif
 }
 
-
 string getAppFileName(char* appPath) {
 	string sAppPath(appPath);
 	int p = sAppPath.rfind('/');
@@ -79,26 +78,83 @@ int main(int argc, char* argv[]) {
 	saveInitialDirectory();
 
 	/* Checking arguments */
-	if (argc != 2) {
-		cout << "ARGUMENTS ERROR!" << endl;
-		cout << "\tUsage: minerva <source_file>" << endl << endl;
-		cout << "Building Augmented Reality Apps has never been so easy!"
-				<< endl;
-		return -1;
-	}
+	if (argc == 1) {
+		// Execute the binary
+		/* Parser and init CODE */
+		try {
 
-	/* Parser and init CODE */
-	try {
+			/* Initializations */
+			MPYWrapper::getInstance()->initPython();
+			World::getInstance()->initWorld(640, 480);
+			VideoFactory::getInstance()->addVideoSource("cam", 0);
+			TrackingMethodFactory::getInstance(); /* Init tracking */
 
-		/* Initializations */
-		MPYWrapper::getInstance()->initPython();
-		World::getInstance()->initWorld(640, 480);
-		VideoFactory::getInstance()->addVideoSource("cam", 0);
-		TrackingMethodFactory::getInstance(); /* Init tracking */
+			/* Setting application directory */
+			setAppDirectory(initialPath, argv[1]);
 
+			/* Preprocessing! */
+			MSLPreprocessor preprocessor;
+			string appName = getAppFileName(argv[1]);
+			stringstream finalFile;
+			preprocessor.start(appName, finalFile);
+
+			/* Parsing! */
+			// Redirect cin
+			streambuf* cinold = cin.rdbuf();
+			cin.rdbuf(finalFile.rdbuf());
+
+			Logger::getInstance()->out("Starts the source file parsing...");
+			MSLParser parser;
+			parser.yyparse();
+
+			// Restoring cin
+			cin.rdbuf(cinold);
+
+		} catch (string e) {
+			cout << "Exception: " << e << endl;
+			EndController::getInstance()->end();
+		} catch (const char* e) {
+			cout << "Exception: " << e << endl;
+			EndController::getInstance()->end();
+		}
+
+		//Main loop
+		while (EndController::getInstance()->isRunning()) {
+			//Grab a frame from the camera!
+			VideoFactory::getInstance()->getMainCamera().grabFrame();
+
+			//Tracking method!
+			TrackingMethodFactory::getInstance()->pollMethods();
+
+			//Physics
+			PhysicsController::getInstance()->pollPhysics();
+
+			//Poll Events
+			InputEventController::getInstance()->pollEvents();
+
+			//Game Logic
+			GameLogicController::getInstance()->pollLogic();
+
+			//Draw
+			World::getInstance()->drawWorld();
+		}
+
+		//Freeing resources
+		World::getInstance()->destroy();
+		GameLogicController::getInstance()->destroy();
+		TrackingMethodFactory::getInstance()->destroy();
+		PhysicsController::getInstance()->destroy();
+		InputEventController::getInstance()->destroy();
+		VideoFactory::getInstance()->destroy();
+
+	} else if (argc == 2) {
+		//Generate the binary
 		/* Setting application directory */
 		setAppDirectory(initialPath, argv[1]);
-		
+
+		// Copies the binary
+
+		// Parses the code looking for resources, and pack them!
 		/* Preprocessing! */
 		MSLPreprocessor preprocessor;
 		string appName = getAppFileName(argv[1]);
@@ -107,52 +163,28 @@ int main(int argc, char* argv[]) {
 
 		/* Parsing! */
 		// Redirect cin
-		streambuf* cinold= cin.rdbuf();
+		streambuf* cinold = cin.rdbuf();
 		cin.rdbuf(finalFile.rdbuf());
 
 		Logger::getInstance()->out("Starts the source file parsing...");
+
 		MSLParser parser;
 		parser.yyparse();
+
+		/* Also, pack the source code! */
+		ResourcesManager::getInstance()->pack();
 
 		// Restoring cin
 		cin.rdbuf(cinold);
 
-	} catch (string e) {
-		cout << "Exception: " << e << endl;
-		EndController::getInstance()->end();
-	} catch (const char* e) {
-		cout << "Exception: " << e << endl;
-		EndController::getInstance()->end();
+	} else {
+		cout << "ARGUMENTS ERROR!" << endl;
+		cout << "\tUsage:" << endl;
+		cout << "\tGenerate: minerva <source_file>" << endl << endl;
+		cout << "Building Augmented Reality Apps has never been so easy!"
+				<< endl;
+		return -1;
 	}
-
-	//Main loop
-	while (EndController::getInstance()->isRunning()) {
-		//Grab a frame from the camera!
-		VideoFactory::getInstance()->getMainCamera().grabFrame();
-
-		//Tracking method!
-		TrackingMethodFactory::getInstance()->pollMethods();
-
-		//Physics
-		PhysicsController::getInstance()->pollPhysics();
-
-		//Poll Events
-		InputEventController::getInstance()->pollEvents();
-
-		//Game Logic
-		GameLogicController::getInstance()->pollLogic();
-
-		//Draw
-		World::getInstance()->drawWorld();
-	}
-
-	//Freeing resources
-	World::getInstance()->destroy();
-	GameLogicController::getInstance()->destroy();
-	TrackingMethodFactory::getInstance()->destroy();
-	PhysicsController::getInstance()->destroy();
-	InputEventController::getInstance()->destroy();
-	VideoFactory::getInstance()->destroy();
 
 	return 0;
 }
