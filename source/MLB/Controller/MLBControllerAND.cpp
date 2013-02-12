@@ -5,7 +5,7 @@
  *      Author: cesar
  */
 
-#include "MLBControllerAND.h"
+#include <MLB/Controller/MLBControllerAND.h>
 
 MLBControllerAND::MLBControllerAND(const std::string& name, MAO& parent): MLBController(name, parent) {
 	_mlbType = T_MLBCONTROLLERAND;

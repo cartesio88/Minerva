@@ -5,7 +5,7 @@
  *      Author: cesar
  */
 
-#include "MAOFactory.h"
+#include <Factories/MAOFactory.h>
 
 MAOFactory::MAOFactory() {
 	_vectorMAO = std::vector<MAO*>();

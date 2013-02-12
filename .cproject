@@ -18,20 +18,29 @@
 					<folderInfo id="0.381937356." name="/" resourcePath="">
 						<toolChain id="org.eclipse.cdt.build.core.prefbase.toolchain.1153234083" name="No ToolChain" resourceTypeBasedDiscovery="false" superClass="org.eclipse.cdt.build.core.prefbase.toolchain">
 							<targetPlatform id="org.eclipse.cdt.build.core.prefbase.toolchain.1153234083.1424860760" name=""/>
-							<builder arguments="-j5 -k" command="make" id="org.eclipse.cdt.build.core.settings.default.builder.419680852" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Gnu Make Builder" superClass="org.eclipse.cdt.build.core.settings.default.builder"/>
+							<builder arguments="-j5 -k" command="make" id="org.eclipse.cdt.build.core.settings.default.builder.419680852" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Gnu Make Builder" superClass="org.eclipse.cdt.build.core.settings.default.builder">
+								<outputEntries>
+									<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="outputPath" name=""/>
+								</outputEntries>
+							</builder>
 							<tool id="org.eclipse.cdt.build.core.settings.holder.libs.922307127" name="holder for library settings" superClass="org.eclipse.cdt.build.core.settings.holder.libs"/>
 							<tool id="org.eclipse.cdt.build.core.settings.holder.1062118393" name="Assembly" superClass="org.eclipse.cdt.build.core.settings.holder">
 								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.1773190791" languageId="org.eclipse.cdt.core.assembly" languageName="Assembly" sourceContentType="org.eclipse.cdt.core.asmSource" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
 							</tool>
 							<tool id="org.eclipse.cdt.build.core.settings.holder.245896693" name="GNU C++" superClass="org.eclipse.cdt.build.core.settings.holder">
 								<option id="org.eclipse.cdt.build.core.settings.holder.incpaths.1910536704" name="Include Paths" superClass="org.eclipse.cdt.build.core.settings.holder.incpaths" valueType="includePath">
-									<listOptionValue builtIn="false" value="/usr/include/c++/4.7"/>
-									<listOptionValue builtIn="false" value="/usr/include/SDL"/>
-									<listOptionValue builtIn="false" value="/usr/include/boost"/>
-									<listOptionValue builtIn="false" value="/usr/include/opencv"/>
-									<listOptionValue builtIn="false" value="/usr/include/python2.7"/>
-									<listOptionValue builtIn="false" value="/usr/include/c++/4.7.2/x86_64-linux-gnu"/>
+									<listOptionValue builtIn="false" value="/usr/include"/>
 									<listOptionValue builtIn="false" value="/usr/include/linux"/>
+									<listOptionValue builtIn="false" value="/usr/include/c++/4.7.2"/>
+									<listOptionValue builtIn="false" value="/usr/include/SDL"/>
+									<listOptionValue builtIn="false" value="/usr/include/opencv"/>
+									<listOptionValue builtIn="false" value="/usr/include/boost"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/minerva/include/MAO}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/minerva/include/Controllers}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/minerva/include/Factories}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/minerva/include/MPY}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/minerva/include/Kernel}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/minerva/include/MLB}&quot;"/>
 								</option>
 								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.1570182932" languageId="org.eclipse.cdt.core.g++" languageName="GNU C++" sourceContentType="org.eclipse.cdt.core.cxxSource,org.eclipse.cdt.core.cxxHeader" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
 							</tool>
@@ -41,31 +50,9 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
-					<fileInfo id="0.381937356.128023805" name="MAOFactory.cpp" rcbsApplicability="disable" resourcePath="Factories/MAOFactory.cpp" toolsToInvoke="org.eclipse.cdt.build.core.settings.holder.245896693.2098058382">
-						<tool id="org.eclipse.cdt.build.core.settings.holder.245896693.2098058382" name="GNU C++" superClass="org.eclipse.cdt.build.core.settings.holder.1062118393">
-							<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.26331969" languageId="org.eclipse.cdt.core.g++" languageName="GNU C++" sourceContentType="org.eclipse.cdt.core.cxxSource,org.eclipse.cdt.core.cxxHeader" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
-						</tool>
-					</fileInfo>
-					<fileInfo id="0.381937356.1755436677" name="MAORenderable3DModel.cpp" rcbsApplicability="disable" resourcePath="MAO/MAORenderable3DModel.cpp" toolsToInvoke="org.eclipse.cdt.build.core.settings.holder.245896693.1791768211">
-						<tool id="org.eclipse.cdt.build.core.settings.holder.245896693.1791768211" name="GNU C++" superClass="org.eclipse.cdt.build.core.settings.holder.1062118393">
-							<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.654387482" languageId="org.eclipse.cdt.core.g++" languageName="GNU C++" sourceContentType="org.eclipse.cdt.core.cxxSource,org.eclipse.cdt.core.cxxHeader" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
-						</tool>
-					</fileInfo>
-					<fileInfo id="0.381937356.1104171449" name="ParserOrej.cpp" rcbsApplicability="disable" resourcePath="Kernel/Parsers/ParserOrej.cpp" toolsToInvoke="org.eclipse.cdt.build.core.settings.holder.245896693.685478358">
-						<tool id="org.eclipse.cdt.build.core.settings.holder.245896693.685478358" name="GNU C++" superClass="org.eclipse.cdt.build.core.settings.holder.1062118393">
-							<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.646553679" languageId="org.eclipse.cdt.core.g++" languageName="GNU C++" sourceContentType="org.eclipse.cdt.core.cxxSource,org.eclipse.cdt.core.cxxHeader" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
-						</tool>
-					</fileInfo>
-					<fileInfo id="0.381937356.1954240131" name="Parser.cpp" rcbsApplicability="disable" resourcePath="Kernel/Parsers/Parser.cpp" toolsToInvoke="org.eclipse.cdt.build.core.settings.holder.245896693.171658906">
-						<tool id="org.eclipse.cdt.build.core.settings.holder.245896693.171658906" name="GNU C++" superClass="org.eclipse.cdt.build.core.settings.holder.1062118393">
-							<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.1266023746" languageId="org.eclipse.cdt.core.g++" languageName="GNU C++" sourceContentType="org.eclipse.cdt.core.cxxSource,org.eclipse.cdt.core.cxxHeader" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
-						</tool>
-					</fileInfo>
-					<fileInfo id="0.381937356.1524468938" name="main.cpp" rcbsApplicability="disable" resourcePath="main.cpp" toolsToInvoke="org.eclipse.cdt.build.core.settings.holder.245896693.1659751556">
-						<tool id="org.eclipse.cdt.build.core.settings.holder.245896693.1659751556" name="GNU C++" superClass="org.eclipse.cdt.build.core.settings.holder.1062118393">
-							<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.2071662406" languageId="org.eclipse.cdt.core.g++" languageName="GNU C++" sourceContentType="org.eclipse.cdt.core.cxxSource,org.eclipse.cdt.core.cxxHeader" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
-						</tool>
-					</fileInfo>
+					<sourceEntries>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+					</sourceEntries>
 				</configuration>
 			</storageModule>
 			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>

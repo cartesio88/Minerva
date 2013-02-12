@@ -5,7 +5,7 @@
  *      Author: cesar
  */
 
-#include "TrackingMethodFactory.h"
+#include <Factories/TrackingMethodFactory.h>
 
 TrackingMethodFactory::TrackingMethodFactory() {
 

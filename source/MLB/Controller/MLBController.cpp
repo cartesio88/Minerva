@@ -5,7 +5,7 @@
  *      Author: cesar
  */
 
-#include "MLBController.h"
+#include <MLB/Controller/MLBController.h>
 
 MLBController::MLBController(const std::string& name, MAO& parent): MLB(name, parent) {
 	_state = false;

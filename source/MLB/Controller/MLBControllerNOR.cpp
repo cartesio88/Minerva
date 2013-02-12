@@ -5,7 +5,7 @@
  *      Author: cesar
  */
 
-#include "MLBControllerNOR.h"
+#include <MLB/Controller/MLBControllerNOR.h>
 
 MLBControllerNOR::MLBControllerNOR(const std::string& name, MAO& parent): MLBController(name, parent) {
 	_mlbType = T_MLBCONTROLLERNOR;

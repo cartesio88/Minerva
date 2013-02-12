@@ -1,4 +1,4 @@
-#include "GLDebugDrawer.h"
+#include <Kernel/GLDebugDrawer.h>
 
 //#include <stdio.h> //printf debugging
 

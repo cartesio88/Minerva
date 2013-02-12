@@ -5,7 +5,7 @@
  *      Author: cesar
  */
 
-#include "PhysicObject.h"
+#include <Kernel/PhysicObject.h>
 
 PhysicObject::PhysicObject(MAORenderable3D* mao) {
 	_mao = mao;

@@ -5,7 +5,7 @@
  *      Author: cesar
  */
 
-#include "VideoSource.h"
+#include <Kernel/VideoSource.h>
 
 VideoSource::VideoSource(const std::string& name, const int& nDevice, int width, int height) {
 	cv::VideoCapture* c = new cv::VideoCapture(nDevice);

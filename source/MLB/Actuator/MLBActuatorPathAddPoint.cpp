@@ -5,7 +5,7 @@
  *      Author: cesar
  */
 
-#include "MLBActuatorPathAddPoint.h"
+#include <MLB/Actuator/MLBActuatorPathAddPoint.h>
 
 MLBActuatorPathAddPoint::MLBActuatorPathAddPoint(const std::string& name, MAORenderable3DPath& parent): MLBActuator(name, parent) {
 	_mlbType = T_MLBACTUATORPATHADDPOINT;

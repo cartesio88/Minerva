@@ -5,7 +5,7 @@
  *      Author: cesar
  */
 
-#include "MLBActuatorRelativePose.h"
+#include <MLB/Actuator/MLBActuatorRelativePose.h>
 
 MLBActuatorRelativePose::MLBActuatorRelativePose(const std::string& name,
 		MAOPositionator3D& parent, MAOPositionator3D& ref,

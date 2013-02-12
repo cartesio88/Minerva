@@ -5,7 +5,7 @@
  *      Author: cesar
  */
 
-#include "MAORenderable3DLine.h"
+#include <MAO/MAORenderable3DLine.h>
 
 MAORenderable3DLine::MAORenderable3DLine(const std::string& name, float size,
 		int r, int g, int b) :

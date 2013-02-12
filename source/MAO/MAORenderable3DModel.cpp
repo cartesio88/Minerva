@@ -5,7 +5,7 @@
  *      Author: cesar
  */
 
-#include "MAORenderable3DModel.h"
+#include <MAO/MAORenderable3DModel.h>
 
 MAORenderable3DModel::MAORenderable3DModel(const std::string& name,
 		const std::string& file, float size): MAORenderable3D(name, size), _file(file) {

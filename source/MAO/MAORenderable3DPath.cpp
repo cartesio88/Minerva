@@ -5,7 +5,7 @@
  *      Author: cesar
  */
 
-#include "MAORenderable3DPath.h"
+#include <MAO/MAORenderable3DPath.h>
 
 MAORenderable3DPath::MAORenderable3DPath(const std::string& name, float size,
 		int r, int g, int b) :

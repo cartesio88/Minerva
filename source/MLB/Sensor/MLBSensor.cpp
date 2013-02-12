@@ -5,7 +5,7 @@
  *      Author: cesar
  */
 
-#include "MLBSensor.h"
+#include <MLB/Sensor/MLBSensor.h>
 
 MLBSensor::MLBSensor(const std::string& name, MAO& parent): MLB(name, parent) {
 	_state = false;

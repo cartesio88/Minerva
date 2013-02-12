@@ -5,7 +5,7 @@
  *      Author: cesar
  */
 
-#include "MLBActuatorAng.h"
+#include <MLB/Actuator/MLBActuatorAng.h>
 
 MLBActuatorAng::MLBActuatorAng(const std::string& name,
 		MAOPositionator3D& parent, MAOProperty& property, int angAxis) :

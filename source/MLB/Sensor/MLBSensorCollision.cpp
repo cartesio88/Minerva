@@ -5,7 +5,7 @@
  *      Author: cesar
  */
 
-#include "MLBSensorCollision.h"
+#include <MLB/Sensor/MLBSensorCollision.h>
 
 MLBSensorCollision::MLBSensorCollision(const std::string& name,
 		MAORenderable3D& parent, const std::string& property) :

@@ -5,7 +5,7 @@
  *      Author: cesar
  */
 
-#include "MAO.h"
+#include <MAO/MAO.h>
 
 MAO::MAO(std::string name) {
 	_name = name;

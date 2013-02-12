@@ -5,7 +5,7 @@
  *      Author: cesar
  */
 
-#include "MLBActuatorChangePose.h"
+#include <MLB/Actuator/MLBActuatorChangePose.h>
 
 /* Rotation angles in degrees ;)*/
 MLBActuatorChangePose::MLBActuatorChangePose(const std::string& name,

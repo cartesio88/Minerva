@@ -5,7 +5,7 @@
  *      Author: cesar
  */
 
-#include "MPYWrapper.h"
+#include <MPY/MPYWrapper.h>
 
 /* Boost Macro's ;) */
 BOOST_PYTHON_MODULE(MGE) {

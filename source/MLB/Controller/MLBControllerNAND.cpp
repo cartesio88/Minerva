@@ -5,7 +5,7 @@
  *      Author: cesar
  */
 
-#include "MLBControllerNAND.h"
+#include <MLB/Controller/MLBControllerNAND.h>
 
 MLBControllerNAND::MLBControllerNAND(const std::string& name, MAO& parent): MLBController(name, parent) {
 	_mlbType = T_MLBCONTROLLERNAND;

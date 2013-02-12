@@ -5,7 +5,7 @@
  *      Author: cesar
  */
 
-#include "MLBSensorAlways.h"
+#include <MLB/Sensor/MLBSensorAlways.h>
 
 MLBSensorAlways::MLBSensorAlways(const std::string& name, MAO& parent): MLBSensor(name, parent) {
 	_mlbType = T_MLBSENSORALWAYS;

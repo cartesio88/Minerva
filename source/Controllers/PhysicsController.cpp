@@ -5,7 +5,7 @@
  *      Author: cesar
  */
 
-#include "PhysicsController.h"
+#include <Controllers/PhysicsController.h>
 
 PhysicsController::PhysicsController() {
 	_ground = NULL;

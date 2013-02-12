@@ -5,7 +5,7 @@
  *      Author: cesar
  */
 
-#include "MLBActuatorAnim.h"
+#include <MLB/Actuator/MLBActuatorAnim.h>
 
 MLBActuatorAnim::MLBActuatorAnim(const std::string& name,
 		MAORenderable3DModel& parent, int animAction, int animType) :

@@ -5,7 +5,7 @@
  *      Author: cesar
  */
 
-#include "MAORenderable3D.h"
+#include <MAO/MAORenderable3D.h>
 
 MAORenderable3D::MAORenderable3D(const std::string& name, const float& size) :
 	MAOPositionator3D(name) {

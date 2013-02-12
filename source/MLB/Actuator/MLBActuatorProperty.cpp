@@ -5,7 +5,7 @@
  *      Author: cesar
  */
 
-#include "MLBActuatorProperty.h"
+#include <MLB/Actuator/MLBActuatorProperty.h>
 
 MLBActuatorProperty::MLBActuatorProperty(const std::string& name, MAO& parent,
 		MAOProperty& property, MAOValue value, int type) :

@@ -5,7 +5,7 @@
  *      Author: cesar
  */
 
-#include "MAOMarksGroup.h"
+#include <MAO/MAOMarksGroup.h>
 
 MAOMarksGroup::MAOMarksGroup(const std::string& name): MAOPositionator3D(name) {
   _vectorMAOMark = std::vector<MAOMark*>();

@@ -5,7 +5,7 @@
  *      Author: cesar
  */
 
-#include "MAORenderable2DImage.h"
+#include <MAO/MAORenderable2DImage.h>
 
 MAORenderable2DImage::MAORenderable2DImage(const std::string& name, const std::string& filePath, const int& x, const int& y, const int& width, const int& height): MAORenderable2D(name,x,y,width,height) {
 	_filePath = filePath;

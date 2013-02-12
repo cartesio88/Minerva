@@ -5,7 +5,7 @@
  *      Author: cesar
  */
 
-#include "MAOMark.h"
+#include <MAO/MAOMark.h>
 
 MAOMark::MAOMark(const std::string& name, const std::string& path,
 		const float& size) :

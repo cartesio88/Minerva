@@ -5,7 +5,7 @@
  *      Author: cesar
  */
 
-#include "MLBActuatorAddDynamicObject.h"
+#include <MLB/Actuator/MLBActuatorAddDynamicObject.h>
 
 MLBActuatorAddDynamicObject::MLBActuatorAddDynamicObject(
 		const std::string& name, MAOPositionator3D& parent,

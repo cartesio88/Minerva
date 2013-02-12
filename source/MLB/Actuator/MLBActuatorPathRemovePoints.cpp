@@ -5,7 +5,7 @@
  *      Author: cesar
  */
 
-#include "MLBActuatorPathRemovePoints.h"
+#include <MLB/Actuator/MLBActuatorPathRemovePoints.h>
 
 MLBActuatorPathRemovePoints::MLBActuatorPathRemovePoints(const std::string& name, MAORenderable3DPath& parent): MLBActuator(name, parent) {
 	_mlbType = T_MLBACTUATORPATHREMOVEPOINTS;

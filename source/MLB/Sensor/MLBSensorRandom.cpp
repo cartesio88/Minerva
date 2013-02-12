@@ -5,7 +5,7 @@
  *      Author: cesar
  */
 
-#include "MLBSensorRandom.h"
+#include <MLB/Sensor/MLBSensorRandom.h>
 
 MLBSensorRandom::MLBSensorRandom(const std::string& name, MAO& parent, float prob): MLBSensor(name, parent) {
 	if(prob<0 || prob>1)

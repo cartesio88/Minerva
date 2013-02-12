@@ -5,7 +5,7 @@
  *      Author: cesar
  */
 
-#include "MAORenderable2D.h"
+#include <MAO/MAORenderable2D.h>
 
 MAORenderable2D::MAORenderable2D(const std::string& name, const int& x,
 		const int& y, const int& width, const int& height) :

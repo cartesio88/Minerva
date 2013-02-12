@@ -5,7 +5,7 @@
  *      Author: cesar
  */
 
-#include "MAORenderable2DText.h"
+#include <MAO/MAORenderable2DText.h>
 
 MAORenderable2DText::MAORenderable2DText(const std::string& name,
 		const std::string& fontPath, const int& ptSize,

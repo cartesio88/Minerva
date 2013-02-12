@@ -5,7 +5,7 @@
  *      Author: cesar
  */
 
-#include "MLBSensorKeyboard.h"
+#include <MLB/Sensor/MLBSensorKeyboard.h>
 
 MLBSensorKeyboard::MLBSensorKeyboard(const std::string& name, MAO& parent,
 		SDL_EventType& type, SDLKey& key) :

@@ -5,7 +5,7 @@
  *      Author: cesar
  */
 
-#include "MLB.h"
+#include <MLB/MLB.h>
 
 MLB::MLB(const std::string& name, MAO& parent) {
 	_name = name;

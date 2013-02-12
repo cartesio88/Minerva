@@ -5,7 +5,7 @@
  *      Author: cesar
  */
 
-#include "MLBActuatorDistance.h"
+#include <MLB/Actuator/MLBActuatorDistance.h>
 
 MLBActuatorDistance::MLBActuatorDistance(const std::string& name,
 		MAOPositionator3D& parent, MAOPositionator3D& mao,

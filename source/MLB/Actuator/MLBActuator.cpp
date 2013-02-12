@@ -5,7 +5,7 @@
  *      Author: cesar
  */
 
-#include "MLBActuator.h"
+#include <MLB/Actuator/MLBActuator.h>
 
 MLBActuator::MLBActuator(const std::string& name,  MAO& parent): MLB(name,parent) {
 	_mlbType = T_MLBACTUATOR;

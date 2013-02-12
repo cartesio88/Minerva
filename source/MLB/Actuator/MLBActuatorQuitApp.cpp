@@ -5,7 +5,7 @@
  *      Author: cesar
  */
 
-#include "MLBActuatorQuitApp.h"
+#include <MLB/Actuator/MLBActuatorQuitApp.h>
 
 MLBActuatorQuitApp::MLBActuatorQuitApp(const std::string& name, MAO& parent):MLBActuator(name, parent) {
 	_mlbType = T_MLBACTUATORQUITAPP;

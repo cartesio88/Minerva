@@ -5,7 +5,7 @@
  *      Author: cesar
  */
 
-#include "MLBSensorDelay.h"
+#include <MLB/Sensor/MLBSensorDelay.h>
 
 MLBSensorDelay::MLBSensorDelay(const std::string& name, MAO& parent,
 		int delayFrames) :

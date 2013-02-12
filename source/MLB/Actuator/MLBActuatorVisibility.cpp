@@ -5,7 +5,7 @@
  *      Author: cesar
  */
 
-#include "MLBActuatorVisibility.h"
+#include <MLB/Actuator/MLBActuatorVisibility.h>
 
 MLBActuatorVisibility::MLBActuatorVisibility(const std::string& name,
 		MAO& parent, bool value) :

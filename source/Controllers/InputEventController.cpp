@@ -5,7 +5,7 @@
  *      Author: cesar
  */
 
-#include "InputEventController.h"
+#include <Controllers/InputEventController.h>
 
 InputEventController::InputEventController() {
 

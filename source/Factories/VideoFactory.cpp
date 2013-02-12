@@ -5,7 +5,7 @@
  *      Author: cesar
  */
 
-#include "VideoFactory.h"
+#include <Factories/VideoFactory.h>
 
 VideoFactory::VideoFactory() {
 	_mainCamera = NULL;

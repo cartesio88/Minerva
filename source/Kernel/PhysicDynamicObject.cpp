@@ -5,7 +5,7 @@
  *      Author: cesar
  */
 
-#include "PhysicDynamicObject.h"
+#include <Kernel/PhysicDynamicObject.h>
 
 PhysicDynamicObject::PhysicDynamicObject(MAORenderable3D* mao,
 		MAOPositionator3D& creationRef, cv::Mat* offset, btVector3* impulse) :

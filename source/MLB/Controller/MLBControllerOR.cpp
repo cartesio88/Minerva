@@ -5,7 +5,7 @@
  *      Author: cesar
  */
 
-#include "MLBControllerOR.h"
+#include <MLB/Controller/MLBControllerOR.h>
 
 MLBControllerOR::MLBControllerOR(const std::string& name, MAO& parent): MLBController(name,parent) {
 	_mlbType = T_MLBCONTROLLEROR;

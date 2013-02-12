@@ -5,7 +5,7 @@
  *      Author: cesar
  */
 
-#include "MLBActuatorRandom.h"
+#include <MLB/Actuator/MLBActuatorRandom.h>
 
 MLBActuatorRandom::MLBActuatorRandom(const std::string& name, MAO& parent, MAOProperty& property): MLBActuator(name, parent) {
 	if(property.getType()!=MAOPROPERTY_FLOAT)

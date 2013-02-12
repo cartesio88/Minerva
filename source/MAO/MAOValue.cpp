@@ -1,4 +1,4 @@
-#include "MAOValue.h"
+#include <MAO/MAOValue.h>
 
 //Default constructor
 MAOValue::MAOValue() {

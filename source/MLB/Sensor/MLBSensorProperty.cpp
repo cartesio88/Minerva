@@ -5,7 +5,7 @@
  *      Author: cesar
  */
 
-#include "MLBSensorProperty.h"
+#include <MLB/Sensor/MLBSensorProperty.h>
 
 MLBSensorProperty::MLBSensorProperty(const std::string& name, MAO& parent,
 		const int& type, MAOProperty& property, MAOValue value1,

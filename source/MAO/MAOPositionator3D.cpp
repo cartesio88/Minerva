@@ -5,7 +5,7 @@
  *      Author: cesar
  */
 
-#include "MAOPositionator3D.h"
+#include <MAO/MAOPositionator3D.h>
 
 MAOPositionator3D::MAOPositionator3D(const std::string& name):MAO(name) {
 	_posMatrix = cv::Mat(4,4,CV_32F);

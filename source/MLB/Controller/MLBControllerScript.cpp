@@ -5,7 +5,7 @@
  *      Author: cesar
  */
 
-#include "MLBControllerScript.h"
+#include <MLB/Controller/MLBControllerScript.h>
 
 MLBControllerScript::MLBControllerScript(const std::string& name, MAO& parent,
 		const std::string& path) :

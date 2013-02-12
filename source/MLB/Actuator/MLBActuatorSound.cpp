@@ -5,7 +5,7 @@
  *      Author: cesar
  */
 
-#include "MLBActuatorSound.h"
+#include <MLB/Actuator/MLBActuatorSound.h>
 
 MLBActuatorSound::MLBActuatorSound(const std::string& name, MAO& parent,
 		const std::string& path) :

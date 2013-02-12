@@ -5,7 +5,7 @@
  *      Author: cesar
  */
 
-#include "MLBSensorNear.h"
+#include <MLB/Sensor/MLBSensorNear.h>
 
 MLBSensorNear::MLBSensorNear(const std::string& name,
 		MAOPositionator3D& parent, const std::string& property,

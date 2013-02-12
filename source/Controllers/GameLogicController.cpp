@@ -5,7 +5,7 @@
  *      Author: cesar
  */
 
-#include "GameLogicController.h"
+#include <Controllers/GameLogicController.h>
 
 GameLogicController::GameLogicController() {
 

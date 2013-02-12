@@ -5,7 +5,7 @@
  *      Author: cesar
  */
 
-#include "PathPoint.h"
+#include <Kernel/PathPoint.h>
 
 PathPoint::PathPoint(float x, float y, float z,
 		float size, int r, int g, int b, bool visible) {

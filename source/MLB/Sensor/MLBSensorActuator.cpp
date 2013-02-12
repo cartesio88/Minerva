@@ -5,7 +5,7 @@
  *      Author: cesar
  */
 
-#include "MLBSensorActuator.h"
+#include <MLB/Sensor/MLBSensorActuator.h>
 
 MLBSensorActuator::MLBSensorActuator(const std::string& name, MAO& parent): MLBSensor(name, parent) {
 	_mlbType = T_MLBSENSORACTUATOR;
