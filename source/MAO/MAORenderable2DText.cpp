@@ -98,7 +98,10 @@ int MAORenderable2DText::getB() {
 }
 
 void MAORenderable2DText::loadFont() {
-	_font = TTF_OpenFont(_fontPath.c_str(),getPtSize());
+	Resource& r = ResourcesManager::getInstance()->getResource(_fontPath);
+	SDL_RWops *rw = SDL_RWFromMem((void*) r.getData(), r.getSize());
+
+	_font = TTF_OpenFontRW(rw, 1, getPtSize());
 
 	if (_font == NULL) {
 		Logger::getInstance()->error("Error loading the font: "+_fontPath);

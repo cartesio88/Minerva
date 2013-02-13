@@ -13,7 +13,10 @@ MLBActuatorSound::MLBActuatorSound(const std::string& name, MAO& parent,
 	_path = path;
 	_chunk = NULL;
 
-	_chunk = Mix_LoadWAV(path.c_str());
+	Resource& r = ResourcesManager::getInstance()->getResource(path);
+	SDL_RWops *rw = SDL_RWFromMem((void*) r.getData(), r.getSize());
+
+	_chunk = Mix_LoadWAV_RW(rw, 1);
 
 	if (_chunk == NULL) {
 		Logger::getInstance()->error(

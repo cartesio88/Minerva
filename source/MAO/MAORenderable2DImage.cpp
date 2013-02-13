@@ -27,8 +27,8 @@ void MAORenderable2DImage::generateTexFromSDLSurface() {
 
 	try {
 		Resource& r = ResourcesManager::getInstance()->getResource(_filePath);
-
 		SDL_RWops *rw = SDL_RWFromMem((void*) r.getData(), r.getSize());
+
 		surface = IMG_Load_RW(rw, 1);
 
 	} catch (std::string& e) {
@@ -36,10 +36,6 @@ void MAORenderable2DImage::generateTexFromSDLSurface() {
 		//Logger::getInstance()->error(IMG_GetError());
 		throw "Unable to load image file: " + _filePath;
 	}
-
-	//if (!(surface = IMG_Load(_filePath.c_str()))) {
-	//if (!surface) {
-	//}
 
 	genGlTexture(surface);
 
