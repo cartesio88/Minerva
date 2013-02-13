@@ -17,8 +17,8 @@ MLBActuatorSound::MLBActuatorSound(const std::string& name, MAO& parent,
 
 	if (_chunk == NULL) {
 		Logger::getInstance()->error(
-				"Error creating MLB Actuator Sound with SDL_Mixer: " + name);
-		throw "Error creating MLB Actuator Sound: " + name;
+				"Error creating MLB Actuator Sound with SDL_Mixer: " + name + " looking for file: "+path);
+		throw "Error creating MLB Actuator Sound: " + name+ " looking for file: "+path;
 	}
 
 	Mix_VolumeChunk(_chunk, MIX_MAX_VOLUME);

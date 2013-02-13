@@ -7,36 +7,46 @@
 
 #include <MAO/MAORenderable2DImage.h>
 
-MAORenderable2DImage::MAORenderable2DImage(const std::string& name, const std::string& filePath, const int& x, const int& y, const int& width, const int& height): MAORenderable2D(name,x,y,width,height) {
+MAORenderable2DImage::MAORenderable2DImage(const std::string& name,
+		const std::string& filePath, const int& x, const int& y,
+		const int& width, const int& height) :
+		MAORenderable2D(name, x, y, width, height) {
 	_filePath = filePath;
 	_type = T_MAORENDERABLE2DIMAGE;
 
 	generateTexFromSDLSurface();
 }
 
-void MAORenderable2DImage::generateTexFromSDLSurface(){
+void MAORenderable2DImage::generateTexFromSDLSurface() {
 
-  /* Generate the image just one time */
-  if(_texture!=-1)
-    return;
+	/* Generate the image just one time */
+	if (_texture != -1)
+		return;
 
-  SDL_Surface* surface;
+	SDL_Surface* surface;
 
-  if(!(surface = IMG_Load(_filePath.c_str()))){
-    Logger::getInstance()->error("Unable to load image file: "+_filePath);
-    Logger::getInstance()->error(IMG_GetError());
-    throw "Unable to load image file: "+_filePath;
-  }
+	try {
+		Resource& r = ResourcesManager::getInstance()->getResource(_filePath);
 
-  genGlTexture(surface);
+		SDL_RWops *rw = SDL_RWFromMem((void*) r.getData(), r.getSize());
+		surface = IMG_Load_RW(rw, 1);
 
-  SDL_FreeSurface(surface);
+	} catch (std::string& e) {
+		Logger::getInstance()->error("Unable to load image file: " + _filePath);
+		//Logger::getInstance()->error(IMG_GetError());
+		throw "Unable to load image file: " + _filePath;
+	}
+
+	//if (!(surface = IMG_Load(_filePath.c_str()))) {
+	//if (!surface) {
+	//}
+
+	genGlTexture(surface);
+
+	SDL_FreeSurface(surface);
 }
 
-
-
-
-std::string& MAORenderable2DImage::getFilePath(){
+std::string& MAORenderable2DImage::getFilePath() {
 	return _filePath;
 }
 

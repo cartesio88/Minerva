@@ -7,6 +7,8 @@
 
 #include <MLB/Controller/MLBControllerScript.h>
 
+using namespace std;
+
 MLBControllerScript::MLBControllerScript(const std::string& name, MAO& parent,
 		const std::string& path) :
 	MLBController(name, parent) {
@@ -33,28 +35,15 @@ void MLBControllerScript::setCompiled(bool compiled) {
 }
 
 void MLBControllerScript::compileScript() {
-	std::ifstream file;
-
-	file.open(_path.c_str());
-	if (file.bad() || !file.is_open()) {
-		Logger::getInstance()->error("Error opening the script: " + getName());
-		return;
-	}
-	//Calculating the length
-	int length = 0;
-	file.seekg(0, std::ios::end);
-	length = file.tellg();
-
-	//char* buf = new char[length + 2]; //Allocating the memory!
-	char buf [length + 2]; //Allocating the memory!
-	file.seekg(0, std::ios::beg); //Rewind!
-
 	//Allocating the memory!
-	file.read(buf, length);
-	buf[length] = '\n';
-	buf[length + 1] = '\0';
+	Resource& r = ResourcesManager::getInstance()->getResource(_path);
+	char buf [r.getSize() + 2]; //Allocating the memory!
 
-	file.close();
+	for(unsigned int i = 0; i<r.getSize(); i++)
+		buf[i] = r.getData()[i];
+
+	buf[r.getSize()] = '\n';
+	buf[r.getSize() + 1] = '\0';
 
 	try {
 		_compiledObj = boost::python::object(boost::python::handle<>(
