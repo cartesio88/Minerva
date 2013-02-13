@@ -31,7 +31,7 @@ endif
 
 # Libraries
 LDFLAGS = -lGL -lGLU -lSDL -lSDL_ttf -lSDL_image -lSDL_mixer `pkg-config --libs opencv`\
-		  $(ARTKLIBS) $(BULLETLIBS) $(PYTHONLIB) -lboost_python -lboost_system -lzip
+		  $(ARTKLIBS) $(BULLETLIBS) $(PYTHONLIB) -lboost_python -lboost_system -lboost_filesystem -lzip
 
 # Includes
 INCFLAGS = -I$(INCDIR) -I ../lib/ARToolKit/include -I../lib/$(BULLETDIR)/src -I$(PYTHONDIR)\
