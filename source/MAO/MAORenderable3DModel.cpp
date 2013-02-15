@@ -7,6 +7,8 @@
 
 #include <MAO/MAORenderable3DModel.h>
 
+using namespace std;
+
 MAORenderable3DModel::MAORenderable3DModel(const std::string& name,
 		const std::string& file, float size): MAORenderable3D(name, size), _file(file) {
 	_playingAnim = false;
@@ -58,10 +60,12 @@ void MAORenderable3DModel::generateBoxShape() {
 	float y[] = { 100, -100 };
 	float z[] = { 100, -100 };
 
-	for (unsigned int i = 0; i < _vertex.size(); i++) {
-		float& vx = _vertex.at(i).x;
-		float& vy = _vertex.at(i).y;
-		float& vz = _vertex.at(i).z;
+	list<MAOVector3>::iterator ptr;
+	for(ptr = _vertex.begin(); ptr != _vertex.end(); ++ptr){
+	//for (unsigned int i = 0; i < _vertex.size(); i++) {
+		float& vx = ptr->x;
+		float& vy = ptr->y;
+		float& vz = ptr->z;
 
 		//Box Shapes
 		if (vx < x[0])
@@ -100,8 +104,11 @@ void MAORenderable3DModel::generateConvexTriangleMeshShape() {
 
   btConvexHullShape* ch = new btConvexHullShape();
   ch->setMargin(btScalar(0.005f));
-  for(unsigned int i=0;i<_vertex.size();i++){
-    ((btConvexHullShape*)ch)->addPoint(btVector3(_vertex.at(i).x,_vertex.at(i).y,_vertex.at(i).z));
+
+  list<MAOVector3>::iterator ptr;
+  for(ptr = _vertex.begin(); ptr != _vertex.end(); ++ptr){
+  //for(unsigned int i=0;i<_vertex.size();i++){
+    ((btConvexHullShape*)ch)->addPoint(btVector3(ptr->x, ptr->y, ptr->z));
   }
 
   _collisionShape = ch;
