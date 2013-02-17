@@ -126,7 +126,10 @@ MAORenderable3DModel& MAOFactory::addMAORenderable3DModel(std::string name,
 	if (format == "orj") {
 		Logger::getInstance()->out("Recognized file format " + format);
 		parser = ParserOrej::getInstance();
-	} else {
+	} else if (format == "obj") {
+		Logger::getInstance()->out("Recognized file format " + format);
+		parser = ParserObj::getInstance();
+	}else {
 		Logger::getInstance()->error(
 				"MAORenderable3DModel: unrecognized file format of: " + file);
 		exit(-1);

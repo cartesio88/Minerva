@@ -12,10 +12,6 @@ using namespace std;
 MAORenderable3DModel::MAORenderable3DModel(const std::string& name,
 		const std::string& file, float size) :
 		MAORenderable3D(name, size), _file(file) {
-	_playingAnim = false;
-	_currentFrame = 0;
-	_animDirection = 1;
-	_hasTexture = false;
 
 	_type = T_MAORENDERABLE3DMODEL;
 }
@@ -118,8 +114,8 @@ void MAORenderable3DModel::drawGeometryWithTexture() {
 
 	glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
 
-	if (_hasTexture) {
-		glBindTexture(GL_TEXTURE_2D, _textureId);
+	if (_texIds.size() > 0) {
+		glBindTexture(GL_TEXTURE_2D, _texIds.back());
 	} else {
 		glColor3f(1.0, 0.0, 0.0);
 	}
@@ -134,28 +130,29 @@ void MAORenderable3DModel::drawGeometryWithoutTexture() {
 	glPushMatrix();
 
 	//Refresh anim!
-	if (_anim.size() > 0) {
-		glMultMatrixf(_anim.at(_currentFrame));
+	if (_anims.size() > 0) {
+		MAOAnimation& anim = _anims.back();
+		glMultMatrixf(anim.frames.at(anim.currentFrame));
 
-		if (_playingAnim) {
-			_currentFrame += _animDirection;
-			if (_currentFrame == (_anim.size() - 1)) {
-				switch (_animType) {
+		if (anim.playing) {
+			anim.currentFrame += anim.dir;
+			if (anim.currentFrame == (anim.frames.size() - 1)) {
+				switch (anim.type) {
 				case SIMPLE:
 					stopAnim();
 					break;
 				case LOOP:
-					_currentFrame = 0;
+					anim.currentFrame = 0;
 					break;
 				case PINGPONG:
-					_animDirection *= -1;
+					anim.dir *= -1;
 					break;
 				}
 			}
 
 			//For Ping-Pong mode!
-			if (_currentFrame == -1) {
-				_animDirection *= -1;
+			if (anim.currentFrame == -1) {
+				anim.dir *= -1;
 			}
 		}
 	}
@@ -165,23 +162,26 @@ void MAORenderable3DModel::drawGeometryWithoutTexture() {
 }
 
 void MAORenderable3DModel::playAnim(int animType) {
-	if (!_playingAnim) {
-		_playingAnim = true;
+	MAOAnimation& anim = _anims.back();
+	if (!anim.playing) {
+		anim.playing = true;
 	}
 }
 
 void MAORenderable3DModel::pauseAnim() {
-	if (_playingAnim) {
-		_playingAnim = false;
+	MAOAnimation& anim = _anims.back();
+	if (anim.playing) {
+		anim.playing = false;
 	}
 }
 
 void MAORenderable3DModel::stopAnim() {
-	if (_playingAnim) {
-		_playingAnim = false;
+	MAOAnimation& anim = _anims.back();
+	if (anim.playing) {
+		anim.playing = false;
 	}
-	_currentFrame = 0;
-	_animDirection = 1;
+	anim.currentFrame = 0;
+	anim.dir = 1;
 }
 
 MAORenderable3DModel::~MAORenderable3DModel() {

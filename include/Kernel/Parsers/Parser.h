@@ -17,7 +17,8 @@
 #include <Kernel/Resources/ResourcesManager.h>
 
 class Parser{
-
+protected:
+	bool _loadResourceToTexture(const std::string& file, GLuint& texid, int& texHeight);
 public:
 	Parser();
 	virtual ~Parser();

@@ -14,6 +14,7 @@
 #include <Kernel/Logger.h>
 #include <Kernel/Singleton.h>
 #include <Kernel/Parsers/ParserOrej.h>
+#include <Kernel/Parsers/ParserObj.h>
 #include <MAO/MAOPositionator3D.h>
 #include <MAO/MAOMark.h>
 #include <MAO/MAOMarksGroup.h>

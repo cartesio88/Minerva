@@ -16,43 +16,55 @@ void ParserObj::loadModel(const std::string& file,
 		MAORenderable3DModel& model) {
 	model._file = file;
 
-	stringstream stream(file);
+	stringstream streamFile(file);
 
 	Resource& r = ResourcesManager::getInstance()->getResource(file);
-	stream << string(r.getData());
+	streamFile << string(r.getData());
 
-	if (stream.bad()) {
+	if (streamFile.bad()) {
 		Logger::getInstance()->error("Error loading the Modelfile: " + file);
 		throw "Error loading the Obj file: " + file;
 	}
 
-	string line;
-	string token;
-	while (!stream.eof()) {
-		getline(stream, line);
-		stream >> token;
+	while (!streamFile.eof()) {
+		string line;
+		getline(streamFile, line);
+		stringstream streamLine;
+		streamLine << line;
 
-		if (token == "v") { // Vertex
+		string symbol;
+		streamLine >> symbol;
+
+		if (symbol == "v") { // Vertex
 			MAOVector3 v;
-			stream >> v.x;
-			stream >> v.y;
-			stream >> v.z;
-		} else if (token == "vt") { // Vertex texture
+			streamLine >> v.x;
+			streamLine >> v.y;
+			streamLine >> v.z;
+		} else if (symbol == "vt") { // Vertex texture
 			MAOVector2 vt;
-			stream >> vt.x;
-			stream >> vt.y;
-		} else if (token == "vn") { // Vertex normal
+			streamLine >> vt.x;
+			streamLine >> vt.y;
+		} else if (symbol == "vn") { // Vertex normal
 			MAOVector3 vn;
-			stream >> vn.x;
-			stream >> vn.y;
-			stream >> vn.z;
+			streamLine >> vn.x;
+			streamLine >> vn.y;
+			streamLine >> vn.z;
+		} else if (symbol == "f") { // Face
+			MAOFace f;
+			//streamLine >> vn.x;
+			//streamLine >> vn.y;
+			//streamLine >> vn.z;
+		} else if (symbol == "mtllib") { // Declaring material
+
+		} else if (symbol == "usemtl") { // Using material
+
+		} else if (symbol == "#") { // Comment
+			/* Ignore it */
 		} else {
 			Logger::getInstance()->warning(
-					"[ParserObj] Token not supported: " + token);
+					"[ParserObj] Symbol not supported: " + symbol);
 		}
-
 	}
-
 }
 
 ParserObj::~ParserObj() {

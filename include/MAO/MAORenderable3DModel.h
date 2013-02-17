@@ -10,13 +10,24 @@
 
 #include <MAO/MAORenderable3D.h>
 
-
 #ifdef WIN32
 #include <windows.h>
 #define GL_BGRA 0x80E1
 #define GL_BGR 0x80E0
 #endif
 
+
+enum AnimType {SIMPLE, LOOP, PINGPONG};
+
+struct MAOAnimation{
+	int type;
+	bool playing;
+	int dir;
+	std::vector<float*> frames;
+	int currentFrame;
+
+	MAOAnimation(): type(SIMPLE), playing(false), dir(1), currentFrame(0){}
+};
 
 struct MAOVector3{
 	float x,y,z;
@@ -32,27 +43,22 @@ struct MAOFace{
 	MAOVector3 normal;
 };
 
-enum AnimType {SIMPLE, LOOP, PINGPONG};
+
 
 class MAORenderable3DModel: public MAORenderable3D {
 	std::string _file;
 
+	/* Maybe, dont really need them */
 	std::vector<MAOVector3> _vertex;
 	std::list<MAOFace> _faces;
-	//int _nFaces, _nVertex, _nFrames;
 
+	std::vector<MAOAnimation> _anims;
 
-
-	int _animType;
-	int _playingAnim;
-	int _animDirection;
-	unsigned int _currentFrame;
-	std::vector<float*> _anim;
-
-	int _texHeight;
-	GLuint _textureId;
+	std::vector<int> _texHeights;
+	std::vector<GLuint> _texIds;
 	GLuint _listMesh;
-	bool _hasTexture;
+
+	//bool _hasTexture;
 
 
 public:

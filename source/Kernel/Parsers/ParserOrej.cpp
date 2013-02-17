@@ -10,7 +10,6 @@
 using namespace std;
 
 ParserOrej::ParserOrej() {
-
 }
 
 void ParserOrej::loadModel(const std::string& file,
@@ -24,8 +23,9 @@ void ParserOrej::loadModel(const std::string& file,
 
 void ParserOrej::_loadTexture(const std::string& file,
 		MAORenderable3DModel& model) {
-	SDL_Surface* img = NULL;
-	GLenum textureFormat;
+
+	model._texIds.push_back((GLuint) -1);
+	model._texHeights.push_back(0);
 
 	// Compatible formats
 	string formats[] = { string(".ppm"), string(".tga"), string(".png"), string(
@@ -38,73 +38,10 @@ void ParserOrej::_loadTexture(const std::string& file,
 	// Formats supported
 	for (int i = 0; i < 4; i++) {
 		fileTex = file.substr(0, dotPos) + formats[i];
-
-		try {
-			Resource& r = ResourcesManager::getInstance()->getResource(fileTex);
-
-			SDL_RWops *rw = SDL_RWFromMem((void*) r.getData(), r.getSize());
-			img = IMG_Load_RW(rw, 1);
-			if (img != NULL)
-				break;
-		} catch (std::string& e) {
-
-		}
+		if(_loadResourceToTexture(fileTex, model._texIds.back(), model._texHeights.back()))
+			break;
 	}
 
-	if (img == NULL) {
-		Logger::getInstance()->error("Error Loading the texture: " + fileTex);
-		Logger::getInstance()->error(IMG_GetError());
-		model._hasTexture = false;
-		return;
-	}
-
-	ResourcesManager::getInstance()->addResource(fileTex);
-
-	model._texHeight = img->h;
-
-	switch (img->format->BytesPerPixel) {
-	case 4: //With alpha channel
-		if (img->format->Rmask == 0x000000ff) {
-			textureFormat = GL_RGBA;
-		} else {
-			textureFormat = GL_BGRA;
-		}
-		break;
-
-	case 3: // Without alpha channel
-		if (img->format->Rmask == 0x000000ff) {
-			textureFormat = GL_RGB;
-		} else {
-			textureFormat = GL_BGR;
-		}
-		break;
-	default:
-		Logger::getInstance()->error(
-				"Error determining the texture format. Bytes per pixel: "
-						+ img->format->BitsPerPixel);
-	}
-
-	glGenTextures(1, &model._textureId);
-
-	if (model._textureId == GL_INVALID_OPERATION) {
-		Logger::getInstance()->error("Error processing an OreJ texture");
-		throw "Error processing an OreJ texture";
-	}
-
-	glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
-	glBindTexture(GL_TEXTURE_2D, model._textureId);
-
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
-	glTexImage2D(GL_TEXTURE_2D, 0, img->format->BytesPerPixel, img->w, img->h,
-			0, textureFormat, GL_UNSIGNED_BYTE, img->pixels);
-
-	SDL_FreeSurface(img);
-
-	model._hasTexture = true;
 }
 
 void ParserOrej::_loadGeometry(const std::string& file,
@@ -189,18 +126,18 @@ void ParserOrej::_loadGeometry(const std::string& file,
 			ptrFace->uv[2].y = uv[2].y;
 
 			ptrFace++;
-			//iUV++;
 			break;
 
 		case 'm':
-
+			if(model._anims.size() == 0)
+				model._anims.push_back(MAOAnimation());
 		{
 			float* m = new float[16];
 			sscanf(&line[2], "%f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f",
 					&m[0], &m[1], &m[2], &m[3], &m[4], &m[5], &m[6], &m[7],
 					&m[8], &m[9], &m[10], &m[11], &m[12], &m[13], &m[14],
 					&m[15]);
-			model._anim.push_back(m);
+			model._anims.back().frames.push_back(m);
 		}
 
 			break;
@@ -219,17 +156,16 @@ void ParserOrej::_loadGeometry(const std::string& file,
 	list<MAOFace>::iterator facePtr;
 	for (facePtr = model._faces.begin(); facePtr != model._faces.end();
 			facePtr++) {
-		//for (int i = 0; i < model._nFaces; i++) {
 		glBegin(GL_TRIANGLES);
-		glTexCoord2f(facePtr->uv[2].x, model._texHeight - facePtr->uv[2].y);
+		glTexCoord2f(facePtr->uv[2].x, model._texHeights.back() - facePtr->uv[2].y);
 		glVertex3f(facePtr->vertex[0].x, facePtr->vertex[0].y,
 				facePtr->vertex[0].z);
 
-		glTexCoord2f(facePtr->uv[1].x, model._texHeight - facePtr->uv[1].y);
+		glTexCoord2f(facePtr->uv[1].x, model._texHeights.back() - facePtr->uv[1].y);
 		glVertex3f(facePtr->vertex[1].x, facePtr->vertex[1].y,
 				facePtr->vertex[1].z);
 
-		glTexCoord2f(facePtr->uv[0].x, model._texHeight - facePtr->uv[0].y);
+		glTexCoord2f(facePtr->uv[0].x, model._texHeights.back() - facePtr->uv[0].y);
 		glVertex3f(facePtr->vertex[2].x, facePtr->vertex[2].y,
 				facePtr->vertex[2].z);
 
