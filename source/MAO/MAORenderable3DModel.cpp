@@ -10,48 +10,49 @@
 using namespace std;
 
 MAORenderable3DModel::MAORenderable3DModel(const std::string& name,
-		const std::string& file, float size): MAORenderable3D(name, size), _file(file) {
+		const std::string& file, float size) :
+		MAORenderable3D(name, size), _file(file) {
 	_playingAnim = false;
 	_currentFrame = 0;
 	_animDirection = 1;
-	_hasTexture = true;
+	_hasTexture = false;
 
 	_type = T_MAORENDERABLE3DMODEL;
 }
-
 
 btCollisionShape* MAORenderable3DModel::getCollisionShape() {
 	return _collisionShape;
 }
 
 void MAORenderable3DModel::generateCollisionShape(int type) {
-  if(_collisionShape==NULL){
-	switch (type) {
-	case MAO_BOX_SHAPE:
-		generateBoxShape();
-		setBoxShape(getCollisionShape());
-		break;
-	case MAO_SPHERE_SHAPE:
-		generateSphereShape();
-		setSphereShape(getCollisionShape());
-		break;
-	case MAO_CYLINDER_SHAPE:
-		generateCylinderShape();
-		setCylinderShape(getCollisionShape());
-		break;
+	if (_collisionShape == NULL) {
+		switch (type) {
+		case MAO_BOX_SHAPE:
+			generateBoxShape();
+			setBoxShape(getCollisionShape());
+			break;
+		case MAO_SPHERE_SHAPE:
+			generateSphereShape();
+			setSphereShape(getCollisionShape());
+			break;
+		case MAO_CYLINDER_SHAPE:
+			generateCylinderShape();
+			setCylinderShape(getCollisionShape());
+			break;
 
-		break;
-	case MAO_CONVEXTRIANGLEMESH_SHAPE:
-		generateConvexTriangleMeshShape();
-		setConvexTriangleMeshShape(getCollisionShape());
-		break;
+			break;
+		case MAO_CONVEXTRIANGLEMESH_SHAPE:
+			generateConvexTriangleMeshShape();
+			setConvexTriangleMeshShape(getCollisionShape());
+			break;
 
-		break;
-	default:
-	  Logger::getInstance()->warning("MAO has not defined a Collision Shape type: "+getName());
-	  break;
+			break;
+		default:
+			Logger::getInstance()->warning(
+					"MAO has not defined a Collision Shape type: " + getName());
+			break;
+		}
 	}
-  }
 }
 
 void MAORenderable3DModel::generateBoxShape() {
@@ -60,9 +61,8 @@ void MAORenderable3DModel::generateBoxShape() {
 	float y[] = { 100, -100 };
 	float z[] = { 100, -100 };
 
-	list<MAOVector3>::iterator ptr;
-	for(ptr = _vertex.begin(); ptr != _vertex.end(); ++ptr){
-	//for (unsigned int i = 0; i < _vertex.size(); i++) {
+	vector<MAOVector3>::iterator ptr;
+	for (ptr = _vertex.begin(); ptr != _vertex.end(); ++ptr) {
 		float& vx = ptr->x;
 		float& vy = ptr->y;
 		float& vz = ptr->z;
@@ -83,39 +83,21 @@ void MAORenderable3DModel::generateBoxShape() {
 		else if (vz > z[1])
 			z[1] = vz;
 
-		_collisionShape = new btBoxShape(btVector3((x[1] - x[0]) / 2, (y[1]
-				- y[0]) / 2, (z[1] - z[0]) / 2));
+		_collisionShape = new btBoxShape(
+				btVector3((x[1] - x[0]) / 2, (y[1] - y[0]) / 2,
+						(z[1] - z[0]) / 2));
 	}
 }
 void MAORenderable3DModel::generateConvexTriangleMeshShape() {
-  /*btTriangleMesh* triangleMesh = new btTriangleMesh(true, false);
-  //triangleMesh->m_weldingThresold = 0.0f; // Test here
-	for (unsigned int i = 0; i < _faces.size(); i++) {
-		//To build the triangle mesh shape
-		btVector3 v1(_faces.at(i).vertex[0]->x, _faces.at(i).vertex[0]->y, _faces.at(i).vertex[0]->z);
-		btVector3 v2(_faces.at(i).vertex[1]->x, _faces.at(i).vertex[1]->y, _faces.at(i).vertex[1]->z);
-		btVector3 v3(_faces.at(i).vertex[2]->x, _faces.at(i).vertex[2]->y, _faces.at(i).vertex[2]->z);
+	btConvexHullShape* ch = new btConvexHullShape();
+	ch->setMargin(btScalar(0.005f));
 
-		triangleMesh->addTriangle(v1, v2, v3, true);
+	vector<MAOVector3>::iterator ptr;
+	for (ptr = _vertex.begin(); ptr != _vertex.end(); ++ptr) {
+		((btConvexHullShape*) ch)->addPoint(btVector3(ptr->x, ptr->y, ptr->z));
 	}
 
-	_collisionShape = new btBvhTriangleMeshShape(triangleMesh, true);
-	((btBvhTriangleMeshShape*)_collisionShape)->recalcLocalAabb();*/
-
-  btConvexHullShape* ch = new btConvexHullShape();
-  ch->setMargin(btScalar(0.005f));
-
-  list<MAOVector3>::iterator ptr;
-  for(ptr = _vertex.begin(); ptr != _vertex.end(); ++ptr){
-  //for(unsigned int i=0;i<_vertex.size();i++){
-    ((btConvexHullShape*)ch)->addPoint(btVector3(ptr->x, ptr->y, ptr->z));
-  }
-
-  _collisionShape = ch;
-  /*btTransform t;
-  t.setOrigin(btVector3(0,0,0.5));
-  ((btCompoundShape*)_collisionShape)->addChildShape(t,ch);
-  ((btCompoundShape*)_collisionShape)*/
+	_collisionShape = ch;
 
 }
 
@@ -131,48 +113,50 @@ void MAORenderable3DModel::generateSphereShape() {
 	throw "Generating Sphere Shapes from Models is not implemented yet!!";
 }
 
-void MAORenderable3DModel::drawGeometryWithTexture(){
+void MAORenderable3DModel::drawGeometryWithTexture() {
 	glEnable(GL_TEXTURE_2D);
 
 	glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
 
-	//if(_hasTexture){
-	  glBindTexture(GL_TEXTURE_2D, _textureId);
-	  //}else{
-	  //glColor3f(1.0,0.0,0.0);
-	  //}
+	if (_hasTexture) {
+		glBindTexture(GL_TEXTURE_2D, _textureId);
+	} else {
+		glColor3f(1.0, 0.0, 0.0);
+	}
 	glPolygonMode(GL_FRONT, GL_FILL);
 
 	drawGeometryWithoutTexture();
 
 	glDisable(GL_TEXTURE_2D);
-	//glClear(GL_COLOR_BUFFER_BIT);
 }
 
 void MAORenderable3DModel::drawGeometryWithoutTexture() {
 	glPushMatrix();
 
 	//Refresh anim!
-	glMultMatrixf(_animMatrix.at(_currentFrame));
-	if (_playingAnim) {
-		_currentFrame += _animDirection;
-		if (_currentFrame == (_nFrames - 1)) {
-			switch (_animType) {
-			case SIMPLE:
-				stopAnim();
-				break;
-			case LOOP:
-				_currentFrame = 0;
-				break;
-			case PINGPONG:
-				_animDirection *= -1;
-				break;
-			}
-		}
+	if (_anim.size() > 0) {
+		glMultMatrixf(_anim.at(_currentFrame));
 
-		//For Ping-Pong mode!
-		if (_currentFrame == -1) {
-			_animDirection *= -1;
+		if (_playingAnim) {
+			_currentFrame += _animDirection;
+			if (_currentFrame == (_anim.size() - 1)) {
+				switch (_animType) {
+				case SIMPLE:
+					stopAnim();
+					break;
+				case LOOP:
+					_currentFrame = 0;
+					break;
+				case PINGPONG:
+					_animDirection *= -1;
+					break;
+				}
+			}
+
+			//For Ping-Pong mode!
+			if (_currentFrame == -1) {
+				_animDirection *= -1;
+			}
 		}
 	}
 

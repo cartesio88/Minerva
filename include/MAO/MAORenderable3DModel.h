@@ -37,18 +37,19 @@ enum AnimType {SIMPLE, LOOP, PINGPONG};
 class MAORenderable3DModel: public MAORenderable3D {
 	std::string _file;
 
-	std::list<MAOVector3> _vertex;
+	std::vector<MAOVector3> _vertex;
 	std::list<MAOFace> _faces;
+	//int _nFaces, _nVertex, _nFrames;
 
-	std::vector<float*> _animMatrix;
-	int _nFaces, _nVertex, _nFrames;
-	int _currentFrame;
 
-	int _texHeight;
+
 	int _animType;
 	int _playingAnim;
 	int _animDirection;
+	unsigned int _currentFrame;
+	std::vector<float*> _anim;
 
+	int _texHeight;
 	GLuint _textureId;
 	GLuint _listMesh;
 	bool _hasTexture;

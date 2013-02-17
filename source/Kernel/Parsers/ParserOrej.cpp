@@ -10,6 +10,7 @@
 using namespace std;
 
 ParserOrej::ParserOrej() {
+
 }
 
 void ParserOrej::loadModel(const std::string& file,
@@ -41,7 +42,7 @@ void ParserOrej::_loadTexture(const std::string& file,
 		try {
 			Resource& r = ResourcesManager::getInstance()->getResource(fileTex);
 
-			SDL_RWops *rw = SDL_RWFromMem((void*)r.getData(),r.getSize());
+			SDL_RWops *rw = SDL_RWFromMem((void*) r.getData(), r.getSize());
 			img = IMG_Load_RW(rw, 1);
 			if (img != NULL)
 				break;
@@ -102,6 +103,8 @@ void ParserOrej::_loadTexture(const std::string& file,
 			0, textureFormat, GL_UNSIGNED_BYTE, img->pixels);
 
 	SDL_FreeSurface(img);
+
+	model._hasTexture = true;
 }
 
 void ParserOrej::_loadGeometry(const std::string& file,
@@ -109,19 +112,16 @@ void ParserOrej::_loadGeometry(const std::string& file,
 	std::stringstream stream;
 	int nLine = 0;
 	char line[256];
-	int iVertex = 0;
-	int iFrames = 0;
-	int iUV = 0;
-	float a, b, c, d, e, f;
+	list<MAOFace>::iterator ptrFace;
+	bool processingUV = false;
 
 	Resource& r = ResourcesManager::getInstance()->getResource(file);
-	stream<<string(r.getData());
+	stream << string(r.getData());
 
 	if (stream.bad()) {
 		Logger::getInstance()->error("Error loading the Modelfile: " + file);
 		throw "Error loading the OreJ file: " + file;
 	}
-
 
 	while (!stream.eof()) {
 		stream.getline(line, 256);
@@ -132,62 +132,66 @@ void ParserOrej::_loadGeometry(const std::string& file,
 			break;
 		case 'f': {
 
+			int v1, v2, v3;
 			model._faces.push_back(MAOFace());
-			a = b = c = d = -1;
-			sscanf(&line[2], "%f %f %f", &a, &b, &c);
 
-			if (a < 0 || b < 0 || c < 0) {
+			sscanf(&line[2], "%d %d %d", &v1, &v2, &v3);
+
+			if (v1 < 0 || v2 < 0 || v3 < 0) {
 				Logger::getInstance()->error(
 						"Format error in OreJ! Line: " + nLine);
 				throw "Format error in OreJ! Line: " + nLine;
 			}
 
-			model._faces.back().vertex[0] = &model._vertex[(int) --a];
-			model._faces.back().vertex[1] = &model._vertex[(int) --b];
-			model._faces.back().vertex[2] = &model._vertex[(int) --c];
+			model._faces.back().vertex[0].x = model._vertex[v1 - 1].x;
+			model._faces.back().vertex[0].y = model._vertex[v1 - 1].y;
+			model._faces.back().vertex[0].z = model._vertex[v1 - 1].z;
 
-			//iFaces++;
+			model._faces.back().vertex[1].x = model._vertex[v2 - 1].x;
+			model._faces.back().vertex[1].y = model._vertex[v2 - 1].y;
+			model._faces.back().vertex[1].z = model._vertex[v2 - 1].z;
+
+			model._faces.back().vertex[2].x = model._vertex[v3 - 1].x;
+			model._faces.back().vertex[2].y = model._vertex[v3 - 1].y;
+			model._faces.back().vertex[2].z = model._vertex[v3 - 1].z;
+
 			break;
 		}
 		case 'v': {
-			model._vertex.push_back(Vector3());
-			sscanf(&line[2], "%f %f %f", &model._vertex.at(iVertex).x,
-					&model._vertex.at(iVertex).y, &model._vertex.at(iVertex).z);
+			model._vertex.push_back(MAOVector3());
+			sscanf(&line[2], "%f %f %f", &model._vertex.back().x,
+					&model._vertex.back().y, &model._vertex.back().z);
 
-			model._vertex.at(iVertex).x *= model.getProperty("size").getValue<
-					float>();
-			model._vertex.at(iVertex).y *= model.getProperty("size").getValue<
-					float>();
-			model._vertex.at(iVertex).z *= model.getProperty("size").getValue<
-					float>();
+			model._vertex.back().x *=
+					model.getProperty("size").getValue<float>();
+			model._vertex.back().y *=
+					model.getProperty("size").getValue<float>();
+			model._vertex.back().z *=
+					model.getProperty("size").getValue<float>();
 
-			iVertex++;
 			break;
 		}
 		case 't':
-			a = b = c = d = e = f = -1;
-			if (iUV > iFaces) {
-				Logger::getInstance()->error(
-						"UV value not associated to any face!");
-				throw "UV value not associated to any face!";
+			if (!processingUV) { // Start assigning textures
+				ptrFace = model._faces.begin();
+				processingUV = true;
 			}
-			sscanf(&line[2], "%f %f %f %f %f %f", &a, &b, &c, &d, &e, &f);
-			model._faces[iUV].uv[0].x = a;
-			model._faces[iUV].uv[0].y = b;
-			model._faces[iUV].uv[1].x = c;
-			model._faces[iUV].uv[1].y = d;
-			model._faces[iUV].uv[2].x = e;
-			model._faces[iUV].uv[2].y = f;
+			MAOVector2 uv[3];
 
-			if (a < 0 || b < 0 || c < 0 || d < 0 || e < 0 || f < 0) {
-				Logger::getInstance()->error("Invalid UV value!");
-				throw "Invalid UV value!";
-			}
+			sscanf(&line[2], "%f %f %f %f %f %f", &uv[0].x, &uv[0].y, &uv[1].x,
+					&uv[1].y, &uv[2].x, &uv[2].y);
 
-			iUV++;
+			ptrFace->uv[0].x = uv[0].x;
+			ptrFace->uv[0].y = uv[0].y;
+			ptrFace->uv[1].x = uv[1].x;
+			ptrFace->uv[1].y = uv[1].y;
+			ptrFace->uv[2].x = uv[2].x;
+			ptrFace->uv[2].y = uv[2].y;
+
+			ptrFace++;
+			//iUV++;
 			break;
 
-			break;
 		case 'm':
 
 		{
@@ -196,56 +200,42 @@ void ParserOrej::_loadGeometry(const std::string& file,
 					&m[0], &m[1], &m[2], &m[3], &m[4], &m[5], &m[6], &m[7],
 					&m[8], &m[9], &m[10], &m[11], &m[12], &m[13], &m[14],
 					&m[15]);
-			model._animMatrix.push_back(m);
+			model._anim.push_back(m);
 		}
-			iFrames++;
 
 			break;
+
 		default:
 			break;
 		}
 	}
 
-	model._nFaces = iFaces;
-	model._nVertex = iVertex;
-	model._nFrames = iFrames;
-
 	model._listMesh = glGenLists(1);
-
 	glNewList(model._listMesh, GL_COMPILE);
 
 	/* Here is where is fixed the "Origin problem"
 	 * OpenGl uses a bottom-left and Blender uses an upper-left origin!
 	 */
-
-	for (int i = 0; i < model._nFaces; i++) {
+	list<MAOFace>::iterator facePtr;
+	for (facePtr = model._faces.begin(); facePtr != model._faces.end();
+			facePtr++) {
+		//for (int i = 0; i < model._nFaces; i++) {
 		glBegin(GL_TRIANGLES);
-		glTexCoord2f(model._faces.at(i).uv[2].x,
-				model._texHeight - model._faces.at(i).uv[2].y);
-		glVertex3f(model._faces.at(i).vertex[0]->x,
-				model._faces.at(i).vertex[0]->y,
-				model._faces.at(i).vertex[0]->z);
+		glTexCoord2f(facePtr->uv[2].x, model._texHeight - facePtr->uv[2].y);
+		glVertex3f(facePtr->vertex[0].x, facePtr->vertex[0].y,
+				facePtr->vertex[0].z);
 
-		glTexCoord2f(model._faces.at(i).uv[1].x,
-				model._texHeight - model._faces.at(i).uv[1].y);
-		glVertex3f(model._faces.at(i).vertex[1]->x,
-				model._faces.at(i).vertex[1]->y,
-				model._faces.at(i).vertex[1]->z);
+		glTexCoord2f(facePtr->uv[1].x, model._texHeight - facePtr->uv[1].y);
+		glVertex3f(facePtr->vertex[1].x, facePtr->vertex[1].y,
+				facePtr->vertex[1].z);
 
-		glTexCoord2f(model._faces.at(i).uv[0].x,
-				model._texHeight - model._faces.at(i).uv[0].y);
-		glVertex3f(model._faces.at(i).vertex[2]->x,
-				model._faces.at(i).vertex[2]->y,
-				model._faces.at(i).vertex[2]->z);
+		glTexCoord2f(facePtr->uv[0].x, model._texHeight - facePtr->uv[0].y);
+		glVertex3f(facePtr->vertex[2].x, facePtr->vertex[2].y,
+				facePtr->vertex[2].z);
 
 		glEnd();
 	}
 	glEndList();
-
-	if (model._nFrames == 0) {
-		Logger::getInstance()->warning(
-				"There is 0 frames for the OreJ. This may incquiry problems!");
-	}
 
 }
 
