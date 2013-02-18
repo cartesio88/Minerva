@@ -67,6 +67,8 @@ void ParserObj::loadModel(const std::string& file,
 			stringstream streamindex;
 			index = index.substr(1); // Removes the first blank
 
+			cout<<"Vertex: "<<model._vertex.size()<<", uv: "<<model._uv.size()<<", normals: "<<model._normals.size()<<endl;
+
 			int v, vt, vn;
 
 			for (int i = 0; i < 3; i++) {
