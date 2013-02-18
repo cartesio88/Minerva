@@ -68,24 +68,22 @@ void ParserObj::loadModel(const boost::filesystem::path& file,
 			stringstream streamindex;
 			index = index.substr(1); // Removes the first blank
 
-			//	cout<<"Vertex: "<<model._vertex.size()<<", uv: "<<model._uv.size()<<", normals: "<<model._normals.size()<<endl;
-
 			int v, vt, vn;
 
-			for (int i = 0; i < 3; i++) {
+			for (int i = 0; i <3 ; i++) {
 				int pos = index.find(' ');
 				string s = index.substr(0, pos);
 				index = index.substr(pos + 1);
 
 				_getFaceIndices(s, v, vt, vn);
 				if (v > 0) {
-					f.vertex[i].x = model._vertex[v - 1].x;
-					f.vertex[i].y = model._vertex[v - 1].y;
-					f.vertex[i].z = model._vertex[v - 1].z;
+					f.vertex[i].x = model._vertex[v -1].x;
+					f.vertex[i].y = model._vertex[v -1].y;
+					f.vertex[i].z = model._vertex[v -1].z;
 				}
 				if (vt > 0) {
-					f.uv[i].x = model._uv[vt - 1].x;
-					f.uv[i].y = model._uv[vt - 1].y;
+					f.uv[i].x = model._uv[vt -1].x;
+					f.uv[i].y = model._uv[vt -1].y;
 				}
 				if (vn > 0) {
 					f.normal[i].x = model._normals[vn - 1].x;
@@ -93,6 +91,7 @@ void ParserObj::loadModel(const boost::filesystem::path& file,
 					f.normal[i].z = model._normals[vn - 1].z;
 				}
 			}
+
 			model._faces.push_back(f);
 		} else if (symbol == "mtllib") { // Declaring material
 			boost::filesystem::path pwd = file.parent_path();
@@ -147,7 +146,6 @@ void ParserObj::_loadTextureFile(const boost::filesystem::path& file,
 		streamLine >> symbol;
 
 		if (symbol == "map_Kd") {
-			//std::string pwd = file.substr(0, file.find_last_of("/") + 1);
 			boost::filesystem::path pwd = file.parent_path();
 
 			std::string fname;

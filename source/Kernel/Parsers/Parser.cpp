@@ -120,29 +120,17 @@ void Parser::_generateCallList(MAORenderable3DModel& model) {
 	for (facePtr = model._faces.begin(); facePtr != model._faces.end();
 			facePtr++) {
 		glBegin(GL_TRIANGLES);
-		if (model._texIds.size() > 0)
-			glTexCoord2f(facePtr->uv[2].x,
-					model._texHeights.back() - facePtr->uv[2].y);
-		glNormal3f(facePtr->normal[0].x, facePtr->normal[0].y,
-				facePtr->normal[0].z);
-		glVertex3f(facePtr->vertex[0].x, facePtr->vertex[0].y,
-				facePtr->vertex[0].z);
+		if (model._texIds.size() > 0) glTexCoord2f(facePtr->uv[0].x, model._texHeights.back() - facePtr->uv[0].y);
+		glNormal3f(facePtr->normal[0].x, facePtr->normal[0].y, facePtr->normal[0].z);
+		glVertex3f(facePtr->vertex[0].x, facePtr->vertex[0].y, facePtr->vertex[0].z);
 
-		if (model._texIds.size() > 0)
-			glTexCoord2f(facePtr->uv[1].x,
-					model._texHeights.back() - facePtr->uv[1].y);
-		glNormal3f(facePtr->normal[0].x, facePtr->normal[0].y,
-						facePtr->normal[0].z);
-		glVertex3f(facePtr->vertex[1].x, facePtr->vertex[1].y,
-				facePtr->vertex[1].z);
+		if (model._texIds.size() > 0) glTexCoord2f(facePtr->uv[1].x, model._texHeights.back() - facePtr->uv[1].y);
+		glNormal3f(facePtr->normal[1].x, facePtr->normal[1].y, facePtr->normal[1].z);
+		glVertex3f(facePtr->vertex[1].x, facePtr->vertex[1].y, facePtr->vertex[1].z);
 
-		if (model._texIds.size() > 0)
-			glTexCoord2f(facePtr->uv[0].x,
-					model._texHeights.back() - facePtr->uv[0].y);
-		glNormal3f(facePtr->normal[0].x, facePtr->normal[0].y,
-						facePtr->normal[0].z);
-		glVertex3f(facePtr->vertex[2].x, facePtr->vertex[2].y,
-				facePtr->vertex[2].z);
+		if (model._texIds.size() > 0) glTexCoord2f(facePtr->uv[2].x,model._texHeights.back() - facePtr->uv[2].y);
+		glNormal3f(facePtr->normal[2].x, facePtr->normal[2].y, facePtr->normal[2].z);
+		glVertex3f(facePtr->vertex[2].x, facePtr->vertex[2].y, facePtr->vertex[2].z);
 
 		glEnd();
 	}
