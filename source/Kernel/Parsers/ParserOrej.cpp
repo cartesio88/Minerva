@@ -147,31 +147,7 @@ void ParserOrej::_loadGeometry(const std::string& file,
 		}
 	}
 
-	model._listMesh = glGenLists(1);
-	glNewList(model._listMesh, GL_COMPILE);
-
-	/* Here is where is fixed the "Origin problem"
-	 * OpenGl uses a bottom-left and Blender uses an upper-left origin!
-	 */
-	list<MAOFace>::iterator facePtr;
-	for (facePtr = model._faces.begin(); facePtr != model._faces.end();
-			facePtr++) {
-		glBegin(GL_TRIANGLES);
-		glTexCoord2f(facePtr->uv[2].x, model._texHeights.back() - facePtr->uv[2].y);
-		glVertex3f(facePtr->vertex[0].x, facePtr->vertex[0].y,
-				facePtr->vertex[0].z);
-
-		glTexCoord2f(facePtr->uv[1].x, model._texHeights.back() - facePtr->uv[1].y);
-		glVertex3f(facePtr->vertex[1].x, facePtr->vertex[1].y,
-				facePtr->vertex[1].z);
-
-		glTexCoord2f(facePtr->uv[0].x, model._texHeights.back() - facePtr->uv[0].y);
-		glVertex3f(facePtr->vertex[2].x, facePtr->vertex[2].y,
-				facePtr->vertex[2].z);
-
-		glEnd();
-	}
-	glEndList();
+	_generateCallList(model);
 
 }
 

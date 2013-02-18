@@ -19,6 +19,7 @@
 class Parser{
 protected:
 	bool _loadResourceToTexture(const std::string& file, GLuint& texid, int& texHeight);
+	void _generateCallList(MAORenderable3DModel& model);
 public:
 	Parser();
 	virtual ~Parser();

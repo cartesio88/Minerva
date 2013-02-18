@@ -40,16 +40,16 @@ struct MAOVector2{
 struct MAOFace{
 	MAOVector3 vertex[3];
 	MAOVector2 uv[3];
-	MAOVector3 normal;
+	MAOVector3 normal[3];
 };
-
-
 
 class MAORenderable3DModel: public MAORenderable3D {
 	std::string _file;
 
 	/* Maybe, dont really need them */
 	std::vector<MAOVector3> _vertex;
+	std::vector<MAOVector2> _uv;
+	std::vector<MAOVector3> _normals;
 	std::list<MAOFace> _faces;
 
 	std::vector<MAOAnimation> _anims;
@@ -58,10 +58,8 @@ class MAORenderable3DModel: public MAORenderable3D {
 	std::vector<GLuint> _texIds;
 	GLuint _listMesh;
 
-	//bool _hasTexture;
-
-
 public:
+	friend class Parser;
 	friend class ParserOrej;
 	friend class ParserObj;
 

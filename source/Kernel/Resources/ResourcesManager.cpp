@@ -26,6 +26,8 @@ Resource& ResourcesManager::getResource(const std::string& uri) {
 
 	Resource* r = _resources[uri];
 
+	cout<<"Looking for resource: "<<uri<<endl;
+
 	/* Try to return the zip resource */
 	if (_dataFileExists && r == NULL) {
 		/* Check if the data file is opened */
@@ -51,8 +53,6 @@ Resource& ResourcesManager::getResource(const std::string& uri) {
 	if (!r->isOpened()) {
 		if (r)
 			delete r;
-		//Logger::getInstance()->error(
-		//	"[ResourcesManager] Could not find the resource " + uri);
 		throw "[ResourcesManager] Could not find the resource " + uri;
 	}
 
@@ -93,12 +93,14 @@ void ResourcesManager::pack(const stringstream& finalFile) {
 		if(s == NULL){
 			Logger::getInstance()->error(
 							"[ResourcesManager] ERROR Locating the file "+entry);
+			Logger::getInstance()->out(zip_strerror(_dataFile));
 			exit(-1);
 		}
 
 		if(zip_add(_dataFile, entry.c_str(), s) == -1) {
 			Logger::getInstance()->error(
 							"[ResourcesManager] ERROR adding the file "+entry);
+			Logger::getInstance()->out(zip_strerror(_dataFile));
 			zip_source_free(s);
 			exit(-1);
 		}

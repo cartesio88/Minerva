@@ -27,9 +27,9 @@ void ResourceFile::load() {
 
 	file.open(_uri.c_str(), ios::binary);
 
-	if (!file.good()) {
-		//Logger::getInstance()->error(
-				//"[ResourceFile] Error opening the file " + _uri);
+	if (!file.is_open()) {
+	//	Logger::getInstance()->error(
+	//			"[ResourceFile] Error opening the file " + _uri);
 		_opened = false;
 		return;
 	}
