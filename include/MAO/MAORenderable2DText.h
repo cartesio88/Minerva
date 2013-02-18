@@ -13,7 +13,10 @@
 
 class MAORenderable2DText: public MAORenderable2D {
 public:
-	MAORenderable2DText(const std::string& name, const std::string& fontPath, const int& ptSize, const std::string& text, const int& x, const int& y,const int& style);
+	MAORenderable2DText(const std::string& name,
+			const boost::filesystem::path& fontPath, const int& ptSize,
+			const std::string& text, const int& x, const int& y,
+			const int& style);
 	virtual ~MAORenderable2DText();
 	void generateTexFromSDLSurface();
 
@@ -25,7 +28,7 @@ public:
 
 	int getPtSize();
 	void setPtSize(int ptSize);
-	void setColor(int r,int b, int g);
+	void setColor(int r, int b, int g);
 	int getR();
 	int getG();
 	int getB();
@@ -33,7 +36,7 @@ private:
 
 	void loadFont();
 	TTF_Font* _font;
-	std::string _fontPath;
+	boost::filesystem::path _fontPath;
 	int _style;
 };
 

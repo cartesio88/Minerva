@@ -15,16 +15,17 @@
 #include <Kernel/Logger.h>
 #include <MAO/MAORenderable3DModel.h>
 #include <Kernel/Resources/ResourcesManager.h>
+#include <boost/filesystem.hpp>
 
 class Parser{
 protected:
-	bool _loadResourceToTexture(const std::string& file, GLuint& texid, int& texHeight);
+	bool _loadResourceToTexture(const boost::filesystem::path& file, GLuint& texid, int& texHeight);
 	void _generateCallList(MAORenderable3DModel& model);
 public:
 	Parser();
 	virtual ~Parser();
 
-	virtual void loadModel(const std::string& file, MAORenderable3DModel& model) = 0;
+	virtual void loadModel(const boost::filesystem::path& file, MAORenderable3DModel& model) = 0;
 
 };
 

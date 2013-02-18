@@ -91,7 +91,7 @@ public:
 	MLBControllerNOR& addMLBControllerNOR(std::string name,
 			std::string nparent);
 	MLBControllerScript& addMLBControllerScript(std::string name,
-			std::string nparent, std::string path);
+			std::string nparent, const boost::filesystem::path& path);
 
 	/* -Actuators */
 	MLBActuatorVisibility& addMLBActuatorVisibility(std::string name,

@@ -7,11 +7,10 @@
 
 #include <MAO/MAOMark.h>
 
-MAOMark::MAOMark(const std::string& name, const std::string& path,
+MAOMark::MAOMark(const std::string& name, const boost::filesystem::path& path,
 		const float& size) :
 	MAOPositionator3D(name) {
-  //_bPath = boost::filesystem::path(path);
-        _bPath = path;
+    _bPath = path;
 	_size = size;
 	_center = new double[2];
 	_center[0] = .0;
@@ -29,23 +28,11 @@ cv::Mat& MAOMark::getPosMatrix() {
 void MAOMark::setTrackingMatrix(cv::Mat& m) {
 	cv::Mat posAux;
 
-	//posAux = _offsetMatrix.inv() * m;
 	posAux = _offsetMatrix * m;
 
 	_vectorPosMatrix.push_back(posAux);
-
-	/*if (_vectorPosMatrix.size() > HIST_LENGTH) {
-		_vectorPosMatrix.erase(_vectorPosMatrix.begin());
-		cv::Mat average;
-
-		average = 0.5 * _vectorPosMatrix.at(3) + 0.25 * _vectorPosMatrix.at(2)
-				+ 0.15 * _vectorPosMatrix.at(1) + 0.1 * _vectorPosMatrix.at(0);
-
-		setPosMatrix(average);
-
-		} else {*/
 		setPosMatrix(posAux);
-		//}
+
 
 
 }
@@ -106,9 +93,8 @@ void MAOMark::setOffsetMatrix(const double* offsetMatrix) {
 			_offsetMatrix.at<float> (i, j) = (float) offsetMatrix[i * 4 + j];
 }
 
-std::string MAOMark::getPath() {
+const boost::filesystem::path& MAOMark::getPath() {
   return _bPath;
-  //return _bPath.string();
 }
 
 float MAOMark::getSize() {

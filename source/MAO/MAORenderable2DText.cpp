@@ -8,7 +8,7 @@
 #include <MAO/MAORenderable2DText.h>
 
 MAORenderable2DText::MAORenderable2DText(const std::string& name,
-		const std::string& fontPath, const int& ptSize,
+		const boost::filesystem::path& fontPath, const int& ptSize,
 		const std::string& text, const int& x, const int& y, const int& style) :
 	MAORenderable2D(name, x, y, 1, 1) {
 	addPropertyString("text", text);
@@ -104,9 +104,9 @@ void MAORenderable2DText::loadFont() {
 	_font = TTF_OpenFontRW(rw, 1, getPtSize());
 
 	if (_font == NULL) {
-		Logger::getInstance()->error("Error loading the font: "+_fontPath);
+		Logger::getInstance()->error("Error loading the font: "+_fontPath.generic_string());
 		Logger::getInstance()->error(TTF_GetError());
-		throw "Error loading the font "+_fontPath;
+		throw "Error loading the font "+_fontPath.generic_string();
 	}
 }
 

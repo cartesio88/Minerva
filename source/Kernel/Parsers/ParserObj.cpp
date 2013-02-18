@@ -12,7 +12,7 @@ using namespace std;
 ParserObj::ParserObj() {
 }
 
-void ParserObj::loadModel(const std::string& file,
+void ParserObj::loadModel(const boost::filesystem::path& file,
 		MAORenderable3DModel& model) {
 	model._file = file;
 
@@ -22,8 +22,9 @@ void ParserObj::loadModel(const std::string& file,
 	streamFile << string(r.getData());
 
 	if (streamFile.bad()) {
-		Logger::getInstance()->error("Error loading the Modelfile: " + file);
-		throw "Error loading the Obj file: " + file;
+		Logger::getInstance()->error(
+				"Error loading the Modelfile: " + file.string());
+		throw "Error loading the Obj file: " + file.string();
 	}
 
 	while (!streamFile.eof()) {
@@ -67,7 +68,7 @@ void ParserObj::loadModel(const std::string& file,
 			stringstream streamindex;
 			index = index.substr(1); // Removes the first blank
 
-			cout<<"Vertex: "<<model._vertex.size()<<", uv: "<<model._uv.size()<<", normals: "<<model._normals.size()<<endl;
+			//	cout<<"Vertex: "<<model._vertex.size()<<", uv: "<<model._uv.size()<<", normals: "<<model._normals.size()<<endl;
 
 			int v, vt, vn;
 
@@ -94,11 +95,18 @@ void ParserObj::loadModel(const std::string& file,
 			}
 			model._faces.push_back(f);
 		} else if (symbol == "mtllib") { // Declaring material
-			std::string pwd = file.substr(0, file.find_last_of("/") + 1);
+			boost::filesystem::path pwd = file.parent_path();
+
 			std::string fname;
-			getline(streamLine, fname);
-			fname = fname.substr(1, fname.length() - 2); // Remove the first blank, and last character
-			string path = pwd + fname;
+			streamLine >> fname;
+			while (!streamLine.eof()) {
+				string aux;
+				streamLine >> aux;
+				fname = fname + " " + aux;
+			}
+			fname = fname.substr(0, fname.length() - 1); //Remove the last character
+
+			boost::filesystem::path path = pwd /= fname;
 
 			ResourcesManager::getInstance()->addResource(path); //MTLIBFILE
 
@@ -116,7 +124,8 @@ void ParserObj::loadModel(const std::string& file,
 	_generateCallList(model);
 }
 
-void ParserObj::_loadTextureFile(const std::string& file, MAORenderable3DModel& model) {
+void ParserObj::_loadTextureFile(const boost::filesystem::path& file,
+		MAORenderable3DModel& model) {
 	stringstream streamFile;
 
 	Resource& r = ResourcesManager::getInstance()->getResource(file);
@@ -124,8 +133,8 @@ void ParserObj::_loadTextureFile(const std::string& file, MAORenderable3DModel& 
 
 	if (streamFile.bad()) {
 		Logger::getInstance()->error(
-				"Error loading the Material lib file: " + file);
-		throw "Error loading the Obj file: " + file;
+				"Error loading the Material lib file: " + file.string());
+		throw "Error loading the Obj file: " + file.string();
 	}
 
 	while (!streamFile.eof()) {
@@ -138,16 +147,25 @@ void ParserObj::_loadTextureFile(const std::string& file, MAORenderable3DModel& 
 		streamLine >> symbol;
 
 		if (symbol == "map_Kd") {
-			std::string pwd = file.substr(0, file.find_last_of("/") + 1);
+			//std::string pwd = file.substr(0, file.find_last_of("/") + 1);
+			boost::filesystem::path pwd = file.parent_path();
+
 			std::string fname;
-			getline(streamLine, fname);
-			fname = fname.substr(1, fname.length() - 2); // Remove the first blank, and last character
-			string path = pwd + fname;
+			streamLine >> fname;
+			while (!streamLine.eof()) {
+				string aux;
+				streamLine >> aux;
+				fname = fname + " " + aux;
+			}
+			fname = fname.substr(0, fname.length() - 1); //Remove the last character
+
+			boost::filesystem::path path = pwd /= fname;
 
 			model._texIds.push_back((GLuint) -1);
 			model._texHeights.push_back(0);
 
-			_loadResourceToTexture(path, model._texIds.back(), model._texHeights.back());
+			_loadResourceToTexture(path, model._texIds.back(),
+					model._texHeights.back());
 
 		} else if (symbol == "#") { // Comment
 			/* Ignore it */

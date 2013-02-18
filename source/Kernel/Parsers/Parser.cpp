@@ -12,7 +12,7 @@ using namespace std;
 Parser::Parser() {
 }
 
-bool Parser::_loadResourceToTexture(const std::string& file, GLuint& texId,
+bool Parser::_loadResourceToTexture(const boost::filesystem::path& file, GLuint& texId,
 		int& texHeight) {
 	SDL_Surface* img = NULL;
 	SDL_RWops *rw = NULL;
@@ -30,7 +30,7 @@ bool Parser::_loadResourceToTexture(const std::string& file, GLuint& texId,
 	}
 
 	if (img == NULL) {
-		Logger::getInstance()->error("Error Loading the texture: " + file);
+		Logger::getInstance()->error("Error Loading the texture: " + file.generic_string());
 		Logger::getInstance()->error(IMG_GetError());
 		return false;
 	}

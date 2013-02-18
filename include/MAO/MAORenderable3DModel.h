@@ -44,7 +44,7 @@ struct MAOFace{
 };
 
 class MAORenderable3DModel: public MAORenderable3D {
-	std::string _file;
+	boost::filesystem::path _file;
 
 	/* Maybe, dont really need them */
 	std::vector<MAOVector3> _vertex;
@@ -63,7 +63,7 @@ public:
 	friend class ParserOrej;
 	friend class ParserObj;
 
-	MAORenderable3DModel(const std::string& name, const std::string& file, float scale = 1.0f);
+	MAORenderable3DModel(const std::string& name, const boost::filesystem::path& file, float scale = 1.0f);
 	virtual ~MAORenderable3DModel();
 
 	void drawGeometryWithTexture();

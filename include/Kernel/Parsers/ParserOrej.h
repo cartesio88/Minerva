@@ -16,13 +16,13 @@
 #include <Kernel/Parsers/Parser.h>
 
 class ParserOrej: public Singleton<ParserOrej>, public Parser {
-	void _loadGeometry(const std::string& file, MAORenderable3DModel& model);
-	void _loadTexture(const std::string& file, MAORenderable3DModel& model);
+	void _loadGeometry(const boost::filesystem::path&, MAORenderable3DModel& model);
+	void _loadTexture(const boost::filesystem::path&, MAORenderable3DModel& model);
 public:
 
 	ParserOrej();
 	virtual ~ParserOrej();
-	void loadModel(const std::string& file, MAORenderable3DModel& model);
+	void loadModel(const boost::filesystem::path&, MAORenderable3DModel& model);
 
 
 

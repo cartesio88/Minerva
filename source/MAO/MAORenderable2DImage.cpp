@@ -8,7 +8,7 @@
 #include <MAO/MAORenderable2DImage.h>
 
 MAORenderable2DImage::MAORenderable2DImage(const std::string& name,
-		const std::string& filePath, const int& x, const int& y,
+		const boost::filesystem::path& filePath, const int& x, const int& y,
 		const int& width, const int& height) :
 		MAORenderable2D(name, x, y, width, height) {
 	_filePath = filePath;
@@ -32,9 +32,9 @@ void MAORenderable2DImage::generateTexFromSDLSurface() {
 		surface = IMG_Load_RW(rw, 1);
 
 	} catch (std::string& e) {
-		Logger::getInstance()->error("Unable to load image file: " + _filePath);
+		Logger::getInstance()->error("Unable to load image file: " + _filePath.generic_string());
 		//Logger::getInstance()->error(IMG_GetError());
-		throw "Unable to load image file: " + _filePath;
+		throw "Unable to load image file: " + _filePath.generic_string();
 	}
 
 	genGlTexture(surface);
@@ -42,7 +42,7 @@ void MAORenderable2DImage::generateTexFromSDLSurface() {
 	SDL_FreeSurface(surface);
 }
 
-std::string& MAORenderable2DImage::getFilePath() {
+boost::filesystem::path& MAORenderable2DImage::getFilePath() {
 	return _filePath;
 }
 

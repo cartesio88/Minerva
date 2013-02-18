@@ -9,7 +9,7 @@
 
 using namespace std;
 
-ResourceZip::ResourceZip(zip* dataFile, std::string uri) :
+ResourceZip::ResourceZip(zip* dataFile, const boost::filesystem::path& uri) :
 		Resource(uri) {
 	_dataFile = dataFile;
 	load();
@@ -18,18 +18,18 @@ ResourceZip::ResourceZip(zip* dataFile, std::string uri) :
 void ResourceZip::load() {
 	if (isOpened()) {
 		Logger::getInstance()->warning(
-				"[ResourceZip] The resource " + _uri + " is already opened.");
+				"[ResourceZip] The resource " + _uri.generic_string() + " is already opened.");
 		return;
 	}
 
 	zip_file* file;
 	struct zip_stat st;
 
-	Logger::getInstance()->out("[ResourceZip] Unpacking resource " + _uri);
+	Logger::getInstance()->out("[ResourceZip] Unpacking resource " + _uri.generic_string());
 
 	zip_stat_init(&st);
 
-	if (zip_stat(_dataFile, _uri.c_str(), 0, &st) == -1) {
+	if (zip_stat(_dataFile, _uri.generic_string().c_str(), 0, &st) == -1) {
 		//Logger::getInstance()->error(
 				//"[ResourceZip] Error locating the zip file " + _uri);
 		_opened = false;
@@ -38,11 +38,11 @@ void ResourceZip::load() {
 
 	_size = st.size;
 
-	file = zip_fopen(_dataFile, _uri.c_str(), 0);
+	file = zip_fopen(_dataFile, _uri.generic_string().c_str(), 0);
 
 	if (file == NULL) {
 		Logger::getInstance()->error(
-				"[ResourceZip] Error opening the zip file " + _uri);
+				"[ResourceZip] Error opening the zip file " + _uri.generic_string());
 		_opened = false;
 		return;
 	}
@@ -51,7 +51,7 @@ void ResourceZip::load() {
 
 	if (zip_fread(file, _data, _size) == -1) {
 		Logger::getInstance()->error(
-				"[ResourceZip] Error reading the zip file " + _uri);
+				"[ResourceZip] Error reading the zip file " + _uri.generic_string());
 		_opened = false;
 		return;
 	}

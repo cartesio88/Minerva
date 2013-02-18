@@ -13,16 +13,17 @@
 
 class MAORenderable2DImage: public MAORenderable2D {
 public:
-	MAORenderable2DImage(const std::string& name, const std::string& filePath, const int& x, const int& y, const int& width, const int& height);
+	MAORenderable2DImage(const std::string& name,
+			const boost::filesystem::path& filePath, const int& x, const int& y,
+			const int& width, const int& height);
 	virtual ~MAORenderable2DImage();
 	void generateTexFromSDLSurface();
 
-
-	std::string& getFilePath();
+	boost::filesystem::path& getFilePath();
 
 private:
 
-	std::string _filePath;
+	boost::filesystem::path _filePath;
 };
 
 #endif /* MAORENDERABLE2DIMAGE_H_ */

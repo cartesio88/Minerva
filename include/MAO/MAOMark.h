@@ -16,10 +16,10 @@
 
 class MAOMark: public MAOPositionator3D {
 public:
-	MAOMark(const std::string& name, const std::string& path,
+	MAOMark(const std::string& name, const boost::filesystem::path& path,
 			const float& size);
 	virtual ~MAOMark();
-	std::string getPath();
+	const boost::filesystem::path& getPath();
 	float getSize();
 	double* getCenter();
 
@@ -38,10 +38,8 @@ public:
 
 private:
 	cv::Mat _offsetMatrix;
-	//boost::filesystem::path _bPath;
-	std::string _bPath;
+	boost::filesystem::path _bPath;
 	std::vector<cv::Mat> _vectorPosMatrix;
-	//std::string _path;
 	float _size;
 	int _id;
 	double* _center;

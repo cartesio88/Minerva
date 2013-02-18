@@ -9,7 +9,7 @@
 
 using namespace std;
 
-ResourceFile::ResourceFile(const std::string& uri) :
+ResourceFile::ResourceFile(const boost::filesystem::path& uri) :
 		Resource(uri) {
 	load();
 }
@@ -17,7 +17,7 @@ ResourceFile::ResourceFile(const std::string& uri) :
 void ResourceFile::load() {
 	if (isOpened()) {
 		Logger::getInstance()->warning(
-				"[ResourceZip] The resource " + _uri + " is already opened.");
+				"[ResourceZip] The resource " + _uri.generic_string() + " is already opened.");
 		return;
 	}
 
@@ -25,7 +25,7 @@ void ResourceFile::load() {
 
 	//Logger::getInstance()->out("[ResourceFile] Opening resource " + _uri);
 
-	file.open(_uri.c_str(), ios::binary);
+	file.open(_uri.generic_string().c_str(), ios::binary);
 
 	if (!file.is_open()) {
 	//	Logger::getInstance()->error(

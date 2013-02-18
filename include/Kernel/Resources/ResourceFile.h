@@ -15,7 +15,7 @@ class ResourceFile: public Resource {
 
 	void load();
 public:
-	ResourceFile(const std::string& uri);
+	ResourceFile(const boost::filesystem::path& uri);
 	virtual ~ResourceFile();
 
 };

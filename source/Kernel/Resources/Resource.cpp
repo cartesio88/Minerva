@@ -7,7 +7,7 @@
 
 #include <Kernel/Resources/Resource.h>
 
-Resource::Resource(const std::string& uri) :
+Resource::Resource(const boost::filesystem::path& uri) :
 		_uri(uri), _opened(false), _data(NULL), _eof(false), _offset(0) {
 }
 

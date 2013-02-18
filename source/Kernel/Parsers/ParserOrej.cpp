@@ -12,7 +12,7 @@ using namespace std;
 ParserOrej::ParserOrej() {
 }
 
-void ParserOrej::loadModel(const std::string& file,
+void ParserOrej::loadModel(const boost::filesystem::path& file,
 		MAORenderable3DModel& model) {
 
 	model._file = file;
@@ -21,7 +21,7 @@ void ParserOrej::loadModel(const std::string& file,
 	_loadGeometry(file, model);
 }
 
-void ParserOrej::_loadTexture(const std::string& file,
+void ParserOrej::_loadTexture(const boost::filesystem::path& file,
 		MAORenderable3DModel& model) {
 
 	model._texIds.push_back((GLuint) -1);
@@ -32,19 +32,18 @@ void ParserOrej::_loadTexture(const std::string& file,
 			".jpg") };
 
 	// Get the file format
-	int dotPos = file.find_last_of('.');
-	string fileTex;
+	boost::filesystem::path fileTex(file);
 
 	// Formats supported
 	for (int i = 0; i < 4; i++) {
-		fileTex = file.substr(0, dotPos) + formats[i];
+		fileTex.replace_extension(formats[i]);
 		if(_loadResourceToTexture(fileTex, model._texIds.back(), model._texHeights.back()))
 			break;
 	}
 
 }
 
-void ParserOrej::_loadGeometry(const std::string& file,
+void ParserOrej::_loadGeometry(const boost::filesystem::path& file,
 		MAORenderable3DModel& model) {
 	std::stringstream stream;
 	int nLine = 0;
@@ -56,8 +55,8 @@ void ParserOrej::_loadGeometry(const std::string& file,
 	stream << string(r.getData());
 
 	if (stream.bad()) {
-		Logger::getInstance()->error("Error loading the Modelfile: " + file);
-		throw "Error loading the OreJ file: " + file;
+		Logger::getInstance()->error("Error loading the Modelfile: " + file.string());
+		throw "Error loading the OreJ file: " + file.string();
 	}
 
 	while (!stream.eof()) {

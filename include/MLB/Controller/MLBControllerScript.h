@@ -41,7 +41,7 @@
 
 class MLBControllerScript: public MLBController {
 public:
-	MLBControllerScript(const std::string& name, MAO& parent, const std::string& path);
+	MLBControllerScript(const std::string& name, MAO& parent, const boost::filesystem::path& path);
 	virtual ~MLBControllerScript();
 	void evaluate();
 	boost::python::object* getCompiledObj();
@@ -52,7 +52,7 @@ public:
 	object mPyGetActuator(std::string name);
 
 private:
-	std::string _path;
+	boost::filesystem::path _path;
 	boost::python::object _compiledObj;
 	bool _compiled;
 

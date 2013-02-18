@@ -14,10 +14,11 @@
 #include <Kernel/Logger.h>
 #include <iostream>
 #include <sstream>
+#include <boost/filesystem.hpp>
 
 class Resource {
 protected:
-	std::string _uri;
+	boost::filesystem::path _uri;
 	bool _opened;
 	char* _data;
 	bool _eof;
@@ -27,7 +28,7 @@ protected:
 	virtual void load() = 0;
 
 public:
-	Resource(const std::string& uri);
+	Resource(const boost::filesystem::path& uri);
 
 	/* Raw methods */
 	size_t getSize();

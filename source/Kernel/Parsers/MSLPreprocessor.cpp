@@ -12,38 +12,41 @@ using namespace std;
 MSLPreprocessor::MSLPreprocessor() {
 }
 
-void MSLPreprocessor::start(const std::string& file, stringstream& finalFile){
-  ifstream fileStream;
-  fileStream.open(file.c_str());
+void MSLPreprocessor::start(const std::string& file, stringstream& finalFile) {
+	ifstream fileStream;
+	fileStream.open(file.c_str());
 
-  Logger::getInstance()->out("Preprocessing file: "+file);
-  
-  if (!fileStream.is_open()) {
-    Logger::getInstance()->error(
-				 "Application file not found!: " + file);
-    throw "File not found exception: " + file;
-  }
-  
-  char line[1024];
-  char firstWord[1024];
-  char path[1024];
-  while(!fileStream.eof()){
-    fileStream.getline(line, 1024);
-    
-    // Checking for import sentences
-    sscanf(line,"%s %s", firstWord, path);
-    if(string(firstWord) == "include"){
-      firstWord[0] = '\0';
+	Logger::getInstance()->out("Preprocessing file: " + file);
 
-      string pathString(path);
-      pathString = pathString.substr(1, pathString.length()-2); // Removing quotes
-      start(pathString, finalFile);
-    }else{
-      finalFile << line<<endl;
-    }
-  }
+	if (!fileStream.is_open()) {
+		Logger::getInstance()->error("Application file not found!: " + file);
+		throw "File not found exception: " + file;
+	}
 
-  fileStream.close();
+	while (!fileStream.eof()) {
+		string line;
+		getline(fileStream, line);
+		stringstream streamLine;
+		streamLine << line;
+
+		// Checking for import sentences
+		string firstWord;
+		streamLine >> firstWord;
+
+		if (string(firstWord) == "include") {
+			string path;
+			streamLine >> path;
+			path = path.substr(1, path.length() - 2); // Removing quotes
+			start(path, finalFile);
+		} else if (firstWord.size() > 1 && firstWord.at(0) == '/'
+				&& firstWord.at(1) == '/') { // Checking for one line comments //
+			// Ignore that line :)
+		} else {
+			finalFile << line << endl;
+		}
+	}
+
+	fileStream.close();
 }
 
 MSLPreprocessor::~MSLPreprocessor() {

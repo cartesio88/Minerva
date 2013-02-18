@@ -16,17 +16,25 @@ ResourcesManager::ResourcesManager() :
 		_dataFile(NULL), _dataFileExists(true) {
 }
 
-void ResourcesManager::addResource(const std::string& uri) {
-	//_resources[uri] = NULL;
+void ResourcesManager::addResource(const boost::filesystem::path& uri) {
 	_filesToPack.push_back(uri);
 }
 
+void ResourcesManager::addResource(const std::string& uri) {
+	_filesToPack.push_back(boost::filesystem::path(uri));
+}
+
+
 Resource& ResourcesManager::getResource(const std::string& uri) {
+	return getResource(boost::filesystem::path(uri));
+}
+
+Resource& ResourcesManager::getResource(const boost::filesystem::path& uri) {
 	int err = 0;
 
 	Resource* r = _resources[uri];
 
-	cout<<"Looking for resource: "<<uri<<endl;
+	cout<<"Looking for resource: "<<uri.generic_string()<<endl;
 
 	/* Try to return the zip resource */
 	if (_dataFileExists && r == NULL) {
@@ -53,7 +61,7 @@ Resource& ResourcesManager::getResource(const std::string& uri) {
 	if (!r->isOpened()) {
 		if (r)
 			delete r;
-		throw "[ResourcesManager] Could not find the resource " + uri;
+		throw "[ResourcesManager] Could not find the resource " + uri.generic_string();
 	}
 
 	//Logger::getInstance()->out("Getting resource " + uri);
@@ -82,24 +90,22 @@ void ResourcesManager::pack(const stringstream& finalFile) {
 	zip_source* s = NULL;
 
 	//map<string, Resource*>::iterator it;
-	list<string>::iterator it;
+	list<boost::filesystem::path>::iterator it;
 	for (it = _filesToPack.begin(); it != _filesToPack.end(); ++it) {
-		//pair<string, Resource*> entry = *it;
-		string entry = *it;
-		Logger::getInstance()->out(
-				"[ResourcesManager] Packing :" + entry + "...");
+		boost::filesystem::path entry = *it;
+		Logger::getInstance()->out("[ResourcesManager] Packing :" + entry.generic_string() + "...");
 
 		s = zip_source_file(_dataFile, entry.c_str(), 0, -1);
 		if(s == NULL){
 			Logger::getInstance()->error(
-							"[ResourcesManager] ERROR Locating the file "+entry);
+							"[ResourcesManager] ERROR Locating the file "+entry.generic_string());
 			Logger::getInstance()->out(zip_strerror(_dataFile));
 			exit(-1);
 		}
 
 		if(zip_add(_dataFile, entry.c_str(), s) == -1) {
 			Logger::getInstance()->error(
-							"[ResourcesManager] ERROR adding the file "+entry);
+							"[ResourcesManager] ERROR adding the file "+entry.generic_string());
 			Logger::getInstance()->out(zip_strerror(_dataFile));
 			zip_source_free(s);
 			exit(-1);
@@ -135,9 +141,9 @@ ResourcesManager::~ResourcesManager() {
 //if (_dataFile != NULL)
 //	zip_close(_dataFile);
 
-	map<string, Resource*>::iterator it;
+	map<boost::filesystem::path, Resource*>::iterator it;
 	for (it = _resources.begin(); it != _resources.end(); ++it) {
-		pair<string, Resource*> entry = (*it);
+		pair<boost::filesystem::path, Resource*> entry = (*it);
 		if (entry.second != NULL)
 			entry.second->free();
 	}

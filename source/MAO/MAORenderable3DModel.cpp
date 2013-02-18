@@ -10,7 +10,7 @@
 using namespace std;
 
 MAORenderable3DModel::MAORenderable3DModel(const std::string& name,
-		const std::string& file, float size) :
+		const boost::filesystem::path& file, float size) :
 		MAORenderable3D(name, size), _file(file) {
 
 	_type = T_MAORENDERABLE3DMODEL;

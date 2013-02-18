@@ -17,7 +17,7 @@ MAOFactory::MAOFactory() {
 }
 
 /* ADDS */
-MAOMark& MAOFactory::addMAOMark(std::string name, const std::string& path,
+MAOMark& MAOFactory::addMAOMark(std::string name,const boost::filesystem::path& path,
 		const float& size) {
 	if (!checkMAOName(name))
 		throw "MAO name already exists: " + name;
@@ -51,7 +51,7 @@ MAOMarksGroup& MAOFactory::addMAOMarksGroup(std::string name) {
 }
 
 MAORenderable2DText& MAOFactory::addMAORenderable2DText(std::string name,
-		const std::string& fontPath, const int& ptSize, const std::string& text,
+		const boost::filesystem::path& fontPath, const int& ptSize, const std::string& text,
 		const int& x, const int& y, const int& style) {
 	if (!checkMAOName(name))
 		throw "MAO name already exists: " + name;
@@ -65,7 +65,7 @@ MAORenderable2DText& MAOFactory::addMAORenderable2DText(std::string name,
 }
 
 MAORenderable2DImage& MAOFactory::addMAORenderable2DImage(std::string name,
-		const std::string& filePath, const int& x, const int& y,
+		const boost::filesystem::path& filePath, const int& x, const int& y,
 		const int& width, const int& height) {
 	if (!checkMAOName(name))
 		throw "MAO name already exists: " + name;
@@ -110,7 +110,7 @@ MAORenderable3DLine& MAOFactory::addMAORenderable3DLine(std::string name,
 }
 
 MAORenderable3DModel& MAOFactory::addMAORenderable3DModel(std::string name,
-		const float& size, const std::string& file, const std::string& nref) {
+		const float& size, const boost::filesystem::path& file, const std::string& nref) {
 	if (!checkMAOName(name))
 		throw "MAO name already exists: " + name;
 
@@ -119,19 +119,18 @@ MAORenderable3DModel& MAOFactory::addMAORenderable3DModel(std::string name,
 	Parser *parser = NULL;
 
 	// Get the file format
-	int dotPos = file.find_last_of('.');
-	std::string format = file.substr(dotPos + 1);
+	std::string format = file.extension().string();
+	std::cout<<"Format: "<<format<<std::endl;
 
-
-	if (format == "orj") {
+	if (format == ".orj") {
 		Logger::getInstance()->out("Recognized file format " + format);
 		parser = ParserOrej::getInstance();
-	} else if (format == "obj") {
+	} else if (format == ".obj") {
 		Logger::getInstance()->out("Recognized file format " + format);
 		parser = ParserObj::getInstance();
 	}else {
 		Logger::getInstance()->error(
-				"MAORenderable3DModel: unrecognized file format of: " + file);
+				"MAORenderable3DModel: unrecognized file format of: " + file.generic_string());
 		exit(-1);
 	}
 

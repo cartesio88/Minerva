@@ -262,7 +262,7 @@ MLBControllerNOR& MLBFactory::addMLBControllerNOR(std::string name,
 }
 
 MLBControllerScript& MLBFactory::addMLBControllerScript(
-		std::string name, const std::string nparent, const std::string path) {
+		std::string name, const std::string nparent, const boost::filesystem::path& path) {
 
 	if (!checkMLBName(nparent, name))
 		throw "MLB name already exists " + name;

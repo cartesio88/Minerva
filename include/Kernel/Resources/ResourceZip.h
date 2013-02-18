@@ -18,7 +18,7 @@ class ResourceZip: public Resource {
 	void load();
 
 public:
-	ResourceZip(zip* dataFile, std::string uri);
+	ResourceZip(zip* dataFile, const boost::filesystem::path& uri);
 
 	virtual ~ResourceZip();
 };

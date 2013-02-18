@@ -33,15 +33,15 @@ public:
 	virtual ~MAOFactory();
 
 	/* Adds */
-	MAOMark& addMAOMark(std::string name, const std::string& path,
+	MAOMark& addMAOMark(std::string name, const boost::filesystem::path& path,
 			const float& size);
 	MAOMarksGroup& addMAOMarksGroup(std::string name);
 	MAORenderable2DText& addMAORenderable2DText(std::string name,
-			const std::string& fontPath, const int& ptSize,
+			const boost::filesystem::path&, const int& ptSize,
 			const std::string& text, const int& x = 0, const int& y = 0,
 			const int& style = 0);
 	MAORenderable2DImage& addMAORenderable2DImage(std::string name,
-			const std::string& filePath, const int& x, const int& y,
+			const boost::filesystem::path& filePath, const int& x, const int& y,
 			const int& width, const int& height);
 	MAORenderable3DLine& addMAORenderable3DLine(std::string name,
 			const float& size, int r, int g, int b);
@@ -49,7 +49,7 @@ public:
 			const float& size, int r, int g, int b, std::string& nMao1,
 			std::string& nMao2);
 	MAORenderable3DModel& addMAORenderable3DModel(std::string name,
-			const float& size, const std::string& file, const std::string& nref);
+			const float& size, const boost::filesystem::path& file, const std::string& nref);
 	MAORenderable3DPath& addMAORenderable3DPath(std::string name,
 			const float& size, int r, int g, int b, std::string& nref);
 

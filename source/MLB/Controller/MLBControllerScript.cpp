@@ -10,7 +10,7 @@
 using namespace std;
 
 MLBControllerScript::MLBControllerScript(const std::string& name, MAO& parent,
-		const std::string& path) :
+		const boost::filesystem::path& path) :
 	MLBController(name, parent) {
 	_path = path;
 	_compiled = false;
@@ -48,7 +48,7 @@ void MLBControllerScript::compileScript() {
 	try {
 		_compiledObj = boost::python::object(boost::python::handle<>(
 				boost::python::borrowed(Py_CompileString((char*) &buf,
-						_path.c_str(), Py_file_input))));
+						_path.generic_string().c_str(), Py_file_input))));
 	} catch (boost::python::error_already_set e) {
 		Logger::getInstance()->error("Error compiling the script: " + getName());
 		PyErr_Print();

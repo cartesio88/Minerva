@@ -21,8 +21,8 @@
 #include <boost/filesystem.hpp>
 
 class ResourcesManager: public Singleton<ResourcesManager>{
-	std::map<std::string, Resource*> _resources;
-	std::list<std::string> _filesToPack;
+	std::map<boost::filesystem::path, Resource*> _resources;
+	std::list<boost::filesystem::path> _filesToPack;
 	zip* _dataFile; /* For zip resources */
 	bool _dataFileExists;
 
@@ -34,7 +34,9 @@ public:
 	virtual ~ResourcesManager();
 
 	void addResource(const std::string& uri);
+	void addResource(const boost::filesystem::path& uri);
 	Resource& getResource(const std::string& uri);
+	Resource& getResource(const boost::filesystem::path& uri);
 	void pack(const std::stringstream& finalFile);
 
 };
