@@ -26,6 +26,11 @@ void Parser3ds::loadModel(const boost::filesystem::path& file,
 		Lib3dsVector normals[m->faces * 3];
 		lib3ds_mesh_calculate_normals(m, normals);
 
+		/* Materials */
+		for(Lib3dsMaterial* mat = file3ds->materials; mat != NULL; mat = mat->next){
+
+		}
+
 		/* Vertex list */
 		cout << "Number of vertex: " << m->points << endl;
 		for (unsigned int i = 0; i < m->points; i++) {

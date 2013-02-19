@@ -48,6 +48,10 @@ struct MAOFace{
 	MAOVector3 normal[3];
 };
 
+struct MAOMaterial{
+
+};
+
 class MAORenderable3DModel: public MAORenderable3D {
 	boost::filesystem::path _file;
 
