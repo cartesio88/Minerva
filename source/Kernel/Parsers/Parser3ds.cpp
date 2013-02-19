@@ -42,7 +42,6 @@ void Parser3ds::loadModel(const boost::filesystem::path& file,
 
 		boost::filesystem::path pwd = file.parent_path();
 		boost::filesystem::path texPath = pwd /= mat->texture1_map.name;
-		ResourcesManager::getInstance()->addResource(texPath); //MTLIBFILE
 
 		mmat.texPath = texPath;
 
