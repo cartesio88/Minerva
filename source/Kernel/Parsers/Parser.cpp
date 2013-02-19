@@ -13,7 +13,7 @@ Parser::Parser() {
 }
 
 bool Parser::_loadResourceToTexture(const boost::filesystem::path& file,
-		GLuint& texId, int& texHeight) {
+		MAOMaterial& mat) {
 	SDL_Surface* img = NULL;
 	SDL_RWops *rw = NULL;
 	GLenum textureFormat;
@@ -61,16 +61,16 @@ bool Parser::_loadResourceToTexture(const boost::filesystem::path& file,
 	}
 
 	// Create the texture id
-	glGenTextures(1, &texId);
-	texHeight = img->h;
+	glGenTextures(1, &mat.texId);
+	mat.texHeight = img->h;
 
-	if (texId == GL_INVALID_OPERATION) {
+	if (mat.texId == GL_INVALID_OPERATION) {
 		Logger::getInstance()->error("Error processing an OreJ texture");
 		throw "Error processing an OreJ texture";
 	}
 
 	glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
-	glBindTexture(GL_TEXTURE_2D, texId);
+	glBindTexture(GL_TEXTURE_2D, mat.texId);
 
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
@@ -99,25 +99,25 @@ void Parser::_generateCallList(MAORenderable3DModel& model) {
 		for (facePtr = meshPtr->faces.begin(); facePtr != meshPtr->faces.end();
 				facePtr++) {
 			glBegin(GL_TRIANGLES);
-			if (meshPtr->material != NULL)
+			if (meshPtr->materialId != -1)
 				glTexCoord2f(facePtr->uv[0].x,
-						meshPtr->material->texHeight - facePtr->uv[0].y);
+						model._materials[meshPtr->materialId].texHeight - facePtr->uv[0].y);
 			glNormal3f(facePtr->normal[0].x, facePtr->normal[0].y,
 					facePtr->normal[0].z);
 			glVertex3f(facePtr->vertex[0].x, facePtr->vertex[0].y,
 					facePtr->vertex[0].z);
 
-			if (meshPtr->material != NULL)
+			if (meshPtr->materialId != -1)
 				glTexCoord2f(facePtr->uv[1].x,
-						meshPtr->material->texHeight - facePtr->uv[1].y);
+						model._materials[meshPtr->materialId].texHeight - facePtr->uv[1].y);
 			glNormal3f(facePtr->normal[1].x, facePtr->normal[1].y,
 					facePtr->normal[1].z);
 			glVertex3f(facePtr->vertex[1].x, facePtr->vertex[1].y,
 					facePtr->vertex[1].z);
 
-			if (meshPtr->material != NULL)
+			if (meshPtr->materialId != -1)
 				glTexCoord2f(facePtr->uv[2].x,
-						meshPtr->material->texHeight - facePtr->uv[2].y);
+						model._materials[meshPtr->materialId].texHeight - facePtr->uv[2].y);
 			glNormal3f(facePtr->normal[2].x, facePtr->normal[2].y,
 					facePtr->normal[2].z);
 			glVertex3f(facePtr->vertex[2].x, facePtr->vertex[2].y,

@@ -58,7 +58,7 @@ void MAORenderable3DModel::generateBoxShape() {
 	float z[] = { 100, -100 };
 
 	vector<MAOVector3>::iterator ptr;
-	for (ptr = _meshes.back().vertex.begin(); ptr != _vertex.end(); ++ptr) {
+	for (ptr = _meshes.back().vertex.begin(); ptr != _meshes.back().vertex.end(); ++ptr) {
 		float& vx = ptr->x;
 		float& vy = ptr->y;
 		float& vz = ptr->z;
@@ -89,7 +89,7 @@ void MAORenderable3DModel::generateConvexTriangleMeshShape() {
 	ch->setMargin(btScalar(0.005f));
 
 	vector<MAOVector3>::iterator ptr;
-	for (ptr = _meshes.back().vertex.begin(); ptr != _vertex.end(); ++ptr) {
+	for (ptr = _meshes.back().vertex.begin(); ptr != _meshes.back().vertex.end(); ++ptr) {
 		((btConvexHullShape*) ch)->addPoint(btVector3(ptr->x, ptr->y, ptr->z));
 	}
 
@@ -109,24 +109,24 @@ void MAORenderable3DModel::generateSphereShape() {
 	throw "Generating Sphere Shapes from Models is not implemented yet!!";
 }
 
-void MAORenderable3DModel::drawMesh(const MAOMesh& mesh) {
+void MAORenderable3DModel::_drawMesh(const MAOMesh& mesh) {
 	glEnable(GL_TEXTURE_2D);
 
 		glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
 
-		if (mesh.material != NULL) {
-			glBindTexture(GL_TEXTURE_2D, mesh.material->texId);
+		if (mesh.materialId != -1) {
+			glBindTexture(GL_TEXTURE_2D, _materials[mesh.materialId].texId);
 		} else {
 			glColor3f(1.0, 0.0, 0.0);
 		}
 		glPolygonMode(GL_FRONT, GL_FILL);
 
-		drawGeometryWithoutTexture();
+		_drawMeshNoTexture(mesh);
 
 		glDisable(GL_TEXTURE_2D);
 }
 
-void MAORenderable3DModel::drawMeshNoTexture(const MAOMesh& mesh) {
+void MAORenderable3DModel::_drawMeshNoTexture(const MAOMesh& mesh) {
 	glPushMatrix();
 
 	//Refresh anim!
@@ -159,6 +159,22 @@ void MAORenderable3DModel::drawMeshNoTexture(const MAOMesh& mesh) {
 
 	glCallList (mesh.idListMesh);
 	glPopMatrix();
+}
+
+
+void MAORenderable3DModel::_drawMAO() {
+	list<MAOMesh>::iterator meshPtr;
+	for(meshPtr = _meshes.begin(); meshPtr != _meshes.end(); ++meshPtr){
+		_drawMesh(*meshPtr);
+	}
+
+}
+
+void MAORenderable3DModel::_drawMAONoTexture() {
+	list<MAOMesh>::iterator meshPtr;
+		for(meshPtr = _meshes.begin(); meshPtr != _meshes.end(); ++meshPtr){
+			_drawMeshNoTexture(*meshPtr);
+		}
 }
 
 void MAORenderable3DModel::playAnim(int animType) {

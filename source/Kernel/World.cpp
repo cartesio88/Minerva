@@ -13,7 +13,7 @@ World::World() {
 void World::initWorld(int width, int height) {
 	Logger::getInstance()->out("Initializing world...");
 
-	const SDL_VideoInfo* info = NULL;
+
 
 	_appName = "Minerva's Application";
 
@@ -25,7 +25,8 @@ void World::initWorld(int width, int height) {
 		throw "Unable to initalize SDL!";
 	}
 
-	info = SDL_GetVideoInfo();
+	//const SDL_VideoInfo* info = NULL;
+	//info = SDL_GetVideoInfo();
 
 	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
 	_screen = SDL_SetVideoMode(640, 480, 32, SDL_HWSURFACE | SDL_OPENGL
@@ -200,7 +201,7 @@ void World::drawShadows() {
 						(float*) renderables3d.at(i)->getPosMatrix().data;
 				glMultMatrixf(res);
 				glMultMatrixf(renderablePosMatrix);
-				renderables3d.at(i)->drawGeometryWithoutTexture();
+				renderables3d.at(i)->drawNoTexture();
 				glPopMatrix();
 			}
 		}
@@ -215,7 +216,7 @@ void World::drawShadows() {
 						(float*) renderables3dInst.at(i)->getPosMatrix().data;
 				glMultMatrixf(res);
 				glMultMatrixf(renderablePosMatrix);
-				renderables3dInst.at(i)->drawGeometryWithoutTexture();
+				renderables3dInst.at(i)->drawNoTexture();
 				glPopMatrix();
 			}
 		}

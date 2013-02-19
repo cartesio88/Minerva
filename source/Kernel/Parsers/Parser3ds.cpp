@@ -20,14 +20,21 @@ void Parser3ds::loadModel(const boost::filesystem::path& file,
 
 	/* Load textures */
 	// TODO
+	MAOMaterial mat;
+	// TODO
+	model._materials.push_back(mat);
+
 	/* Load Geometry */
 	for (Lib3dsMesh* m = file3ds->meshes; m != NULL; m = m->next) {
+		MAOMesh mmesh;
+
 		/* It is necessary to calculate the normals */
 		Lib3dsVector normals[m->faces * 3];
 		lib3ds_mesh_calculate_normals(m, normals);
 
 		/* Materials */
-		for(Lib3dsMaterial* mat = file3ds->materials; mat != NULL; mat = mat->next){
+		for (Lib3dsMaterial* mat = file3ds->materials; mat != NULL;
+				mat = mat->next) {
 
 		}
 
@@ -37,7 +44,12 @@ void Parser3ds::loadModel(const boost::filesystem::path& file,
 			Lib3dsPoint v = m->pointL[i];
 
 			MAOVector3 mv(v.pos[0], v.pos[1], v.pos[2]);
-			model._vertex.push_back(mv);
+
+			mv.x *= model.getProperty("size").getValue<float>();
+			mv.y *= model.getProperty("size").getValue<float>();
+			mv.z *= model.getProperty("size").getValue<float>();
+
+			mmesh.vertex.push_back(mv);
 		}
 
 		/* UV list */
@@ -47,7 +59,7 @@ void Parser3ds::loadModel(const boost::filesystem::path& file,
 			float v = m->texelL[2 * i][1];
 
 			MAOVector2 uv(u, v);
-			model._uv.push_back(uv);
+			mmesh.uv.push_back(uv);
 		}
 
 		/* Normals */
@@ -58,7 +70,7 @@ void Parser3ds::loadModel(const boost::filesystem::path& file,
 			float nz = normals[3 * i][2];
 
 			MAOVector3 n(nx, ny, nz);
-			model._normals.push_back(n);
+			mmesh.normals.push_back(n);
 		}
 
 		/* Faces list */
@@ -69,29 +81,31 @@ void Parser3ds::loadModel(const boost::filesystem::path& file,
 			MAOFace mf;
 
 			for (int j = 0; j < 3; j++) {
-				mf.vertex[j].x = model._vertex.at(f.points[j]).x;
-				mf.vertex[j].y = model._vertex.at(f.points[j]).y;
-				mf.vertex[j].z = model._vertex.at(f.points[j]).z;
+				mf.vertex[j].x = mmesh.vertex.at(f.points[j]).x;
+				mf.vertex[j].y = mmesh.vertex.at(f.points[j]).y;
+				mf.vertex[j].z = mmesh.vertex.at(f.points[j]).z;
 
-				mf.uv[j].x = model._uv.at(f.points[j]).x;
-				mf.uv[j].y = model._uv.at(f.points[j]).y;
+				mf.uv[j].x = mmesh.uv.at(f.points[j]).x;
+				mf.uv[j].y = mmesh.uv.at(f.points[j]).y;
 
-				mf.normal[j].x = normals[i*3 + j][0];
-				mf.normal[j].y = normals[i*3 + j][1];
-				mf.normal[j].z = normals[i*3 + j][2];
+				mf.normal[j].x = normals[i * 3 + j][0];
+				mf.normal[j].y = normals[i * 3 + j][1];
+				mf.normal[j].z = normals[i * 3 + j][2];
 			}
 
-			model._faces.push_back(mf);
+			mmesh.faces.push_back(mf);
 		}
 
+		model._meshes.push_back(mmesh);
 	}
 
 	/* Load animation */
 
+	/* Load to OpenGL :) */
+	_generateCallList(model);
+
 	// Dont forget to free it
 	lib3ds_file_free(file3ds);
-
-	_generateCallList(model);
 }
 
 Lib3dsFile* Parser3ds::_load3dsFile(const boost::filesystem::path& file) {

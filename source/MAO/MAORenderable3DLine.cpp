@@ -116,11 +116,11 @@ void MAORenderable3DLine::setPointsFromMao() {
 		_z2 = _mao2->getPosMatrix().at<float> (3, 2);
 	}
 }
-void MAORenderable3DLine::drawGeometryWithoutTexture(){
-	drawGeometryWithTexture();
+void MAORenderable3DLine::_drawMAONoTexture(){
+	_drawMAO();
 }
 
-void MAORenderable3DLine::drawGeometryWithTexture() {
+void MAORenderable3DLine::_drawMAO() {
 
 	glDisable(GL_LIGHTING);
 

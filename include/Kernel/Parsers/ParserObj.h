@@ -18,7 +18,7 @@
 #include <Kernel/Parsers/Parser.h>
 
 class ParserObj: public Singleton<ParserObj>, public Parser{
-	void _loadTextureFile(const boost::filesystem::path&, MAORenderable3DModel& model);
+	void _loadTextureFile(const boost::filesystem::path&, MAOMaterial& mat);
 	void _getFaceIndices(std::string& line, int& v, int& vt, int& vn);
 public:
 

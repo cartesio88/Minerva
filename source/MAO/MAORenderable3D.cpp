@@ -204,11 +204,12 @@ void MAORenderable3D::draw() {
 
 		glDisable(GL_TEXTURE_2D);
 
-		//Drawing the shadows!
-
-
 	}
 
+}
+
+void MAORenderable3D::drawNoTexture() {
+	_drawMAONoTexture();
 }
 
 bool MAORenderable3D::isVisible() {

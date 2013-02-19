@@ -16,6 +16,8 @@ void ParserObj::loadModel(const boost::filesystem::path& file,
 		MAORenderable3DModel& model) {
 	model._file = file;
 
+	MAOMesh mesh;
+
 	stringstream streamFile;
 
 	Resource& r = ResourcesManager::getInstance()->getResource(file);
@@ -46,20 +48,20 @@ void ParserObj::loadModel(const boost::filesystem::path& file,
 			v.y *= model.getProperty("size").getValue<float>();
 			v.z *= model.getProperty("size").getValue<float>();
 
-			model._vertex.push_back(v);
+			mesh.vertex.push_back(v);
 		} else if (symbol == "vt") { // Vertex texture
 			MAOVector2 vt;
 			streamLine >> vt.x;
 			streamLine >> vt.y;
 
-			model._uv.push_back(vt);
+			mesh.uv.push_back(vt);
 		} else if (symbol == "vn") { // Vertex normal
 			MAOVector3 vn;
 			streamLine >> vn.x;
 			streamLine >> vn.y;
 			streamLine >> vn.z;
 
-			model._normals.push_back(vn);
+			mesh.normals.push_back(vn);
 		} else if (symbol == "f") { // Face
 			MAOFace f;
 			std::string index;
@@ -77,22 +79,22 @@ void ParserObj::loadModel(const boost::filesystem::path& file,
 
 				_getFaceIndices(s, v, vt, vn);
 				if (v > 0) {
-					f.vertex[i].x = model._vertex[v -1].x;
-					f.vertex[i].y = model._vertex[v -1].y;
-					f.vertex[i].z = model._vertex[v -1].z;
+					f.vertex[i].x = mesh.vertex[v -1].x;
+					f.vertex[i].y = mesh.vertex[v -1].y;
+					f.vertex[i].z = mesh.vertex[v -1].z;
 				}
 				if (vt > 0) {
-					f.uv[i].x = model._uv[vt -1].x;
-					f.uv[i].y = model._uv[vt -1].y;
+					f.uv[i].x = mesh.uv[vt -1].x;
+					f.uv[i].y = mesh.uv[vt -1].y;
 				}
 				if (vn > 0) {
-					f.normal[i].x = model._normals[vn - 1].x;
-					f.normal[i].y = model._normals[vn - 1].y;
-					f.normal[i].z = model._normals[vn - 1].z;
+					f.normal[i].x = mesh.normals[vn - 1].x;
+					f.normal[i].y = mesh.normals[vn - 1].y;
+					f.normal[i].z = mesh.normals[vn - 1].z;
 				}
 			}
 
-			model._faces.push_back(f);
+			mesh.faces.push_back(f);
 		} else if (symbol == "mtllib") { // Declaring material
 			boost::filesystem::path pwd = file.parent_path();
 
@@ -109,7 +111,11 @@ void ParserObj::loadModel(const boost::filesystem::path& file,
 
 			ResourcesManager::getInstance()->addResource(path); //MTLIBFILE
 
-			_loadTextureFile(path, model);
+			MAOMaterial mat;
+			_loadTextureFile(path, mat);
+			model._materials.push_back(mat);
+			mesh.materialId = model._materials.size() - 1;
+
 		} else if (symbol == "usemtl") { // Using material
 
 		} else if (symbol == "#") { // Comment
@@ -120,11 +126,13 @@ void ParserObj::loadModel(const boost::filesystem::path& file,
 		}
 	}
 
+	model._meshes.push_back(mesh);
+
 	_generateCallList(model);
 }
 
 void ParserObj::_loadTextureFile(const boost::filesystem::path& file,
-		MAORenderable3DModel& model) {
+		MAOMaterial& mat) {
 	stringstream streamFile;
 
 	Resource& r = ResourcesManager::getInstance()->getResource(file);
@@ -159,11 +167,7 @@ void ParserObj::_loadTextureFile(const boost::filesystem::path& file,
 
 			boost::filesystem::path path = pwd /= fname;
 
-			model._texIds.push_back((GLuint) -1);
-			model._texHeights.push_back(0);
-
-			_loadResourceToTexture(path, model._texIds.back(),
-					model._texHeights.back());
+			_loadResourceToTexture(path, mat);
 
 		} else if (symbol == "#") { // Comment
 			/* Ignore it */

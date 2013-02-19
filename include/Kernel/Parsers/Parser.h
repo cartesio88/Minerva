@@ -19,7 +19,7 @@
 
 class Parser{
 protected:
-	bool _loadResourceToTexture(const boost::filesystem::path& file, GLuint& texid, int& texHeight);
+	bool _loadResourceToTexture(const boost::filesystem::path& file, MAOMaterial& mat);
 	void _generateCallList(MAORenderable3DModel& model);
 public:
 	Parser();

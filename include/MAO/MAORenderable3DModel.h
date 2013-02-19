@@ -67,10 +67,10 @@ struct MAOMesh{
 	std::vector<MAOVector3> normals;
 	std::list<MAOFace> faces;
 
-	MAOMaterial* material;
+	int materialId;
 	GLuint idListMesh;
 
-	MAOMesh(): material(NULL) {}
+	MAOMesh(): materialId(-1) {}
 };
 
 class MAORenderable3DModel: public MAORenderable3D {
@@ -84,8 +84,8 @@ class MAORenderable3DModel: public MAORenderable3D {
 	void _drawMesh(const MAOMesh& mesh); // Just one mesh
 	void _drawMeshNoTexture(const MAOMesh& mesh); // Just one mesh
 
-	void _drawMAOMesh(); // Whole geometry
-	void _drawMAOMeshNoTexture(); // Whole geometry
+	void _drawMAO(); // Whole geometry
+	void _drawMAONoTexture(); // Whole geometry
 
 public:
 	friend class Parser;

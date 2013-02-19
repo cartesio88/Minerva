@@ -12,11 +12,17 @@
 #include <Kernel/PathPoint.h>
 
 class MAORenderable3DPath: public MAORenderable3D {
+	std::vector<PathPoint> _vectorPathPoint;
+	PathPoint* refPoint; //Just nothing!
+
+	bool _hasChanged(PathPoint& p);
+
+	void _drawMAO();
+	void _drawMAONoTexture();
+
 public:
 	MAORenderable3DPath(const std::string& name, float size, int r, int g, int b);
 	virtual ~MAORenderable3DPath();
-	void drawGeometryWithTexture();
-	void drawGeometryWithoutTexture();
 	void addPoint();
 	void removePoints();
 	int getR();
@@ -26,11 +32,6 @@ public:
 
 	void generateCollisionShape(int type);
 
-private:
-	std::vector<PathPoint> _vectorPathPoint;
-	PathPoint* refPoint; //Just nothing!
-
-	bool hasChanged(PathPoint& p);
 };
 
 #endif /* MAORENDERABLE3DPATH_H_ */

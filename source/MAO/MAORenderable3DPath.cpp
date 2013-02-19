@@ -49,11 +49,11 @@ void MAORenderable3DPath::generateCollisionShape(int type) {
 	}
 }
 
-void MAORenderable3DPath::drawGeometryWithoutTexture(){
-	drawGeometryWithTexture();
+void MAORenderable3DPath::_drawMAONoTexture(){
+	_drawMAO();
 }
 
-void MAORenderable3DPath::drawGeometryWithTexture() {
+void MAORenderable3DPath::_drawMAO() {
   	if (_vectorPathPoint.size() == 0)
 		return;
 
@@ -72,7 +72,7 @@ void MAORenderable3DPath::drawGeometryWithTexture() {
 	for (unsigned int i = 0; i < _vectorPathPoint.size(); i++) {
 		PathPoint& p = _vectorPathPoint.at(i);
 
-		if (hasChanged(p)) {
+		if (_hasChanged(p)) {
 			refPoint = &p;
 			glEnd();
 			glLineWidth(p.getSize());
@@ -90,7 +90,7 @@ void MAORenderable3DPath::drawGeometryWithTexture() {
 	glEnable(GL_LIGHTING);
 }
 
-bool MAORenderable3DPath::hasChanged(PathPoint& p) {
+bool MAORenderable3DPath::_hasChanged(PathPoint& p) {
 	if (refPoint->getR() != p.getR() || refPoint->getG() != p.getG()
 			|| refPoint->getB() != p.getB())
 		return true;
