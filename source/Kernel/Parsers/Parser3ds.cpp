@@ -7,13 +7,22 @@
 
 #include <Kernel/Parsers/Parser3ds.h>
 
+using namespace std;
+
 Parser3ds::Parser3ds() {
 }
 
 void Parser3ds::loadModel(const boost::filesystem::path& file,
 		MAORenderable3DModel& model) {
 
-	/* Me myself has to load it :) */
+	Lib3dsFile *file3ds;
+	file3ds = _load3dsFile(file);
+
+	// Maybe at the end?
+	lib3ds_file_free(file3ds);
+}
+
+Lib3dsFile* Parser3ds::_load3dsFile(const boost::filesystem::path& file) {
 	Lib3dsFile *file3ds;
 	Lib3dsIo *io;
 
@@ -27,21 +36,10 @@ void Parser3ds::loadModel(const boost::filesystem::path& file,
 		exit(-1);
 	}
 
-	std::istringstream stream(std::string(r.getData()));
+	std::stringstream stream(std::string(r.getData()));
 
-	// Aqui esta la miga!
-	// Self is the FILE (rdbuf)
-	/*typedef Lib3dsBool (*Lib3dsIoErrorFunc)(void *self);
-	 typedef long (*Lib3dsIoSeekFunc)(void *self, long offset,
-	 Lib3dsIoSeek origin);
-	 typedef long (*Lib3dsIoTellFunc)(void *self);
-	 typedef size_t (*Lib3dsIoReadFunc)(void *self, void *buffer, size_t size);
-	 typedef size_t (*Lib3dsIoWriteFunc)(void *self, const void *buffer,
-	 size_t size);
-	 */
-
-	io = lib3ds_io_new(stream.rdbuf(), Parser3ds::_IoErrorFunc, _IoSeekFunc,
-			_IoTellFunc, _IoReadFunc, _IoWriteFunc);
+	io = lib3ds_io_new(&stream, Parser3ds::_IoErrorFunc, _IoSeekFunc,
+			_IoTellFunc, _IoReadFunc, NULL);
 
 	if (!io) {
 		lib3ds_file_free(file3ds);
@@ -62,31 +60,51 @@ void Parser3ds::loadModel(const boost::filesystem::path& file,
 
 	lib3ds_io_free(io);
 
+	return file3ds;
 }
 
 Lib3dsBool Parser3ds::_IoErrorFunc(void *self) {
-	Logger::getInstance()->error("Error func not implemented");
-	return 0 == 0;
+	stringstream *s = (stringstream*) self;
+
+	return s->bad();
 }
 
 long Parser3ds::_IoSeekFunc(void *self, long offset, Lib3dsIoSeek origin) {
-	Logger::getInstance()->error("Seek func not implemented");
-	return 0;
+	stringstream *s = (stringstream*) self;
+
+	ios_base::seekdir o;
+	switch (origin) {
+	case LIB3DS_SEEK_SET:
+		o = ios_base::beg;
+		break;
+	case LIB3DS_SEEK_CUR:
+		o = ios_base::cur;
+		break;
+	case LIB3DS_SEEK_END:
+		o = ios_base::end;
+		break;
+	default:
+		Logger::getInstance()->error("[Parser3ds] Error in SEEK function");
+		return (0);
+	}
+
+	s->seekg(offset, o);
+
+	return s->bad();
 }
 
 long Parser3ds::_IoTellFunc(void *self) {
-	Logger::getInstance()->error("Tell func not implemented");
-	return 0;
+	stringstream *s = (stringstream*) self;
+
+	return s->tellg();
 }
 
 size_t Parser3ds::_IoReadFunc(void *self, void *buffer, size_t size) {
-	Logger::getInstance()->error("Read func not implemented");
-	return 0;
-}
+	stringstream *s = (stringstream*) self;
 
-size_t Parser3ds::_IoWriteFunc(void *self, const void *buffer, size_t size) {
-	Logger::getInstance()->error("Write func not implemented");
-	return 0;
+	s->read((char*)buffer, size);
+
+	return s->gcount();
 }
 
 Parser3ds::~Parser3ds() {

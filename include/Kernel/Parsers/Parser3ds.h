@@ -22,7 +22,9 @@ class Parser3ds: public Singleton<Parser3ds>, public Parser {
 	static long _IoSeekFunc(void *self, long offset, Lib3dsIoSeek origin);
 	static long _IoTellFunc(void *self);
 	static size_t _IoReadFunc(void *self, void *buffer, size_t size);
-	static size_t _IoWriteFunc(void *self, const void *buffer, size_t size);
+	static size_t _IoWriteFunc(void *self, const void *buffer, size_t size); // Unused ;)
+
+	Lib3dsFile* _load3dsFile(const boost::filesystem::path& file);
 
 public:
 	Parser3ds();
