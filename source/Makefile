@@ -16,7 +16,7 @@ ARTKLIBS = -L../lib/ARToolKit/lib -lARgsub -lAR
 BULLETDIR = bullet-2.78/
 BULLETLIBS = -L../lib/$(BULLETDIR)/src/BulletDynamics -lBulletDynamics\
 			 -L../lib/$(BULLETDIR)/src/BulletCollision -lBulletCollision\
-			 -L../lib/$(BULLETDIR)/src/LinearMath -lLinearMath
+			 -L../lib/$(BULLETDIR)/src/LinearMath -lLinearMath -l3ds
 
 # Python
 PYTHONDIR = /usr/include/python2.7

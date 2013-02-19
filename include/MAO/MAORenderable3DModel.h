@@ -16,7 +16,6 @@
 #define GL_BGR 0x80E0
 #endif
 
-
 enum AnimType {SIMPLE, LOOP, PINGPONG};
 
 struct MAOAnimation{
@@ -62,6 +61,7 @@ public:
 	friend class Parser;
 	friend class ParserOrej;
 	friend class ParserObj;
+	friend class Parser3ds;
 
 	MAORenderable3DModel(const std::string& name, const boost::filesystem::path& file, float scale = 1.0f);
 	virtual ~MAORenderable3DModel();

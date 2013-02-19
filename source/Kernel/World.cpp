@@ -52,7 +52,7 @@ void World::initWorld(int width, int height) {
 	glEnable(GL_LIGHT0);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	gluPerspective(45.f, (GLfloat) 640 / (GLfloat) 480, .01f, 20.f);
+	gluPerspective(45.f, (GLfloat) 640 / (GLfloat) 480, .001f, 20.f);
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 
