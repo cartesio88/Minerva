@@ -30,10 +30,16 @@ struct MAOAnimation{
 
 struct MAOVector3{
 	float x,y,z;
+
+	MAOVector3(): x(0), y(0), z(0) {}
+	MAOVector3(float xx, float yy, float zz): x(xx), y(yy), z(zz){}
 };
 
 struct MAOVector2{
 	float x,y;
+
+	MAOVector2(): x(0), y(0) {}
+	MAOVector2(float xx, float yy): x(xx), y(yy){}
 };
 
 struct MAOFace{

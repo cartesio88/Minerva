@@ -10,6 +10,7 @@
 
 #include <lib3ds/file.h>
 #include <lib3ds/io.h>
+#include <lib3ds/mesh.h>
 #include <sstream>
 #include <Kernel/Parsers/Parser.h>
 #include <Kernel/Singleton.h>
