@@ -166,8 +166,9 @@ void ParserObj::_loadTextureFile(const boost::filesystem::path& file,
 			fname = fname.substr(0, fname.length() - 1); //Remove the last character
 
 			boost::filesystem::path path = pwd /= fname;
+			mat.texPath = path;
 
-			_loadResourceToTexture(path, mat);
+			_loadResourceToMaterial(mat);
 
 		} else if (symbol == "#") { // Comment
 			/* Ignore it */

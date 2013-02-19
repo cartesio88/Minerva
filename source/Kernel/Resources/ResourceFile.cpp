@@ -17,9 +17,12 @@ ResourceFile::ResourceFile(const boost::filesystem::path& uri) :
 void ResourceFile::load() {
 	if (isOpened()) {
 		Logger::getInstance()->warning(
-				"[ResourceZip] The resource " + _uri.generic_string() + " is already opened.");
+				"[ResourceFile] The resource " + _uri.generic_string() + " is already opened.");
 		return;
 	}
+
+	Logger::getInstance()->out(
+			"[ResourceFile] Looking for the resource " + _uri.generic_string());
 
 	ifstream file;
 
@@ -28,8 +31,7 @@ void ResourceFile::load() {
 	file.open(_uri.generic_string().c_str(), ios::binary);
 
 	if (!file.is_open()) {
-	//	Logger::getInstance()->error(
-	//			"[ResourceFile] Error opening the file " + _uri);
+		//Logger::getInstance()->error("[ResourceFile] Error opening the file " + _uri.generic_string());
 		_opened = false;
 		return;
 	}

@@ -18,11 +18,38 @@ void Parser3ds::loadModel(const boost::filesystem::path& file,
 	Lib3dsFile *file3ds;
 	file3ds = _load3dsFile(file);
 
-	/* Load textures */
-	// TODO
-	MAOMaterial mat;
-	// TODO
-	model._materials.push_back(mat);
+	/* Load Textures / Materials */
+
+	for (Lib3dsMaterial* mat = file3ds->materials; mat != NULL; mat =
+			mat->next) {
+		MAOMaterial mmat;
+
+		mmat.name = std::string(mat->name);
+
+		mmat.ambient.x = mat->ambient[0];
+		mmat.ambient.y = mat->ambient[1];
+		mmat.ambient.z = mat->ambient[2];
+
+		mmat.diffuse.x = mat->diffuse[0];
+		mmat.diffuse.y = mat->diffuse[1];
+		mmat.diffuse.z = mat->diffuse[2];
+
+		mmat.specular.x = mat->specular[0];
+		mmat.specular.y = mat->specular[1];
+		mmat.specular.z = mat->specular[2];
+
+		mmat.transparency = mat->transparency;
+
+		boost::filesystem::path pwd = file.parent_path();
+		boost::filesystem::path texPath = pwd /= mat->texture1_map.name;
+		ResourcesManager::getInstance()->addResource(texPath); //MTLIBFILE
+
+		mmat.texPath = texPath;
+
+		_loadResourceToMaterial(mmat);
+
+		model._materials.push_back(mmat);
+	}
 
 	/* Load Geometry */
 	for (Lib3dsMesh* m = file3ds->meshes; m != NULL; m = m->next) {
@@ -32,14 +59,7 @@ void Parser3ds::loadModel(const boost::filesystem::path& file,
 		Lib3dsVector normals[m->faces * 3];
 		lib3ds_mesh_calculate_normals(m, normals);
 
-		/* Materials */
-		for (Lib3dsMaterial* mat = file3ds->materials; mat != NULL;
-				mat = mat->next) {
-
-		}
-
 		/* Vertex list */
-		cout << "Number of vertex: " << m->points << endl;
 		for (unsigned int i = 0; i < m->points; i++) {
 			Lib3dsPoint v = m->pointL[i];
 
@@ -53,7 +73,6 @@ void Parser3ds::loadModel(const boost::filesystem::path& file,
 		}
 
 		/* UV list */
-		cout << "Number of uvs: " << m->texels << endl;
 		for (unsigned int i = 0; i < m->texels; i++) {
 			float u = m->texelL[2 * i][0];
 			float v = m->texelL[2 * i][1];
@@ -63,7 +82,6 @@ void Parser3ds::loadModel(const boost::filesystem::path& file,
 		}
 
 		/* Normals */
-		cout << "Number of normals: " << (m->faces * 3) << endl;
 		for (unsigned int i = 0; i < m->faces; i++) {
 			float nx = normals[3 * i][0];
 			float ny = normals[3 * i][1];
@@ -74,7 +92,6 @@ void Parser3ds::loadModel(const boost::filesystem::path& file,
 		}
 
 		/* Faces list */
-		cout << "Number of faces: " << m->faces << endl;
 		for (unsigned int i = 0; i < m->faces; i++) {
 			Lib3dsFace f = m->faceL[i];
 
@@ -96,6 +113,24 @@ void Parser3ds::loadModel(const boost::filesystem::path& file,
 			mmesh.faces.push_back(mf);
 		}
 
+		/* Assign the material */
+		std::string materialName = std::string(m->faceL[0].material);
+
+		// Look for the material (This should be done by a Material Factory! TODO)
+		int matId = -1;
+		for (unsigned int i = 0; i < model._materials.size(); i++) {
+			if (model._materials[i].name == materialName) {
+				matId = i;
+				break;
+			}
+		}
+
+		if (matId == -1) {
+			Logger::getInstance()->error(
+					"[Parser3ds] Material not found for mesh!");
+		} else {
+			mmesh.materialId = matId;
+		}
 		model._meshes.push_back(mmesh);
 	}
 

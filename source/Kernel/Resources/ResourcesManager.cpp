@@ -52,19 +52,18 @@ Resource& ResourcesManager::getResource(const boost::filesystem::path& uri) {
 
 	/* Else, try to load the actual file */
 	if (!r || !r->isOpened()) {
-		if (r)
-			delete r;
+		if (r)	delete r;
 		r = new ResourceFile(uri);
 	}
 
 	/* Else, we can't find it.. aborting! */
-	if (!r->isOpened()) {
+	if (!r || !r->isOpened()) {
 		if (r)
 			delete r;
-		throw "[ResourcesManager] Could not find the resource " + uri.generic_string();
+		Logger::getInstance()->error("[ResourcesManager] Could not find the resource " + uri.generic_string());
+		exit(-1);
 	}
 
-	//Logger::getInstance()->out("Getting resource " + uri);
 	return *r;
 }
 

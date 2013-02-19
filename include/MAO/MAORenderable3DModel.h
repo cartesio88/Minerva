@@ -55,6 +55,8 @@ struct MAOMaterial{
 	MAOVector3 specular;
 	float transparency;
 
+	boost::filesystem::path texPath;
+
 	GLuint texId;
 	int texHeight;
 

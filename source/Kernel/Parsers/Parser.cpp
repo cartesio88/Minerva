@@ -12,14 +12,13 @@ using namespace std;
 Parser::Parser() {
 }
 
-bool Parser::_loadResourceToTexture(const boost::filesystem::path& file,
-		MAOMaterial& mat) {
+bool Parser::_loadResourceToMaterial(MAOMaterial& mat) {
 	SDL_Surface* img = NULL;
 	SDL_RWops *rw = NULL;
 	GLenum textureFormat;
 
 	try {
-		Resource& r = ResourcesManager::getInstance()->getResource(file);
+		Resource& r = ResourcesManager::getInstance()->getResource(mat.texPath);
 
 		rw = SDL_RWFromMem((void*) r.getData(), r.getSize());
 		img = IMG_Load_RW(rw, 1);
@@ -31,12 +30,12 @@ bool Parser::_loadResourceToTexture(const boost::filesystem::path& file,
 
 	if (img == NULL) {
 		Logger::getInstance()->error(
-				"Error Loading the texture: " + file.generic_string());
+				"Error Loading the texture: " + mat.texPath.generic_string());
 		Logger::getInstance()->error(IMG_GetError());
 		return false;
 	}
 
-	ResourcesManager::getInstance()->addResource(file);
+	ResourcesManager::getInstance()->addResource(mat.texPath);
 
 	switch (img->format->BytesPerPixel) {
 	case 4: //With alpha channel

@@ -32,11 +32,12 @@ void ParserOrej::_loadTexture(const boost::filesystem::path& file,
 
 	// Get the file format
 	boost::filesystem::path fileTex(file);
+	mat.texPath = file;
 
 	// Formats supported
 	for (int i = 0; i < 4; i++) {
 		fileTex.replace_extension(formats[i]);
-		if (_loadResourceToTexture(fileTex, mat))
+		if (_loadResourceToMaterial(mat))
 			break;
 	}
 
