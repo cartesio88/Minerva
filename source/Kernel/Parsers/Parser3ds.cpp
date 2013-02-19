@@ -18,6 +18,12 @@ void Parser3ds::loadModel(const boost::filesystem::path& file,
 	Lib3dsFile *file3ds;
 	file3ds = _load3dsFile(file);
 
+	int nMeshes = 0;
+	for (Lib3dsMesh* m = file3ds->meshes; m != NULL; m = m->next)
+		nMeshes++;
+	// Load the geometry!
+	cout << "There are meshes: " << nMeshes << endl;
+
 	// Maybe at the end?
 	lib3ds_file_free(file3ds);
 }
@@ -36,7 +42,7 @@ Lib3dsFile* Parser3ds::_load3dsFile(const boost::filesystem::path& file) {
 		exit(-1);
 	}
 
-	std::stringstream stream(std::string(r.getData()));
+	std::istringstream stream(string(r.getData(), r.getSize()));
 
 	io = lib3ds_io_new(&stream, Parser3ds::_IoErrorFunc, _IoSeekFunc,
 			_IoTellFunc, _IoReadFunc, NULL);
@@ -102,7 +108,7 @@ long Parser3ds::_IoTellFunc(void *self) {
 size_t Parser3ds::_IoReadFunc(void *self, void *buffer, size_t size) {
 	stringstream *s = (stringstream*) self;
 
-	s->read((char*)buffer, size);
+	s->read((char*) buffer, size);
 
 	return s->gcount();
 }
