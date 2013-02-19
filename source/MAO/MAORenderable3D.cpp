@@ -198,7 +198,7 @@ void MAORenderable3D::draw() {
 
 		glMultMatrixf(m);
 
-		drawGeometryWithTexture();
+		_drawMAO();
 
 		glPopMatrix();
 

@@ -49,23 +49,43 @@ struct MAOFace{
 };
 
 struct MAOMaterial{
+	std::string name;
+	MAOVector3 ambient;
+	MAOVector3 diffuse;
+	MAOVector3 specular;
+	float transparency;
 
+	GLuint texId;
+	int texHeight;
+
+	MAOMaterial() {}
+};
+
+struct MAOMesh{
+	std::vector<MAOVector3> vertex;
+	std::vector<MAOVector2> uv;
+	std::vector<MAOVector3> normals;
+	std::list<MAOFace> faces;
+
+	MAOMaterial* material;
+	GLuint idListMesh;
+
+	MAOMesh(): material(NULL) {}
 };
 
 class MAORenderable3DModel: public MAORenderable3D {
 	boost::filesystem::path _file;
 
-	/* Maybe, dont really need them */
-	std::vector<MAOVector3> _vertex;
-	std::vector<MAOVector2> _uv;
-	std::vector<MAOVector3> _normals;
-	std::list<MAOFace> _faces;
+	std::list<MAOMesh> _meshes;
+	std::vector<MAOMaterial> _materials;
 
 	std::vector<MAOAnimation> _anims;
 
-	std::vector<int> _texHeights;
-	std::vector<GLuint> _texIds;
-	GLuint _listMesh;
+	void _drawMesh(const MAOMesh& mesh); // Just one mesh
+	void _drawMeshNoTexture(const MAOMesh& mesh); // Just one mesh
+
+	void _drawMAOMesh(); // Whole geometry
+	void _drawMAOMeshNoTexture(); // Whole geometry
 
 public:
 	friend class Parser;
@@ -75,9 +95,6 @@ public:
 
 	MAORenderable3DModel(const std::string& name, const boost::filesystem::path& file, float scale = 1.0f);
 	virtual ~MAORenderable3DModel();
-
-	void drawGeometryWithTexture();
-	void drawGeometryWithoutTexture();
 
 	void generateCollisionShape(int type);
 

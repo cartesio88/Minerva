@@ -24,8 +24,7 @@ void ParserOrej::loadModel(const boost::filesystem::path& file,
 void ParserOrej::_loadTexture(const boost::filesystem::path& file,
 		MAORenderable3DModel& model) {
 
-	model._texIds.push_back((GLuint) -1);
-	model._texHeights.push_back(0);
+	MAOMaterial mat;
 
 	// Compatible formats
 	string formats[] = { string(".ppm"), string(".tga"), string(".png"), string(
@@ -37,10 +36,11 @@ void ParserOrej::_loadTexture(const boost::filesystem::path& file,
 	// Formats supported
 	for (int i = 0; i < 4; i++) {
 		fileTex.replace_extension(formats[i]);
-		if(_loadResourceToTexture(fileTex, model._texIds.back(), model._texHeights.back()))
+		if(_loadResourceToTexture(fileTex, mat.texId, mat.texHeight))
 			break;
 	}
 
+	model._materials.push_back(mat);
 }
 
 void ParserOrej::_loadGeometry(const boost::filesystem::path& file,
@@ -50,6 +50,8 @@ void ParserOrej::_loadGeometry(const boost::filesystem::path& file,
 	char line[256];
 	list<MAOFace>::iterator ptrFace;
 	bool processingUV = false;
+
+	MAOMesh mesh;
 
 	Resource& r = ResourcesManager::getInstance()->getResource(file);
 	stream << string(r.getData());
@@ -69,7 +71,7 @@ void ParserOrej::_loadGeometry(const boost::filesystem::path& file,
 		case 'f': {
 
 			int v1, v2, v3;
-			model._faces.push_back(MAOFace());
+			mesh.faces.push_back(MAOFace());
 
 			sscanf(&line[2], "%d %d %d", &v1, &v2, &v3);
 
@@ -79,37 +81,37 @@ void ParserOrej::_loadGeometry(const boost::filesystem::path& file,
 				throw "Format error in OreJ! Line: " + nLine;
 			}
 
-			model._faces.back().vertex[0].x = model._vertex[v1 - 1].x;
-			model._faces.back().vertex[0].y = model._vertex[v1 - 1].y;
-			model._faces.back().vertex[0].z = model._vertex[v1 - 1].z;
+			mesh.faces.back().vertex[0].x = mesh.vertex[v1 - 1].x;
+			mesh.faces.back().vertex[0].y = mesh.vertex[v1 - 1].y;
+			mesh.faces.back().vertex[0].z = mesh.vertex[v1 - 1].z;
 
-			model._faces.back().vertex[1].x = model._vertex[v2 - 1].x;
-			model._faces.back().vertex[1].y = model._vertex[v2 - 1].y;
-			model._faces.back().vertex[1].z = model._vertex[v2 - 1].z;
+			mesh.faces.back().vertex[1].x = mesh.vertex[v2 - 1].x;
+			mesh.faces.back().vertex[1].y = mesh.vertex[v2 - 1].y;
+			mesh.faces.back().vertex[1].z = mesh.vertex[v2 - 1].z;
 
-			model._faces.back().vertex[2].x = model._vertex[v3 - 1].x;
-			model._faces.back().vertex[2].y = model._vertex[v3 - 1].y;
-			model._faces.back().vertex[2].z = model._vertex[v3 - 1].z;
+			mesh.faces.back().vertex[2].x = mesh.vertex[v3 - 1].x;
+			mesh.faces.back().vertex[2].y = mesh.vertex[v3 - 1].y;
+			mesh.faces.back().vertex[2].z = mesh.vertex[v3 - 1].z;
 
 			break;
 		}
 		case 'v': {
-			model._vertex.push_back(MAOVector3());
-			sscanf(&line[2], "%f %f %f", &model._vertex.back().x,
-					&model._vertex.back().y, &model._vertex.back().z);
+			mesh.vertex.push_back(MAOVector3());
+			sscanf(&line[2], "%f %f %f", &mesh.vertex.back().x,
+					&mesh.vertex.back().y, &mesh.vertex.back().z);
 
-			model._vertex.back().x *=
+			mesh.vertex.back().x *=
 					model.getProperty("size").getValue<float>();
-			model._vertex.back().y *=
+			mesh.vertex.back().y *=
 					model.getProperty("size").getValue<float>();
-			model._vertex.back().z *=
+			mesh.vertex.back().z *=
 					model.getProperty("size").getValue<float>();
 
 			break;
 		}
-		case 't':
+		case 't':{
 			if (!processingUV) { // Start assigning textures
-				ptrFace = model._faces.begin();
+				ptrFace = mesh.faces.begin();
 				processingUV = true;
 			}
 			MAOVector2 uv[3];
@@ -125,29 +127,31 @@ void ParserOrej::_loadGeometry(const boost::filesystem::path& file,
 			ptrFace->uv[2].y = uv[2].y;
 
 			ptrFace++;
-			break;
 
-		case 'm':
+			break;
+		}
+		case 'm':{
 			if(model._anims.size() == 0)
 				model._anims.push_back(MAOAnimation());
-		{
+
 			float* m = new float[16];
 			sscanf(&line[2], "%f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f",
 					&m[0], &m[1], &m[2], &m[3], &m[4], &m[5], &m[6], &m[7],
 					&m[8], &m[9], &m[10], &m[11], &m[12], &m[13], &m[14],
 					&m[15]);
 			model._anims.back().frames.push_back(m);
-		}
+
 
 			break;
-
+		}
 		default:
 			break;
 		}
 	}
 
-	_generateCallList(model);
+	_generateCallList(mesh);
 
+	model._meshes.push_back(mesh);
 }
 
 ParserOrej::~ParserOrej() {

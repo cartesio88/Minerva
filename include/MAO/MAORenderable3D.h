@@ -26,6 +26,11 @@
 #include <list>
 
 class MAORenderable3D: public MAOPositionator3D {
+protected:
+
+	virtual void _drawMAO()=0;
+	virtual void _drawMAONoTexture()=0; /* For shadows Purposes ;) */
+
 public:
 	MAORenderable3D(const std::string& name, const float& size);
 	MAORenderable3D(const MAORenderable3D& o);
@@ -33,9 +38,11 @@ public:
 	void setGlobalReference(MAOPositionator3D& globalReference);
 
 	MAOPositionator3D* getGlobalReference();
+
 	void draw();
-	virtual void drawGeometryWithTexture()=0;
-	virtual void drawGeometryWithoutTexture()=0; /* For shadows Propouses ;) */
+	void drawNoTexture();
+
+
 
 	cv::Mat& getPosMatrix();
 	cv::Mat& getRelativeMatrix();
