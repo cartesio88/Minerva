@@ -43,7 +43,7 @@ void ResourceFile::load() {
 	if(_size<=0){
 		Logger::getInstance()->error("[ResourceFile] This file seems to be corrupt: "+_uri.generic_string());
 	}
-	cout<<"Size: "<<_size<<endl;
+
 	_data = new char[_size];
 
 	_opened = true;

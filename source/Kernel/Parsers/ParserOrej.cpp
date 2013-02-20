@@ -135,15 +135,13 @@ void ParserOrej::_loadGeometry(const boost::filesystem::path& file,
 			break;
 		}
 		case 'm': {
-			if (model._anims.size() == 0)
-				model._anims.push_back(MAOAnimation());
 
 			float* m = new float[16];
 			sscanf(&line[2], "%f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f",
 					&m[0], &m[1], &m[2], &m[3], &m[4], &m[5], &m[6], &m[7],
 					&m[8], &m[9], &m[10], &m[11], &m[12], &m[13], &m[14],
 					&m[15]);
-			model._anims.back().frames.push_back(m);
+			mesh.animMatrix.push_back(m);
 
 			break;
 		}

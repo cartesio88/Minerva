@@ -22,10 +22,10 @@ struct MAOAnimation{
 	int type;
 	bool playing;
 	int dir;
-	std::vector<float*> frames;
 	int currentFrame;
+	int frames;
 
-	MAOAnimation(): type(SIMPLE), playing(false), dir(1), currentFrame(0){}
+	MAOAnimation(): type(SIMPLE), playing(false), dir(1), currentFrame(0), frames(0){}
 };
 
 struct MAOVector3{
@@ -46,6 +46,21 @@ struct MAOFace{
 	MAOVector3 vertex[3];
 	MAOVector2 uv[3];
 	MAOVector3 normal[3];
+
+	MAOFace(){
+		for(int i = 0; i<3; i++){
+			vertex[i].x = 0;
+			vertex[i].y = 0;
+			vertex[i].z = 0;
+
+			uv[i].x = 0;
+			uv[i].y = 0;
+
+			normal[i].x = 0;
+			normal[i].y = 0;
+			normal[i].z = 0;
+		}
+	}
 };
 
 struct MAOMaterial{
@@ -68,6 +83,7 @@ struct MAOMesh{
 	std::vector<MAOVector2> uv;
 	std::vector<MAOVector3> normals;
 	std::list<MAOFace> faces;
+	std::vector<float*> animMatrix;
 
 	int materialId;
 	GLuint idListMesh;
@@ -80,8 +96,8 @@ class MAORenderable3DModel: public MAORenderable3D {
 
 	std::list<MAOMesh> _meshes;
 	std::vector<MAOMaterial> _materials;
+	MAOAnimation _anim; // Maybe, more than one? who knows...
 
-	std::vector<MAOAnimation> _anims;
 
 	void _drawMesh(const MAOMesh& mesh); // Just one mesh
 	void _drawMeshNoTexture(const MAOMesh& mesh); // Just one mesh

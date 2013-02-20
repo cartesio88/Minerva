@@ -98,9 +98,9 @@ void Parser::_generateCallList(MAORenderable3DModel& model) {
 		for (facePtr = meshPtr->faces.begin(); facePtr != meshPtr->faces.end();
 				facePtr++) {
 			glBegin(GL_TRIANGLES);
-			if (meshPtr->materialId != -1)
-				glTexCoord2f(facePtr->uv[0].x,
-						model._materials[meshPtr->materialId].texHeight - facePtr->uv[0].y);
+			if (meshPtr->materialId != -1){
+				glTexCoord2f(facePtr->uv[0].x, model._materials[meshPtr->materialId].texHeight - facePtr->uv[0].y);
+			}
 			glNormal3f(facePtr->normal[0].x, facePtr->normal[0].y,
 					facePtr->normal[0].z);
 			glVertex3f(facePtr->vertex[0].x, facePtr->vertex[0].y,

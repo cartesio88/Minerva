@@ -105,17 +105,18 @@ void ParserObj::loadModel(const boost::filesystem::path& file,
 				streamLine >> aux;
 				fname = fname + " " + aux;
 			}
-			// TODO, algun caracter, igual retorno de carro, me esta dando problemas
-			//fname = fname.substr(0, fname.length() - 1); //Remove the last character
+			// Deleting final spaces :/
+			while(fname.at(fname.length()-1) == ' ') fname = fname.substr(0, fname.length() - 1);
 
 			boost::filesystem::path path = pwd /= fname;
 
 			ResourcesManager::getInstance()->addResource(path); //MTLIBFILE
 
 			MAOMaterial mat;
-			_loadTextureFile(path, mat);
 			model._materials.push_back(mat);
+			cout<<"Asignando ID: "<<model._materials.size() - 1;
 			mesh.materialId = model._materials.size() - 1;
+			_loadTextureFile(path, model._materials[mesh.materialId]);
 
 		} else if (symbol == "usemtl") { // Using material
 
@@ -168,7 +169,8 @@ void ParserObj::_loadTextureFile(const boost::filesystem::path& file,
 				streamLine >> aux;
 				fname = fname + " " + aux;
 			}
-			//fname = fname.substr(0, fname.length() - 1); //Remove the last character
+			// Deleting final spaces :/
+			while(fname.at(fname.length()-1) == ' ') fname = fname.substr(0, fname.length() - 1);
 
 			boost::filesystem::path path = pwd /= fname;
 

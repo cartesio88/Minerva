@@ -130,29 +130,28 @@ void MAORenderable3DModel::_drawMeshNoTexture(const MAOMesh& mesh) {
 	glPushMatrix();
 
 	//Refresh anim!
-	if (_anims.size() > 0) {
-		MAOAnimation& anim = _anims.back();
-		glMultMatrixf(anim.frames.at(anim.currentFrame));
+	if (_anim.frames > 0) {
+		glMultMatrixf(mesh.animMatrix[_anim.currentFrame]);
 
-		if (anim.playing) {
-			anim.currentFrame += anim.dir;
-			if (anim.currentFrame == (anim.frames.size() - 1)) {
-				switch (anim.type) {
+		if (_anim.playing) {
+			_anim.currentFrame += _anim.dir;
+			if (_anim.currentFrame == (_anim.frames - 1)) {
+				switch (_anim.type) {
 				case SIMPLE:
 					stopAnim();
 					break;
 				case LOOP:
-					anim.currentFrame = 0;
+					_anim.currentFrame = 0;
 					break;
 				case PINGPONG:
-					anim.dir *= -1;
+					_anim.dir *= -1;
 					break;
 				}
 			}
 
 			//For Ping-Pong mode!
-			if (anim.currentFrame == -1) {
-				anim.dir *= -1;
+			if (_anim.currentFrame == -1) {
+				_anim.dir *= -1;
 			}
 		}
 	}
@@ -178,26 +177,23 @@ void MAORenderable3DModel::_drawMAONoTexture() {
 }
 
 void MAORenderable3DModel::playAnim(int animType) {
-	MAOAnimation& anim = _anims.back();
-	if (!anim.playing) {
-		anim.playing = true;
+	if (!_anim.playing) {
+		_anim.playing = true;
 	}
 }
 
 void MAORenderable3DModel::pauseAnim() {
-	MAOAnimation& anim = _anims.back();
-	if (anim.playing) {
-		anim.playing = false;
+	if (_anim.playing) {
+		_anim.playing = false;
 	}
 }
 
 void MAORenderable3DModel::stopAnim() {
-	MAOAnimation& anim = _anims.back();
-	if (anim.playing) {
-		anim.playing = false;
+	if (_anim.playing) {
+		_anim.playing = false;
 	}
-	anim.currentFrame = 0;
-	anim.dir = 1;
+	_anim.currentFrame = 0;
+	_anim.dir = 1;
 }
 
 MAORenderable3DModel::~MAORenderable3DModel() {

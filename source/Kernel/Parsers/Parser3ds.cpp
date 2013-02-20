@@ -42,9 +42,16 @@ void Parser3ds::loadModel(const boost::filesystem::path& file,
 		boost::filesystem::path pwd = file.parent_path();
 		boost::filesystem::path texPath = pwd /= mat->texture1_map.name;
 
-		mmat.texPath = texPath;
+		if (string(mat->texture1_map.name) == "") {
+			Logger::getInstance()->warning(
+					"[Parser3ds] Material " + string(mat->name)
+							+ " does not have texture associated.");
+		} else {
 
-		_loadResourceToMaterial(mmat);
+			mmat.texPath = texPath;
+			_loadResourceToMaterial(mmat);
+
+		}
 
 		model._materials.push_back(mmat);
 	}
@@ -116,6 +123,8 @@ void Parser3ds::loadModel(const boost::filesystem::path& file,
 				mf.normal[j].z = normals[i * 3 + j][2];
 			}
 
+			/* Load frames */
+
 			mmesh.faces.push_back(mf);
 		}
 
@@ -137,10 +146,27 @@ void Parser3ds::loadModel(const boost::filesystem::path& file,
 		} else {
 			mmesh.materialId = matId;
 		}
+
 		model._meshes.push_back(mmesh);
 	}
 
 	/* Load animation */
+	model._anim.frames = file3ds->frames;
+
+	for (int f = 0; f < file3ds->frames; f++) {
+		lib3ds_file_eval(file3ds, f);
+		list<MAOMesh>::iterator ptrMMesh = model._meshes.begin();
+		for (Lib3dsMesh* m = file3ds->meshes; m != NULL; m = m->next) {
+			float* mat = new float[16];
+			for (int i = 0; i < 4; i++) {
+				for (int j = 0; j < 4; j++) {
+					mat[i * 4 + j] = m->matrix[i][j];
+				}
+			}
+			ptrMMesh->animMatrix.push_back(mat);
+			ptrMMesh++;
+		}
+	}
 
 	/* Load to OpenGL :) */
 	_generateCallList(model);
