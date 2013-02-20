@@ -31,7 +31,6 @@ void ResourceFile::load() {
 	file.open(_uri.generic_string().c_str(), ios::binary);
 
 	if (!file.is_open()) {
-		//Logger::getInstance()->error("[ResourceFile] Error opening the file " + _uri.generic_string());
 		_opened = false;
 		return;
 	}
@@ -41,6 +40,10 @@ void ResourceFile::load() {
 	_size = file.tellg();
 	file.seekg(0, ios::beg);
 
+	if(_size<=0){
+		Logger::getInstance()->error("[ResourceFile] This file seems to be corrupt: "+_uri.generic_string());
+	}
+	cout<<"Size: "<<_size<<endl;
 	_data = new char[_size];
 
 	_opened = true;

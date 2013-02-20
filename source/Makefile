@@ -15,8 +15,8 @@ ARTKLIBS = -L../lib/ARToolKit/lib -lARgsub -lAR
 # Bullet
 BULLETDIR = bullet-2.78/
 BULLETLIBS = -L../lib/$(BULLETDIR)/src/BulletDynamics -lBulletDynamics\
-			 -L../lib/$(BULLETDIR)/src/BulletCollision -lBulletCollision\
-			 -L../lib/$(BULLETDIR)/src/LinearMath -lLinearMath -l3ds
+			-L../lib/$(BULLETDIR)/src/BulletCollision -lBulletCollision\
+			-L../lib/$(BULLETDIR)/src/LinearMath -lLinearMath 
 
 # Python
 PYTHONDIR = /usr/include/python2.7
@@ -31,7 +31,8 @@ endif
 
 # Libraries
 LDFLAGS = -lGL -lGLU -lSDL -lSDL_ttf -lSDL_image -lSDL_mixer `pkg-config --libs opencv`\
-		  $(ARTKLIBS) $(BULLETLIBS) $(PYTHONLIB) -lboost_python -lboost_system -lboost_filesystem -lzip
+		  $(ARTKLIBS) $(BULLETLIBS) $(PYTHONLIB) -lboost_python -lboost_filesystem -lzip\
+		  -lboost_system -l3ds
 
 # Includes
 INCFLAGS = -I$(INCDIR) -I ../lib/ARToolKit/include -I../lib/$(BULLETDIR)/src -I$(PYTHONDIR)\

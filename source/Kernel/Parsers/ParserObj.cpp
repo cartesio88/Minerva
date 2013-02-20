@@ -78,16 +78,16 @@ void ParserObj::loadModel(const boost::filesystem::path& file,
 				index = index.substr(pos + 1);
 
 				_getFaceIndices(s, v, vt, vn);
-				if (v > 0) {
+				if (v > 0 && v <= mesh.vertex.size()) {
 					f.vertex[i].x = mesh.vertex[v -1].x;
 					f.vertex[i].y = mesh.vertex[v -1].y;
 					f.vertex[i].z = mesh.vertex[v -1].z;
 				}
-				if (vt > 0) {
+				if (vt > 0 && vt <= mesh.uv.size()) {
 					f.uv[i].x = mesh.uv[vt -1].x;
 					f.uv[i].y = mesh.uv[vt -1].y;
 				}
-				if (vn > 0) {
+				if (vn > 0 && vn <= mesh.normals.size()) {
 					f.normal[i].x = mesh.normals[vn - 1].x;
 					f.normal[i].y = mesh.normals[vn - 1].y;
 					f.normal[i].z = mesh.normals[vn - 1].z;
@@ -105,7 +105,8 @@ void ParserObj::loadModel(const boost::filesystem::path& file,
 				streamLine >> aux;
 				fname = fname + " " + aux;
 			}
-			fname = fname.substr(0, fname.length() - 1); //Remove the last character
+			// TODO, algun caracter, igual retorno de carro, me esta dando problemas
+			//fname = fname.substr(0, fname.length() - 1); //Remove the last character
 
 			boost::filesystem::path path = pwd /= fname;
 
@@ -125,6 +126,10 @@ void ParserObj::loadModel(const boost::filesystem::path& file,
 					"[ParserObj] Symbol not supported: " + symbol);
 		}
 	}
+
+	//cout<<"Vertex: "<<mesh.vertex.size()<<endl;
+	//cout<<"UV: "<<mesh.uv.size()<<endl;
+	//cout<<"Faces: "<<mesh.faces.size()<<endl;
 
 	model._meshes.push_back(mesh);
 
@@ -163,11 +168,11 @@ void ParserObj::_loadTextureFile(const boost::filesystem::path& file,
 				streamLine >> aux;
 				fname = fname + " " + aux;
 			}
-			fname = fname.substr(0, fname.length() - 1); //Remove the last character
+			//fname = fname.substr(0, fname.length() - 1); //Remove the last character
 
 			boost::filesystem::path path = pwd /= fname;
-			mat.texPath = path;
 
+			mat.texPath = path;
 			_loadResourceToMaterial(mat);
 
 		} else if (symbol == "#") { // Comment

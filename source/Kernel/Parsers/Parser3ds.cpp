@@ -19,7 +19,6 @@ void Parser3ds::loadModel(const boost::filesystem::path& file,
 	file3ds = _load3dsFile(file);
 
 	/* Load Textures / Materials */
-
 	for (Lib3dsMaterial* mat = file3ds->materials; mat != NULL; mat =
 			mat->next) {
 		MAOMaterial mmat;
@@ -59,10 +58,14 @@ void Parser3ds::loadModel(const boost::filesystem::path& file,
 		lib3ds_mesh_calculate_normals(m, normals);
 
 		/* Vertex list */
+		//cout << "Vertex: " << m->points << endl;
 		for (unsigned int i = 0; i < m->points; i++) {
 			Lib3dsPoint v = m->pointL[i];
 
 			MAOVector3 mv(v.pos[0], v.pos[1], v.pos[2]);
+
+			//cout << "Vertex[" << i << "]: " << mv.x << "," << mv.y << ","
+//					<< mv.z << endl;
 
 			mv.x *= model.getProperty("size").getValue<float>();
 			mv.y *= model.getProperty("size").getValue<float>();
@@ -72,15 +75,18 @@ void Parser3ds::loadModel(const boost::filesystem::path& file,
 		}
 
 		/* UV list */
+		//cout << "UV: " << m->texels << endl;
 		for (unsigned int i = 0; i < m->texels; i++) {
-			float u = m->texelL[2 * i][0];
-			float v = m->texelL[2 * i][1];
+			float u = m->texelL[i][0];
+			float v = m->texelL[i][1];
 
+			//cout << "UV[" << i << "]: " << u << "," << v << endl;
 			MAOVector2 uv(u, v);
 			mmesh.uv.push_back(uv);
 		}
 
 		/* Normals */
+		//cout << "Faces: " << m->faces << endl;
 		for (unsigned int i = 0; i < m->faces; i++) {
 			float nx = normals[3 * i][0];
 			float ny = normals[3 * i][1];
@@ -95,8 +101,9 @@ void Parser3ds::loadModel(const boost::filesystem::path& file,
 			Lib3dsFace f = m->faceL[i];
 
 			MAOFace mf;
-
+			//cout << "== Face! [" << i << "]==" << endl;
 			for (int j = 0; j < 3; j++) {
+				//cout << "Face point[" << j << "] is " << f.points[j] << endl;
 				mf.vertex[j].x = mmesh.vertex.at(f.points[j]).x;
 				mf.vertex[j].y = mmesh.vertex.at(f.points[j]).y;
 				mf.vertex[j].z = mmesh.vertex.at(f.points[j]).z;
